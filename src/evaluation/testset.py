@@ -49,7 +49,7 @@ def _sample(sample_id: str, question_type: str, question: str, ground_truth: str
 
 
 def build_test_set(df: pd.DataFrame, output_path: Path) -> list[dict[str, Any]]:
-    """Build five deterministic benchmark questions from actual cleaned papers."""
+    """Build ten deterministic benchmark questions from actual cleaned papers."""
     missing_columns = _REQUIRED_COLUMNS - set(df.columns)
     if missing_columns:
         raise ValueError(f"Cleaned dataframe is missing required columns: {sorted(missing_columns)}")
@@ -57,58 +57,81 @@ def build_test_set(df: pd.DataFrame, output_path: Path) -> list[dict[str, Any]]:
         raise ValueError("At least two cleaned papers are required to create the multi-hop benchmark.")
 
     papers = df.reset_index(drop=True)
-    summary_paper = papers.iloc[0]
-    authors_paper = papers.iloc[1 % len(papers)]
-    date_paper = papers.iloc[2 % len(papers)]
-    category_paper = papers.iloc[3 % len(papers)]
-    first_hop_paper = papers.iloc[0]
-    second_hop_paper = papers.iloc[1 % len(papers)]
+    samples: list[dict[str, Any]] = []
+    sample_number = 1
 
-    summary_title = _value(summary_paper, "title")
-    authors_title = _value(authors_paper, "title")
-    date_title = _value(date_paper, "title")
-    category_title = _value(category_paper, "title")
-    first_hop_title = _value(first_hop_paper, "title")
-    second_hop_title = _value(second_hop_paper, "title")
+    for offset in range(2):
+        paper = papers.iloc[offset % len(papers)]
+        title = _value(paper, "title")
+        samples.append(
+            _sample(
+                f"eval_{sample_number:03d}",
+                "summary",
+                f"What is the main research summary of the paper '{title}'?",
+                first_sentence(_value(paper, "summary")),
+                [_value(paper, "paper_id")],
+            )
+        )
+        sample_number += 1
 
-    samples = [
-        _sample(
-            "eval_001",
-            "summary",
-            f"What is the main research summary of the paper '{summary_title}'?",
-            first_sentence(_value(summary_paper, "summary")),
-            [_value(summary_paper, "paper_id")],
-        ),
-        _sample(
-            "eval_002",
-            "authors",
-            f"Who authored the research paper '{authors_title}'?",
-            _value(authors_paper, "authors_joined"),
-            [_value(authors_paper, "paper_id")],
-        ),
-        _sample(
-            "eval_003",
-            "date",
-            f"When was the paper '{date_title}' published?",
-            _value(date_paper, "published"),
-            [_value(date_paper, "paper_id")],
-        ),
-        _sample(
-            "eval_004",
-            "category",
-            f"What categories does the paper '{category_title}' belong to?",
-            _value(category_paper, "categories_joined"),
-            [_value(category_paper, "paper_id")],
-        ),
-        _sample(
-            "eval_005",
-            "multi_hop",
-            f"How do the research topics in '{first_hop_title}' and '{second_hop_title}' relate to each other?",
-            f"'{first_hop_title}' studies {first_sentence(_value(first_hop_paper, 'summary'))} "
-            f"'{second_hop_title}' studies {first_sentence(_value(second_hop_paper, 'summary'))}",
-            [_value(first_hop_paper, "paper_id"), _value(second_hop_paper, "paper_id")],
-        ),
-    ]
+    for offset in range(2, 4):
+        paper = papers.iloc[offset % len(papers)]
+        title = _value(paper, "title")
+        samples.append(
+            _sample(
+                f"eval_{sample_number:03d}",
+                "authors",
+                f"Who authored the research paper '{title}'?",
+                _value(paper, "authors_joined"),
+                [_value(paper, "paper_id")],
+            )
+        )
+        sample_number += 1
+
+    for offset in range(4, 6):
+        paper = papers.iloc[offset % len(papers)]
+        title = _value(paper, "title")
+        samples.append(
+            _sample(
+                f"eval_{sample_number:03d}",
+                "date",
+                f"When was the paper '{title}' published?",
+                _value(paper, "published"),
+                [_value(paper, "paper_id")],
+            )
+        )
+        sample_number += 1
+
+    for offset in range(6, 8):
+        paper = papers.iloc[offset % len(papers)]
+        title = _value(paper, "title")
+        samples.append(
+            _sample(
+                f"eval_{sample_number:03d}",
+                "category",
+                f"What categories does the paper '{title}' belong to?",
+                _value(paper, "categories_joined"),
+                [_value(paper, "paper_id")],
+            )
+        )
+        sample_number += 1
+
+    for first_offset, second_offset in ((8, 9), (10, 11)):
+        first_paper = papers.iloc[first_offset % len(papers)]
+        second_paper = papers.iloc[second_offset % len(papers)]
+        first_title = _value(first_paper, "title")
+        second_title = _value(second_paper, "title")
+        samples.append(
+            _sample(
+                f"eval_{sample_number:03d}",
+                "multi_hop",
+                f"How do the research topics in '{first_title}' and '{second_title}' relate to each other?",
+                f"'{first_title}' studies {first_sentence(_value(first_paper, 'summary'))} "
+                f"'{second_title}' studies {first_sentence(_value(second_paper, 'summary'))}",
+                [_value(first_paper, "paper_id"), _value(second_paper, "paper_id")],
+            )
+        )
+        sample_number += 1
     write_json(Path(output_path), samples)
     return samples
 
@@ -118,7 +141,7 @@ def load_or_create_test_set(df: pd.DataFrame, output_path: Path) -> TestSet:
     path = Path(output_path)
     if path.exists():
         samples = read_json(path)
-        if isinstance(samples, list) and len(samples) == 5:
+        if isinstance(samples, list) and len(samples) == 10:
             required_fields = {"id", "type", "question", "ground_truth", "ground_truth_doc_ids"}
             if all(required_fields <= set(sample) for sample in samples if isinstance(sample, dict)):
                 return TestSet(samples=samples)
