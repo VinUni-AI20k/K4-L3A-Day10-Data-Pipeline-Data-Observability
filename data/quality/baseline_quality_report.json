@@ -1,0 +1,60 @@
+{
+  "report_name": "baseline_quality_report",
+  "success": true,
+  "statistics": {
+    "evaluated": 6,
+    "successful": 6
+  },
+  "results": [
+    {
+      "expectation": "expect_table_row_count_to_be_between",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "min_value": 5,
+        "max_value": 5000
+      }
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "paper_id"
+      }
+    },
+    {
+      "expectation": "expect_column_values_to_be_unique",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "paper_id"
+      }
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "title"
+      }
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "text_for_embedding"
+      }
+    },
+    {
+      "expectation": "expect_column_value_lengths_to_be_between",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "summary",
+        "min_value": 30
+      }
+    }
+  ]
+}

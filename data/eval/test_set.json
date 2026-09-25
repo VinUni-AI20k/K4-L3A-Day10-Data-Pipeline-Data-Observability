@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q01",
+    "question_type": "summary",
+    "question": "What is 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines' about?",
+    "ground_truth": "Static benchmarks fail to capture domain drift in enterprise knowledge bases.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671812"
+    ]
+  },
+  {
+    "id": "q02",
+    "question_type": "summary",
+    "question": "What is 'Data Observability and Quality Gates for Production RAG Systems' about?",
+    "ground_truth": "Silent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671802"
+    ]
+  },
+  {
+    "id": "q03",
+    "question_type": "summary",
+    "question": "What is 'Advanced Perspectives on Chunking Strategies for Technical Documentation Retrieval' about?",
+    "ground_truth": "An extended empirical study on ierarchical and semantic boundary chunking preserves code block contexts and markdown headings.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671821"
+    ]
+  },
+  {
+    "id": "q04",
+    "question_type": "authors",
+    "question": "Who authored 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines'?",
+    "ground_truth": "Quang Le, Yen Vu",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671812"
+    ]
+  },
+  {
+    "id": "q05",
+    "question_type": "authors",
+    "question": "Who authored 'Data Observability and Quality Gates for Production RAG Systems'?",
+    "ground_truth": "Anh Tran, Quoc Pham",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671802"
+    ]
+  },
+  {
+    "id": "q06",
+    "question_type": "authors",
+    "question": "Who authored 'Advanced Perspectives on Chunking Strategies for Technical Documentation Retrieval'?",
+    "ground_truth": "Long Trinh, Ha Chu",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671821"
+    ]
+  },
+  {
+    "id": "q07",
+    "question_type": "date",
+    "question": "When was 'Advanced Perspectives on Semantic Layer Integration for Agentic Text-to-SQL Pipelines' published?",
+    "ground_truth": "2026-06-06",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671818"
+    ]
+  },
+  {
+    "id": "q08",
+    "question_type": "date",
+    "question": "When was 'Advanced Perspectives on Data Observability and Quality Gates for Production RAG Systems' published?",
+    "ground_truth": "2026-06-02",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671814"
+    ]
+  },
+  {
+    "id": "q09",
+    "question_type": "categories",
+    "question": "What categories does 'Advanced Perspectives on Semantic Layer Integration for Agentic Text-to-SQL Pipelines' belong to?",
+    "ground_truth": "Databases, Information Systems",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671818"
+    ]
+  },
+  {
+    "id": "q10",
+    "question_type": "categories",
+    "question": "What categories does 'Advanced Perspectives on Data Observability and Quality Gates for Production RAG Systems' belong to?",
+    "ground_truth": "Software Engineering, Data Systems",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671814"
+    ]
+  }
+]
