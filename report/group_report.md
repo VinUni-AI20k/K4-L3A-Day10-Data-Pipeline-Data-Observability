@@ -6,9 +6,9 @@
 
 | Thông tin         | Nội dung                  |
 | ------------------ | -------------------------- |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
-| Repository         | [Đường dẫn repository] |
+| Khóa/Lớp         | K4              |
+| Tên nhóm         | G36     |
+| Repository         | https://github.com/tuanfptu/K4-L3-DAY10-G36-DataPipeline |
 | Ngày hoàn thành | [YYYY-MM-DD]               |
 
 ### Thành viên và phân công
@@ -16,7 +16,7 @@
 | STT | Họ và tên | MSSV | Vai trò chính | Module/deliverable sở hữu |
 | --: | --- | --- | --- | --- |
 | 1 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 2 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
+| 2 | Ninh Quang Minh | 2A202602432 | Data Foundation | `src/ingestion/crossref.py`, `src/ingestion/cleaning.py`, raw/clean artifacts |
 | 3 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
 | 4 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
 | 5 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
