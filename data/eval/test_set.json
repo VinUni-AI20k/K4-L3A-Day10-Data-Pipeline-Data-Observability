@@ -1,0 +1,92 @@
+[
+  {
+    "id": "q1",
+    "question_type": "summary",
+    "question": "Bai bao 'Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks' viet ve noi dung gi?",
+    "ground_truth": "Retrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671801"
+    ]
+  },
+  {
+    "id": "q2",
+    "question_type": "authors",
+    "question": "Ai la tac gia cua bai bao 'Data Observability and Quality Gates for Production RAG Systems'?",
+    "ground_truth": "Anh Tran, Quoc Pham",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671802"
+    ]
+  },
+  {
+    "id": "q3",
+    "question_type": "date",
+    "question": "Bai bao 'Mitigating Ghost Vectors in Dense Retrieval via Idempotent Indexing' duoc xuat ban khi nao?",
+    "ground_truth": "2026-04-18",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671803"
+    ]
+  },
+  {
+    "id": "q4",
+    "question_type": "categories",
+    "question": "Bai bao 'Freshness SLAs for Real-Time LLM Knowledge Augmentation' thuoc linh vuc / chuyen nganh nao?",
+    "ground_truth": "Data Management, Artificial Intelligence",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671804"
+    ]
+  },
+  {
+    "id": "q5",
+    "question_type": "summary",
+    "question": "Bai bao 'Evaluating Retrieval Precision with Token F1 and LLM Judges' viet ve noi dung gi?",
+    "ground_truth": "Evaluating open-domain QA requires robust metrics. We benchmark semantic similarity, token-level overlap F1, and model-based judge verdicts to quantify RAG answer correctness across noisy corpus conditions.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671805"
+    ]
+  },
+  {
+    "id": "q6",
+    "question_type": "authors",
+    "question": "Ai la tac gia cua bai bao 'Semantic Layer Integration for Agentic Text-to-SQL Pipelines'?",
+    "ground_truth": "Huy Dinh, Trang Vo",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671806"
+    ]
+  },
+  {
+    "id": "q7",
+    "question_type": "date",
+    "question": "Bai bao 'Synthetic Corruption Testing: Stress-Testing Vector Search Robustness' duoc xuat ban khi nao?",
+    "ground_truth": "2026-06-25",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671807"
+    ]
+  },
+  {
+    "id": "q8",
+    "question_type": "categories",
+    "question": "Bai bao 'Multi-Agent Consensus for High-Stakes Fact Verification' thuoc linh vuc / chuyen nganh nao?",
+    "ground_truth": "Multi-Agent Systems, Artificial Intelligence",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671808"
+    ]
+  },
+  {
+    "id": "q9",
+    "question_type": "summary",
+    "question": "Bai bao 'Chunking Strategies for Technical Documentation Retrieval' viet ve noi dung gi?",
+    "ground_truth": "Hierarchical and semantic boundary chunking preserves code block contexts and markdown headings. Our benchmark demonstrates superior top-1 recall compared to fixed character length sliding windows.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671809"
+    ]
+  },
+  {
+    "id": "q10",
+    "question_type": "authors",
+    "question": "Ai la tac gia cua bai bao 'Automated Data Quality Profiling with Great Expectations in CI/CD'?",
+    "ground_truth": "Son Nguyen, Thuy Doan",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671810"
+    ]
+  }
+]
