@@ -6,7 +6,7 @@
 | ---------------- | -------- |
 | Họ và tên        | Hoàng Trung Hiếu |
 | MSSV             | 2A202602945 |
-| Khóa/Lớp         | K4 — K4-L3-DAY10 |
+| Khóa/Lớp         | K4 - L3A |
 | Tên nhóm         | SVSoppi |
 | Vai trò chính    | Trưởng nhóm — Pipeline integration & reporting |
 | Repository       | https://github.com/hoangtrunghieu0025-lab/K4-L3-DAY10-SVSoppi-DataPipeline |
