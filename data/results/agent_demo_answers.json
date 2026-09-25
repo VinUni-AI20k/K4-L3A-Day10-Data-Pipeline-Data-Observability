@@ -1,0 +1,18 @@
+[
+  {
+    "question": "What is the summary of the paper 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines'?",
+    "answer": "Static benchmarks fail to capture domain drift in enterprise knowledge bases.",
+    "retrieved_doc_ids": [
+      "10.1145/3637528.3671812",
+      "10.1145/3637528.3671824",
+      "10.1145/3637528.3671817",
+      "10.1145/3637528.3671805"
+    ],
+    "retrieved_titles": [
+      "Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines",
+      "Advanced Perspectives on Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines",
+      "Advanced Perspectives on Evaluating Retrieval Precision with Token F1 and LLM Judges",
+      "Evaluating Retrieval Precision with Token F1 and LLM Judges"
+    ]
+  }
+]
