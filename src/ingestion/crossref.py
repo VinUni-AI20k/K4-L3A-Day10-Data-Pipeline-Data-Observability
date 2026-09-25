@@ -36,8 +36,80 @@ def clean_xml_and_whitespace(text: str) -> str:
         return ""
     cleaned = re.sub(r"<[^>]+>", " ", text)
     cleaned = html.unescape(cleaned)
+    cleaned = re.sub(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]", "", cleaned)
     cleaned = re.sub(r"\s+", " ", cleaned).strip()
     return cleaned
+
+
+def standardize_summary(text: str) -> str:
+    """Automated summary standardization:
+    - Strips XML/HTML tags and unescapes entities.
+    - Automatically detects bilingual abstracts (e.g. Cyrillic + English) and extracts the English text.
+    - Strips common boilerplate prefixes ('Abstract:', 'Summary:', 'Abstract - ').
+    """
+    cleaned = clean_xml_and_whitespace(text)
+    if not cleaned:
+        return ""
+
+    # Tu dong phat hien doan tom tat song ngu (VD: tieng Nga + tieng Anh) de lay phan tieng Anh cho mo hinh embedding
+    if re.search(r"[\u0400-\u04FF]", cleaned):
+        english_match = re.search(
+            r"(\b(?:The article|This paper|In this paper|This study|This review|We examine|We propose)\b[\s\S]+)",
+            cleaned,
+            re.IGNORECASE,
+        )
+        if english_match and len(english_match.group(1).strip()) >= 50:
+            cleaned = english_match.group(1).strip()
+
+    # Loai bo cac boilerplate prefix pho bien o dau tom tat
+    cleaned = re.sub(r"^(?:Abstract\s*[:\-–—]\s*|Summary\s*[:\-–—]\s*)", "", cleaned, flags=re.IGNORECASE).strip()
+    return cleaned
+
+
+def standardize_author_name(name: str) -> str:
+    """Clean and normalize author name (remove trailing hyphens, extraneous punctuation)."""
+    cleaned = clean_xml_and_whitespace(name)
+    cleaned = re.sub(r"[\s\-–—]+$", "", cleaned).strip()
+    return cleaned
+
+
+def infer_and_standardize_categories(title: str, summary: str, raw_subjects: list[str]) -> list[str]:
+    """Automated rule-based domain taxonomy inference for papers with missing or unstandardized categories.
+    Scales automatically to hundreds or thousands of papers without manual curation.
+    """
+    valid_subjects: list[str] = []
+    for s in raw_subjects:
+        cs = clean_xml_and_whitespace(str(s))
+        if cs:
+            valid_subjects.append(cs)
+
+    if valid_subjects:
+        return valid_subjects
+
+    combined = f"{title} {summary}".lower()
+    inferred: list[str] = []
+
+    if any(k in combined for k in ["retrieval", "rag", "search", "ranking", "bm25", "index", "vector"]):
+        inferred.append("Information Retrieval")
+
+    if any(k in combined for k in ["agent", "agentic", "autonomous", "multi-agent", "reinforcement learning"]):
+        inferred.append("Artificial Intelligence")
+
+    if any(k in combined for k in ["language model", "llm", "nlp", "text generation", "transformer", "prompt"]):
+        if "Artificial Intelligence" not in inferred:
+            inferred.append("Artificial Intelligence")
+        inferred.append("Natural Language Processing")
+
+    if any(k in combined for k in ["observability", "data quality", "governance", "database", "pipeline", "compliance", "software"]):
+        inferred.append("Data Systems")
+
+    if any(k in combined for k in ["medical", "clinical", "health", "doctor"]):
+        inferred.append("Medical Informatics")
+
+    if not inferred:
+        inferred = ["Artificial Intelligence", "Computer Science"]
+
+    return inferred
 
 
 def _extract_date(date_dict: Any) -> str:
@@ -68,14 +140,7 @@ def _extract_date(date_dict: Any) -> str:
 
 
 def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
-    """Parse Crossref payload thanh list PaperRecord.
-
-    Pseudo-code:
-    1. Duyet `payload["message"]["items"]`.
-    2. Lay DOI, title, abstract, authors, subject, dates, URLs.
-    3. Chuan hoa text va bo record khong hop le.
-    4. Tra ve list `PaperRecord`.
-    """
+    """Parse Crossref payload thanh list PaperRecord voi quy trinh chuan hoa tu dong."""
     if isinstance(payload, list):
         items = payload
     elif isinstance(payload, dict):
@@ -90,6 +155,8 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
         items = []
 
     records: list[PaperRecord] = []
+    seen_ids: set[str] = set()
+
     for item in items:
         if not isinstance(item, dict):
             continue
@@ -97,6 +164,11 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
         paper_id = str(item.get("DOI", "")).strip()
         if not paper_id:
             continue
+
+        # De-duplicate by DOI
+        if paper_id.lower() in seen_ids:
+            continue
+        seen_ids.add(paper_id.lower())
 
         # Title
         raw_title = item.get("title", [])
@@ -108,13 +180,13 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
         if not title:
             continue
 
-        # Summary / Abstract
+        # Summary / Abstract (automated standardization)
         abstract_raw = item.get("abstract", "") or item.get("summary", "")
-        summary = clean_xml_and_whitespace(str(abstract_raw))
+        summary = standardize_summary(str(abstract_raw))
         if not summary:
             continue
 
-        # Authors
+        # Authors (automated standardization)
         authors: list[str] = []
         raw_authors = item.get("author", [])
         if isinstance(raw_authors, list):
@@ -124,20 +196,16 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
                     family = str(a.get("family", "")).strip()
                     name = f"{given} {family}".strip() or str(a.get("name", "")).strip()
                     if name:
-                        authors.append(clean_xml_and_whitespace(name))
+                        authors.append(standardize_author_name(name))
                 elif isinstance(a, str) and a.strip():
-                    authors.append(clean_xml_and_whitespace(a))
+                    authors.append(standardize_author_name(a))
 
-        # Categories / Subjects
-        categories: list[str] = []
+        # Categories / Subjects (automated inference if missing)
         raw_subjects = item.get("subject", []) or item.get("categories", [])
-        if isinstance(raw_subjects, list):
-            for subj in raw_subjects:
-                cleaned_subj = clean_xml_and_whitespace(str(subj))
-                if cleaned_subj:
-                    categories.append(cleaned_subj)
-
-        primary_category = categories[0] if categories else ""
+        if not isinstance(raw_subjects, list):
+            raw_subjects = []
+        categories = infer_and_standardize_categories(title, summary, raw_subjects)
+        primary_category = categories[0] if categories else "General"
 
         # Published date
         published = (
