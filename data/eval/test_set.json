@@ -1,0 +1,53 @@
+[
+  {
+    "id": "test-001",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the summary of the paper 'Data Observability and Quality Gates for Production RAG Systems'?",
+    "ground_truth": "Silent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671802"
+    ]
+  },
+  {
+    "id": "test-002",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the research on topic 'Multi-Agent Consensus for High-Stakes Fact Verification'?",
+    "ground_truth": "Phong Vu, Ngan Hoang",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671808"
+    ]
+  },
+  {
+    "id": "test-003",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was the research 'Freshness SLAs for Real-Time LLM Knowledge Augmentation' published on?",
+    "ground_truth": "2026-07-05",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671804"
+    ]
+  },
+  {
+    "id": "test-004",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories does the work 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines' belong to?",
+    "ground_truth": "Evaluation Methodology, Enterprise Systems",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671812"
+    ]
+  },
+  {
+    "id": "test-005",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "How does synthetic corruption testing stress-test vector search robustness in 'Synthetic Corruption Testing: Stress-Testing Vector Search Robustness' for production RAG observability?",
+    "ground_truth": "We introduce an automated fuzzing suite that corrupts text chunks by injecting noise, truncating titles, and blanking summaries.",
+    "ground_truth_doc_ids": [
+      "10.1145/3637528.3671807",
+      "10.1145/3637528.3671802"
+    ]
+  }
+]
