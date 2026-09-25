@@ -112,6 +112,8 @@ def settings(tmp_path):
         raw_records_json=data / "raw" / "crossref_records.json",
         clean_csv=data / "clean" / "papers_clean.csv",
         clean_json=data / "clean" / "papers_clean.json",
+        repaired_clean_csv=data / "clean" / "papers_clean_repaired.csv",
+        repaired_clean_json=data / "clean" / "papers_clean_repaired.json",
         chroma_dir=data / "chroma",
         embeddings_json=data / "embeddings" / "papers_embeddings.json",
         corrupted_embeddings_json=data / "embeddings" / "papers_embeddings_corrupted.json",
