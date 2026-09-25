@@ -1,9 +1,18 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
+import html
+import json
+import logging
 from pathlib import Path
+import re
+import time
+from typing import Any
+import requests
 
 from core.config import Settings
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -21,8 +30,45 @@ class PaperRecord:
     comment: str
 
 
+def clean_xml_and_whitespace(text: str) -> str:
+    """Clean XML/HTML tags, unescape entities, and normalize whitespace."""
+    if not text:
+        return ""
+    cleaned = re.sub(r"<[^>]+>", " ", text)
+    cleaned = html.unescape(cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned
+
+
+def _extract_date(date_dict: Any) -> str:
+    """Extract YYYY-MM-DD from Crossref date structure."""
+    if not date_dict:
+        return ""
+    if isinstance(date_dict, str):
+        match = re.search(r"\d{4}-\d{2}-\d{2}", date_dict)
+        if match:
+            return match.group(0)
+        return date_dict.strip()
+    if isinstance(date_dict, dict):
+        date_parts = date_dict.get("date-parts", [])
+        if date_parts and isinstance(date_parts, list) and len(date_parts) > 0:
+            parts = date_parts[0]
+            if isinstance(parts, list) and len(parts) > 0:
+                year = parts[0]
+                month = parts[1] if len(parts) > 1 else 1
+                day = parts[2] if len(parts) > 2 else 1
+                try:
+                    return f"{int(year):04d}-{int(month):02d}-{int(day):02d}"
+                except (ValueError, TypeError):
+                    pass
+        date_time = date_dict.get("date-time", "")
+        if date_time and isinstance(date_time, str):
+            return date_time.split("T")[0]
+    return ""
+
+
 def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
-    """TODO(student): parse Crossref payload thanh list PaperRecord.
+    """Parse Crossref payload thanh list PaperRecord.
 
     Pseudo-code:
     1. Duyet `payload["message"]["items"]`.
@@ -30,22 +76,226 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
     3. Chuan hoa text va bo record khong hop le.
     4. Tra ve list `PaperRecord`.
     """
-    raise NotImplementedError("Student task: implement Crossref payload parsing.")
+    if isinstance(payload, list):
+        items = payload
+    elif isinstance(payload, dict):
+        msg = payload.get("message", {})
+        if isinstance(msg, dict):
+            items = msg.get("items", [])
+        elif "items" in payload:
+            items = payload.get("items", [])
+        else:
+            items = []
+    else:
+        items = []
+
+    records: list[PaperRecord] = []
+    for item in items:
+        if not isinstance(item, dict):
+            continue
+
+        paper_id = str(item.get("DOI", "")).strip()
+        if not paper_id:
+            continue
+
+        # Title
+        raw_title = item.get("title", [])
+        if isinstance(raw_title, list):
+            title_str = raw_title[0] if raw_title else ""
+        else:
+            title_str = str(raw_title or "")
+        title = clean_xml_and_whitespace(title_str)
+        if not title:
+            continue
+
+        # Summary / Abstract
+        abstract_raw = item.get("abstract", "") or item.get("summary", "")
+        summary = clean_xml_and_whitespace(str(abstract_raw))
+        if not summary:
+            continue
+
+        # Authors
+        authors: list[str] = []
+        raw_authors = item.get("author", [])
+        if isinstance(raw_authors, list):
+            for a in raw_authors:
+                if isinstance(a, dict):
+                    given = str(a.get("given", "")).strip()
+                    family = str(a.get("family", "")).strip()
+                    name = f"{given} {family}".strip() or str(a.get("name", "")).strip()
+                    if name:
+                        authors.append(clean_xml_and_whitespace(name))
+                elif isinstance(a, str) and a.strip():
+                    authors.append(clean_xml_and_whitespace(a))
+
+        # Categories / Subjects
+        categories: list[str] = []
+        raw_subjects = item.get("subject", []) or item.get("categories", [])
+        if isinstance(raw_subjects, list):
+            for subj in raw_subjects:
+                cleaned_subj = clean_xml_and_whitespace(str(subj))
+                if cleaned_subj:
+                    categories.append(cleaned_subj)
+
+        primary_category = categories[0] if categories else ""
+
+        # Published date
+        published = (
+            _extract_date(item.get("published"))
+            or _extract_date(item.get("created"))
+            or _extract_date(item.get("issued"))
+        )
+        if not published:
+            published = time.strftime("%Y-%m-%d")
+
+        # Updated date
+        created_dt = item.get("created", {})
+        if isinstance(created_dt, dict) and "date-time" in created_dt:
+            updated = str(created_dt["date-time"]).split("T")[0]
+        else:
+            updated = _extract_date(item.get("updated")) or published
+
+        # URLs
+        url = str(item.get("URL", "")).strip() or f"https://doi.org/{paper_id}"
+        abs_url = url
+        pdf_url = url
+
+        comment = f"Crossref record {paper_id}"
+
+        record = PaperRecord(
+            paper_id=paper_id,
+            title=title,
+            summary=summary,
+            authors=authors,
+            categories=categories,
+            primary_category=primary_category,
+            published=published,
+            updated=updated,
+            abs_url=abs_url,
+            pdf_url=pdf_url,
+            comment=comment,
+        )
+        records.append(record)
+
+    return records
 
 
 def fetch_source_records(settings: Settings) -> list[PaperRecord]:
-    """TODO(student): goi source API, luu raw response, parse thanh records.
+    """Goi source API, luu raw response, parse thanh records.
 
-    Pseudo-code:
-    1. Tao params tu `settings.source_query`, `settings.source_filter`, `settings.max_results`.
-    2. Goi API voi retry cho cac status code nhu 429/503.
-    3. Luu raw response vao `settings.paths.raw_api_response`.
-    4. Parse payload bang `parse_crossref_payload`.
-    5. Luu records vao `settings.paths.raw_records_json`.
+    Co che Dual-Mode (Live API hoac Snapshot Offline):
+    - Neu refresh_source=True hoac file raw chua ton tai: goi Crossref REST API truc tiep.
+    - Neu gap su co mang / 429: tu dong fallback ve snapshot offline data/raw/crossref_response.json.
+    - Luu raw response vao settings.paths.raw_api_response.
+    - Parse payload va luu records vao settings.paths.raw_records_json.
     """
-    raise NotImplementedError("Student task: implement source fetching.")
+    raw_api_path = settings.paths.raw_api_response
+    raw_records_path = settings.paths.raw_records_json
+
+    raw_api_path.parent.mkdir(parents=True, exist_ok=True)
+    raw_records_path.parent.mkdir(parents=True, exist_ok=True)
+
+    payload: dict | None = None
+
+    # 1. Che do Offline / Dev: load tu snapshot da co neu khong yeu cau refresh
+    if not settings.refresh_source and raw_api_path.exists():
+        try:
+            with open(raw_api_path, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+            logger.info("Loaded Crossref payload from local snapshot: %s", raw_api_path)
+        except Exception as e:
+            logger.warning("Failed to load local snapshot: %s. Falling back to live API.", e)
+            payload = None
+
+    # 2. Che do Live API: goi truc tiep Crossref REST API
+    if payload is None:
+        api_url = "https://api.crossref.org/works"
+        params = {
+            "query": settings.source_query,
+            "filter": settings.source_filter,
+            "rows": settings.max_results,
+        }
+        headers = {
+            "User-Agent": "DataPipelineLab/1.0 (mailto:lab@vinuni.edu.vn)",
+            "Accept": "application/json",
+        }
+
+        max_retries = 3
+        backoff_sec = 2.0
+
+        for attempt in range(1, max_retries + 1):
+            try:
+                logger.info(
+                    "Fetching papers from Crossref API (attempt %d/%d): %s",
+                    attempt,
+                    max_retries,
+                    api_url,
+                )
+                response = requests.get(api_url, params=params, headers=headers, timeout=15)
+                if response.status_code == 200:
+                    payload = response.json()
+                    with open(raw_api_path, "w", encoding="utf-8") as f:
+                        json.dump(payload, f, indent=2, ensure_ascii=False)
+                    logger.info("Successfully fetched and saved raw response to %s", raw_api_path)
+                    break
+                elif response.status_code in (429, 500, 502, 503, 504):
+                    logger.warning(
+                        "Crossref API returned status %d. Retrying in %.1fs...",
+                        response.status_code,
+                        backoff_sec,
+                    )
+                    time.sleep(backoff_sec)
+                    backoff_sec *= 2
+                else:
+                    logger.error(
+                        "Crossref API returned unexpected status %d: %s",
+                        response.status_code,
+                        response.text[:200],
+                    )
+                    break
+            except Exception as exc:
+                logger.warning("Error connecting to Crossref API: %s. Retrying in %.1fs...", exc, backoff_sec)
+                time.sleep(backoff_sec)
+                backoff_sec *= 2
+
+        # 3. Fallback neu Live API khong thanh cong
+        if payload is None:
+            if raw_api_path.exists():
+                logger.warning("Live API failed. Falling back to existing offline snapshot: %s", raw_api_path)
+                with open(raw_api_path, "r", encoding="utf-8") as f:
+                    payload = json.load(f)
+            else:
+                backup_snapshot = raw_api_path.parent / "backup" / "crossref_response.json"
+                if backup_snapshot.exists():
+                    logger.warning("Falling back to backup snapshot: %s", backup_snapshot)
+                    with open(backup_snapshot, "r", encoding="utf-8") as f:
+                        payload = json.load(f)
+                    with open(raw_api_path, "w", encoding="utf-8") as f:
+                        json.dump(payload, f, indent=2, ensure_ascii=False)
+                else:
+                    raise RuntimeError("Failed to fetch from Crossref API and no offline snapshot found.")
+
+    records = parse_crossref_payload(payload)
+
+    # Ghi de / luu danh sach records vao raw_records_json
+    with open(raw_records_path, "w", encoding="utf-8") as f:
+        json.dump([asdict(r) for r in records], f, indent=2, ensure_ascii=False)
+    logger.info("Saved %d parsed records to %s", len(records), raw_records_path)
+
+    return records
 
 
 def load_raw_records(path: Path) -> list[PaperRecord]:
-    """TODO(student): doc JSON snapshot va map thanh `PaperRecord`."""
-    raise NotImplementedError("Student task: implement raw record loading.")
+    """Doc JSON snapshot va map thanh `PaperRecord`."""
+    if not path.exists():
+        raise FileNotFoundError(f"Raw records file not found at {path}")
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    if isinstance(data, list):
+        return [PaperRecord(**item) for item in data]
+    elif isinstance(data, dict):
+        return parse_crossref_payload(data)
+    else:
+        raise ValueError(f"Unsupported format in {path}: expected list or dict.")
