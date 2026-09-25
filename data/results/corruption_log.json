@@ -1,0 +1,76 @@
+{
+  "input_rows": 24,
+  "scenarios": [
+    {
+      "name": "drop_latest_records",
+      "description": "Dropped the newest 20 percent of records to mimic ingestion loss.",
+      "affected_count": 5,
+      "paper_ids": [
+        "10.1145/3637528.3671812",
+        "10.1145/3637528.3671808",
+        "10.1145/3637528.3671804",
+        "10.1145/3637528.3671807",
+        "10.1145/3637528.3671802"
+      ]
+    },
+    {
+      "name": "blank_summary",
+      "description": "Blanked summaries so quality checks and answers lose core evidence.",
+      "affected_count": 3,
+      "paper_ids": [
+        "10.1145/3637528.3671824",
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822"
+      ]
+    },
+    {
+      "name": "inject_noise",
+      "description": "Injected junk tokens into summaries to dilute semantic retrieval.",
+      "affected_count": 3,
+      "paper_ids": [
+        "10.1145/3637528.3671821",
+        "10.1145/3637528.3671810",
+        "10.1145/3637528.3671820"
+      ],
+      "noise": "@@NOISE@@ ### BROKEN_TOKEN_STREAM ###"
+    },
+    {
+      "name": "truncate_title",
+      "description": "Truncated titles below eight characters to break exact title lookup.",
+      "affected_count": 4,
+      "paper_ids": [
+        "10.1145/3637528.3671819",
+        "10.1145/3637528.3671818",
+        "10.1145/3637528.3671817",
+        "10.1145/3637528.3671816"
+      ]
+    },
+    {
+      "name": "stale_date",
+      "description": "Moved a large slice of records one year into the past.",
+      "affected_count": 7,
+      "paper_ids": [
+        "10.1145/3637528.3671824",
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822",
+        "10.1145/3637528.3671821",
+        "10.1145/3637528.3671810",
+        "10.1145/3637528.3671820",
+        "10.1145/3637528.3671819"
+      ]
+    },
+    {
+      "name": "duplicate_rows",
+      "description": "Duplicated records without changing paper_id to trigger uniqueness checks.",
+      "affected_count": 2,
+      "paper_ids": [
+        "10.1145/3637528.3671803",
+        "10.1145/3637528.3671805"
+      ]
+    }
+  ],
+  "output_rows": 21,
+  "output_duplicate_paper_ids": 2,
+  "blank_summary_rows": 3,
+  "stale_rows": 9
+}
