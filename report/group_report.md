@@ -15,7 +15,7 @@
 | --: | --- | --- | --- | --- | --- |
 | 1 | Hoàng Trung Hiếu | 2A202602945 | `hoangtrunghieu0025-lab` | Trưởng nhóm — Pipeline integration & reporting | `pipelines/phase1.py`, `pipelines/corruption_flow.py`, `pipelines/common.py`, `observability/reporting.py`; tích hợp và chạy lại toàn bộ flow |
 | 2 | Ngô Kỳ Anh | 2A202602916 | `glacerjust` | Source & cleaning owner | `ingestion/crossref.py`, `ingestion/cleaning.py`; `data/raw/`, `data/clean/` |
-| 3 | Nguyễn Văn Tài | 2A202603004 | `Tai Nguyen Van` | Corruption & vector store owner | `ingestion/corruption.py`, `script/smoke_test_chroma.py`; `corruption_log.json` |
+| 3 | Nguyễn Văn Tài | 2A202603004 | `nvtai24` | Corruption & vector store owner | `ingestion/corruption.py`, `script/smoke_test_chroma.py`; `corruption_log.json` |
 | 4 | Nguyễn Việt Hoàng Hải | 2A202602967 | `nguyenviethoanghai` | Observability & evaluation-set owner | `observability/quality.py` (GX 1.x + freshness), `evaluation/testset.py`; `data/quality/`, `data/eval/` |
 
 ## 2. Tóm tắt kết quả
@@ -52,10 +52,10 @@ Crossref REST API ──(lỗi/429)──> snapshot data/raw/crossref_response.j
 | --- | --- | --- | --- | --- |
 | Ingestion | Crossref `/works` (query + filter) | Gọi API timeout 10s; lỗi mạng/HTTP thì fallback snapshot; bóc tách JATS; fallback categories | `data/raw/crossref_response.json`, `crossref_records.json` | glacerjust |
 | Cleaning | `PaperRecord` list, `run_date` | `age_days`, `authors_joined`/`categories_joined`, `text_for_embedding` 5 phần, dedup `paper_id`, loại title/summary rỗng | `data/clean/papers_clean.{csv,json}` | glacerjust |
-| Embedding/index | Clean dataframe | `all-MiniLM-L6-v2`, Chroma cosine, 3 collection tách biệt | `data/chroma/` | (có sẵn trong starter); smoke test: Tai Nguyen Van |
+| Embedding/index | Clean dataframe | `all-MiniLM-L6-v2`, Chroma cosine, 3 collection tách biệt | `data/chroma/` | (có sẵn trong starter); smoke test: nvtai24 |
 | Evaluation | Clean dataframe | 10 câu cố định, 4 `question_type`, ground truth lấy từ dữ liệu sạch | `data/eval/test_set.json`, `data/results/*_metrics.json` | nguyenviethoanghai |
 | Observability | Dataframe bất kỳ trạng thái | 8 expectation GX 1.x (ephemeral context) + freshness SLA | `data/quality/*.json`, `data/quality/gx/*` | nguyenviethoanghai |
-| Corruption/repair | Clean dataframe / raw records | 6 loại lỗi có seed; repair = rebuild từ raw | `corruption_log.json`, `papers_clean_{corrupted,repaired}.*` | Tai Nguyen Van (corruption), hoangtrunghieu0025-lab (repair flow) |
+| Corruption/repair | Clean dataframe / raw records | 6 loại lỗi có seed; repair = rebuild từ raw | `corruption_log.json`, `papers_clean_{corrupted,repaired}.*` | nvtai24 (corruption), hoangtrunghieu0025-lab (repair flow) |
 | Orchestration & reporting | Tất cả artifact trên | Thứ tự chạy, gate chặn index, kiểm tra idempotent, báo cáo Markdown | `data/reports/*.md` | hoangtrunghieu0025-lab |
 
 ## 4. Cách tái hiện kết quả
