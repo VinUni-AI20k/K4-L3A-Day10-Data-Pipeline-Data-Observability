@@ -1,7 +1,13 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import date
+import html
+import json
 from pathlib import Path
+import re
+
+import requests
 
 from core.config import Settings
 
@@ -30,7 +36,49 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
     3. Chuan hoa text va bo record khong hop le.
     4. Tra ve list `PaperRecord`.
     """
-    raise NotImplementedError("Student task: implement Crossref payload parsing.")
+    records: list[PaperRecord] = []
+    items = payload.get("message", {}).get("items", [])
+    for item in items:
+        paper_id = str(item.get("DOI", "")).strip()
+        title = _clean_text((item.get("title") or [""])[0])
+        summary = _clean_text(item.get("abstract", ""))
+        if not paper_id or not title or not summary:
+            continue
+
+        authors = [
+            _clean_text(" ".join(filter(None, (author.get("given"), author.get("family")))))
+            for author in item.get("author", [])
+        ]
+        authors = [author for author in authors if author]
+        categories = [_clean_text(value) for value in item.get("subject", [])]
+        categories = [category for category in categories if category]
+        published = _crossref_date(item.get("published"))
+        updated = _crossref_date(item.get("updated")) or _crossref_date(item.get("created"))
+        abs_url = str(item.get("URL") or f"https://doi.org/{paper_id}").strip()
+        pdf_url = next(
+            (
+                str(link.get("URL")).strip()
+                for link in item.get("link", [])
+                if link.get("URL") and link.get("content-type") == "application/pdf"
+            ),
+            abs_url,
+        )
+        records.append(
+            PaperRecord(
+                paper_id=paper_id,
+                title=title,
+                summary=summary,
+                authors=authors,
+                categories=categories,
+                primary_category=categories[0] if categories else "Uncategorized",
+                published=published,
+                updated=updated or published,
+                abs_url=abs_url,
+                pdf_url=pdf_url,
+                comment=f"Crossref record {paper_id}",
+            )
+        )
+    return records
 
 
 def fetch_source_records(settings: Settings) -> list[PaperRecord]:
@@ -43,9 +91,57 @@ def fetch_source_records(settings: Settings) -> list[PaperRecord]:
     4. Parse payload bang `parse_crossref_payload`.
     5. Luu records vao `settings.paths.raw_records_json`.
     """
-    raise NotImplementedError("Student task: implement source fetching.")
+    response_path = settings.paths.raw_api_response
+    response_path.parent.mkdir(parents=True, exist_ok=True)
+    payload: dict
+    try:
+        response = requests.get(
+            "https://api.crossref.org/works",
+            params={
+                "query": settings.source_query,
+                "filter": settings.source_filter,
+                "rows": settings.max_results,
+            },
+            headers={"User-Agent": "day10-data-pipeline/0.1 (mailto:lab@example.com)"},
+            timeout=30,
+        )
+        response.raise_for_status()
+        payload = response.json()
+        response_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    except (requests.RequestException, ValueError):
+        if not response_path.exists():
+            raise
+        payload = json.loads(response_path.read_text(encoding="utf-8"))
+
+    records = parse_crossref_payload(payload)
+    settings.paths.raw_records_json.parent.mkdir(parents=True, exist_ok=True)
+    settings.paths.raw_records_json.write_text(
+        json.dumps([record.__dict__ for record in records], ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return records
 
 
 def load_raw_records(path: Path) -> list[PaperRecord]:
     """TODO(student): doc JSON snapshot va map thanh `PaperRecord`."""
-    raise NotImplementedError("Student task: implement raw record loading.")
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    return [PaperRecord(**record) for record in payload]
+
+
+def _clean_text(value: object) -> str:
+    text = html.unescape(str(value or ""))
+    text = re.sub(r"<[^>]+>", " ", text)
+    return " ".join(text.split())
+
+
+def _crossref_date(value: object) -> str:
+    if not isinstance(value, dict):
+        return ""
+    parts = value.get("date-parts", [[]])[0]
+    if not parts:
+        return ""
+    try:
+        year, month, day = (list(parts) + [1, 1])[:3]
+        return date(int(year), int(month), int(day)).isoformat()
+    except (TypeError, ValueError):
+        return ""

@@ -1,0 +1,168 @@
+{
+  "generated_at": "2026-09-25T08:33:48.520135+00:00",
+  "seed": 20261010,
+  "input_rows": 24,
+  "output_rows": 22,
+  "scenario_count": 6,
+  "scenarios": [
+    {
+      "name": "drop_latest_records",
+      "description": "Xoa 5 ban ghi moi nhat (~20% corpus).",
+      "rows_affected": 5,
+      "paper_ids": [
+        "10.21203/rs.3.rs-10489777/v1",
+        "10.70267/aitia.2026482489",
+        "10.21203/rs.3.rs-10349437/v1",
+        "10.54254/2755-2721/2026.36624",
+        "10.36887/2415-8453-2026-3-2"
+      ],
+      "details": {
+        "dropped_published_dates": [
+          "2026-09-15",
+          "2026-09-13",
+          "2026-09-12",
+          "2026-09-08",
+          "2026-09-04"
+        ]
+      }
+    },
+    {
+      "name": "blank_summary",
+      "description": "Xoa trang summary cua 4 dong (vi pham GX summary_length >= 30).",
+      "rows_affected": 4,
+      "paper_ids": [
+        "10.20944/preprints202608.1849.v1",
+        "10.21203/rs.3.rs-10178277/v1",
+        "10.2196/preprints.106157",
+        "10.63646/kpqm1958"
+      ],
+      "details": {
+        "summary_chars_after": 0
+      }
+    },
+    {
+      "name": "inject_noise",
+      "description": "Chen chuoi rac vao summary cua 5 dong. Day la silent failure: do dai van hop le nen GX khong bat duoc.",
+      "rows_affected": 5,
+      "paper_ids": [
+        "10.36948/ijfmr.2026.v08i04.85777",
+        "10.2118/234689-pa",
+        "10.1007/s10278-026-02086-9",
+        "10.21203/rs.3.rs-10012178/v1",
+        "10.52060/juptik.v4i1.4318"
+      ],
+      "details": {
+        "noise_snippet": "%%% <<<garbled-ocr>>> ?????? zzzz 0x00 ### lorem-noise-42"
+      }
+    },
+    {
+      "name": "truncate_title",
+      "description": "Cat tieu de cua 4 dong xuong <8 ky tu, pha vo buoc lookup theo title trong retrieval/qa.py.",
+      "rows_affected": 4,
+      "paper_ids": [
+        "10.21203/rs.3.rs-10423755/v1",
+        "10.3390/buildings16132637",
+        "10.47576/2949-1894.2026.7.7.023",
+        "10.20944/preprints202604.0339.v1"
+      ],
+      "details": {
+        "titles": [
+          {
+            "paper_id": "10.21203/rs.3.rs-10423755/v1",
+            "before": "Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study",
+            "after": "Evidenc"
+          },
+          {
+            "paper_id": "10.3390/buildings16132637",
+            "before": "An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models",
+            "after": "An Agen"
+          },
+          {
+            "paper_id": "10.47576/2949-1894.2026.7.7.023",
+            "before": "\u0421\u043d\u0438\u0436\u0435\u043d\u0438\u0435 \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation)",
+            "after": "\u0421\u043d\u0438\u0436\u0435\u043d\u0438"
+          },
+          {
+            "paper_id": "10.20944/preprints202604.0339.v1",
+            "before": "Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation",
+            "after": "Retriev"
+          }
+        ]
+      }
+    },
+    {
+      "name": "stale_date",
+      "description": "Lui published cua 7 dong lai 365 ngay de day stale_ratio vuot nguong Freshness SLA 25%.",
+      "rows_affected": 7,
+      "paper_ids": [
+        "10.20944/preprints202608.1849.v1",
+        "10.36948/ijfmr.2026.v08i04.85777",
+        "10.2118/234689-pa",
+        "10.1007/s10278-026-02086-9",
+        "10.3390/buildings16132637",
+        "10.63646/kpqm1958",
+        "10.21203/rs.3.rs-10012178/v1"
+      ],
+      "details": {
+        "shift_days": 365,
+        "dates": [
+          {
+            "paper_id": "10.20944/preprints202608.1849.v1",
+            "before": "2026-08-26",
+            "after": "2025-08-26"
+          },
+          {
+            "paper_id": "10.36948/ijfmr.2026.v08i04.85777",
+            "before": "2026-08-14",
+            "after": "2025-08-14"
+          },
+          {
+            "paper_id": "10.2118/234689-pa",
+            "before": "2026-08-01",
+            "after": "2025-08-01"
+          },
+          {
+            "paper_id": "10.1007/s10278-026-02086-9",
+            "before": "2026-07-13",
+            "after": "2025-07-13"
+          },
+          {
+            "paper_id": "10.3390/buildings16132637",
+            "before": "2026-07-02",
+            "after": "2025-07-02"
+          },
+          {
+            "paper_id": "10.63646/kpqm1958",
+            "before": "2026-06-30",
+            "after": "2025-06-30"
+          },
+          {
+            "paper_id": "10.21203/rs.3.rs-10012178/v1",
+            "before": "2026-06-15",
+            "after": "2025-06-15"
+          }
+        ]
+      }
+    },
+    {
+      "name": "duplicate_rows",
+      "description": "Nhan ban 3 dong (vi pham GX paper_id_unique).",
+      "rows_affected": 3,
+      "paper_ids": [
+        "10.20944/preprints202608.1849.v1",
+        "10.21203/rs.3.rs-10423755/v1",
+        "10.63125/gseh0k17"
+      ],
+      "details": {
+        "rows_added": 3
+      }
+    }
+  ],
+  "totals": {
+    "rows_dropped": 5,
+    "rows_added": 3,
+    "unique_paper_ids": 19,
+    "blank_summaries": 5,
+    "duplicated_paper_ids": 3
+  }
+}
