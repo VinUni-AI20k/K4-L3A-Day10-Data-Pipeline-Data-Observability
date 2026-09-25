@@ -162,4 +162,5 @@
 - [x] Báo cáo này không phải bản sao nguyên văn của báo cáo nhóm hoặc báo cáo thành viên khác.
 
 **Họ và tên:** Vũ Minh Hoàng  
+**MSSV:** 2A202602371  
 **Ngày xác nhận:** 2026-09-25
