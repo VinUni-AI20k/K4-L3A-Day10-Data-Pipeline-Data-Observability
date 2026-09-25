@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any
+from core.utils import write_text
 
 
 def generate_phase1_report(
@@ -18,7 +19,15 @@ def generate_phase1_report(
     3. In data quality va freshness.
     4. Ghi markdown vao report_path.
     """
-    raise NotImplementedError("Student task: implement phase 1 report.")
+    rows = ["# Baseline evaluation", "", "## Source", ""]
+    rows += [f"- {k}: {v}" for k, v in source_summary.items()]
+    rows += ["", "## Metrics", "", "| Metric | Value |", "|---|---:|"]
+    for key in ("samples", "retrieval_hit_rate", "mean_token_f1", "judge_accuracy", "mean_judge_score"):
+        rows.append(f"| {key} | {metrics.get(key, 'N/A')} |")
+    rows += ["", f"- Quality Gate: {quality.get('success', False)}",
+             f"- Freshness: {freshness.get('is_fresh', False)}",
+             f"- Stale ratio: {freshness.get('stale_ratio', 'N/A')}", ""]
+    write_text(report_path, "\n".join(rows))
 
 
 def generate_corruption_report(
@@ -32,4 +41,14 @@ def generate_corruption_report(
     repaired_freshness: dict[str, Any],
 ) -> None:
     """TODO(student): viet markdown report so sanh baseline/corrupted/repaired."""
-    raise NotImplementedError("Student task: implement corruption comparison report.")
+    rows = ["# Corruption and repair comparison", "",
+            "| Metric | Baseline | Corrupted | Repaired |", "|---|---:|---:|---:|"]
+    for key in ("samples", "retrieval_hit_rate", "mean_token_f1", "judge_accuracy", "mean_judge_score"):
+        rows.append(f"| {key} | {baseline_metrics.get(key, 'N/A')} | {corrupted_metrics.get(key, 'N/A')} | {repaired_metrics.get(key, 'N/A')} |")
+    rows += [f"| Quality Gate | N/A | {corrupted_quality.get('success', False)} | {repaired_quality.get('success', False)} |",
+             f"| Freshness | N/A | {corrupted_freshness.get('is_fresh', False)} | {repaired_freshness.get('is_fresh', False)} |", "",
+             "## Quality failures in corrupted data", ""]
+    for item in corrupted_quality.get("results", []):
+        if not item.get("success", True):
+            rows.append(f"- {item.get('expectation_config', {}).get('type', 'expectation')}")
+    write_text(report_path, "\n".join(rows) + "\n")
