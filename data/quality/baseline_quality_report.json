@@ -1,7 +1,7 @@
 {
   "success": true,
   "gx_success": true,
-  "report_name": "test",
+  "report_name": "baseline",
   "row_count": 24,
   "missing_columns": [],
   "expectations": [
@@ -183,5 +183,5 @@
     "max_stale_ratio": 0.25,
     "is_fresh": true
   },
-  "report_path": "C:\\Users\\LAPTOP\\Documents\\Projects\\AiInAction\\K4A-DAY10-Group18-DoubleMint\\data\\quality\\test_quality_report.json"
+  "report_path": "C:\\Users\\LAPTOP\\Documents\\Projects\\AiInAction\\K4A-DAY10-Group18-DoubleMint\\data\\quality\\baseline_quality_report.json"
 }

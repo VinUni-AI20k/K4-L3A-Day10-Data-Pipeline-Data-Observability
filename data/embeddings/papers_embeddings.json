@@ -1,7 +1,7 @@
 {
   "backend": "chroma",
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
-  "persist_path": "D:\\Day10-Lab\\K4A-DAY10-Group18-DoubleMint\\data\\chroma",
+  "persist_path": "C:\\Users\\LAPTOP\\Documents\\Projects\\AiInAction\\K4A-DAY10-Group18-DoubleMint\\data\\chroma",
   "collection_name": "papers-baseline",
   "documents": [
     {
