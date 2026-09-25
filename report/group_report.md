@@ -4,22 +4,22 @@
 
 ## 1. Thông tin bài nộp
 
-| Thông tin         | Nội dung                  |
-| ------------------ | -------------------------- |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
-| Repository         | [Đường dẫn repository] |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Thông tin         | Nội dung                                   |
+| ------------------ | ------------------------------------------ |
+| Khóa/Lớp         | K4                                         |
+| Tên nhóm         | ILV                                        |
+| Repository         | https://github.com/dwcsnh/K4-L3A-Day10-ILV |
+| Ngày hoàn thành | 2026-09-25                                 |
 
 ### Thành viên và phân công
 
 | STT | Họ và tên | MSSV | Vai trò chính | Module/deliverable sở hữu |
 | --: | --- | --- | --- | --- |
-| 1 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 2 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 3 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 4 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
-| 5 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
+| 1 | Đào Đức Anh | 2A202602567 | Đội trưởng / Data Ingestion | `src/ingestion/crossref.py`, `src/ingestion/cleaning.py`, raw & clean data |
+| 2 | Nguyễn Thọ Đạt | 2A202602484 | Pha 3: Vector Index & ChromaDB | `src/retrieval/index.py`, embedding model, 3 vector collections |
+| 3 | Cao Văn Trường | 2A202602562 | Data Observability & Quality Gate | `src/observability/quality.py` (GX 1.x), `src/observability/reporting.py`, Freshness SLA |
+| 4 | Trần Thu Phương | 2A202602366 | Pha 3: Benchmark Test Set | `src/evaluation/testset.py`, `data/eval/test_set.json` (5 question types) |
+| 5 | Nguyễn Quốc Tuấn | 2A202602910 | Pipeline Integration & UI Demo | `src/core/`, `src/pipelines/`, `src/ingestion/corruption.py`, `script/run_dashboard.py` |
 
 ## 2. Tóm tắt kết quả
 
