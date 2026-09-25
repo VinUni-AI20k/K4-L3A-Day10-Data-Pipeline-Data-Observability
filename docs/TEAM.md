@@ -8,12 +8,12 @@
 
 ## # Thành viên
 
-| STT | Họ và tên | MSSV | Email | Vai trò & Phân công công việc | Báo cáo cá nhân |
-|---:|---|---|---|---|---|
-| 1 | | | | Trưởng nhóm / Pipeline Integrator (`core/`, `phase1.py`, `corruption_flow.py`) | `report/<MSSV1>_HoTen.md` |
-| 2 | | | | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, raw data) | `report/<MSSV2>_HoTen.md` |
-| 3 | | | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/<MSSV3>_HoTen.md` |
-| 4 | | | | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/<MSSV4>_HoTen.md` |
+| STT | Họ và tên | MSSV | Email | GitHub | Vai trò & Phân công công việc | Issue | Báo cáo cá nhân |
+|---:|---|---|---|---|---|---|---|
+| 1 | [Họ tên] | [MSSV] | [Email] | @pbaodev | Trưởng nhóm / Pipeline Integrator (`pipelines/phase1.py`, `pipelines/corruption_flow.py`, `core/`, artifacts `data/`) | #9 | `report/<MSSV1>_HoTen.md` |
+| 2 | [Họ tên] | [MSSV] | [Email] | @hminh1231 | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, `repair.py`) | #3 | `report/<MSSV2>_HoTen.md` |
+| 3 | [Họ tên] | [MSSV] | [Email] | @byllkoy259 | RAG & Evaluation (`testset.py`, `corruption.py`, `retrieval/`, ChromaDB) | #6 | `report/<MSSV3>_HoTen.md` |
+| 4 | [Họ tên] | [MSSV] | [Email] | @oabga | Observability & Reporting (`quality.py` GX 1.x, Freshness SLA, `reporting.py`) | #5 | `report/<MSSV4>_HoTen.md` |
 
 *(Nếu nhóm có 3 hoặc 5-6 thành viên, xem bảng phân công chi tiết theo vai trò trong file `CHECKPOINTS.md`)*.
 
