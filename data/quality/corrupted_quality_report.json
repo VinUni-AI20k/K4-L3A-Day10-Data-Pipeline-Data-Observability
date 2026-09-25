@@ -1,0 +1,31 @@
+{
+  "report_name": "corrupted",
+  "success": false,
+  "row_count": 21,
+  "checks": [
+    {
+      "expectation": "ExpectTableRowCountToBeBetween",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValuesToBeUnique",
+      "success": false
+    },
+    {
+      "expectation": "ExpectColumnValueLengthsToBeBetween",
+      "success": false
+    }
+  ]
+}

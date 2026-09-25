@@ -75,7 +75,7 @@ def build_clean_dataframe(
             f"Published: {published}\n"
             f"Categories: {categories_joined}\n"
             f"Summary: {summary}"
-        )
+         )
 
         rows.append(
             {

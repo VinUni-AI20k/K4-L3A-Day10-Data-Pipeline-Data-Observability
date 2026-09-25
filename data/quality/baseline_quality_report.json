@@ -1,0 +1,31 @@
+{
+  "report_name": "baseline",
+  "success": true,
+  "row_count": 24,
+  "checks": [
+    {
+      "expectation": "ExpectTableRowCountToBeBetween",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValuesToBeUnique",
+      "success": true
+    },
+    {
+      "expectation": "ExpectColumnValueLengthsToBeBetween",
+      "success": true
+    }
+  ]
+}

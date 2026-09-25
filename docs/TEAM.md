@@ -1,58 +1,134 @@
 # Danh Sách Thành Viên & Báo Cáo Phân Công Nhóm
 
-- **Tên Nhóm:** `[Điền tên nhóm]`
-- **Mã Nhóm / Lớp:** `K4-L3-DAY10`
-- **Tên Repository Nộp Bài:** `K4-L3-DAY10-TenNhom-DataPipeline`
+* **Tên Nhóm:** `2ae`
+* **Mã Nhóm / Lớp:** `K4-L3-DAY10`
+* **Tên Repository Nộp Bài:** `K4A-DAY10-2ae`
 
 ---
 
-## # Thành viên
+## Thành viên
 
-| STT | Họ và tên | MSSV | Email | Vai trò & Phân công công việc | Báo cáo cá nhân |
-|---:|---|---|---|---|---|
-| 1 | | | | Trưởng nhóm / Pipeline Integrator (`core/`, `phase1.py`, `corruption_flow.py`) | `report/<MSSV1>_HoTen.md` |
-| 2 | | | | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, raw data) | `report/<MSSV2>_HoTen.md` |
-| 3 | | | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/<MSSV3>_HoTen.md` |
-| 4 | | | | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/<MSSV4>_HoTen.md` |
-
-*(Nếu nhóm có 3 hoặc 5-6 thành viên, xem bảng phân công chi tiết theo vai trò trong file `CHECKPOINTS.md`)*.
+| STT | Họ và tên       | MSSV        | Email                                               | Vai trò & Phân công công việc                                                                                      | Báo cáo cá nhân                       |
+| --: | --------------- | ----------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------------- |
+|   1 | Nguyễn Bá Chính | 2A202602654 | [Chinhlhiep@gmail.com](mailto:Chinhlhiep@gmail.com) | Data Foundation & Observability (`crossref.py`, `cleaning.py`, `quality.py`, `corruption.py`)                      | `report/2A202602654_NguyenBaChinh.md` |
+|   2 | Trần Anh Vũ     | 2A202602570 | [vuxjqk@gmail.com](mailto:vuxjqk@gmail.com)         | RAG, Evaluation & Pipeline Integration (`retrieval/`, `evaluation/`, `phase1.py`, `corruption_flow.py`, reporting) | `report/2A202602570_TranAnhVu.md`     |
 
 ---
 
-## # Cá nhân
+# Cá nhân
 
-### ## HoVaTen1-MSSV1
-- **Vai trò:** Trưởng nhóm & Điều phối Pipeline.
-- **Công việc chi tiết đã hoàn thành:**
-  - Thiết lập cấu hình hệ thống `core/config.py` và đường dẫn artifacts `core/utils.py`.
-  - Kết nối luồng thực thi trong `src/pipelines/phase1.py` và `src/pipelines/corruption_flow.py`.
-  - Kiểm tra tính nhất quán của các artifacts và theo dõi Contributor tracking trên GitHub nhánh `main`.
-- **Điều học được / Đóng góp chính:**
-  - Hiểu sâu sắc về thiết kế Idempotent Pipeline và quản lý trạng thái luồng dữ liệu đa tầng.
+## Nguyễn Bá Chính - 2A202602654
 
-### ## HoVaTen2-MSSV2
-- **Vai trò:** Phụ trách Ingestion, Làm sạch & Phục hồi dữ liệu.
-- **Công việc chi tiết đã hoàn thành:**
-  - Xây dựng module thu thập Crossref API với cơ chế Fallback offline trong `src/ingestion/crossref.py`.
-  - Chuẩn hóa schema, tính toán trường `age_days` và `text_for_embedding` trong `src/ingestion/cleaning.py`.
-  - Thực thi cơ chế Idempotent Repair phục hồi dữ liệu từ raw snapshot.
-- **Điều học được / Đóng góp chính:**
-  - Kỹ thuật truy vết nguồn gốc dữ liệu (Data Lineage) và bảo toàn raw snapshot trước khi biến đổi.
+* **Vai trò:** Data Foundation & Data Observability.
 
-### ## HoVaTen3-MSSV3
-- **Vai trò:** Phụ trách RAG, Vector Database & Embedding.
-- **Công việc chi tiết đã hoàn thành:**
-  - Quản lý mô hình embedding `sentence-transformers/all-MiniLM-L6-v2`.
-  - Nạp và quản lý 3 collection riêng biệt trong ChromaDB (`papers-baseline`, `papers-corrupted`, `papers-repaired`).
-  - Xây dựng QA Agent truy vấn ngữ cảnh chính xác theo tài liệu.
-- **Điều học được / Đóng góp chính:**
-  - Cách cô lập các không gian vector để so sánh khách quan giữa dữ liệu sạch và dữ liệu bị lỗi.
+* **Công việc chi tiết đã hoàn thành:**
 
-### ## HoVaTen4-MSSV4
-- **Vai trò:** Phụ trách Data Observability & Benchmark Evaluation.
-- **Công việc chi tiết đã hoàn thành:**
-  - Thiết lập Quality Gate theo chuẩn mới **Great Expectations 1.x** và giám sát Freshness SLA trong `src/observability/quality.py`.
-  - Xây dựng bộ câu hỏi đánh giá chuẩn trong `src/evaluation/testset.py`.
-  - Đo lường và xuất bảng đối chiếu 3 trạng thái vào `data/reports/corruption_report.md`.
-- **Điều học được / Đóng góp chính:**
-  - Cách thiết lập hệ thống cảnh báo sớm chặn đứng hiện tượng Silent Failure trước khi dữ liệu vào serving layer.
+  * Xây dựng module thu thập dữ liệu từ Crossref trong `src/ingestion/crossref.py`.
+  * Parse dữ liệu Crossref từ schema bên ngoài sang cấu trúc nội bộ `PaperRecord`.
+  * Hỗ trợ cơ chế sử dụng local snapshot khi Crossref API không khả dụng hoặc gặp lỗi như `429` / `503`.
+  * Bảo toàn dữ liệu gốc thông qua các raw artifacts:
+
+    * `data/raw/crossref_response.json`
+    * `data/raw/crossref_records.json`
+  * Xây dựng pipeline làm sạch dữ liệu trong `src/ingestion/cleaning.py`.
+  * Chuẩn hóa `title`, `summary`, `authors`, `categories`.
+  * Loại bỏ bản ghi trùng lặp theo `paper_id`.
+  * Chuẩn hóa ngày xuất bản và tính trường `age_days`.
+  * Sinh các trường hỗ trợ:
+
+    * `authors_joined`
+    * `categories_joined`
+    * `summary_chars`
+    * `text_for_embedding`
+  * Xây dựng Data Quality Gate trong `src/observability/quality.py` bằng Great Expectations 1.x.
+  * Kiểm tra các điều kiện chất lượng dữ liệu quan trọng:
+
+    * Số lượng bản ghi hợp lệ.
+    * `paper_id` không null.
+    * `paper_id` là duy nhất.
+    * `title` và `text_for_embedding` không null.
+    * `summary` đạt độ dài tối thiểu.
+  * Xây dựng Freshness Monitoring dựa trên `age_days` và ngưỡng `freshness_threshold_days`.
+  * Xây dựng Synthetic Data Corruption Suite trong `src/ingestion/corruption.py`.
+  * Mô phỏng 6 dạng lỗi dữ liệu:
+
+    1. Drop latest records.
+    2. Blank summary.
+    3. Inject noise.
+    4. Truncate title.
+    5. Stale date.
+    6. Duplicate rows.
+  * Rebuild lại `summary_chars` và `text_for_embedding` sau khi dữ liệu bị corruption để đảm bảo lỗi thực sự ảnh hưởng đến downstream RAG pipeline.
+  * Ghi lại các lỗi được inject vào `data/results/corruption_log.json`.
+  * Phối hợp với thành viên 2 để kiểm chứng Quality Gate trên cả dữ liệu sạch và dữ liệu bị corruption.
+
+* **Điều học được / Đóng góp chính:**
+
+  * Hiểu quy trình Data Pipeline từ `Source → Raw → Clean → Quality Gate → Serving`.
+  * Hiểu vai trò của Raw Data Preservation trong Data Lineage và khả năng phục hồi dữ liệu.
+  * Hiểu cách chuẩn hóa dữ liệu trước khi tạo embedding cho RAG.
+  * Hiểu lý do cần Data Quality Gate thay vì giả định dữ liệu sau Cleaning luôn chính xác.
+  * Hiểu cách Great Expectations được sử dụng để phát hiện các lỗi dữ liệu trước khi dữ liệu đi vào Vector Store.
+  * Hiểu Freshness SLA và cách phát hiện dữ liệu stale.
+  * Hiểu khái niệm Silent Failure trong hệ thống RAG khi dữ liệu lỗi nhưng hệ thống vẫn tiếp tục trả lời.
+  * Hiểu cách sử dụng Controlled Corruption để kiểm thử khả năng quan sát và độ bền của Data Pipeline.
+
+---
+
+## Trần Anh Vũ - 2A202602570
+
+* **Vai trò:** RAG, Evaluation & Pipeline Integration.
+
+* **Công việc chi tiết đã hoàn thành:**
+
+  * Xây dựng và quản lý phần Retrieval trong `src/retrieval/`.
+  * Sử dụng mô hình `sentence-transformers/all-MiniLM-L6-v2` để sinh embedding.
+  * Xây dựng và quản lý Vector Store bằng ChromaDB.
+  * Quản lý các collection phục vụ việc so sánh:
+
+    * `papers-baseline`
+    * `papers-corrupted`
+    * `papers-repaired`
+  * Xây dựng logic truy vấn tài liệu và QA Agent.
+  * Xây dựng evaluation test set trong `src/evaluation/testset.py`.
+  * Sinh bộ câu hỏi đánh giá gồm các nhóm:
+
+    * `summary`
+    * `authors`
+    * `date`
+    * `categories`
+  * Đánh giá hiệu năng của RAG bằng các metric như:
+
+    * Retrieval Hit Rate
+    * Token F1
+    * LLM Judge
+  * Tích hợp Baseline Pipeline trong `src/pipelines/phase1.py`.
+  * Kết nối toàn bộ luồng:
+    `Ingestion → Cleaning → Quality → Embedding → ChromaDB → Evaluation → Reporting`.
+  * Tích hợp Corruption & Repair Pipeline trong `src/pipelines/corruption_flow.py`.
+  * Đánh giá và so sánh ba trạng thái:
+
+    * Baseline
+    * Corrupted
+    * Repaired
+  * Sinh các artifact kết quả:
+
+    * `data/results/baseline_metrics.json`
+    * `data/results/corrupted_metrics.json`
+    * `data/results/repaired_metrics.json`
+    * `data/reports/phase1_report.md`
+    * `data/reports/corruption_report.md`
+  * Phối hợp kiểm tra End-to-End Pipeline và chuẩn bị kết quả phục vụ Live Demo.
+
+* **Điều học được / Đóng góp chính:**
+
+  * Hiểu cách dữ liệu sạch được chuyển thành embedding và lưu trong Vector Database.
+  * Hiểu cách Retrieval Quality ảnh hưởng trực tiếp đến chất lượng câu trả lời của RAG.
+  * Hiểu cách xây dựng benchmark để so sánh các trạng thái dữ liệu.
+  * Hiểu sự khác biệt giữa Baseline, Corrupted và Repaired pipeline.
+  * Hiểu cách tích hợp nhiều module độc lập thành một pipeline end-to-end có thể tái chạy.
+  * Hiểu cơ chế Idempotent Repair và cách kiểm chứng dữ liệu sau phục hồi.
+
+---
+
+
