@@ -6,13 +6,13 @@
 
 | Thông tin         | Nội dung                  |
 | ------------------ | -------------------------- |
-| Họ và tên       | [Họ và tên]             |
-| MSSV               | [MSSV]                     |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
-| Vai trò chính    | [Vai trò]                 |
-| Repository         | [Đường dẫn repository] |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Họ và tên       | Trần Quốc Bảo Long             |
+| MSSV               | 2A202602696                     |
+| Khóa/Lớp         | K4              |
+| Tên nhóm         | TAL     |
+| Vai trò chính    | Frontend, BA                 |
+| Repository         | https://github.com/Nituv05/K4-L3-DAY10-TAL-DataPipeline |
+| Ngày hoàn thành | [2026-09-25]              |
 
 ## 2. Vai trò và phạm vi công việc
 
@@ -20,8 +20,7 @@
 
 | Module/deliverable | File/hàm phụ trách | Input nhận vào | Output bàn giao  | Trạng thái                                 |
 | ------------------ | --------------------- | ---------------- | ----------------- | -------------------------------------------- |
-| [Phần việc]      | [File/hàm]           | [Input]          | [Output/artifact] | [Hoàn thành/Một phần/Chưa hoàn thành] |
-| [Phần việc]      | [File/hàm]           | [Input]          | [Output/artifact] | [Hoàn thành/Một phần/Chưa hoàn thành] |
+| Thiết kế UI cho hệ thống      | [File/hàm]           | [Input]          | [Output/artifact] | [Hoàn thành/Một phần/Chưa hoàn thành] |
 
 Chỉ nhận ownership cho phần bạn trực tiếp thực hiện. Liên hệ rõ phần việc của bạn với đầu vào, đầu ra và các thành viên phụ thuộc vào phần đó.
 
@@ -153,12 +152,12 @@ Kết quả nào khác với kỳ vọng ban đầu?
 
 Đánh dấu sau khi tự kiểm tra:
 
-- [ ] Nội dung báo cáo phản ánh đúng phần việc và mức hiểu của tôi.
+- [x] Nội dung báo cáo phản ánh đúng phần việc và mức hiểu của tôi.
 - [ ] Tôi có thể giải thích luồng end-to-end, không chỉ module mình phụ trách.
 - [ ] Mọi kết luận về kết quả đều có artifact hoặc metric để đối chiếu.
 - [ ] Tôi không ghi “đã chạy thành công” cho phần chưa được kiểm chứng.
-- [ ] Báo cáo không chứa `.env`, API key, token hoặc secret.
-- [ ] Báo cáo này không phải bản sao nguyên văn của báo cáo nhóm hoặc báo cáo thành viên khác.
+- [x] Báo cáo không chứa `.env`, API key, token hoặc secret.
+- [x] Báo cáo này không phải bản sao nguyên văn của báo cáo nhóm hoặc báo cáo thành viên khác.
 
-**Họ và tên:** [Họ và tên]
-**Ngày xác nhận:** [YYYY-MM-DD]
+**Họ và tên:** Trần Quốc Bảo Long
+**Ngày xác nhận:** [2026-09-25]

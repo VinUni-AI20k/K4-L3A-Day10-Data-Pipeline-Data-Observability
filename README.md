@@ -224,3 +224,7 @@ GOOGLE_API_KEY=your_gemini_api_key_here
   > GitHub chỉ ghi nhận đóng góp khi commit được push trực tiếp vào **nhánh mặc định (`main`)**.  
   > Trước khi nộp bài, mở trình duyệt vào repo nhóm, chọn tab **Insights > Contributors**. Bắt buộc mọi thành viên trong nhóm đều phải xuất hiện trên biểu đồ commit thì mới được tính điểm chuyên cần nhóm!
 - [ ] **Nộp bài lên VLearn LMS:** Mỗi thành viên copy đường link repository GitHub của nhóm và nộp lên cổng LMS trước khi đồng hồ đếm ngược kết thúc 240 phút!
+
+## 7. UI minh họa pipeline
+
+Chạy `python script/run_ui.py` rồi mở http://127.0.0.1:8765 để xem sơ đồ tương tác, dữ liệu Crossref, Quality Gate và so sánh Baseline / Corrupted / Repaired. UI có nút chạy các script pipeline và xem log trực tiếp. Xem [hướng dẫn demo UI](ui/README.md) để biết điều kiện môi trường và kịch bản trình bày.
