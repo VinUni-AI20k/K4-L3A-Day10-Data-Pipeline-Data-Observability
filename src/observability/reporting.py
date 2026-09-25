@@ -98,7 +98,7 @@ Pha 1 thiết lập chu trình dữ liệu sạch end-to-end từ việc thu th�
 ---
 
 ## 6. Kết Luận & Khuyến Nghị Pha 1
-Dữ liệu sạch đáp ứng 100% tiêu chuẩn Quality Gate và Freshness SLA. Chỉ số Baseline đạt mức tối ưu, sẵn sàng làm mốc đối chứng (ground truth benchmark) cho thử thách tiêm độc tố dữ liệu (Data Corruption) ở Pha 2.
+Quality Gate: `{quality_status}`; Freshness SLA: `{fresh_status}`. Baseline đo được Hit Rate `{_pct(hit_rate)}` và Token F1 `{token_f1:.4f}` trên `{samples_count}` câu hỏi. Đây là mốc đối chứng cho Pha 2; các chỉ số phản ánh đúng dữ liệu và bộ câu hỏi của lần chạy này.
 """
     write_text(target_path, md.strip() + "\n")
 
@@ -112,6 +112,8 @@ def generate_corruption_report(
     repaired_quality: dict[str, Any],
     corrupted_freshness: dict[str, Any],
     repaired_freshness: dict[str, Any],
+    baseline_quality: dict[str, Any] | None = None,
+    baseline_freshness: dict[str, Any] | None = None,
 ) -> None:
     """Generate Markdown comparison report for Baseline vs Corrupted vs Repaired."""
     target_path = Path(report_path)
@@ -129,6 +131,11 @@ def generate_corruption_report(
     c_judge = corrupted_metrics.get("judge_accuracy", 0.0)
     r_judge = repaired_metrics.get("judge_accuracy", 0.0)
 
+    b_quality_status = (
+        "N/A" if baseline_quality is None else "PASS" if baseline_quality.get("success") else "FAIL"
+    )
+    b_stale_pct = baseline_freshness.get("stale_ratio_pct") if baseline_freshness else None
+    b_stale_display = f"{b_stale_pct}%" if b_stale_pct is not None else "N/A"
     c_quality_status = "PASS" if corrupted_quality.get("passed", corrupted_quality.get("success", False)) else "FAIL"
     r_quality_status = "PASS" if repaired_quality.get("passed", repaired_quality.get("success", False)) else "FAIL"
 
@@ -142,8 +149,8 @@ def generate_corruption_report(
 
 | Tiêu chí Đánh giá | Baseline (Dữ liệu Sạch) | Corrupted (Dữ liệu Tiêm Lỗi) | Repaired (Sau Phục Hồi) |
 | :--- | :---: | :---: | :---: |
-| **Data Quality Gate (GX 1.x)** | **`PASS`** | **`{c_quality_status}`** | **`{r_quality_status}`** |
-| **Freshness SLA (Stale %)** | `<= 25%` | `{c_stale_pct}%` | `{r_stale_pct}%` |
+| **Data Quality Gate (GX 1.x)** | **`{b_quality_status}`** | **`{c_quality_status}`** | **`{r_quality_status}`** |
+| **Freshness SLA (Stale %)** | `{b_stale_display}` | `{c_stale_pct}%` | `{r_stale_pct}%` |
 | **Retrieval Hit Rate** | **`{_pct(b_hit)}`** | **`{_pct(c_hit)}`** | **`{_pct(r_hit)}`** |
 | **Mean Token F1** | **`{b_f1:.4f}`** | **`{c_f1:.4f}`** | **`{r_f1:.4f}`** |
 | **Judge Accuracy** | **`{_pct(b_judge)}`** | **`{_pct(c_judge)}`** | **`{_pct(r_judge)}`** |
@@ -154,7 +161,7 @@ def generate_corruption_report(
 - **Sự cố dữ liệu bẩn:** Khi tiêm các lỗi thường gặp (drop latest records, blank summary, inject noise, truncate title, stale date, duplicate rows), hệ thống RAG không báo lỗi crash hệ thống (no runtime errors) nhưng chất lượng câu trả lời bị suy giảm nghiêm trọng (**Silent Failure**).
 - **Suy giảm Retrieval Hit Rate:** Từ `{_pct(b_hit)}` sụt giảm xuống `{_pct(c_hit)}` (chênh lệch `{(b_hit - c_hit) * 100:.1f}%`).
 - **Suy giảm Token F1:** Từ `{b_f1:.4f}` sụt giảm xuống `{c_f1:.4f}`.
-- **Phát hiện bởi Quality Gate:** Cổng Great Expectations 1.x đã kích hoạt cảnh báo `{c_quality_status}`, chặn đứng dữ liệu lỗi trước khi người dùng bị ảnh hưởng bởi ảo giác (hallucination).
+- **Phát hiện bởi Quality Gate:** Cổng Great Expectations 1.x đã báo `{c_quality_status}`. Bộ dữ liệu lỗi được index trong collection riêng chỉ để đo ảnh hưởng; luồng production phải dừng trước bước index khi gate thất bại.
 
 ---
 
@@ -164,6 +171,6 @@ def generate_corruption_report(
   - Quality Gate chuyển từ `{c_quality_status}` trở lại **`{r_quality_status}`**.
   - Retrieval Hit Rate phục hồi từ `{_pct(c_hit)}` lên **`{_pct(r_hit)}`**.
   - Token F1 phục hồi từ `{c_f1:.4f}` lên **`{r_f1:.4f}`**.
-- **Kết luận:** Hệ thống khôi phục 100% độ chính xác ban đầu, chứng minh tính tin cậy và khả năng tự phục hồi của Data Pipeline.
+- **Kết luận:** Các chỉ số sau phục hồi được đối chiếu trực tiếp với baseline trên cùng bộ câu hỏi. Hit Rate: `{_pct(r_hit)}` so với `{_pct(b_hit)}`; Token F1: `{r_f1:.4f}` so với `{b_f1:.4f}`.
 """
     write_text(target_path, md.strip() + "\n")
