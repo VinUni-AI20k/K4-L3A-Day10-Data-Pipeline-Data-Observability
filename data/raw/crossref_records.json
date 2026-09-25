@@ -7,8 +7,11 @@
       "\u0418.\u0412. \u0415\u0440\u043c\u0430\u043a\u043e\u0432",
       "\u0412.\u0412. \u0424\u0438\u043b\u0430\u0442\u043e\u0432"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Innovative economy: information, analytics, forecasts",
+      "journal-article"
+    ],
+    "primary_category": "Innovative economy: information, analytics, forecasts",
     "published": "2026-06-15T00:00:00Z",
     "updated": "2026-06-17T07:51:54Z",
     "abs_url": "https://doi.org/10.47576/2949-1894.2026.7.7.023",
@@ -22,8 +25,11 @@
     "authors": [
       "Zilang Shao"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Exploring Science Academic Conference Series",
+      "journal-article"
+    ],
+    "primary_category": "Exploring Science Academic Conference Series",
     "published": "2026-09-13T00:00:00Z",
     "updated": "2026-09-13T10:04:31Z",
     "abs_url": "https://doi.org/10.70267/aitia.2026482489",
@@ -37,8 +43,11 @@
     "authors": [
       "Zunlong Hong"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Applied and Computational Engineering",
+      "journal-article"
+    ],
+    "primary_category": "Applied and Computational Engineering",
     "published": "2026-09-08T00:00:00Z",
     "updated": "2026-09-08T02:26:31Z",
     "abs_url": "https://doi.org/10.54254/2755-2721/2026.36624",
@@ -57,8 +66,10 @@
       "Zhen Qi",
       "Huajun Zhang"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "posted-content"
+    ],
+    "primary_category": "posted-content",
     "published": "2026-04-06T00:00:00Z",
     "updated": "2026-04-07T00:32:22Z",
     "abs_url": "https://doi.org/10.20944/preprints202604.0339.v1",
@@ -74,8 +85,11 @@
       "Clara M. Hofmann",
       "Amara N. Okoye"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Journal of AI Analytics and Applications",
+      "journal-article"
+    ],
+    "primary_category": "Journal of AI Analytics and Applications",
     "published": "2026-06-30T00:00:00Z",
     "updated": "2026-07-17T01:44:04Z",
     "abs_url": "https://doi.org/10.63646/kpqm1958",
@@ -90,8 +104,10 @@
       "Sathiska Priyad",
       "Gayathri Karthick"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "posted-content"
+    ],
+    "primary_category": "posted-content",
     "published": "2026-09-12T00:00:00Z",
     "updated": "2026-09-12T16:12:32Z",
     "abs_url": "https://doi.org/10.21203/rs.3.rs-10349437/v1",
@@ -106,8 +122,11 @@
       "Dr. Sumalatha P",
       "Manoj Kumar"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "International Scientific Journal of Engineering and Management",
+      "journal-article"
+    ],
+    "primary_category": "International Scientific Journal of Engineering and Management",
     "published": "2026-05-06T00:00:00Z",
     "updated": "2026-05-06T16:40:09Z",
     "abs_url": "https://doi.org/10.55041/isjem07213",
@@ -123,8 +142,10 @@
       "Alexander Cresswell",
       "Alice Huffman"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "posted-content"
+    ],
+    "primary_category": "posted-content",
     "published": "2026-07-03T00:00:00Z",
     "updated": "2026-07-06T03:55:08Z",
     "abs_url": "https://doi.org/10.2196/preprints.106157",
@@ -139,8 +160,11 @@
       "Nawari O. Nawari",
       "Oluwatoyin O. Lawal"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Buildings",
+      "journal-article"
+    ],
+    "primary_category": "Buildings",
     "published": "2026-07-02T00:00:00Z",
     "updated": "2026-07-02T10:04:44Z",
     "abs_url": "https://doi.org/10.3390/buildings16132637",
@@ -157,8 +181,11 @@
       "Muhammad Yousaf Rehman",
       "Basharat Hussain"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Knowledge",
+      "journal-article"
+    ],
+    "primary_category": "Knowledge",
     "published": "2026-08-25T00:00:00Z",
     "updated": "2026-08-25T08:00:48Z",
     "abs_url": "https://doi.org/10.3390/knowledge6030022",
@@ -172,8 +199,10 @@
     "authors": [
       "Divya K"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "posted-content"
+    ],
+    "primary_category": "posted-content",
     "published": "2026-09-15T00:00:00Z",
     "updated": "2026-09-15T11:49:09Z",
     "abs_url": "https://doi.org/10.21203/rs.3.rs-10489777/v1",
@@ -188,8 +217,10 @@
       "Audrey Rah",
       "Sven Hahues"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "posted-content"
+    ],
+    "primary_category": "posted-content",
     "published": "2026-06-15T00:00:00Z",
     "updated": "2026-06-15T06:08:16Z",
     "abs_url": "https://doi.org/10.21203/rs.3.rs-10012178/v1",
@@ -204,8 +235,11 @@
       "Serhii Arefiev",
       "Serhii Hildi"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Ukrainian Journal of Applied Economics and Technology",
+      "journal-article"
+    ],
+    "primary_category": "Ukrainian Journal of Applied Economics and Technology",
     "published": "2026-09-04T00:00:00Z",
     "updated": "2026-09-04T08:34:12Z",
     "abs_url": "https://doi.org/10.36887/2415-8453-2026-3-2",
@@ -222,8 +256,11 @@
       "Junxiong Ning",
       "Gongru Li"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "SPE Journal",
+      "journal-article"
+    ],
+    "primary_category": "SPE Journal",
     "published": "2026-08-01T00:00:00Z",
     "updated": "2026-08-05T14:17:54Z",
     "abs_url": "https://doi.org/10.2118/234689-pa",
@@ -238,8 +275,11 @@
       "Vanlalropuia Ralte",
       "Abhisake Sinha -"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "International Journal For Multidisciplinary Research",
+      "journal-article"
+    ],
+    "primary_category": "International Journal For Multidisciplinary Research",
     "published": "2026-08-14T00:00:00Z",
     "updated": "2026-08-15T12:19:23Z",
     "abs_url": "https://doi.org/10.36948/ijfmr.2026.v08i04.85777",
@@ -256,8 +296,11 @@
       "Yelfi Vitriani",
       "Novriyanto"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Jurnal Pengembangan Teknologi Informasi dan Komunikasi (JUPTIK)",
+      "journal-article"
+    ],
+    "primary_category": "Jurnal Pengembangan Teknologi Informasi dan Komunikasi (JUPTIK)",
     "published": "2026-06-01T00:00:00Z",
     "updated": "2026-07-04T14:11:07Z",
     "abs_url": "https://doi.org/10.52060/juptik.v4i1.4318",
@@ -275,8 +318,10 @@
       "Thomas Sigler",
       "Victoria D. Moore"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "report"
+    ],
+    "primary_category": "report",
     "published": "2026-07-01T00:00:00Z",
     "updated": "2026-07-10T14:51:37Z",
     "abs_url": "https://doi.org/10.21079/11681/50309",
@@ -294,8 +339,11 @@
       "Peter Claes",
       "Reinhilde Jacobs"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Journal of Imaging Informatics in Medicine",
+      "journal-article"
+    ],
+    "primary_category": "Journal of Imaging Informatics in Medicine",
     "published": "2026-07-13T00:00:00Z",
     "updated": "2026-07-13T14:44:24Z",
     "abs_url": "https://doi.org/10.1007/s10278-026-02086-9",
@@ -310,8 +358,10 @@
       "Yizhang Huang",
       "Xinhui Zhang"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "posted-content"
+    ],
+    "primary_category": "posted-content",
     "published": "2026-08-26T00:00:00Z",
     "updated": "2026-08-26T06:36:23Z",
     "abs_url": "https://doi.org/10.21203/rs.3.rs-10423755/v1",
@@ -331,8 +381,11 @@
       "Hayden Heninger",
       "Cui Tao"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "SLEEPJ",
+      "journal-article"
+    ],
+    "primary_category": "SLEEPJ",
     "published": "2026-05-01T00:00:00Z",
     "updated": "2026-05-09T02:39:59Z",
     "abs_url": "https://doi.org/10.1093/sleep/zsag091.0346",
@@ -346,8 +399,11 @@
     "authors": [
       "Nadia Islam Tanha"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "American Journal of Data Science and Analytics",
+      "journal-article"
+    ],
+    "primary_category": "American Journal of Data Science and Analytics",
     "published": "2026-04-01T00:00:00Z",
     "updated": "2026-08-11T12:20:31Z",
     "abs_url": "https://doi.org/10.63125/gseh0k17",
@@ -364,8 +420,11 @@
       "Yessy Mulyani",
       "Puput Budi Wintoro"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "Jurnal Teknik Informatika dan Sistem Informasi",
+      "journal-article"
+    ],
+    "primary_category": "Jurnal Teknik Informatika dan Sistem Informasi",
     "published": "2026-08-27T00:00:00Z",
     "updated": "2026-09-02T06:41:28Z",
     "abs_url": "https://doi.org/10.28932/jutisi.v12i2.13099",
@@ -380,8 +439,10 @@
       "Novanto Yudistira",
       "Yanuar Putra Kharisma Adhiyasa"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "posted-content"
+    ],
+    "primary_category": "posted-content",
     "published": "2026-07-10T00:00:00Z",
     "updated": "2026-07-10T18:10:19Z",
     "abs_url": "https://doi.org/10.21203/rs.3.rs-10178277/v1",
@@ -397,8 +458,10 @@
       "Rajiv Malhotra",
       "Farhad Imani"
     ],
-    "categories": [],
-    "primary_category": "",
+    "categories": [
+      "posted-content"
+    ],
+    "primary_category": "posted-content",
     "published": "2026-08-26T00:00:00Z",
     "updated": "2026-08-27T00:41:55Z",
     "abs_url": "https://doi.org/10.20944/preprints202608.1849.v1",
