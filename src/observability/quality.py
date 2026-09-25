@@ -24,11 +24,7 @@ def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: s
             "expectations": [],
             "freshness": {"is_fresh": False, "stale_rows": 0, "total_rows": 0},
         }
-        output_path = (
-            settings.paths.corrupted_quality_report
-            if "corrupt" in report_name.lower()
-            else settings.paths.baseline_quality_report
-        )
+        output_path = _quality_report_path(settings, report_name)
         write_json(output_path, payload)
         return payload
 
@@ -37,11 +33,13 @@ def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: s
     data_asset = data_source.add_dataframe_asset(name="papers_asset")
     batch_def = data_asset.add_batch_definition_whole_dataframe("papers_batch")
     batch = batch_def.get_batch(batch_parameters={"dataframe": df})
-    validator = batch.get_validator()
+    validator = batch._create_validator(result_format={"result_format": "BASIC"})
 
     expectation_results: list[dict[str, Any]] = []
 
-    row_count = validator.expect_table_row_count_to_be_between(min_value=5, max_value=5000)
+    row_count = validator.validate_expectation(
+        expectation=gx.expectations.ExpectTableRowCountToBeBetween(min_value=5, max_value=5000)
+    )
     expectation_results.append({
         "name": "row_count_between_5_and_5000",
         "success": bool(row_count.success),
@@ -49,24 +47,30 @@ def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: s
     })
 
     for column_name in ["paper_id", "title", "text_for_embedding"]:
-        result = validator.expect_column_values_to_not_be_null(column=column_name)
+        result = validator.validate_expectation(
+            expectation=gx.expectations.ExpectColumnValuesToNotBeNull(column=column_name)
+        )
         expectation_results.append({
             "name": f"{column_name}_not_null",
             "success": bool(result.success),
             "details": result.result,
         })
 
-    paper_unique = validator.expect_column_values_to_be_unique(column="paper_id")
+    paper_unique = validator.validate_expectation(
+        expectation=gx.expectations.ExpectColumnValuesToBeUnique(column="paper_id")
+    )
     expectation_results.append({
         "name": "paper_id_unique",
         "success": bool(paper_unique.success),
         "details": paper_unique.result,
     })
 
-    summary_length = validator.expect_column_value_lengths_to_be_between(
-        column="summary",
-        min_value=30,
-        max_value=None,
+    summary_length = validator.validate_expectation(
+        expectation=gx.expectations.ExpectColumnValueLengthsToBeBetween(
+            column="summary",
+            min_value=30,
+            max_value=None,
+        )
     )
     expectation_results.append({
         "name": "summary_length_at_least_30",
@@ -86,11 +90,7 @@ def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: s
     })
 
     success = all(item["success"] for item in expectation_results)
-    output_path = (
-        settings.paths.corrupted_quality_report
-        if "corrupt" in report_name.lower()
-        else settings.paths.baseline_quality_report
-    )
+    output_path = _quality_report_path(settings, report_name)
     payload = {
         "report_name": report_name,
         "success": success,
@@ -100,6 +100,15 @@ def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: s
     }
     write_json(output_path, payload)
     return payload
+
+
+def _quality_report_path(settings: Settings, report_name: str) -> Path:
+    normalized_name = report_name.lower()
+    if "corrupt" in normalized_name:
+        return settings.paths.corrupted_quality_report
+    if "repair" in normalized_name:
+        return settings.paths.repaired_quality_report
+    return settings.paths.baseline_quality_report
 
 
 def build_freshness_report(df: pd.DataFrame, settings: Settings, report_path) -> dict[str, Any]:

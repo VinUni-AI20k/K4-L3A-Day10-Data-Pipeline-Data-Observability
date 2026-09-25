@@ -4,7 +4,7 @@
   "message-version": "1.0.0",
   "message": {
     "facets": {},
-    "total-results": 103654,
+    "total-results": 103661,
     "items": [
       {
         "indexed": {
@@ -120,7 +120,7 @@
           "date-time": "2026-06-17T08:00:36Z",
           "timestamp": 1781683236000
         },
-        "score": 39.82899,
+        "score": 39.881847,
         "resource": {
           "primary": {
             "URL": "https://ieiap.ru/journal"
@@ -167,6 +167,146 @@
               2026,
               6,
               15
+            ]
+          ]
+        }
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              15
+            ]
+          ],
+          "date-time": "2026-09-15T09:50:34Z",
+          "timestamp": 1789465834146,
+          "version": "build-2803163510"
+        },
+        "reference-count": 0,
+        "publisher": "EWA Publishing",
+        "issue": "1",
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "ACE"
+        ],
+        "abstract": "<jats:p>Retrieval-augmented generation (RAG) enhances large language models (LLMs) by incorporating external information, but traditional fixed retrieval processes struggle to adapt to complex task requirements. In recent years, reinforcement learning (RL) has been increasingly applied to train LLMs to autonomously invoke search tools, driving RAG to evolve from the passive information acquisition of a fixed pipeline to a trustworthy retrieval system with autonomous decision-making capabilities. This paper reviews the representative studies on the combination of LLMs, RAG and RL in recent years. It focuses on analyzing the role of RL in dynamic retrieval, process rewards, query optimization, etc., and compares the connections and evolutionary relationships among different methods. The research findings show that RL has gradually expanded from simply improving the accuracy of the final answer to optimizing queries, multi-round search, process decision-making and trustworthy screening, providing new ideas for enhancing the active retrieval ability of RAG and improving the credibility of information.</jats:p>",
+        "DOI": "10.54254/2755-2721/2026.36624",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              8
+            ]
+          ],
+          "date-time": "2026-09-08T02:26:31Z",
+          "timestamp": 1788834391000
+        },
+        "page": "196-202",
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model"
+        ],
+        "prefix": "10.54254",
+        "volume": "256",
+        "author": [
+          {
+            "given": "Zunlong",
+            "family": "Hong",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Xidian University"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "32523",
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              8
+            ]
+          ]
+        },
+        "container-title": [
+          "Applied and Computational Engineering"
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              15
+            ]
+          ],
+          "date-time": "2026-09-15T08:27:58Z",
+          "timestamp": 1789460878000
+        },
+        "score": 37.86307,
+        "resource": {
+          "primary": {
+            "URL": "https://ace.ewapub.com/article/view/36624"
+          }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              8
+            ]
+          ]
+        },
+        "references-count": 0,
+        "journal-issue": {
+          "issue": "1",
+          "published-online": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                15
+              ]
+            ]
+          }
+        },
+        "URL": "https://doi.org/10.54254/2755-2721/2026.36624",
+        "ISSN": [
+          "2755-2721",
+          "2755-273X"
+        ],
+        "issn-type": [
+          {
+            "value": "2755-2721",
+            "type": "print"
+          },
+          {
+            "value": "2755-273X",
+            "type": "electronic"
+          }
+        ],
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              9,
+              8
             ]
           ]
         }
@@ -285,7 +425,7 @@
           "date-time": "2026-09-13T10:04:32Z",
           "timestamp": 1789293872000
         },
-        "score": 37.852886,
+        "score": 37.846756,
         "resource": {
           "primary": {
             "URL": "https://journals.zeuspress.org/index.php/conference/article/view/1352"
@@ -322,146 +462,6 @@
               2026,
               9,
               13
-            ]
-          ]
-        }
-      },
-      {
-        "indexed": {
-          "date-parts": [
-            [
-              2026,
-              9,
-              15
-            ]
-          ],
-          "date-time": "2026-09-15T09:50:34Z",
-          "timestamp": 1789465834146,
-          "version": "build-2803163510"
-        },
-        "reference-count": 0,
-        "publisher": "EWA Publishing",
-        "issue": "1",
-        "content-domain": {
-          "domain": [],
-          "crossmark-restriction": false
-        },
-        "short-container-title": [
-          "ACE"
-        ],
-        "abstract": "<jats:p>Retrieval-augmented generation (RAG) enhances large language models (LLMs) by incorporating external information, but traditional fixed retrieval processes struggle to adapt to complex task requirements. In recent years, reinforcement learning (RL) has been increasingly applied to train LLMs to autonomously invoke search tools, driving RAG to evolve from the passive information acquisition of a fixed pipeline to a trustworthy retrieval system with autonomous decision-making capabilities. This paper reviews the representative studies on the combination of LLMs, RAG and RL in recent years. It focuses on analyzing the role of RL in dynamic retrieval, process rewards, query optimization, etc., and compares the connections and evolutionary relationships among different methods. The research findings show that RL has gradually expanded from simply improving the accuracy of the final answer to optimizing queries, multi-round search, process decision-making and trustworthy screening, providing new ideas for enhancing the active retrieval ability of RAG and improving the credibility of information.</jats:p>",
-        "DOI": "10.54254/2755-2721/2026.36624",
-        "type": "journal-article",
-        "created": {
-          "date-parts": [
-            [
-              2026,
-              9,
-              8
-            ]
-          ],
-          "date-time": "2026-09-08T02:26:31Z",
-          "timestamp": 1788834391000
-        },
-        "page": "196-202",
-        "source": "Crossref",
-        "is-referenced-by-count": 0,
-        "title": [
-          "Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model"
-        ],
-        "prefix": "10.54254",
-        "volume": "256",
-        "author": [
-          {
-            "given": "Zunlong",
-            "family": "Hong",
-            "sequence": "first",
-            "affiliation": [
-              {
-                "name": "Xidian University"
-              }
-            ],
-            "role": [
-              {
-                "vocabulary": "crossref",
-                "role": "author"
-              }
-            ]
-          }
-        ],
-        "member": "32523",
-        "published-online": {
-          "date-parts": [
-            [
-              2026,
-              9,
-              8
-            ]
-          ]
-        },
-        "container-title": [
-          "Applied and Computational Engineering"
-        ],
-        "deposited": {
-          "date-parts": [
-            [
-              2026,
-              9,
-              15
-            ]
-          ],
-          "date-time": "2026-09-15T08:27:58Z",
-          "timestamp": 1789460878000
-        },
-        "score": 37.836037,
-        "resource": {
-          "primary": {
-            "URL": "https://ace.ewapub.com/article/view/36624"
-          }
-        },
-        "issued": {
-          "date-parts": [
-            [
-              2026,
-              9,
-              8
-            ]
-          ]
-        },
-        "references-count": 0,
-        "journal-issue": {
-          "issue": "1",
-          "published-online": {
-            "date-parts": [
-              [
-                2026,
-                9,
-                15
-              ]
-            ]
-          }
-        },
-        "URL": "https://doi.org/10.54254/2755-2721/2026.36624",
-        "ISSN": [
-          "2755-2721",
-          "2755-273X"
-        ],
-        "issn-type": [
-          {
-            "value": "2755-2721",
-            "type": "print"
-          },
-          {
-            "value": "2755-273X",
-            "type": "electronic"
-          }
-        ],
-        "published": {
-          "date-parts": [
-            [
-              2026,
-              9,
-              8
             ]
           ]
         }
@@ -628,7 +628,7 @@
           "date-time": "2026-04-07T00:32:52Z",
           "timestamp": 1775521972000
         },
-        "score": 37.286552,
+        "score": 37.27256,
         "resource": {
           "primary": {
             "URL": "https://www.preprints.org/manuscript/202604.0339/v1"
@@ -793,7 +793,7 @@
           "date-time": "2026-07-17T01:44:05Z",
           "timestamp": 1784252645000
         },
-        "score": 37.121117,
+        "score": 37.1214,
         "resource": {
           "primary": {
             "URL": "https://inatgi.net/index.php/jaiaa/article/view/806"
@@ -973,7 +973,7 @@
           "date-time": "2026-09-12T16:12:33Z",
           "timestamp": 1789229553000
         },
-        "score": 36.50102,
+        "score": 36.506737,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10349437/v1"
@@ -1096,7 +1096,7 @@
           "date-time": "2026-05-06T16:40:10Z",
           "timestamp": 1778085610000
         },
-        "score": 36.429176,
+        "score": 36.46275,
         "resource": {
           "primary": {
             "URL": "https://isjem.com/download/speculative-retrieval-augmented-generation-for-cost-efficient-large-language-model-inference/"
@@ -1143,146 +1143,6 @@
             ]
           ]
         }
-      },
-      {
-        "indexed": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              6
-            ]
-          ],
-          "date-time": "2026-07-06T04:15:50Z",
-          "timestamp": 1783311350461,
-          "version": "3.54.6"
-        },
-        "posted": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              3
-            ]
-          ]
-        },
-        "group-title": "JMIR Formative Research",
-        "reference-count": 1,
-        "publisher": "JMIR Publications Inc.",
-        "content-domain": {
-          "domain": [],
-          "crossmark-restriction": false
-        },
-        "abstract": "<sec>\n                  <title>BACKGROUND</title>\n                  <p>There is evidence of rapid adoption of large language models (LLMs) in undergraduate medical education, with medical students using it to support their learning. This raises concerns particularly around the accuracy of LLM-generated information students are learning. Retrieval-augmented generation (RAG), which grounds a LLM in curated materials, may be a strategy to improve their accuracy.</p>\n                </sec>\n                <sec>\n                  <title>OBJECTIVE</title>\n                  <p>This study investigates if grounding LLM outputs in verifiable sources using RAG impacts trust and perceived usability amongst medical students.</p>\n                </sec>\n                <sec>\n                  <title>METHODS</title>\n                  <p>In a four-month qualitative study, second-year medical students at Bristol Medical School used a RAG-enabled LLM (NotebookLM) to help them learn course content. Following this, their perspectives were explored using a focus group and survey was. Qualitative data was analysed using thematic analysis and was supplemented by Likert scale data.</p>\n                </sec>\n                <sec>\n                  <title>RESULTS</title>\n                  <p>RAG-based LLMs were perceived as more reliable than standard LLM responses mainly due to the transparency of and control over information sources. The system functioned as an accessible, on-demand learning resource, improving efficiency and supporting self-directed study. Students continued to use strategies to cross check generated information. They demonstrated some awareness of ethical concerns, mostly around the environmental impact of LLMs and data privacy.</p>\n                </sec>\n                <sec>\n                  <title>CONCLUSIONS</title>\n                  <p>These findings suggest that RAG may enhance students’ trust in LLM outputs while maintaining their benefit as a flexible ‘study partner’. It highlights RAG as a strategy that educators can use to support students who use LLMs in the context of increasing. However, the impact of RAG-based LLMs over a longer period and on learning outcomes requires further evaluation.</p>\n                </sec>",
-        "DOI": "10.2196/preprints.106157",
-        "type": "posted-content",
-        "created": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              6
-            ]
-          ],
-          "date-time": "2026-07-06T03:55:08Z",
-          "timestamp": 1783310108000
-        },
-        "source": "Crossref",
-        "is-referenced-by-count": 0,
-        "title": [
-          "Does retrieval-augmented generation impact medical students’ perceptions of large language models? (Preprint)"
-        ],
-        "prefix": "10.2196",
-        "author": [
-          {
-            "ORCID": "https://orcid.org/0009-0008-3513-3029",
-            "authenticated-orcid": false,
-            "given": "Rohin",
-            "family": "Athavale",
-            "sequence": "first",
-            "affiliation": [],
-            "role": [
-              {
-                "vocabulary": "crossref",
-                "role": "author"
-              }
-            ]
-          },
-          {
-            "ORCID": "https://orcid.org/0009-0000-8683-3107",
-            "authenticated-orcid": false,
-            "given": "Alexander",
-            "family": "Cresswell",
-            "sequence": "additional",
-            "affiliation": [],
-            "role": [
-              {
-                "vocabulary": "crossref",
-                "role": "author"
-              }
-            ]
-          },
-          {
-            "ORCID": "https://orcid.org/0009-0001-4033-6380",
-            "authenticated-orcid": false,
-            "given": "Alice",
-            "family": "Huffman",
-            "sequence": "additional",
-            "affiliation": [],
-            "role": [
-              {
-                "vocabulary": "crossref",
-                "role": "author"
-              }
-            ]
-          }
-        ],
-        "member": "1010",
-        "reference": [
-          {
-            "key": "ref1",
-            "doi-asserted-by": "publisher",
-            "DOI": "10.52783/jier.v6i1.4539"
-          }
-        ],
-        "deposited": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              6
-            ]
-          ],
-          "date-time": "2026-07-06T03:55:08Z",
-          "timestamp": 1783310108000
-        },
-        "score": 35.513035,
-        "resource": {
-          "primary": {
-            "URL": "http://preprints.jmir.org/preprint/106157"
-          }
-        },
-        "issued": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              3
-            ]
-          ]
-        },
-        "references-count": 1,
-        "URL": "https://doi.org/10.2196/preprints.106157",
-        "published": {
-          "date-parts": [
-            [
-              2026,
-              7,
-              3
-            ]
-          ]
-        },
-        "subtype": "preprint"
       },
       {
         "indexed": {
@@ -1728,7 +1588,7 @@
           "date-time": "2026-07-02T10:56:27Z",
           "timestamp": 1782989787000
         },
-        "score": 35.504368,
+        "score": 35.504913,
         "resource": {
           "primary": {
             "URL": "https://www.mdpi.com/2075-5309/16/13/2637"
@@ -1777,6 +1637,146 @@
             ]
           ]
         }
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              6
+            ]
+          ],
+          "date-time": "2026-07-06T04:15:50Z",
+          "timestamp": 1783311350461,
+          "version": "3.54.6"
+        },
+        "posted": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              3
+            ]
+          ]
+        },
+        "group-title": "JMIR Formative Research",
+        "reference-count": 1,
+        "publisher": "JMIR Publications Inc.",
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "abstract": "<sec>\n                  <title>BACKGROUND</title>\n                  <p>There is evidence of rapid adoption of large language models (LLMs) in undergraduate medical education, with medical students using it to support their learning. This raises concerns particularly around the accuracy of LLM-generated information students are learning. Retrieval-augmented generation (RAG), which grounds a LLM in curated materials, may be a strategy to improve their accuracy.</p>\n                </sec>\n                <sec>\n                  <title>OBJECTIVE</title>\n                  <p>This study investigates if grounding LLM outputs in verifiable sources using RAG impacts trust and perceived usability amongst medical students.</p>\n                </sec>\n                <sec>\n                  <title>METHODS</title>\n                  <p>In a four-month qualitative study, second-year medical students at Bristol Medical School used a RAG-enabled LLM (NotebookLM) to help them learn course content. Following this, their perspectives were explored using a focus group and survey was. Qualitative data was analysed using thematic analysis and was supplemented by Likert scale data.</p>\n                </sec>\n                <sec>\n                  <title>RESULTS</title>\n                  <p>RAG-based LLMs were perceived as more reliable than standard LLM responses mainly due to the transparency of and control over information sources. The system functioned as an accessible, on-demand learning resource, improving efficiency and supporting self-directed study. Students continued to use strategies to cross check generated information. They demonstrated some awareness of ethical concerns, mostly around the environmental impact of LLMs and data privacy.</p>\n                </sec>\n                <sec>\n                  <title>CONCLUSIONS</title>\n                  <p>These findings suggest that RAG may enhance students’ trust in LLM outputs while maintaining their benefit as a flexible ‘study partner’. It highlights RAG as a strategy that educators can use to support students who use LLMs in the context of increasing. However, the impact of RAG-based LLMs over a longer period and on learning outcomes requires further evaluation.</p>\n                </sec>",
+        "DOI": "10.2196/preprints.106157",
+        "type": "posted-content",
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              6
+            ]
+          ],
+          "date-time": "2026-07-06T03:55:08Z",
+          "timestamp": 1783310108000
+        },
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "Does retrieval-augmented generation impact medical students’ perceptions of large language models? (Preprint)"
+        ],
+        "prefix": "10.2196",
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0009-0008-3513-3029",
+            "authenticated-orcid": false,
+            "given": "Rohin",
+            "family": "Athavale",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0000-8683-3107",
+            "authenticated-orcid": false,
+            "given": "Alexander",
+            "family": "Cresswell",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0009-0001-4033-6380",
+            "authenticated-orcid": false,
+            "given": "Alice",
+            "family": "Huffman",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "1010",
+        "reference": [
+          {
+            "key": "ref1",
+            "doi-asserted-by": "publisher",
+            "DOI": "10.52783/jier.v6i1.4539"
+          }
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              6
+            ]
+          ],
+          "date-time": "2026-07-06T03:55:08Z",
+          "timestamp": 1783310108000
+        },
+        "score": 35.50356,
+        "resource": {
+          "primary": {
+            "URL": "http://preprints.jmir.org/preprint/106157"
+          }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              3
+            ]
+          ]
+        },
+        "references-count": 1,
+        "URL": "https://doi.org/10.2196/preprints.106157",
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              7,
+              3
+            ]
+          ]
+        },
+        "subtype": "preprint"
       },
       {
         "indexed": {
@@ -2144,7 +2144,7 @@
           "date-time": "2026-08-25T08:39:01Z",
           "timestamp": 1787647141000
         },
-        "score": 35.195755,
+        "score": 35.168667,
         "resource": {
           "primary": {
             "URL": "https://www.mdpi.com/2673-9585/6/3/22"
@@ -2319,7 +2319,7 @@
           "date-time": "2026-09-15T11:49:09Z",
           "timestamp": 1789472949000
         },
-        "score": 35.105057,
+        "score": 35.105114,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10489777/v1"
@@ -2490,7 +2490,7 @@
           "date-time": "2026-06-15T06:08:17Z",
           "timestamp": 1781503697000
         },
-        "score": 34.985504,
+        "score": 35.011566,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10012178/v1"
@@ -2718,7 +2718,7 @@
           "date-time": "2026-09-04T08:34:52Z",
           "timestamp": 1788510892000
         },
-        "score": 34.866913,
+        "score": 34.856567,
         "resource": {
           "primary": {
             "URL": "https://ujae.org.ua/en/intelligent-automation-of-economic-processes-based-on-retrieval-augmented-generation-and-large-language-models/"
@@ -3228,7 +3228,7 @@
           "date-time": "2026-08-05T14:18:01Z",
           "timestamp": 1785939481000
         },
-        "score": 34.758686,
+        "score": 34.759087,
         "resource": {
           "primary": {
             "URL": "https://onepetro.org/SJ/article/doi/10.2118/234689-PA/801839/SafeRAG-A-Large-Language-Model-Based-Multistage"
@@ -3371,7 +3371,7 @@
           "date-time": "2026-08-15T12:19:26Z",
           "timestamp": 1786796366000
         },
-        "score": 34.499435,
+        "score": 34.500034,
         "resource": {
           "primary": {
             "URL": "https://www.ijfmr.com/research-paper.php?id=85777"
@@ -3584,7 +3584,7 @@
           "date-time": "2026-07-04T20:37:12Z",
           "timestamp": 1783197432000
         },
-        "score": 34.44431,
+        "score": 34.443924,
         "resource": {
           "primary": {
             "URL": "https://www.ejournal.ummuba.ac.id/index.php/JUPTIK/article/view/4318"
@@ -3753,7 +3753,7 @@
           "date-time": "2026-07-10T14:51:37Z",
           "timestamp": 1783695097000
         },
-        "score": 34.38137,
+        "score": 34.442093,
         "resource": {
           "primary": {
             "URL": "https://hdl.handle.net/11681/50309"
@@ -4326,7 +4326,7 @@
           "date-time": "2026-07-13T14:44:27Z",
           "timestamp": 1783953867000
         },
-        "score": 34.31367,
+        "score": 34.393936,
         "resource": {
           "primary": {
             "URL": "https://link.springer.com/10.1007/s10278-026-02086-9"
@@ -4583,7 +4583,7 @@
           "date-time": "2026-08-26T06:36:23Z",
           "timestamp": 1787726183000
         },
-        "score": 34.15855,
+        "score": 34.163357,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10423755/v1"
@@ -4610,6 +4610,132 @@
           ]
         },
         "subtype": "preprint"
+      },
+      {
+        "indexed": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              11
+            ]
+          ],
+          "date-time": "2026-08-11T12:41:09Z",
+          "timestamp": 1786452069067,
+          "version": "build-2736575974"
+        },
+        "reference-count": 0,
+        "publisher": "American Scholarly Publishing Group Inc",
+        "issue": "04",
+        "content-domain": {
+          "domain": [],
+          "crossmark-restriction": false
+        },
+        "short-container-title": [
+          "ajdsa"
+        ],
+        "abstract": "<jats:p>This study has examined whether a foundation model architecture, combining large language models with a supply chain knowledge graph and retrieval-augmented generation, can predict supply chain disruptions from unstructured evidence more effectively than the classical machine learning methods that dominate current practice, and it has developed and tested a framework for automated disruption alerting across supplier, logistics, regulatory, and hazard risk domains. The central problem has been that the great majority of the information that signals an impending disruption arrives as unstructured text, in supplier annual reports and financial disclosures, in global news reporting, in tariff and sanctions registers, and in hazard bulletins, whereas classical supply chain risk models require structured tabular features, so that this evidence is either discarded or converted into features by manual analyst reading that cannot scale to a multi-tier network of thousands of suppliers. Guided by five research questions, concerning how the foundation model architecture affects alerting performance, what each architectural component independently contributes, which evidence sources drive which event types through to which alert dispositions, what failure modes the architecture introduces, and whether alert quality transmits architectural capability into risk response performance, the study has proposed a framework comprising five contributing constructs: multi-source signal ingestion and coverage; knowledge graph construction and entity resolution; retrieval-augmented reasoning and evidence grounding; alert precision, calibration and hallucination control; and analyst workflow integration and human verification, with disruption alert quality as the proximal outcome and risk response performance as the distal outcome. A quantitative, cross-sectional design supplemented by a benchmark evaluation and an architectural ablation has been used, and data have been collected from supply chain risk managers, procurement and category leads, data science and machine learning engineers, business continuity and compliance officers, and logistics managers. Out of 364 distributed questionnaires, 289 valid responses have been retained, producing a 79.4% valid response rate. The analysis has included descriptive statistics, reliability and validity testing, correlation analysis, hierarchical multiple regression, relative importance decomposition, bootstrapped mediation analysis, and a benchmark evaluation of alert lead time, precision, recall, evidence attribution, and unsupported-claim rate. The findings have shown that all five constructs were significantly and positively associated with disruption alert quality, that the model was significant, F(5, 283) = 82.85, p &lt; .001, explaining 59.4% of the variance, and that retrieval-augmented reasoning and knowledge graph construction were the strongest predictors. Alert quality in turn predicted risk response performance and partially mediated the relationship between retrieval-augmented reasoning and performance, carrying 64.7% of the total effect. The ablation showed that retrieval and the knowledge graph contribute along different axes, retrieval principally raising evidence attribution and suppressing unsupported claims while the graph principally raising recall of multi-hop tier-n exposure, and that only their combination reached the precision required for alerting without exhaustive human review. The study concludes that the value of foundation models in supply chain risk lies not in their generative fluency but in their capacity to read evidence at scale, and that this capacity is safe to rely upon only when every assertion is grounded in a retrieved and cited source and resolved against an explicit graph of the network.</jats:p>",
+        "DOI": "10.63125/gseh0k17",
+        "type": "journal-article",
+        "created": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              11
+            ]
+          ],
+          "date-time": "2026-08-11T12:20:31Z",
+          "timestamp": 1786450831000
+        },
+        "page": "167-190",
+        "source": "Crossref",
+        "is-referenced-by-count": 0,
+        "title": [
+          "A Foundation Model Architecture for Supply Chain Risk Prediction: Integrating Large Language Models and Retrieval-Augmented Generation for Automated Disruption Alerting"
+        ],
+        "prefix": "10.63125",
+        "volume": "07",
+        "author": [
+          {
+            "given": "Nadia Islam",
+            "family": "Tanha",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "College of Engineering, Industrial Engineering, Lamar University, Beaumont, Texas, USA"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "member": "52477",
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              4,
+              1
+            ]
+          ]
+        },
+        "container-title": [
+          "American Journal of Data Science and Analytics"
+        ],
+        "deposited": {
+          "date-parts": [
+            [
+              2026,
+              8,
+              11
+            ]
+          ],
+          "date-time": "2026-08-11T12:20:32Z",
+          "timestamp": 1786450832000
+        },
+        "score": 34.078884,
+        "resource": {
+          "primary": {
+            "URL": "https://ajdsa-journal.org/index.php/ajdsa/article/view/80"
+          }
+        },
+        "issued": {
+          "date-parts": [
+            [
+              2026,
+              4,
+              1
+            ]
+          ]
+        },
+        "references-count": 0,
+        "journal-issue": {
+          "issue": "04",
+          "published-online": {
+            "date-parts": [
+              [
+                2026,
+                4,
+                1
+              ]
+            ]
+          }
+        },
+        "URL": "https://doi.org/10.63125/gseh0k17",
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              4,
+              1
+            ]
+          ]
+        }
       },
       {
         "indexed": {
@@ -4833,7 +4959,7 @@
           "date-time": "2026-05-09T02:39:59Z",
           "timestamp": 1778294399000
         },
-        "score": 34.1077,
+        "score": 34.068836,
         "resource": {
           "primary": {
             "URL": "https://academic.oup.com/sleep/article/49/Supplement_1/A153/8673444"
@@ -4897,132 +5023,6 @@
             [
               2026,
               5
-            ]
-          ]
-        }
-      },
-      {
-        "indexed": {
-          "date-parts": [
-            [
-              2026,
-              8,
-              11
-            ]
-          ],
-          "date-time": "2026-08-11T12:41:09Z",
-          "timestamp": 1786452069067,
-          "version": "build-2736575974"
-        },
-        "reference-count": 0,
-        "publisher": "American Scholarly Publishing Group Inc",
-        "issue": "04",
-        "content-domain": {
-          "domain": [],
-          "crossmark-restriction": false
-        },
-        "short-container-title": [
-          "ajdsa"
-        ],
-        "abstract": "<jats:p>This study has examined whether a foundation model architecture, combining large language models with a supply chain knowledge graph and retrieval-augmented generation, can predict supply chain disruptions from unstructured evidence more effectively than the classical machine learning methods that dominate current practice, and it has developed and tested a framework for automated disruption alerting across supplier, logistics, regulatory, and hazard risk domains. The central problem has been that the great majority of the information that signals an impending disruption arrives as unstructured text, in supplier annual reports and financial disclosures, in global news reporting, in tariff and sanctions registers, and in hazard bulletins, whereas classical supply chain risk models require structured tabular features, so that this evidence is either discarded or converted into features by manual analyst reading that cannot scale to a multi-tier network of thousands of suppliers. Guided by five research questions, concerning how the foundation model architecture affects alerting performance, what each architectural component independently contributes, which evidence sources drive which event types through to which alert dispositions, what failure modes the architecture introduces, and whether alert quality transmits architectural capability into risk response performance, the study has proposed a framework comprising five contributing constructs: multi-source signal ingestion and coverage; knowledge graph construction and entity resolution; retrieval-augmented reasoning and evidence grounding; alert precision, calibration and hallucination control; and analyst workflow integration and human verification, with disruption alert quality as the proximal outcome and risk response performance as the distal outcome. A quantitative, cross-sectional design supplemented by a benchmark evaluation and an architectural ablation has been used, and data have been collected from supply chain risk managers, procurement and category leads, data science and machine learning engineers, business continuity and compliance officers, and logistics managers. Out of 364 distributed questionnaires, 289 valid responses have been retained, producing a 79.4% valid response rate. The analysis has included descriptive statistics, reliability and validity testing, correlation analysis, hierarchical multiple regression, relative importance decomposition, bootstrapped mediation analysis, and a benchmark evaluation of alert lead time, precision, recall, evidence attribution, and unsupported-claim rate. The findings have shown that all five constructs were significantly and positively associated with disruption alert quality, that the model was significant, F(5, 283) = 82.85, p &lt; .001, explaining 59.4% of the variance, and that retrieval-augmented reasoning and knowledge graph construction were the strongest predictors. Alert quality in turn predicted risk response performance and partially mediated the relationship between retrieval-augmented reasoning and performance, carrying 64.7% of the total effect. The ablation showed that retrieval and the knowledge graph contribute along different axes, retrieval principally raising evidence attribution and suppressing unsupported claims while the graph principally raising recall of multi-hop tier-n exposure, and that only their combination reached the precision required for alerting without exhaustive human review. The study concludes that the value of foundation models in supply chain risk lies not in their generative fluency but in their capacity to read evidence at scale, and that this capacity is safe to rely upon only when every assertion is grounded in a retrieved and cited source and resolved against an explicit graph of the network.</jats:p>",
-        "DOI": "10.63125/gseh0k17",
-        "type": "journal-article",
-        "created": {
-          "date-parts": [
-            [
-              2026,
-              8,
-              11
-            ]
-          ],
-          "date-time": "2026-08-11T12:20:31Z",
-          "timestamp": 1786450831000
-        },
-        "page": "167-190",
-        "source": "Crossref",
-        "is-referenced-by-count": 0,
-        "title": [
-          "A Foundation Model Architecture for Supply Chain Risk Prediction: Integrating Large Language Models and Retrieval-Augmented Generation for Automated Disruption Alerting"
-        ],
-        "prefix": "10.63125",
-        "volume": "07",
-        "author": [
-          {
-            "given": "Nadia Islam",
-            "family": "Tanha",
-            "sequence": "first",
-            "affiliation": [
-              {
-                "name": "College of Engineering, Industrial Engineering, Lamar University, Beaumont, Texas, USA"
-              }
-            ],
-            "role": [
-              {
-                "vocabulary": "crossref",
-                "role": "author"
-              }
-            ]
-          }
-        ],
-        "member": "52477",
-        "published-online": {
-          "date-parts": [
-            [
-              2026,
-              4,
-              1
-            ]
-          ]
-        },
-        "container-title": [
-          "American Journal of Data Science and Analytics"
-        ],
-        "deposited": {
-          "date-parts": [
-            [
-              2026,
-              8,
-              11
-            ]
-          ],
-          "date-time": "2026-08-11T12:20:32Z",
-          "timestamp": 1786450832000
-        },
-        "score": 34.06693,
-        "resource": {
-          "primary": {
-            "URL": "https://ajdsa-journal.org/index.php/ajdsa/article/view/80"
-          }
-        },
-        "issued": {
-          "date-parts": [
-            [
-              2026,
-              4,
-              1
-            ]
-          ]
-        },
-        "references-count": 0,
-        "journal-issue": {
-          "issue": "04",
-          "published-online": {
-            "date-parts": [
-              [
-                2026,
-                4,
-                1
-              ]
-            ]
-          }
-        },
-        "URL": "https://doi.org/10.63125/gseh0k17",
-        "published": {
-          "date-parts": [
-            [
-              2026,
-              4,
-              1
             ]
           ]
         }
@@ -5178,7 +5178,7 @@
           "date-time": "2026-09-02T06:41:33Z",
           "timestamp": 1788331293000
         },
-        "score": 34.058777,
+        "score": 34.02614,
         "resource": {
           "primary": {
             "URL": "https://journal.maranatha.edu/index.php/jutisi/article/view/13099"
@@ -5372,7 +5372,7 @@
           "date-time": "2026-08-11T06:13:06Z",
           "timestamp": 1786428786000
         },
-        "score": 33.904034,
+        "score": 33.88008,
         "resource": {
           "primary": {
             "URL": "https://www.researchsquare.com/article/rs-10178277/v1"
@@ -5526,7 +5526,7 @@
           "date-time": "2026-08-27T00:42:04Z",
           "timestamp": 1787791324000
         },
-        "score": 33.830982,
+        "score": 33.84045,
         "resource": {
           "primary": {
             "URL": "https://www.preprints.org/manuscript/202608.1849/v1"
