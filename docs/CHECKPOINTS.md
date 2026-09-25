@@ -1,29 +1,30 @@
 # CHECKPOINTS: DAY 10 - DATA PIPELINE & DATA OBSERVABILITY
 
-> **Tổng thời lượng thực chiến:** 240 phút (4 giờ)  
-> **Hình thức:** Làm việc theo nhóm (Teamwork)  
-> **Bộ dữ liệu chuẩn:** Crossref Metadata API (hoặc Local Snapshot `data/raw/crossref_response.json`)  
+> **Tổng thời lượng thực chiến:** 240 phút (4 giờ)
+> **Hình thức:** Làm việc theo nhóm (Teamwork)
+> **Bộ dữ liệu chuẩn:** Crossref Metadata API (hoặc Local Snapshot `data/raw/crossref_response.json`)
 > **Mục tiêu cốt lõi:** Xây dựng Data Pipeline hoàn chỉnh cho hệ thống RAG Agent, tích hợp Data Observability (Great Expectations 1.x + Freshness SLA), đo lường mức độ suy giảm khi dữ liệu bị lỗi (Data Corruption) và chứng minh năng lực tự phục hồi (Self-healing / Repair).
 
 ---
 
 ## Bảng Phân Bổ Thời Gian & Mục Tiêu Từng Checkpoint
 
-| Checkpoint | Nội dung trọng tâm | Thời lượng gợi ý | Deliverables (Sản phẩm bàn giao) | Tín hiệu hoàn thành (Self-Verification) |
-| :--- | :--- | :--- | :--- | :--- |
-| **CP0** | Khởi tạo môi trường, cấu hình `.env`, Ingestion raw data | 0 - 30m (30') | Môi trường venv kích hoạt, file `.env` hợp lệ, 2 raw JSON artifacts | Console in `Môi trường sẵn sàng`, tải đủ 24 bài báo |
-| **CP1** | Data Cleaning & Data Observability với Great Expectations 1.x & Freshness | 30m - 65m (35') | `src/ingestion/cleaning.py`, `src/observability/quality.py`, cleaned dataframe & GX suite | Clean dataframe 24 dòng có `text_for_embedding`, GX 1.x `success=True` |
-| **CP2** | Benchmark Test Set & ChromaDB Vector Store Indexing | 65m - 95m (30') | `src/evaluation/testset.py`, ChromaDB collection `papers-baseline` | Sinh bộ test set (10 câu), ChromaDB index 24 docs |
-| **CP3** | Baseline Pipeline End-to-End & Báo Cáo Pha 1 | 95m - 120m (25') | `script/run_phase1.py`, `baseline_metrics.json`, `phase1_report.md` | Phase 1 sinh báo cáo markdown và baseline Hit Rate |
-| **CP4** | Synthetic Data Corruption Suite & Đo Lường Suy Giảm | 120m - 165m (45') | `src/ingestion/corruption.py`, `corruption_log.json`, `corrupted_metrics.json` | Tiêm 6 lỗi dữ liệu, đo lường sự sụt giảm của RAG |
-| **CP5** | Idempotent Repair & Báo Cáo Đối Chiếu 3 Trạng Thái | 165m - 210m (45') | `run_corruption_flow.py`, `corruption_report.md`, `repaired_metrics.json` | Bảng so sánh 3 trạng thái: Baseline vs Corrupted vs Repaired |
-| **CP6** | Live Demo Trên Bảng, Q&A & Nghiệm Thu Nộp Bài | 210m - 240m (30') | Trình diễn luồng phục hồi trực tiếp trên bảng, phản biện Q&A, nộp link LMS | Nhóm bảo vệ thành công trước lớp, 100% commit nhánh `main`, nộp link LMS |
+| Checkpoint    | Nội dung trọng tâm                                                      | Thời lượng gợi ý | Deliverables (Sản phẩm bàn giao)                                                           | Tín hiệu hoàn thành (Self-Verification)                                         |
+| :------------ | :------------------------------------------------------------------------- | :-------------------- | :-------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+| **CP0** | Khởi tạo môi trường, cấu hình`.env`, Ingestion raw data           | 0 - 30m (30')         | Môi trường venv kích hoạt, file`.env` hợp lệ, 2 raw JSON artifacts                   | Console in`Môi trường sẵn sàng`, tải đủ 24 bài báo                      |
+| **CP1** | Data Cleaning & Data Observability với Great Expectations 1.x & Freshness | 30m - 65m (35')       | `src/ingestion/cleaning.py`, `src/observability/quality.py`, cleaned dataframe & GX suite | Clean dataframe 24 dòng có`text_for_embedding`, GX 1.x `success=True`         |
+| **CP2** | Benchmark Test Set & ChromaDB Vector Store Indexing                        | 65m - 95m (30')       | `src/evaluation/testset.py`, ChromaDB collection `papers-baseline`                        | Sinh bộ test set (10 câu), ChromaDB index 24 docs                                 |
+| **CP3** | Baseline Pipeline End-to-End & Báo Cáo Pha 1                             | 95m - 120m (25')      | `script/run_phase1.py`, `baseline_metrics.json`, `phase1_report.md`                     | Phase 1 sinh báo cáo markdown và baseline Hit Rate                               |
+| **CP4** | Synthetic Data Corruption Suite & Đo Lường Suy Giảm                    | 120m - 165m (45')     | `src/ingestion/corruption.py`, `corruption_log.json`, `corrupted_metrics.json`          | Tiêm 6 lỗi dữ liệu, đo lường sự sụt giảm của RAG                         |
+| **CP5** | Idempotent Repair & Báo Cáo Đối Chiếu 3 Trạng Thái                  | 165m - 210m (45')     | `run_corruption_flow.py`, `corruption_report.md`, `repaired_metrics.json`               | Bảng so sánh 3 trạng thái: Baseline vs Corrupted vs Repaired                    |
+| **CP6** | Live Demo Trên Bảng, Q&A & Nghiệm Thu Nộp Bài                         | 210m - 240m (30')     | Trình diễn luồng phục hồi trực tiếp trên bảng, phản biện Q&A, nộp link LMS        | Nhóm bảo vệ thành công trước lớp, 100% commit nhánh`main`, nộp link LMS |
 
 ---
 
 ## Chi Tiết Yêu Cầu Từng Checkpoint
 
 ### Checkpoint 0: Khởi tạo Môi trường & Ingestion Raw Data (30 phút)
+
 - **Mục tiêu:** Thiết lập workspace Python chuẩn hóa (Python 3.11 - 3.13), cài đặt đầy đủ dependencies qua `uv` hoặc `pip`, thu thập dữ liệu metadata qua Crossref API và bảo toàn dữ liệu gốc.
 - **Nhiệm vụ:**
   1. Tạo và kích hoạt virtual environment (`.venv`), cài đặt dependencies từ `pyproject.toml` hoặc `requirements.txt`.
@@ -35,11 +36,13 @@
   python -c "import chromadb, great_expectations, sentence_transformers; print('Môi trường sẵn sàng')"
   python -c "from core.config import load_settings; from ingestion.crossref import fetch_source_records; s=load_settings(); r=fetch_source_records(s); print(f'Tín hiệu hoàn thành: Đã tải {len(r)} bài báo')"
   ```
+
   Console in ra đúng chuỗi `Môi trường sẵn sàng` và `Tín hiệu hoàn thành: Đã tải 24 bài báo`.
 
 ---
 
 ### Checkpoint 1: Data Cleaning & Data Observability với Great Expectations 1.x (35 phút)
+
 - **Mục tiêu:** Tiền xử lý, chuẩn hóa `text_for_embedding`, tính `age_days` và thiết lập chốt kiểm dịch chất lượng tự động theo chuẩn GX 1.x cùng Freshness SLA.
 - **Nhiệm vụ:**
   1. Hoàn thiện hàm `build_clean_dataframe` trong `src/ingestion/cleaning.py`: khử trùng lặp theo `paper_id`, tính `age_days = (run_date - published).days`, ghép `text_for_embedding`.
@@ -58,11 +61,13 @@
   python -c "from datetime import datetime, timezone; from core.config import load_settings; from ingestion.crossref import load_raw_records; from ingestion.cleaning import build_clean_dataframe; s=load_settings(); df=build_clean_dataframe(load_raw_records(s.paths.raw_records_json), datetime.now(timezone.utc)); print(f'Tín hiệu hoàn thành: Clean thành công {len(df)} dòng')"
   python -c "from core.config import load_settings; from observability.quality import run_data_quality_checks; import pandas as pd; s=load_settings(); df=pd.read_json(s.paths.clean_json); res=run_data_quality_checks(df, s, 'test'); print(f'Tín hiệu hoàn thành: Quality check status = {res[\"success\"]}')"
   ```
+
   Console in ra `Tín hiệu hoàn thành: Clean thành công 24 dòng` và `Tín hiệu hoàn thành: Quality check status = True`.
 
 ---
 
 ### Checkpoint 2: Benchmark Test Set & ChromaDB Vector Store Indexing (30 phút)
+
 - **Mục tiêu:** Xây dựng bộ test đánh giá chuẩn hóa gồm các câu hỏi qua 4 nhóm nghiệp vụ và đánh chỉ mục vector trên ChromaDB.
 - **Nhiệm vụ:**
   1. Viết logic sinh câu hỏi đánh giá trong `src/evaluation/testset.py` phủ đủ 4 nhóm: `summary`, `authors`, `date`, `categories`.
@@ -72,11 +77,13 @@
   ```bash
   python -c "from core.config import load_settings; from evaluation.testset import build_test_set; import pandas as pd; s=load_settings(); df=pd.read_json(s.paths.clean_json); ts=build_test_set(df, s.paths.eval_testset); print(f'Tín hiệu hoàn thành: Sinh được {len(ts)} câu hỏi test')"
   ```
+
   Console in ra `Tín hiệu hoàn thành: Sinh được 10 câu hỏi test`.
 
 ---
 
 ### Checkpoint 3: Baseline Pipeline End-to-End & Báo Cáo Pha 1 (25 phút)
+
 - **Mục tiêu:** Chạy end-to-end chu trình dữ liệu sạch, kiểm thử RAG Agent và đo lường chỉ số nền (Baseline Benchmarks).
 - **Nhiệm vụ:**
   1. Hoàn thiện liên kết trong `src/pipelines/phase1.py` và chạy kịch bản `python script/run_phase1.py`.
@@ -92,6 +99,7 @@
 ---
 
 ### Checkpoint 4: Synthetic Data Corruption & Đo Lường Suy Giảm (45 phút)
+
 - **Mục tiêu:** Giả lập sự cố dữ liệu bẩn trong sản xuất bằng cách tiêm 6 kịch bản lỗi, chứng minh Data Quality Gate báo động và Agent suy giảm chất lượng (Silent Failure).
 - **Nhiệm vụ:**
   1. Triển khai 6 kịch bản làm bẩn dữ liệu trong `src/ingestion/corruption.py`:
@@ -109,6 +117,7 @@
 ---
 
 ### Checkpoint 5: Idempotent Repair & Báo Cáo Đối Chiếu 3 Trạng Thái (45 phút)
+
 - **Mục tiêu:** Tự động kích hoạt cơ chế phục hồi dữ liệu an toàn (Idempotent Repair) từ nguồn Raw đáng tin cậy, lập báo cáo so sánh định lượng 3 trạng thái.
 - **Nhiệm vụ:**
   1. Thực thi luồng khôi phục dữ liệu sạch từ bản lưu trữ thô ban đầu `data/raw/crossref_records.json` (hoặc `crossref_response.json`).
@@ -123,6 +132,7 @@
 ---
 
 ### Checkpoint 6: Live Demo Trên Bảng, Q&A & Nghiệm Thu Nộp Bài (30 phút)
+
 - **Mục tiêu:** Các nhóm lần lượt lên bảng trình diễn (Live Demo) quy trình phát hiện dữ liệu bẩn và cơ chế tự phục hồi trước Giảng viên & cả lớp, phản biện Q&A, đối chiếu checklist và hoàn tất nộp bài.
 - **Nhiệm vụ:**
   1. Chuẩn bị terminal và artifacts: sẵn sàng chạy demo trực tiếp `run_phase1.py` và `run_corruption_flow.py`.
