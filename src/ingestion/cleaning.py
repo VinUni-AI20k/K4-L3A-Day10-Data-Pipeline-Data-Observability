@@ -4,8 +4,8 @@ from datetime import datetime
 
 import pandas as pd
 
+from core.utils import normalize_whitespace
 from ingestion.crossref import PaperRecord
-
 
 def build_clean_dataframe(
     records: list[PaperRecord],
