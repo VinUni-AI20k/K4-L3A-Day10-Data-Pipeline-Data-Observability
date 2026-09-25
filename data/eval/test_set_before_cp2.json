@@ -1,0 +1,1098 @@
+[
+  {
+    "id": "summary-7db7c44750e88b60",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study'?",
+    "ground_truth": "Abstract Diagnosing jawbone lesions in oral and maxillofacial radiology remains challenging due to overlapping radiological features and the need for integrated clinical reasoning.",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9"
+    ]
+  },
+  {
+    "id": "authors-7db7c44750e88b60",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study'?",
+    "ground_truth": "Soroush Baseri Saadi, Jonas Ver Berne, Rocharles Cavalcante Fontenele, Peter Claes, Reinhilde Jacobs",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9"
+    ]
+  },
+  {
+    "id": "date-7db7c44750e88b60",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-07",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9"
+    ]
+  },
+  {
+    "id": "category-7db7c44750e88b60",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Medicine",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Diagnostic"
+  },
+  {
+    "id": "summary-67dfea01126a14c9",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine'?",
+    "ground_truth": "Abstract Introduction While Large Language Models (LLMs) offer generative capabilities, generic models often lack domain-specific grounding, leading to hallucinations in high-stakes contexts.",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ]
+  },
+  {
+    "id": "authors-67dfea01126a14c9",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine'?",
+    "ground_truth": "Joseph Cheung, Pengze Li, Anshum Patel, SaiKrishna Vallamchetla, Het Contractor, Hayden Heninger, Cui Tao",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ]
+  },
+  {
+    "id": "date-67dfea01126a14c9",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-05",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ]
+  },
+  {
+    "id": "category-67dfea01126a14c9",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Medicine",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Medicine"
+  },
+  {
+    "id": "summary-32b5e2145e02f2bf",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation'?",
+    "ground_truth": "This study investigates a method that integrates retrieval-augmented mechanisms into large language model agents for scientific literature review generation.",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202604.0339.v1"
+    ]
+  },
+  {
+    "id": "authors-32b5e2145e02f2bf",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation'?",
+    "ground_truth": "Ruotong Wang, Nyutian Long, Shunqi Liu, Yuxi Wang, Zhen Qi, Huajun Zhang",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202604.0339.v1"
+    ]
+  },
+  {
+    "id": "date-32b5e2145e02f2bf",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-04",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202604.0339.v1"
+    ]
+  },
+  {
+    "id": "category-32b5e2145e02f2bf",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "The source does not provide enough information to identify the field.",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202604.0339.v1"
+    ],
+    "category_source": "unavailable",
+    "category_evidence": ""
+  },
+  {
+    "id": "summary-da5f8ee28f581277",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'An Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization'?",
+    "ground_truth": "Selecting an encoding configuration for Hyperdimensional Computing (HDC) determines whether a model fits the memory budget of an Internet of Things (IoT) device, yet the knowledge needed to make that choice is dispersed across thousands of papers in a form no optimizer can query.",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202608.1849.v1"
+    ]
+  },
+  {
+    "id": "authors-da5f8ee28f581277",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'An Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization'?",
+    "ground_truth": "Fardin Jalil Piran, Rajiv Malhotra, Farhad Imani",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202608.1849.v1"
+    ]
+  },
+  {
+    "id": "date-da5f8ee28f581277",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'An Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-08",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202608.1849.v1"
+    ]
+  },
+  {
+    "id": "category-da5f8ee28f581277",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'An Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Machine learning",
+    "ground_truth_doc_ids": [
+      "10.20944/preprints202608.1849.v1"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Encoding Optimization"
+  },
+  {
+    "id": "summary-1b2adb4ae67622b3",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Microsoft Azure artificial intelligence / machine learning hackathon for development of retrieval-augmented generation large language model'?",
+    "ground_truth": "The US Army Corps of Engineers (USACE) Civil Works (CW) research and development (R&D) mission is to address challenging environmental sustainability problems through innovative science and engineering, which helps to ensure a safer, more prosperous, and more resilient nation.",
+    "ground_truth_doc_ids": [
+      "10.21079/11681/50309"
+    ]
+  },
+  {
+    "id": "authors-1b2adb4ae67622b3",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Microsoft Azure artificial intelligence / machine learning hackathon for development of retrieval-augmented generation large language model'?",
+    "ground_truth": "Janet L. Autrey, Lacey S. Duckworth, Ashly N. Horner, Thomas Sigler, Victoria D. Moore",
+    "ground_truth_doc_ids": [
+      "10.21079/11681/50309"
+    ]
+  },
+  {
+    "id": "date-1b2adb4ae67622b3",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Microsoft Azure artificial intelligence / machine learning hackathon for development of retrieval-augmented generation large language model' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-07",
+    "ground_truth_doc_ids": [
+      "10.21079/11681/50309"
+    ]
+  },
+  {
+    "id": "category-1b2adb4ae67622b3",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Microsoft Azure artificial intelligence / machine learning hackathon for development of retrieval-augmented generation large language model' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "The source does not provide enough information to identify the field.",
+    "ground_truth_doc_ids": [
+      "10.21079/11681/50309"
+    ],
+    "category_source": "unavailable",
+    "category_evidence": ""
+  },
+  {
+    "id": "summary-fca448a92c21793d",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'SafeRAG: A Large-Language-Model-Based Multistage Retrieval-Augmented Framework for Oil and Gas Safety Report Generation'?",
+    "ground_truth": "Summary In high-risk industrial settings, leveraging large language models (LLMs) for automated accident analysis and generating safety reports has emerged as an efficient workflow.",
+    "ground_truth_doc_ids": [
+      "10.2118/234689-pa"
+    ]
+  },
+  {
+    "id": "authors-fca448a92c21793d",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'SafeRAG: A Large-Language-Model-Based Multistage Retrieval-Augmented Framework for Oil and Gas Safety Report Generation'?",
+    "ground_truth": "Qianwen Cao, Chiyu Zhang, Junxiong Ning, Gongru Li",
+    "ground_truth_doc_ids": [
+      "10.2118/234689-pa"
+    ]
+  },
+  {
+    "id": "date-fca448a92c21793d",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'SafeRAG: A Large-Language-Model-Based Multistage Retrieval-Augmented Framework for Oil and Gas Safety Report Generation' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-08",
+    "ground_truth_doc_ids": [
+      "10.2118/234689-pa"
+    ]
+  },
+  {
+    "id": "category-fca448a92c21793d",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'SafeRAG: A Large-Language-Model-Based Multistage Retrieval-Augmented Framework for Oil and Gas Safety Report Generation' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Energy industry safety",
+    "ground_truth_doc_ids": [
+      "10.2118/234689-pa"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Oil and Gas"
+  },
+  {
+    "id": "summary-0a5198b74a5a8d83",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Retrieval-Augmented Generation (RAG), Generative AI, and Agentic AI Governance: An Integrated Enterprise Governance Prioritization Architecture'?",
+    "ground_truth": "Abstract Enterprise adoption of artificial intelligence (AI) systems, including Generative AI (GenAI), Retrieval-Augmented Generation (RAG), and agentic AI, is advancing faster than many organizations can adapt their governance, audit, cybersecurity, and executive oversight practices.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10012178/v1"
+    ]
+  },
+  {
+    "id": "authors-0a5198b74a5a8d83",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Retrieval-Augmented Generation (RAG), Generative AI, and Agentic AI Governance: An Integrated Enterprise Governance Prioritization Architecture'?",
+    "ground_truth": "Audrey Rah, Sven Hahues",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10012178/v1"
+    ]
+  },
+  {
+    "id": "date-0a5198b74a5a8d83",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Retrieval-Augmented Generation (RAG), Generative AI, and Agentic AI Governance: An Integrated Enterprise Governance Prioritization Architecture' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-06",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10012178/v1"
+    ]
+  },
+  {
+    "id": "category-0a5198b74a5a8d83",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Retrieval-Augmented Generation (RAG), Generative AI, and Agentic AI Governance: An Integrated Enterprise Governance Prioritization Architecture' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "AI governance",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10012178/v1"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Governance"
+  },
+  {
+    "id": "summary-b00e9f759313ca32",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Retrieval-Augmented Large-Language-Model-Based Time-Series Forecasting for Cross-Market Equity Analysis'?",
+    "ground_truth": "Abstract Time-series foundation models and retrieval-based augmentation have recently emerged as relevant tools for financial forecasting, yet it remains unclear when explicit historical retrieval helps a pre-trained probabilistic forecaster in noisy equity settings.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10178277/v1"
+    ]
+  },
+  {
+    "id": "authors-b00e9f759313ca32",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Retrieval-Augmented Large-Language-Model-Based Time-Series Forecasting for Cross-Market Equity Analysis'?",
+    "ground_truth": "Novanto Yudistira, Yanuar Putra Kharisma Adhiyasa",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10178277/v1"
+    ]
+  },
+  {
+    "id": "date-b00e9f759313ca32",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Retrieval-Augmented Large-Language-Model-Based Time-Series Forecasting for Cross-Market Equity Analysis' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-07",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10178277/v1"
+    ]
+  },
+  {
+    "id": "category-b00e9f759313ca32",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Retrieval-Augmented Large-Language-Model-Based Time-Series Forecasting for Cross-Market Equity Analysis' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Finance and economics",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10178277/v1"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Equity"
+  },
+  {
+    "id": "summary-44b878bc037faa46",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Agentic Retrieval-Augmented Generation for Verifiable Regulatory Compliance in Urban Cyber-Physical Systems'?",
+    "ground_truth": "Abstract Urban Cyber-Physical Systems (UCPS) support sustainable cities through the integration of Internet of Things (IoT), Artificial Intelligence (AI), and digi-tal infrastructures for environmental monitoring, urban planning, and resilient public services.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10349437/v1"
+    ]
+  },
+  {
+    "id": "authors-44b878bc037faa46",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Agentic Retrieval-Augmented Generation for Verifiable Regulatory Compliance in Urban Cyber-Physical Systems'?",
+    "ground_truth": "Sathiska Priyad, Gayathri Karthick",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10349437/v1"
+    ]
+  },
+  {
+    "id": "date-44b878bc037faa46",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Agentic Retrieval-Augmented Generation for Verifiable Regulatory Compliance in Urban Cyber-Physical Systems' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-09",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10349437/v1"
+    ]
+  },
+  {
+    "id": "category-44b878bc037faa46",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Agentic Retrieval-Augmented Generation for Verifiable Regulatory Compliance in Urban Cyber-Physical Systems' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "The source does not provide enough information to identify the field.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10349437/v1"
+    ],
+    "category_source": "unavailable",
+    "category_evidence": ""
+  },
+  {
+    "id": "summary-50a9be2f2f980dbd",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study'?",
+    "ground_truth": "Abstract Substation civil engineering preliminary design documents must integrate project-specific conditions, current regulatory requirements, typical design practices, and historical engineering experience while maintaining consistency across architectural, structural, general-layout, foundation, road, drainage, and technical-indicator sections.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10423755/v1"
+    ]
+  },
+  {
+    "id": "authors-50a9be2f2f980dbd",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study'?",
+    "ground_truth": "Yizhang Huang, Xinhui Zhang",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10423755/v1"
+    ]
+  },
+  {
+    "id": "date-50a9be2f2f980dbd",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-08",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10423755/v1"
+    ]
+  },
+  {
+    "id": "category-50a9be2f2f980dbd",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Civil engineering",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10423755/v1"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Substation"
+  },
+  {
+    "id": "summary-d9e5af82e7e2e558",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation'?",
+    "ground_truth": "Abstract Increasingly, digital forensic investigations require a quick, reliable, and privacy-preserving assessment of case materials before formal forensic examination.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10489777/v1"
+    ]
+  },
+  {
+    "id": "authors-d9e5af82e7e2e558",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation'?",
+    "ground_truth": "Divya K",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10489777/v1"
+    ]
+  },
+  {
+    "id": "date-d9e5af82e7e2e558",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-09",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10489777/v1"
+    ]
+  },
+  {
+    "id": "category-d9e5af82e7e2e558",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Digital forensics",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10489777/v1"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Digital Investigation"
+  },
+  {
+    "id": "summary-f33de200bb9312d4",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Does retrieval-augmented generation impact medical students\u2019 perceptions of large language models? (Preprint)'?",
+    "ground_truth": "BACKGROUND There is evidence of rapid adoption of large language models (LLMs) in undergraduate medical education, with medical students using it to support their learning.",
+    "ground_truth_doc_ids": [
+      "10.2196/preprints.106157"
+    ]
+  },
+  {
+    "id": "authors-f33de200bb9312d4",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Does retrieval-augmented generation impact medical students\u2019 perceptions of large language models? (Preprint)'?",
+    "ground_truth": "Rohin Athavale, Alexander Cresswell, Alice Huffman",
+    "ground_truth_doc_ids": [
+      "10.2196/preprints.106157"
+    ]
+  },
+  {
+    "id": "date-f33de200bb9312d4",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Does retrieval-augmented generation impact medical students\u2019 perceptions of large language models? (Preprint)' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-07",
+    "ground_truth_doc_ids": [
+      "10.2196/preprints.106157"
+    ]
+  },
+  {
+    "id": "category-f33de200bb9312d4",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Does retrieval-augmented generation impact medical students\u2019 perceptions of large language models? (Preprint)' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Medicine",
+    "ground_truth_doc_ids": [
+      "10.2196/preprints.106157"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "medical"
+  },
+  {
+    "id": "summary-cb60094d4e03495e",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large Language Model'?",
+    "ground_truth": "Keterbukaan akses informasi publik diatur dalam Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik sebagai elemen utama untuk mewujudkan transparansi dan tata kelola pemerintahan yang baik.",
+    "ground_truth_doc_ids": [
+      "10.28932/jutisi.v12i2.13099"
+    ]
+  },
+  {
+    "id": "authors-cb60094d4e03495e",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large Language Model'?",
+    "ground_truth": "Muhamad Komarudin, Chelly Sabrina, Yessy Mulyani, Puput Budi Wintoro",
+    "ground_truth_doc_ids": [
+      "10.28932/jutisi.v12i2.13099"
+    ]
+  },
+  {
+    "id": "date-cb60094d4e03495e",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large Language Model' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-08",
+    "ground_truth_doc_ids": [
+      "10.28932/jutisi.v12i2.13099"
+    ]
+  },
+  {
+    "id": "category-cb60094d4e03495e",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large Language Model' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "The source does not provide enough information to identify the field.",
+    "ground_truth_doc_ids": [
+      "10.28932/jutisi.v12i2.13099"
+    ],
+    "category_source": "unavailable",
+    "category_evidence": ""
+  },
+  {
+    "id": "summary-4d7d0d79708656dc",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models'?",
+    "ground_truth": "Designers, engineers, and building officials face increasing pressure to accelerate and improve the accuracy of design review for buildings and infrastructure.",
+    "ground_truth_doc_ids": [
+      "10.3390/buildings16132637"
+    ]
+  },
+  {
+    "id": "authors-4d7d0d79708656dc",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models'?",
+    "ground_truth": "Nawari O. Nawari, Oluwatoyin O. Lawal",
+    "ground_truth_doc_ids": [
+      "10.3390/buildings16132637"
+    ]
+  },
+  {
+    "id": "date-4d7d0d79708656dc",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-07",
+    "ground_truth_doc_ids": [
+      "10.3390/buildings16132637"
+    ]
+  },
+  {
+    "id": "category-4d7d0d79708656dc",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Civil engineering",
+    "ground_truth_doc_ids": [
+      "10.3390/buildings16132637"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Roof Design"
+  },
+  {
+    "id": "summary-5996d2f04f198b27",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection'?",
+    "ground_truth": "Large Language Models (LLMs) have been rapidly evolving lately, resulting in the need for strong, explainable models to detect the difference between human-generated and machine-generated articles.",
+    "ground_truth_doc_ids": [
+      "10.3390/knowledge6030022"
+    ]
+  },
+  {
+    "id": "authors-5996d2f04f198b27",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection'?",
+    "ground_truth": "Ibtasam Ur Rehman, Muhammad Islam, Muhammad Yousaf Rehman, Basharat Hussain",
+    "ground_truth_doc_ids": [
+      "10.3390/knowledge6030022"
+    ]
+  },
+  {
+    "id": "date-5996d2f04f198b27",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-08",
+    "ground_truth_doc_ids": [
+      "10.3390/knowledge6030022"
+    ]
+  },
+  {
+    "id": "category-5996d2f04f198b27",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Natural language processing",
+    "ground_truth_doc_ids": [
+      "10.3390/knowledge6030022"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Text Detection"
+  },
+  {
+    "id": "summary-440b1338764c2c54",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Intelligent automation of economic processes based on retrieval-augmented generation and large language models'?",
+    "ground_truth": "The article is devoted to the theoretical and methodological substantiation of the concept of intelligent automation of economic processes based on the integration of Retrieval-Augmented Generation (RAG), Large Language Models (LLM), Prompt Engineering, and Automatic Engineering technologies.",
+    "ground_truth_doc_ids": [
+      "10.36887/2415-8453-2026-3-2"
+    ]
+  },
+  {
+    "id": "authors-440b1338764c2c54",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Intelligent automation of economic processes based on retrieval-augmented generation and large language models'?",
+    "ground_truth": "Serhii Arefiev, Serhii Hildi",
+    "ground_truth_doc_ids": [
+      "10.36887/2415-8453-2026-3-2"
+    ]
+  },
+  {
+    "id": "date-440b1338764c2c54",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Intelligent automation of economic processes based on retrieval-augmented generation and large language models' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-09",
+    "ground_truth_doc_ids": [
+      "10.36887/2415-8453-2026-3-2"
+    ]
+  },
+  {
+    "id": "category-440b1338764c2c54",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Intelligent automation of economic processes based on retrieval-augmented generation and large language models' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Finance and economics",
+    "ground_truth_doc_ids": [
+      "10.36887/2415-8453-2026-3-2"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "economic"
+  },
+  {
+    "id": "summary-92dbe6bd2b3b011f",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'A Framework for Adaptive Knowledge-Augmented Mizo Large Language Models Using Retrieval-Augmented Generation and Continual Learning'?",
+    "ground_truth": "The deployment of Large Language Models (LLMs) for low-resource languages is challenging due to the lack of linguistic resources, sparse digital content and the absence of structured knowledge bases.",
+    "ground_truth_doc_ids": [
+      "10.36948/ijfmr.2026.v08i04.85777"
+    ]
+  },
+  {
+    "id": "authors-92dbe6bd2b3b011f",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'A Framework for Adaptive Knowledge-Augmented Mizo Large Language Models Using Retrieval-Augmented Generation and Continual Learning'?",
+    "ground_truth": "Vanlalropuia Ralte, Abhisake Sinha -",
+    "ground_truth_doc_ids": [
+      "10.36948/ijfmr.2026.v08i04.85777"
+    ]
+  },
+  {
+    "id": "date-92dbe6bd2b3b011f",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'A Framework for Adaptive Knowledge-Augmented Mizo Large Language Models Using Retrieval-Augmented Generation and Continual Learning' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-08",
+    "ground_truth_doc_ids": [
+      "10.36948/ijfmr.2026.v08i04.85777"
+    ]
+  },
+  {
+    "id": "category-92dbe6bd2b3b011f",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'A Framework for Adaptive Knowledge-Augmented Mizo Large Language Models Using Retrieval-Augmented Generation and Continual Learning' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Natural language processing",
+    "ground_truth_doc_ids": [
+      "10.36948/ijfmr.2026.v08i04.85777"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Mizo"
+  },
+  {
+    "id": "summary-07fe69d48c9317b6",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of '\u0421\u043d\u0438\u0436\u0435\u043d\u0438\u0435 \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation)'?",
+    "ground_truth": "\u0412 \u0441\u0442\u0430\u0442\u044c\u0435 \u043f\u0440\u043e\u0432\u0435\u0434\u0435\u043d\u043e \u0438\u0441\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u043d\u0438\u0435 \u043e\u0441\u043e\u0431\u0435\u043d\u043d\u043e\u0441\u0442\u0435\u0439 \u0441\u043d\u0438\u0436\u0435\u043d\u0438\u044f \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation) \u0432 \u0441\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0445 \u0443\u0441\u043b\u043e\u0432\u0438\u044f\u0445.",
+    "ground_truth_doc_ids": [
+      "10.47576/2949-1894.2026.7.7.023"
+    ]
+  },
+  {
+    "id": "authors-07fe69d48c9317b6",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study '\u0421\u043d\u0438\u0436\u0435\u043d\u0438\u0435 \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation)'?",
+    "ground_truth": "\u0418.\u0412. \u0415\u0440\u043c\u0430\u043a\u043e\u0432, \u0412.\u0412. \u0424\u0438\u043b\u0430\u0442\u043e\u0432",
+    "ground_truth_doc_ids": [
+      "10.47576/2949-1894.2026.7.7.023"
+    ]
+  },
+  {
+    "id": "date-07fe69d48c9317b6",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was '\u0421\u043d\u0438\u0436\u0435\u043d\u0438\u0435 \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation)' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-06",
+    "ground_truth_doc_ids": [
+      "10.47576/2949-1894.2026.7.7.023"
+    ]
+  },
+  {
+    "id": "category-07fe69d48c9317b6",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study '\u0421\u043d\u0438\u0436\u0435\u043d\u0438\u0435 \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation)' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "The source does not provide enough information to identify the field.",
+    "ground_truth_doc_ids": [
+      "10.47576/2949-1894.2026.7.7.023"
+    ],
+    "category_source": "unavailable",
+    "category_evidence": ""
+  },
+  {
+    "id": "summary-64a2fdff98a0b4b8",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Chatbot Hybrid Fatwa MUI Menggunakan Retrieval Augmented Generation dan Large Language Model'?",
+    "ground_truth": "Aksesibilitas dokumen digital Fatwa Majelis Ulama Indonesia (MUI) yang terfragmentasi membuat pencarian informasi kurang efektif.",
+    "ground_truth_doc_ids": [
+      "10.52060/juptik.v4i1.4318"
+    ]
+  },
+  {
+    "id": "authors-64a2fdff98a0b4b8",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Chatbot Hybrid Fatwa MUI Menggunakan Retrieval Augmented Generation dan Large Language Model'?",
+    "ground_truth": "Surya Hidayatullah Firdaus, Nazruddin Safaat H, Yelfi Vitriani, Novriyanto",
+    "ground_truth_doc_ids": [
+      "10.52060/juptik.v4i1.4318"
+    ]
+  },
+  {
+    "id": "date-64a2fdff98a0b4b8",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Chatbot Hybrid Fatwa MUI Menggunakan Retrieval Augmented Generation dan Large Language Model' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-06",
+    "ground_truth_doc_ids": [
+      "10.52060/juptik.v4i1.4318"
+    ]
+  },
+  {
+    "id": "category-64a2fdff98a0b4b8",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Chatbot Hybrid Fatwa MUI Menggunakan Retrieval Augmented Generation dan Large Language Model' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Religious studies",
+    "ground_truth_doc_ids": [
+      "10.52060/juptik.v4i1.4318"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Fatwa"
+  },
+  {
+    "id": "summary-3a56873f40983d69",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model'?",
+    "ground_truth": "Retrieval-augmented generation (RAG) enhances large language models (LLMs) by incorporating external information, but traditional fixed retrieval processes struggle to adapt to complex task requirements.",
+    "ground_truth_doc_ids": [
+      "10.54254/2755-2721/2026.36624"
+    ]
+  },
+  {
+    "id": "authors-3a56873f40983d69",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model'?",
+    "ground_truth": "Zunlong Hong",
+    "ground_truth_doc_ids": [
+      "10.54254/2755-2721/2026.36624"
+    ]
+  },
+  {
+    "id": "date-3a56873f40983d69",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-09",
+    "ground_truth_doc_ids": [
+      "10.54254/2755-2721/2026.36624"
+    ]
+  },
+  {
+    "id": "category-3a56873f40983d69",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Machine learning",
+    "ground_truth_doc_ids": [
+      "10.54254/2755-2721/2026.36624"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Reinforcement Learning"
+  },
+  {
+    "id": "summary-97816c9044e10bc0",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Speculative Retrieval-Augmented Generation for Cost-Efficient Large Language Model Inference'?",
+    "ground_truth": "Abstract - This work focuses on the two crucial bottlenecks in Retrieval-Augmented Generation (RAG): high inference latency and expensive computation cost.",
+    "ground_truth_doc_ids": [
+      "10.55041/isjem07213"
+    ]
+  },
+  {
+    "id": "authors-97816c9044e10bc0",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Speculative Retrieval-Augmented Generation for Cost-Efficient Large Language Model Inference'?",
+    "ground_truth": "Dr. Sumalatha P, Manoj Kumar",
+    "ground_truth_doc_ids": [
+      "10.55041/isjem07213"
+    ]
+  },
+  {
+    "id": "date-97816c9044e10bc0",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Speculative Retrieval-Augmented Generation for Cost-Efficient Large Language Model Inference' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-05",
+    "ground_truth_doc_ids": [
+      "10.55041/isjem07213"
+    ]
+  },
+  {
+    "id": "category-97816c9044e10bc0",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Speculative Retrieval-Augmented Generation for Cost-Efficient Large Language Model Inference' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Machine learning",
+    "ground_truth_doc_ids": [
+      "10.55041/isjem07213"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Model Inference"
+  },
+  {
+    "id": "summary-78e6cc2f90390318",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'A Foundation Model Architecture for Supply Chain Risk Prediction: Integrating Large Language Models and Retrieval-Augmented Generation for Automated Disruption Alerting'?",
+    "ground_truth": "This study has examined whether a foundation model architecture, combining large language models with a supply chain knowledge graph and retrieval-augmented generation, can predict supply chain disruptions from unstructured evidence more effectively than the classical machine learning methods that dominate current practice, and it has developed and tested a framework for automated disruption alerting across supplier, logistics, regulatory, and hazard risk domains.",
+    "ground_truth_doc_ids": [
+      "10.63125/gseh0k17"
+    ]
+  },
+  {
+    "id": "authors-78e6cc2f90390318",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'A Foundation Model Architecture for Supply Chain Risk Prediction: Integrating Large Language Models and Retrieval-Augmented Generation for Automated Disruption Alerting'?",
+    "ground_truth": "Nadia Islam Tanha",
+    "ground_truth_doc_ids": [
+      "10.63125/gseh0k17"
+    ]
+  },
+  {
+    "id": "date-78e6cc2f90390318",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'A Foundation Model Architecture for Supply Chain Risk Prediction: Integrating Large Language Models and Retrieval-Augmented Generation for Automated Disruption Alerting' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-04",
+    "ground_truth_doc_ids": [
+      "10.63125/gseh0k17"
+    ]
+  },
+  {
+    "id": "category-78e6cc2f90390318",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'A Foundation Model Architecture for Supply Chain Risk Prediction: Integrating Large Language Models and Retrieval-Augmented Generation for Automated Disruption Alerting' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "Supply chain management",
+    "ground_truth_doc_ids": [
+      "10.63125/gseh0k17"
+    ],
+    "category_source": "inferred_from_title",
+    "category_evidence": "Supply Chain"
+  },
+  {
+    "id": "summary-8a5298bc8736b237",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'The Age of Autonomous Agents: A Bibliometric Review of Agentic AI Architectures, Applications, and Emerging Challenges'?",
+    "ground_truth": "The rapid evolution of large language models (LLMs) has catalyzed a shift from passive AI systems toward autonomous agentic architectures capable of reasoning, memory, tool use, and multi-agent collaboration.",
+    "ground_truth_doc_ids": [
+      "10.63646/kpqm1958"
+    ]
+  },
+  {
+    "id": "authors-8a5298bc8736b237",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'The Age of Autonomous Agents: A Bibliometric Review of Agentic AI Architectures, Applications, and Emerging Challenges'?",
+    "ground_truth": "Ben J. Weber, Clara M. Hofmann, Amara N. Okoye",
+    "ground_truth_doc_ids": [
+      "10.63646/kpqm1958"
+    ]
+  },
+  {
+    "id": "date-8a5298bc8736b237",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'The Age of Autonomous Agents: A Bibliometric Review of Agentic AI Architectures, Applications, and Emerging Challenges' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-06",
+    "ground_truth_doc_ids": [
+      "10.63646/kpqm1958"
+    ]
+  },
+  {
+    "id": "category-8a5298bc8736b237",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'The Age of Autonomous Agents: A Bibliometric Review of Agentic AI Architectures, Applications, and Emerging Challenges' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "The source does not provide enough information to identify the field.",
+    "ground_truth_doc_ids": [
+      "10.63646/kpqm1958"
+    ],
+    "category_source": "unavailable",
+    "category_evidence": ""
+  },
+  {
+    "id": "summary-21f4b4440901e574",
+    "type": "summary",
+    "question_type": "summary",
+    "question": "What is the main research focus of 'Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review'?",
+    "ground_truth": "Large language models have accelerated the development of intelligent assistants by providing flexible natural- language understanding and generation.",
+    "ground_truth_doc_ids": [
+      "10.70267/aitia.2026482489"
+    ]
+  },
+  {
+    "id": "authors-21f4b4440901e574",
+    "type": "authors",
+    "question_type": "authors",
+    "question": "Who authored the study 'Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review'?",
+    "ground_truth": "Zilang Shao",
+    "ground_truth_doc_ids": [
+      "10.70267/aitia.2026482489"
+    ]
+  },
+  {
+    "id": "date-21f4b4440901e574",
+    "type": "date",
+    "question_type": "date",
+    "question": "When was 'Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-09",
+    "ground_truth_doc_ids": [
+      "10.70267/aitia.2026482489"
+    ]
+  },
+  {
+    "id": "category-21f4b4440901e574",
+    "type": "category",
+    "question_type": "category",
+    "question": "What categories or professional field does the study 'Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review' belong to? Use the source categories or explicit title evidence; state when unavailable.",
+    "ground_truth": "The source does not provide enough information to identify the field.",
+    "ground_truth_doc_ids": [
+      "10.70267/aitia.2026482489"
+    ],
+    "category_source": "unavailable",
+    "category_evidence": ""
+  },
+  {
+    "id": "multi_hop-56b0071b5aa2bfae",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "Considering 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study' and 'An Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization' together, compare the research problems addressed in Medicine and Machine learning. Explain the focus in each field using evidence from both studies.",
+    "ground_truth": "JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study (Medicine): Abstract Diagnosing jawbone lesions in oral and maxillofacial radiology remains challenging due to overlapping radiological features and the need for integrated clinical reasoning.\nAn Agentic Retrieval-Augmented Vision-Language Recommendation System for Hyperdimensional Encoding Optimization (Machine learning): Selecting an encoding configuration for Hyperdimensional Computing (HDC) determines whether a model fits the memory budget of an Internet of Things (IoT) device, yet the knowledge needed to make that choice is dispersed across thousands of papers in a form no optimizer can query.",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9",
+      "10.20944/preprints202608.1849.v1"
+    ]
+  },
+  {
+    "id": "multi_hop-4c6ba664cab44ea8",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "Considering '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine' and 'SafeRAG: A Large-Language-Model-Based Multistage Retrieval-Augmented Framework for Oil and Gas Safety Report Generation' together, compare the research problems addressed in Medicine and Energy industry safety. Explain the focus in each field using evidence from both studies.",
+    "ground_truth": "0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine (Medicine): Abstract Introduction While Large Language Models (LLMs) offer generative capabilities, generic models often lack domain-specific grounding, leading to hallucinations in high-stakes contexts.\nSafeRAG: A Large-Language-Model-Based Multistage Retrieval-Augmented Framework for Oil and Gas Safety Report Generation (Energy industry safety): Summary In high-risk industrial settings, leveraging large language models (LLMs) for automated accident analysis and generating safety reports has emerged as an efficient workflow.",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346",
+      "10.2118/234689-pa"
+    ]
+  },
+  {
+    "id": "multi_hop-b44dee7e8e57b456",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "Considering 'Retrieval-Augmented Generation (RAG), Generative AI, and Agentic AI Governance: An Integrated Enterprise Governance Prioritization Architecture' and 'Retrieval-Augmented Large-Language-Model-Based Time-Series Forecasting for Cross-Market Equity Analysis' together, compare the research problems addressed in AI governance and Finance and economics. Explain the focus in each field using evidence from both studies.",
+    "ground_truth": "Retrieval-Augmented Generation (RAG), Generative AI, and Agentic AI Governance: An Integrated Enterprise Governance Prioritization Architecture (AI governance): Abstract Enterprise adoption of artificial intelligence (AI) systems, including Generative AI (GenAI), Retrieval-Augmented Generation (RAG), and agentic AI, is advancing faster than many organizations can adapt their governance, audit, cybersecurity, and executive oversight practices.\nRetrieval-Augmented Large-Language-Model-Based Time-Series Forecasting for Cross-Market Equity Analysis (Finance and economics): Abstract Time-series foundation models and retrieval-based augmentation have recently emerged as relevant tools for financial forecasting, yet it remains unclear when explicit historical retrieval helps a pre-trained probabilistic forecaster in noisy equity settings.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10012178/v1",
+      "10.21203/rs.3.rs-10178277/v1"
+    ]
+  },
+  {
+    "id": "multi_hop-2121e51685f900e5",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "Considering 'Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study' and 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation' together, compare the research problems addressed in Civil engineering and Digital forensics. Explain the focus in each field using evidence from both studies.",
+    "ground_truth": "Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study (Civil engineering): Abstract Substation civil engineering preliminary design documents must integrate project-specific conditions, current regulatory requirements, typical design practices, and historical engineering experience while maintaining consistency across architectural, structural, general-layout, foundation, road, drainage, and technical-indicator sections.\nDOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation (Digital forensics): Abstract Increasingly, digital forensic investigations require a quick, reliable, and privacy-preserving assessment of case materials before formal forensic examination.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-10423755/v1",
+      "10.21203/rs.3.rs-10489777/v1"
+    ]
+  },
+  {
+    "id": "multi_hop-ea41045cc409801f",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "Considering 'Does retrieval-augmented generation impact medical students\u2019 perceptions of large language models? (Preprint)' and 'An Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models' together, compare the research problems addressed in Medicine and Civil engineering. Explain the focus in each field using evidence from both studies.",
+    "ground_truth": "Does retrieval-augmented generation impact medical students\u2019 perceptions of large language models? (Preprint) (Medicine): BACKGROUND There is evidence of rapid adoption of large language models (LLMs) in undergraduate medical education, with medical students using it to support their learning.\nAn Agentic AI System for Roof Design Compliance Using Computer Vision, Retrieval-Augmented Generation and Large Language Models (Civil engineering): Designers, engineers, and building officials face increasing pressure to accelerate and improve the accuracy of design review for buildings and infrastructure.",
+    "ground_truth_doc_ids": [
+      "10.2196/preprints.106157",
+      "10.3390/buildings16132637"
+    ]
+  },
+  {
+    "id": "multi_hop-397a588f67018883",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "Considering 'Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection' and 'Intelligent automation of economic processes based on retrieval-augmented generation and large language models' together, compare the research problems addressed in Natural language processing and Finance and economics. Explain the focus in each field using evidence from both studies.",
+    "ground_truth": "Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection (Natural language processing): Large Language Models (LLMs) have been rapidly evolving lately, resulting in the need for strong, explainable models to detect the difference between human-generated and machine-generated articles.\nIntelligent automation of economic processes based on retrieval-augmented generation and large language models (Finance and economics): The article is devoted to the theoretical and methodological substantiation of the concept of intelligent automation of economic processes based on the integration of Retrieval-Augmented Generation (RAG), Large Language Models (LLM), Prompt Engineering, and Automatic Engineering technologies.",
+    "ground_truth_doc_ids": [
+      "10.3390/knowledge6030022",
+      "10.36887/2415-8453-2026-3-2"
+    ]
+  },
+  {
+    "id": "multi_hop-9ff45bbc42c69af6",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "Considering 'A Framework for Adaptive Knowledge-Augmented Mizo Large Language Models Using Retrieval-Augmented Generation and Continual Learning' and 'Chatbot Hybrid Fatwa MUI Menggunakan Retrieval Augmented Generation dan Large Language Model' together, compare the research problems addressed in Natural language processing and Religious studies. Explain the focus in each field using evidence from both studies.",
+    "ground_truth": "A Framework for Adaptive Knowledge-Augmented Mizo Large Language Models Using Retrieval-Augmented Generation and Continual Learning (Natural language processing): The deployment of Large Language Models (LLMs) for low-resource languages is challenging due to the lack of linguistic resources, sparse digital content and the absence of structured knowledge bases.\nChatbot Hybrid Fatwa MUI Menggunakan Retrieval Augmented Generation dan Large Language Model (Religious studies): Aksesibilitas dokumen digital Fatwa Majelis Ulama Indonesia (MUI) yang terfragmentasi membuat pencarian informasi kurang efektif.",
+    "ground_truth_doc_ids": [
+      "10.36948/ijfmr.2026.v08i04.85777",
+      "10.52060/juptik.v4i1.4318"
+    ]
+  },
+  {
+    "id": "multi_hop-08bce68d87f2dd52",
+    "type": "multi_hop",
+    "question_type": "multi_hop",
+    "question": "Considering 'Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model' and 'A Foundation Model Architecture for Supply Chain Risk Prediction: Integrating Large Language Models and Retrieval-Augmented Generation for Automated Disruption Alerting' together, compare the research problems addressed in Machine learning and Supply chain management. Explain the focus in each field using evidence from both studies.",
+    "ground_truth": "Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model (Machine learning): Retrieval-augmented generation (RAG) enhances large language models (LLMs) by incorporating external information, but traditional fixed retrieval processes struggle to adapt to complex task requirements.\nA Foundation Model Architecture for Supply Chain Risk Prediction: Integrating Large Language Models and Retrieval-Augmented Generation for Automated Disruption Alerting (Supply chain management): This study has examined whether a foundation model architecture, combining large language models with a supply chain knowledge graph and retrieval-augmented generation, can predict supply chain disruptions from unstructured evidence more effectively than the classical machine learning methods that dominate current practice, and it has developed and tested a framework for automated disruption alerting across supplier, logistics, regulatory, and hazard risk domains.",
+    "ground_truth_doc_ids": [
+      "10.54254/2755-2721/2026.36624",
+      "10.63125/gseh0k17"
+    ]
+  }
+]

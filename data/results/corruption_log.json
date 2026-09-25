@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-09-25T09:29:28.383895+00:00",
+  "total_original_rows": 24,
+  "total_corrupted_rows": 24,
+  "scenarios": [
+    {
+      "name": "drop_latest_records",
+      "affected_count": 3,
+      "details": "Removed newest published records: ['10.21203/rs.3.rs-10489777/v1', '10.70267/aitia.2026482489', '10.21203/rs.3.rs-10349437/v1']"
+    },
+    {
+      "name": "blank_summary",
+      "affected_count": 3,
+      "details": "Set summary to an empty string."
+    },
+    {
+      "name": "inject_text_noise",
+      "affected_count": 3,
+      "details": "Appended noise marker: !@#$% RANDOM NOISE CORRUPTION gibberish_token_xyz"
+    },
+    {
+      "name": "truncate_title",
+      "affected_count": 3,
+      "details": "Truncated title to at most eight characters."
+    },
+    {
+      "name": "stale_date",
+      "affected_count": 4,
+      "details": "Set published to 2021-09-26 and recomputed age_days."
+    },
+    {
+      "name": "duplicate_rows",
+      "affected_count": 3,
+      "details": "Appended exact copies to restore the original row count."
+    }
+  ]
+}

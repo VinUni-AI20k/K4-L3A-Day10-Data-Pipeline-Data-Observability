@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime
 import re
 
 from core.config import Settings
@@ -22,29 +23,50 @@ def _extract_answer(question: str, top_result: SearchResult) -> str:
     metadata = top_result.metadata
     if "who authored" in lowered or "list the authors" in lowered:
         return metadata["authors_joined"]
-    if "when was" in lowered or "publication date" in lowered or "published on" in lowered:
-        return metadata["published"]
-    if "what categories" in lowered:
-        return metadata["categories_joined"]
+    if any(phrase in lowered for phrase in ("when was", "publication date", "published on", "month and year")):
+        try:
+            return datetime.fromisoformat(metadata["published"]).strftime("%B %Y")
+        except (TypeError, ValueError):
+            return metadata["published"]
+    if any(phrase in lowered for phrase in ("what categories", "which categor", "specialist field", "which field")):
+        return metadata["categories_joined"] or "Crossref did not supply a specialist category."
     return first_sentence(metadata["summary"])
 
 
 def answer_question(question: str, settings: Settings, index: LocalEmbeddingIndex, top_k: int | None = None) -> AnswerResult:
-    title_match = re.search(r"'([^']+)'", question)
-    exact = index.lookup(title_match.group(1)) if title_match else None
+    quoted_values = [single or double for single, double in re.findall(r"'([^']+)'|\"([^\"]+)\"", question)]
+    exact_documents = []
+    seen_exact_ids = set()
+    for value in quoted_values:
+        document = index.lookup(value)
+        if document and document["paper_id"] not in seen_exact_ids:
+            exact_documents.append(document)
+            seen_exact_ids.add(document["paper_id"])
     retrieved = index.search(question, top_k=top_k)
-    if exact:
-        exact_result = SearchResult(
-            paper_id=exact["paper_id"],
-            title=exact["title"],
-            score=1.0,
-            content=exact["content"],
-            metadata=exact["metadata"],
-        )
-        deduped = [exact_result] + [item for item in retrieved if item.paper_id != exact_result.paper_id]
+    if exact_documents:
+        exact_results = [
+            SearchResult(
+                paper_id=document["paper_id"],
+                title=document["title"],
+                score=1.0,
+                content=document["content"],
+                metadata=document["metadata"],
+            )
+            for document in exact_documents
+        ]
+        exact_ids = {item.paper_id for item in exact_results}
+        deduped = exact_results + [item for item in retrieved if item.paper_id not in exact_ids]
         retrieved = deduped[: (top_k or settings.top_k)]
     if not retrieved:
         answer = "I don't know from the indexed corpus."
+    elif len(exact_documents) >= 2 and any(
+        phrase in question.lower() for phrase in ("complement", "together", "across their fields", "compare")
+    ):
+        answer = " ".join(
+            f"{document['title']} ({document['metadata']['categories_joined'] or 'Crossref did not supply a specialist category.'}): "
+            f"{first_sentence(document['metadata']['summary'])}"
+            for document in exact_documents
+        )
     else:
         answer = _extract_answer(question, retrieved[0])
     return AnswerResult(

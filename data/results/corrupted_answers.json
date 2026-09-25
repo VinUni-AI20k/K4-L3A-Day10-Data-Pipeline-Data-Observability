@@ -1,0 +1,78 @@
+[
+  {
+    "id": "q_summary_01",
+    "question": "Summarize the main research in 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study'.",
+    "ground_truth": "Abstract Diagnosing jawbone lesions in oral and maxillofacial radiology remains challenging due to overlapping radiological features and the need for integrated clinical reasoning. This study aimed to develop and validate JADE-Plus, a novel multimodal, agent-controlled retrieval-augmented generation (RAG) framework for diagnostic decision support in jawbone lesion assessment. JADE-Plus was implemented as a cloud-based, tablet-optimized system integrating a vision-language model (VLM) for panoramic radiograph analysis, a knowledge-grounded RAG module, and an agentic verification loop for diagnostic fusion and re-ranking. The system was evaluated using 40 representative jawbone lesion cases and compared with JADE, GPT-5.4, GPT-5.4 VLM, and ORAD. Performance was assessed using Top-1 and Top-3 accuracy, ablation and statistical analyses, intra-model stability, and response time. JADE-Plus achieved the highest diagnostic performance, with a Top-1 accuracy of 90% (36/40; 95% CI 76–97%) and a Top-3 accuracy of 100%, with no missed diagnoses. Cochran’s Q test demonstrated significant differences among models for both Top-3 correctness ( Q = 25.66, p < 0.001) and Top-1 correctness ( Q = 27.55, p < 0.001). Post-hoc McNemar tests with the Benjamini–Hochberg correction showed that JADE-Plus significantly outperformed other models, particularly under the stricter Top-1 evaluation. Ablation analysis showed that the agentic verification stage improved Top-1 and Top-3 accuracy by 15 and 8 percentage points, respectively. JADE-Plus achieved the highest reproducibility (mean Jaccard similarity 0.97 ± 0.12) while maintaining a mean response time of 33 ± 1.5 s per case. JADE-Plus demonstrated superior diagnostic accuracy, stability, and reproducibility compared with baseline systems, supporting multimodal agentic RAG frameworks for jawbone lesion diagnosis.",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9"
+    ],
+    "answer": "",
+    "retrieved_doc_ids": [
+      "10.1007/s10278-026-02086-9",
+      "10.1007/s10278-026-02086-9"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 0.0
+  },
+  {
+    "id": "q_authors_02",
+    "question": "Who authored the study '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine'?",
+    "ground_truth": "Joseph Cheung, Pengze Li, Anshum Patel, SaiKrishna Vallamchetla, Het Contractor, Hayden Heninger, Cui Tao",
+    "ground_truth_doc_ids": [
+      "10.1093/sleep/zsag091.0346"
+    ],
+    "answer": "Joseph Cheung, Pengze Li, Anshum Patel, SaiKrishna Vallamchetla, Het Contractor, Hayden Heninger, Cui Tao",
+    "retrieved_doc_ids": [
+      "10.1093/sleep/zsag091.0346",
+      "10.1093/sleep/zsag091.0346"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 1.0
+  },
+  {
+    "id": "q_date_03",
+    "question": "When was 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study' published? Give the year and month (YYYY-MM).",
+    "ground_truth": "2026-07",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9"
+    ],
+    "answer": "2026-07-13",
+    "retrieved_doc_ids": [
+      "10.1007/s10278-026-02086-9",
+      "10.1007/s10278-026-02086-9"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 0.0
+  },
+  {
+    "id": "q_category_04",
+    "question": "What categories are recorded for 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study'? State if the source metadata does not provide them.",
+    "ground_truth": "Subject categories are not provided in the source metadata.",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9"
+    ],
+    "answer": "Summary:",
+    "retrieved_doc_ids": [
+      "10.1007/s10278-026-02086-9",
+      "10.1007/s10278-026-02086-9"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 0.0
+  },
+  {
+    "id": "q_multi_hop_05",
+    "question": "Compare the research problems addressed by 'JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study' and '0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine'. Explain the focus of each study using both papers.",
+    "ground_truth": "JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study: Abstract Diagnosing jawbone lesions in oral and maxillofacial radiology remains challenging due to overlapping radiological features and the need for integrated clinical reasoning. This study aimed to develop and validate JADE-Plus, a novel multimodal, agent-controlled retrieval-augmented generation (RAG) framework for diagnostic decision support in jawbone lesion assessment. JADE-Plus was implemented as a cloud-based, tablet-optimized system integrating a vision-language model (VLM) for panoramic radiograph analysis, a knowledge-grounded RAG module, and an agentic verification loop for diagnostic fusion and re-ranking. The system was evaluated using 40 representative jawbone lesion cases and compared with JADE, GPT-5.4, GPT-5.4 VLM, and ORAD. Performance was assessed using Top-1 and Top-3 accuracy, ablation and statistical analyses, intra-model stability, and response time. JADE-Plus achieved the highest diagnostic performance, with a Top-1 accuracy of 90% (36/40; 95% CI 76–97%) and a Top-3 accuracy of 100%, with no missed diagnoses. Cochran’s Q test demonstrated significant differences among models for both Top-3 correctness ( Q = 25.66, p < 0.001) and Top-1 correctness ( Q = 27.55, p < 0.001). Post-hoc McNemar tests with the Benjamini–Hochberg correction showed that JADE-Plus significantly outperformed other models, particularly under the stricter Top-1 evaluation. Ablation analysis showed that the agentic verification stage improved Top-1 and Top-3 accuracy by 15 and 8 percentage points, respectively. JADE-Plus achieved the highest reproducibility (mean Jaccard similarity 0.97 ± 0.12) while maintaining a mean response time of 33 ± 1.5 s per case. JADE-Plus demonstrated superior diagnostic accuracy, stability, and reproducibility compared with baseline systems, supporting multimodal agentic RAG frameworks for jawbone lesion diagnosis.\n0346 Retrieval Augmented Generation Improves Large Language Model Performance in Sleep Medicine: Abstract Introduction While Large Language Models (LLMs) offer generative capabilities, generic models often lack domain-specific grounding, leading to hallucinations in high-stakes contexts. However, LLMs can serve as clinical decision support tools if augmented with specific domain data. This study evaluates the utility of Retrieval-Augmented Generation (RAG) applied to open-source LLMs, utilizing a curated knowledge base of authoritative sleep medicine textbooks, to quantify improvement in performance. Methods We evaluated four open-source models—Llama-70B, Llama-8B, Qwen-14B, and Qwen-235B, linked to a RAG system indexing five standard textbooks, including ICSD-3 TR. Models were tested on sleep board–style MCQs and clinical vignettes diagnostic accuracy. Performance was assessed across nine configurations derived from three factors: RAG pipeline complexity (Plain vs. Complicated), textbook preprocessing (Uncleaned vs. Cleaned/TOC-aligned), and retriever type (Dense-only vs. Hybrid). Metrics included MCQ Accuracy and the rates at which the correct diagnosis appeared as the top result or within the top 5 differential diagnosis lists for vignettes. Results RAG consistently outperformed the no-RAG baseline, yielding absolute performance gains of 5.6%–10.7% for MCQs and 8.1%–10.2% for the top diagnosis in cases across all models. For MCQs, Qwen-235B achieved the highest accuracy of 87.3% (vs. 81.7% baseline) using the Plain RAG configuration with Cleaned (TOC-aligned) Hybrid retrieval. Llama-70B followed with 83.6% in the same configuration. For case vignettes, Qwen-235B achieved a correct top diagnosis rate of 66.3% and a correct diagnosis rate within the top 5 differential diagnosis lists of 90.8% using Cleaned Hybrid retrieval configurations. Hybrid retrieval (Dense + Sparse) consistently surpassed Dense-only methods. Notably, while larger models benefited from Cleaned text, smaller models (e.g., Qwen-14B) achieved higher top diagnosis rates with Uncleaned text (57.1% vs. 51.0%), suggesting a dependency on redundant context in lower-parameter settings. Conclusion RAG significantly enhances knowledge performance of open-source LLMs in sleep medicine. Hybrid retrieval and curated, TOC-aligned knowledge bases yield optimal results for large models, whereas smaller models benefit from the redundancy of uncleaned text. These findings suggest that RAG systems can augment LLMs in domain specific knowledge for clinical decision support. Support (if any)",
+    "ground_truth_doc_ids": [
+      "10.1007/s10278-026-02086-9",
+      "10.1093/sleep/zsag091.0346"
+    ],
+    "answer": "",
+    "retrieved_doc_ids": [
+      "10.1007/s10278-026-02086-9",
+      "10.1007/s10278-026-02086-9"
+    ],
+    "retrieval_hit": true,
+    "token_f1": 0.0
+  }
+]

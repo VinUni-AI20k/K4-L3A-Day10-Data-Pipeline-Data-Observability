@@ -1,0 +1,35 @@
+{
+  "stage": "corrupted",
+  "success": false,
+  "gate_passed": false,
+  "total_rows": 24,
+  "unique_ids": 21,
+  "duplicate_ids": 3,
+  "null_checks": {
+    "paper_id": {
+      "nulls": 0,
+      "empty": 0
+    },
+    "title": {
+      "nulls": 0,
+      "empty": 0
+    },
+    "text_for_embedding": {
+      "nulls": 0,
+      "empty": 0
+    },
+    "summary": {
+      "nulls": 0,
+      "empty": 6
+    }
+  },
+  "short_summaries": 6,
+  "freshness": {
+    "stale_rows": 4,
+    "stale_ratio": 0.16666666666666666,
+    "threshold_days": 180,
+    "max_stale_ratio": 0.25,
+    "is_fresh": true
+  },
+  "timestamp": "2026-09-25T09:29:28.399563+00:00"
+}

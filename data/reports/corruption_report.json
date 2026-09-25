@@ -1,0 +1,55 @@
+{
+  "baseline": {
+    "samples": 5,
+    "retrieval_hit_rate": 1.0,
+    "mean_token_f1": 0.26990302162715957,
+    "judge_accuracy": 0.2,
+    "mean_judge_score": 1.8,
+    "ragas": {
+      "skipped": "Set RUN_RAGAS=1 to enable the slower Ragas pass."
+    },
+    "gate_passed": true,
+    "freshness": {
+      "is_fresh": true
+    }
+  },
+  "corrupted": {
+    "samples": 5,
+    "retrieval_hit_rate": 1.0,
+    "mean_token_f1": 0.2,
+    "judge_accuracy": 1.0,
+    "mean_judge_score": 3.0,
+    "indexed_documents": 24,
+    "stage": "corrupted",
+    "gate_passed": false,
+    "freshness": {
+      "stale_rows": 4,
+      "stale_ratio": 0.16666666666666666,
+      "threshold_days": 180,
+      "max_stale_ratio": 0.25,
+      "is_fresh": true
+    },
+    "total_rows": 24,
+    "duplicate_ids": 3,
+    "short_summaries": 6
+  },
+  "repaired": {
+    "samples": 5,
+    "retrieval_hit_rate": 1.0,
+    "mean_token_f1": 0.274422795638459,
+    "judge_accuracy": 1.0,
+    "mean_judge_score": 3.0,
+    "indexed_documents": 24,
+    "stage": "repaired",
+    "gate_passed": true,
+    "freshness": {
+      "stale_rows": 0,
+      "stale_ratio": 0.0,
+      "threshold_days": 180,
+      "max_stale_ratio": 0.25,
+      "is_fresh": true
+    },
+    "total_rows": 24
+  },
+  "generated": "2026-09-25T09:29:28.437439+00:00"
+}
