@@ -128,8 +128,8 @@ Starter Repo được cấu trúc dạng module hóa rõ ràng:
 └── pyproject.toml           <- Quản lý dependencies (Python 3.11-3.13)
 ```
 
-> ⚠️ **LƯU Ý VỀ CODE KHUNG:**  
-> Các file trong `src/` chứa các khối `TODO(student)` và `raise NotImplementedError`. Đây là bài tập thiết kế kỹ thuật, nhóm cần đọc kỹ docstring và hoàn thiện từng module theo thứ tự hướng dẫn trong [Guide.md](docs/Guide.md).
+> ✅ **TRẠNG THÁI TRIỂN KHAI:**
+> Các module trong `src/` đã được hoàn thiện theo contract của bài lab. Hai entrypoint trong `script/` có thể chạy lại để tái tạo toàn bộ artifacts baseline, corruption và repair.
 
 ---
 

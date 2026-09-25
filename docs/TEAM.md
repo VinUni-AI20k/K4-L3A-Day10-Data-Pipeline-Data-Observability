@@ -1,58 +1,69 @@
 # Danh Sách Thành Viên & Báo Cáo Phân Công Nhóm
 
-- **Tên Nhóm:** `[Điền tên nhóm]`
-- **Mã Nhóm / Lớp:** `K4-L3-DAY10`
-- **Tên Repository Nộp Bài:** `K4-L3-DAY10-TenNhom-DataPipeline`
+- **Tên nhóm:** `1Prompt4All`
+- **Mã nhóm / lớp:** `K4-L3-DAY10`
+- **Repository:** [K4-L3A-Day10-Data-Pipeline-Data-Observability](https://github.com/D3vNguy3n/K4-L3A-Day10-Data-Pipeline-Data-Observability)
 
----
+## Thành viên và phân công
 
-## # Thành viên
+| STT | Họ và tên | MSSV | Email | Vai trò chính | Phạm vi sở hữu | Output bàn giao | Báo cáo cá nhân |
+| ---: | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Nguyễn Hoàng Lê Nguyên | `2A202602472` | Chưa cung cấp | Trưởng nhóm / Pipeline Integrator | `src/core/`, `src/pipelines/phase1.py`, `src/pipelines/corruption_flow.py`, hai entrypoint | Pipeline chạy end-to-end, metrics và báo cáo ba trạng thái | `report/2A202602472_NguyenHoangLeNguyen.md` |
+| 2 | Giang Thế Vũ | `2A202602478` | Chưa cung cấp | Data Foundation & Recovery | `src/ingestion/crossref.py`, `src/ingestion/cleaning.py`, raw/clean schema và repair từ raw | Raw records, clean dataset, data lineage và dữ liệu repaired | `report/2A202602478_GiangTheVu.md` |
+| 3 | Trần Đức Lộc | `2A202602431` | Chưa cung cấp | RAG & Vector Index | `src/retrieval/`, MiniLM embeddings và ChromaDB | Ba vector collections, semantic search và QA retrieval | `report/2A202602431_TranDucLoc.md` |
+| 4 | Đặng Hữu Cương | `2A202602572` | Chưa cung cấp | Observability & Evaluation | `src/observability/`, `src/evaluation/`, quality/freshness artifacts | GX quality gate, benchmark test set, metrics và Markdown reports | `report/2A202602572_DangHuuCuong.md` |
 
-| STT | Họ và tên | MSSV | Email | Vai trò & Phân công công việc | Báo cáo cá nhân |
-|---:|---|---|---|---|---|
-| 1 | | | | Trưởng nhóm / Pipeline Integrator (`core/`, `phase1.py`, `corruption_flow.py`) | `report/<MSSV1>_HoTen.md` |
-| 2 | | | | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, raw data) | `report/<MSSV2>_HoTen.md` |
-| 3 | | | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/<MSSV3>_HoTen.md` |
-| 4 | | | | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/<MSSV4>_HoTen.md` |
+## Chi tiết trách nhiệm cá nhân
 
-*(Nếu nhóm có 3 hoặc 5-6 thành viên, xem bảng phân công chi tiết theo vai trò trong file `CHECKPOINTS.md`)*.
+### Nguyễn Hoàng Lê Nguyên — 2A202602472
 
----
+- Điều phối contract chung giữa raw data, clean dataframe, vector index, evaluation và reporting.
+- Quản lý cấu hình đường dẫn artifact trong `src/core/config.py`.
+- Kết nối baseline flow trong `src/pipelines/phase1.py`.
+- Kết nối corruption → evaluate → repair → compare trong `src/pipelines/corruption_flow.py`.
+- Chạy nghiệm thu hai entrypoint, kiểm tra artifact contract và tính idempotent của repair.
+- Tổng hợp số liệu kỹ thuật vào báo cáo nhóm và hỗ trợ tích hợp các module.
 
-## # Cá nhân
+### Giang Thế Vũ — 2A202602478
 
-### ## HoVaTen1-MSSV1
-- **Vai trò:** Trưởng nhóm & Điều phối Pipeline.
-- **Công việc chi tiết đã hoàn thành:**
-  - Thiết lập cấu hình hệ thống `core/config.py` và đường dẫn artifacts `core/utils.py`.
-  - Kết nối luồng thực thi trong `src/pipelines/phase1.py` và `src/pipelines/corruption_flow.py`.
-  - Kiểm tra tính nhất quán của các artifacts và theo dõi Contributor tracking trên GitHub nhánh `main`.
-- **Điều học được / Đóng góp chính:**
-  - Hiểu sâu sắc về thiết kế Idempotent Pipeline và quản lý trạng thái luồng dữ liệu đa tầng.
+- Parse Crossref payload thành `PaperRecord`, chuẩn hóa DOI, title, abstract, authors, categories và publication date.
+- Triển khai live API retry/backoff và offline fallback từ snapshot.
+- Xây dựng clean dataframe, tính `age_days`, tạo `text_for_embedding` và deduplicate theo `paper_id`.
+- Bảo toàn raw lineage để repair luôn tái tạo từ nguồn sạch, không sửa trực tiếp corrupted data.
+- Xác minh 24 raw records tạo thành 24 clean records có DOI duy nhất.
 
-### ## HoVaTen2-MSSV2
-- **Vai trò:** Phụ trách Ingestion, Làm sạch & Phục hồi dữ liệu.
-- **Công việc chi tiết đã hoàn thành:**
-  - Xây dựng module thu thập Crossref API với cơ chế Fallback offline trong `src/ingestion/crossref.py`.
-  - Chuẩn hóa schema, tính toán trường `age_days` và `text_for_embedding` trong `src/ingestion/cleaning.py`.
-  - Thực thi cơ chế Idempotent Repair phục hồi dữ liệu từ raw snapshot.
-- **Điều học được / Đóng góp chính:**
-  - Kỹ thuật truy vết nguồn gốc dữ liệu (Data Lineage) và bảo toàn raw snapshot trước khi biến đổi.
+### Trần Đức Lộc — 2A202602431
 
-### ## HoVaTen3-MSSV3
-- **Vai trò:** Phụ trách RAG, Vector Database & Embedding.
-- **Công việc chi tiết đã hoàn thành:**
-  - Quản lý mô hình embedding `sentence-transformers/all-MiniLM-L6-v2`.
-  - Nạp và quản lý 3 collection riêng biệt trong ChromaDB (`papers-baseline`, `papers-corrupted`, `papers-repaired`).
-  - Xây dựng QA Agent truy vấn ngữ cảnh chính xác theo tài liệu.
-- **Điều học được / Đóng góp chính:**
-  - Cách cô lập các không gian vector để so sánh khách quan giữa dữ liệu sạch và dữ liệu bị lỗi.
+- Quản lý embedding model `sentence-transformers/all-MiniLM-L6-v2`.
+- Xây dựng và nạp ba Chroma collections độc lập: `papers-baseline`, `papers-corrupted`, `papers-repaired`.
+- Triển khai semantic search, exact lookup và QA extraction.
+- Bảo đảm rebuild collection không làm phát sinh segment mồ côi qua các lần chạy lặp.
+- Xác minh mỗi collection có 24 documents và smoke test trả đúng số lượng kết quả.
 
-### ## HoVaTen4-MSSV4
-- **Vai trò:** Phụ trách Data Observability & Benchmark Evaluation.
-- **Công việc chi tiết đã hoàn thành:**
-  - Thiết lập Quality Gate theo chuẩn mới **Great Expectations 1.x** và giám sát Freshness SLA trong `src/observability/quality.py`.
-  - Xây dựng bộ câu hỏi đánh giá chuẩn trong `src/evaluation/testset.py`.
-  - Đo lường và xuất bảng đối chiếu 3 trạng thái vào `data/reports/corruption_report.md`.
-- **Điều học được / Đóng góp chính:**
-  - Cách thiết lập hệ thống cảnh báo sớm chặn đứng hiện tượng Silent Failure trước khi dữ liệu vào serving layer.
+### Đặng Hữu Cương — 2A202602572
+
+- Xây dựng benchmark 10 câu thuộc bốn loại `summary`, `authors`, `date`, `categories`.
+- Triển khai bốn loại expectation bắt buộc bằng Great Expectations 1.x.
+- Giám sát freshness theo ngưỡng 180 ngày và tỷ lệ stale tối đa 25%.
+- Tính retrieval hit rate, token F1, judge metrics và quản lý answer artifacts.
+- Sinh `phase1_report.md` và `corruption_report.md`, đối chiếu baseline/corrupted/repaired.
+
+## Contract phối hợp
+
+| Bàn giao | Owner | Người nhận | Điều kiện nghiệm thu |
+| --- | --- | --- | --- |
+| Raw records | Giang Thế Vũ | Nguyễn Hoàng Lê Nguyên | 24 records, parse được offline |
+| Clean dataframe | Giang Thế Vũ | Trần Đức Lộc, Đặng Hữu Cương | DOI unique, đủ embedding text, quality pass |
+| Chroma index/search | Trần Đức Lộc | Nguyễn Hoàng Lê Nguyên, Đặng Hữu Cương | 3 collections, mỗi collection 24 docs |
+| Test set và quality signals | Đặng Hữu Cương | Nguyễn Hoàng Lê Nguyên | 10 câu cố định, baseline pass/corrupted fail |
+| End-to-end artifacts | Nguyễn Hoàng Lê Nguyên | Cả nhóm | Hai entrypoint exit code 0, repair phục hồi metrics |
+
+## Kết quả nghiệm thu chung
+
+| Trạng thái | Retrieval hit rate | Mean token F1 | Quality gate | Freshness |
+| --- | ---: | ---: | --- | --- |
+| Baseline | 1.000 | 1.000 | PASSED | PASSED |
+| Corrupted | 0.000 | 0.007 | FAILED | FAILED |
+| Repaired | 1.000 | 1.000 | PASSED | PASSED |
+
+> Mỗi thành viên cần tự rà soát phần được phân công, tạo báo cáo cá nhân tương ứng và có commit trên nhánh `main` trước khi nộp.

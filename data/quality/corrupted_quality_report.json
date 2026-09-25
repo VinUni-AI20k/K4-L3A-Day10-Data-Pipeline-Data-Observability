@@ -1,0 +1,117 @@
+{
+  "report_name": "corrupted",
+  "success": false,
+  "gx_success": false,
+  "freshness_success": false,
+  "statistics": {
+    "evaluated_expectations": 6,
+    "successful_expectations": 4,
+    "unsuccessful_expectations": 2,
+    "success_percent": 66.66666666666667
+  },
+  "expectations": [
+    {
+      "expectation": "ExpectTableRowCountToBeBetween",
+      "column": null,
+      "success": true,
+      "details": {
+        "observed_value": 24
+      }
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "column": "paper_id",
+      "success": true,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_index_list": []
+      }
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "column": "title",
+      "success": true,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_index_list": []
+      }
+    },
+    {
+      "expectation": "ExpectColumnValuesToNotBeNull",
+      "column": "text_for_embedding",
+      "success": true,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_index_list": []
+      }
+    },
+    {
+      "expectation": "ExpectColumnValuesToBeUnique",
+      "column": "paper_id",
+      "success": false,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 10,
+        "unexpected_percent": 41.66666666666667,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 41.66666666666667,
+        "unexpected_percent_nonmissing": 41.66666666666667,
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          19,
+          20,
+          21,
+          22,
+          23
+        ]
+      }
+    },
+    {
+      "expectation": "ExpectColumnValueLengthsToBeBetween",
+      "column": "summary",
+      "success": false,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 10,
+        "unexpected_percent": 41.66666666666667,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 41.66666666666667,
+        "unexpected_percent_nonmissing": 41.66666666666667,
+        "partial_unexpected_index_list": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          19,
+          20,
+          21,
+          22,
+          23
+        ]
+      }
+    }
+  ],
+  "freshness": {
+    "latest_published": "2021-06-12",
+    "oldest_published": "2021-03-28",
+    "stale_rows": 24,
+    "total_rows": 24,
+    "stale_ratio": 1.0,
+    "freshness_threshold_days": 180,
+    "max_stale_ratio": 0.25,
+    "is_fresh": false
+  }
+}

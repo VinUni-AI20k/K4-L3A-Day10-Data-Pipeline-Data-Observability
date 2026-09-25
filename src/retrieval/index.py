@@ -6,6 +6,7 @@ from typing import Any
 
 import chromadb
 import pandas as pd
+from chromadb.errors import NotFoundError
 
 from core.config import Settings
 from core.utils import read_json, safe_slug, write_json
@@ -26,19 +27,26 @@ class LocalEmbeddingIndex:
         self,
         settings: Settings,
         collection_name: str,
-        documents: list[dict[str, Any]],
-        persist_path: Path,
+        documents: list[dict[str, Any]] | None = None,
+        persist_path: Path | None = None,
     ):
         self.settings = settings
         self.collection_name = collection_name
-        self.documents = documents
-        self.persist_path = persist_path
+        self.documents = documents or []
+        self.persist_path = persist_path or settings.paths.chroma_dir
         self.embedding_backend = "chroma"
         self.embedding_model = MiniLMEmbeddings(settings.embedding_model)
-        self.client = chromadb.PersistentClient(path=str(persist_path))
-        self.collection = self.client.get_collection(name=collection_name)
-        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in documents}
-        self.documents_by_title = {document["title"].lower(): document for document in documents}
+        self.client = chromadb.PersistentClient(path=str(self.persist_path))
+        try:
+            self.collection = self.client.get_collection(name=collection_name)
+        except NotFoundError:
+            self.collection = None
+        self.documents_by_paper_id = {
+            document["paper_id"].lower(): document for document in self.documents
+        }
+        self.documents_by_title = {
+            document["title"].lower(): document for document in self.documents
+        }
 
     @staticmethod
     def _build_documents(df: pd.DataFrame) -> list[dict[str, Any]]:
@@ -89,19 +97,25 @@ class LocalEmbeddingIndex:
     ) -> "LocalEmbeddingIndex":
         collection_name = cls._derive_collection_name(settings, embeddings_output_path)
         documents = cls._build_documents(df)
+        if not documents:
+            raise ValueError("Cannot build a vector index from an empty dataframe.")
         persist_path = settings.paths.chroma_dir
         persist_path.mkdir(parents=True, exist_ok=True)
 
         embedding_model = MiniLMEmbeddings(settings.embedding_model)
         client = chromadb.PersistentClient(path=str(persist_path))
         try:
-            client.delete_collection(name=collection_name)
-        except Exception:
-            pass
-        collection = client.create_collection(
-            name=collection_name,
-            configuration={"hnsw": {"space": "cosine"}},
-        )
+            collection = client.get_collection(name=collection_name)
+        except NotFoundError:
+            collection = client.create_collection(
+                name=collection_name,
+                configuration={"hnsw": {"space": "cosine"}},
+                embedding_function=None,
+            )
+        else:
+            existing = collection.get(include=["metadatas"])
+            if existing["ids"]:
+                collection.delete(ids=existing["ids"])
         embeddings = embedding_model.embed_documents([document["content"] for document in documents])
         collection.add(
             ids=[document["record_id"] for document in documents],
@@ -116,7 +130,7 @@ class LocalEmbeddingIndex:
             {
                 "backend": "chroma",
                 "embedding_model": settings.embedding_model,
-                "persist_path": str(persist_path),
+                "persist_path": persist_path.relative_to(settings.paths.project_dir).as_posix(),
                 "collection_name": collection_name,
                 "documents": documents,
             },
@@ -131,18 +145,26 @@ class LocalEmbeddingIndex:
     @classmethod
     def load(cls, settings: Settings, embeddings_path: Path | None = None) -> "LocalEmbeddingIndex":
         payload = read_json(embeddings_path or settings.paths.embeddings_json)
+        persist_path = Path(payload["persist_path"])
+        if not persist_path.is_absolute():
+            persist_path = settings.paths.project_dir / persist_path
         return cls(
             settings=settings,
             collection_name=payload["collection_name"],
             documents=payload["documents"],
-            persist_path=Path(payload["persist_path"]),
+            persist_path=persist_path,
         )
 
     def search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        if self.collection is None:
+            raise RuntimeError(
+                f"Chroma collection '{self.collection_name}' does not exist. Build the index first."
+            )
         query_embedding = self.embedding_model.embed_query(query)
+        result_count = min(top_k or self.settings.top_k, max(1, len(self.documents)))
         results = self.collection.query(
             query_embeddings=[query_embedding],
-            n_results=top_k or self.settings.top_k,
+            n_results=result_count,
             include=["documents", "metadatas", "distances"],
         )
         ids = results.get("ids", [[]])[0]
@@ -172,3 +194,23 @@ class LocalEmbeddingIndex:
         if needle in self.documents_by_title:
             return self.documents_by_title[needle]
         return None
+
+    def build_from_clean(self) -> "LocalEmbeddingIndex":
+        """Build this instance from the configured clean artifact.
+
+        This convenience method preserves compatibility with commands in the
+        handout while the classmethod remains the main pipeline API.
+        """
+        if self.settings.paths.clean_json.exists():
+            dataframe = pd.DataFrame(read_json(self.settings.paths.clean_json))
+        elif self.settings.paths.clean_csv.exists():
+            dataframe = pd.read_csv(self.settings.paths.clean_csv)
+        else:
+            raise FileNotFoundError("Run the cleaning pipeline before building the index.")
+        built = type(self).build(dataframe, self.settings, self.settings.paths.embeddings_json)
+        self.__dict__.update(built.__dict__)
+        return self
+
+    def semantic_search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        """Backward-compatible alias for :meth:`search`."""
+        return self.search(query, top_k=top_k)
