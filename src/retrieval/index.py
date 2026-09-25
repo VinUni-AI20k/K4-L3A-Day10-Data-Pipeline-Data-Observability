@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 import chromadb
+from chromadb.errors import NotFoundError
 import pandas as pd
 
 from core.config import Settings
@@ -26,19 +27,28 @@ class LocalEmbeddingIndex:
         self,
         settings: Settings,
         collection_name: str,
-        documents: list[dict[str, Any]],
-        persist_path: Path,
+        documents: list[dict[str, Any]] | None = None,
+        persist_path: Path | None = None,
     ):
         self.settings = settings
         self.collection_name = collection_name
-        self.documents = documents
-        self.persist_path = persist_path
+        self.documents = documents or []
+        self.persist_path = persist_path or settings.paths.chroma_dir
         self.embedding_backend = "chroma"
         self.embedding_model = MiniLMEmbeddings(settings.embedding_model)
-        self.client = chromadb.PersistentClient(path=str(persist_path))
-        self.collection = self.client.get_collection(name=collection_name)
-        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in documents}
-        self.documents_by_title = {document["title"].lower(): document for document in documents}
+        self.client = chromadb.PersistentClient(path=str(self.persist_path))
+        try:
+            self.collection = self.client.get_collection(name=collection_name)
+        except NotFoundError:
+            # A newly constructed object may intentionally precede index creation;
+            # ``build_from_clean`` will create and attach the collection.
+            self.collection = None
+        self.documents_by_paper_id = {
+            document["paper_id"].lower(): document for document in self.documents
+        }
+        self.documents_by_title = {
+            document["title"].lower(): document for document in self.documents
+        }
 
     @staticmethod
     def _build_documents(df: pd.DataFrame) -> list[dict[str, Any]]:
@@ -86,8 +96,13 @@ class LocalEmbeddingIndex:
         df: pd.DataFrame,
         settings: Settings,
         embeddings_output_path: Path | None = None,
+        *,
+        collection_name: str | None = None,
     ) -> "LocalEmbeddingIndex":
-        collection_name = cls._derive_collection_name(settings, embeddings_output_path)
+        collection_name = collection_name or cls._derive_collection_name(
+            settings,
+            embeddings_output_path,
+        )
         documents = cls._build_documents(df)
         persist_path = settings.paths.chroma_dir
         persist_path.mkdir(parents=True, exist_ok=True)
@@ -128,6 +143,31 @@ class LocalEmbeddingIndex:
             persist_path=persist_path,
         )
 
+    def build_from_clean(self, clean_path: str | Path | None = None) -> "LocalEmbeddingIndex":
+        """Build this collection from the persisted clean JSON artifact."""
+        path = Path(clean_path) if clean_path is not None else self.settings.paths.clean_json
+        if not path.exists():
+            raise FileNotFoundError(
+                f"Clean dataset does not exist: {path}. Run the cleaning step first."
+            )
+
+        dataframe = pd.read_json(path)
+        built = type(self).build(
+            dataframe,
+            settings=self.settings,
+            embeddings_output_path=self.settings.paths.embeddings_json,
+            collection_name=self.collection_name,
+        )
+        self.documents = built.documents
+        self.persist_path = built.persist_path
+        self.embedding_backend = built.embedding_backend
+        self.embedding_model = built.embedding_model
+        self.client = built.client
+        self.collection = built.collection
+        self.documents_by_paper_id = built.documents_by_paper_id
+        self.documents_by_title = built.documents_by_title
+        return self
+
     @classmethod
     def load(cls, settings: Settings, embeddings_path: Path | None = None) -> "LocalEmbeddingIndex":
         payload = read_json(embeddings_path or settings.paths.embeddings_json)
@@ -139,6 +179,13 @@ class LocalEmbeddingIndex:
         )
 
     def search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        if self.collection is None:
+            raise RuntimeError("Embedding index has not been built. Call build_from_clean() first.")
+        if not query.strip():
+            raise ValueError("Search query must not be blank.")
+        if top_k is not None and top_k < 1:
+            raise ValueError("top_k must be at least 1.")
+
         query_embedding = self.embedding_model.embed_query(query)
         results = self.collection.query(
             query_embeddings=[query_embedding],
@@ -164,6 +211,10 @@ class LocalEmbeddingIndex:
                 )
             )
         return scored
+
+    def semantic_search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        """Compatibility alias for semantic vector search."""
+        return self.search(query=query, top_k=top_k)
 
     def lookup(self, value: str) -> dict[str, Any] | None:
         needle = value.strip().lower()

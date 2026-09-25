@@ -1,0 +1,163 @@
+{
+  "report_name": "repaired",
+  "success": true,
+  "gx_success": true,
+  "freshness_success": true,
+  "evaluated_rows": 24,
+  "statistics": {
+    "evaluated_expectations": 6,
+    "successful_expectations": 6,
+    "unsuccessful_expectations": 0
+  },
+  "expectations": [
+    {
+      "name": "row_count_between_5_and_5000",
+      "type": "expect_table_row_count_to_be_between",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "min_value": 5,
+        "max_value": 5000
+      },
+      "result": {
+        "observed_value": 24
+      },
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "name": "paper_id_not_null",
+      "type": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "paper_id"
+      },
+      "result": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "name": "title_not_null",
+      "type": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "title"
+      },
+      "result": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "name": "text_for_embedding_not_null",
+      "type": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "text_for_embedding"
+      },
+      "result": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "name": "paper_id_unique",
+      "type": "expect_column_values_to_be_unique",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "paper_id"
+      },
+      "result": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    },
+    {
+      "name": "summary_length_at_least_30",
+      "type": "expect_column_value_lengths_to_be_between",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source-papers_asset",
+        "column": "summary",
+        "min_value": 30
+      },
+      "result": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "partial_unexpected_counts": [],
+        "partial_unexpected_index_list": []
+      },
+      "exception_info": {
+        "raised_exception": false,
+        "exception_traceback": null,
+        "exception_message": null
+      }
+    }
+  ],
+  "freshness": {
+    "latest_published": "2026-07-22",
+    "oldest_published": "2026-03-28",
+    "freshness_threshold_days": 180,
+    "maximum_stale_ratio": 0.25,
+    "stale_rows": 1,
+    "invalid_age_rows": 0,
+    "total_rows": 24,
+    "stale_ratio": 0.041666666666666664,
+    "is_fresh": true
+  },
+  "report_path": "D:\\VinUNI_LAB\\K4-L3-DAY10-Invisible-DataPipeline\\data\\quality\\repaired_quality_report.json"
+}

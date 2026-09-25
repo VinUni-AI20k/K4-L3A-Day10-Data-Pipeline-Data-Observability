@@ -1,0 +1,88 @@
+{
+  "input_rows": 24,
+  "output_rows": 21,
+  "net_row_change": -3,
+  "scenario_count": 6,
+  "corruptions": [
+    {
+      "type": "drop_latest_records",
+      "count": 5,
+      "paper_ids": [
+        "10.1145/3637528.3671812",
+        "10.1145/3637528.3671808",
+        "10.1145/3637528.3671804",
+        "10.1145/3637528.3671807",
+        "10.1145/3637528.3671802"
+      ],
+      "original_published": [
+        "2026-07-22",
+        "2026-07-19",
+        "2026-07-05",
+        "2026-06-25",
+        "2026-06-12"
+      ],
+      "description": "Removed the newest 20% of source records."
+    },
+    {
+      "type": "blank_summary",
+      "count": 3,
+      "paper_ids": [
+        "10.1145/3637528.3671824",
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822"
+      ],
+      "description": "Replaced selected summaries with empty strings."
+    },
+    {
+      "type": "inject_text_noise",
+      "count": 3,
+      "paper_ids": [
+        "10.1145/3637528.3671821",
+        "10.1145/3637528.3671810",
+        "10.1145/3637528.3671820"
+      ],
+      "noise": "ZXQJ_9x7v !!! @@@ ### $$$ %%% ^^^ ZXQJ_9x7v",
+      "description": "Appended meaningless character sequences to embedding text."
+    },
+    {
+      "type": "truncate_title",
+      "count": 3,
+      "paper_ids": [
+        "10.1145/3637528.3671819",
+        "10.1145/3637528.3671818",
+        "10.1145/3637528.3671817"
+      ],
+      "original_titles": [
+        "Advanced Perspectives on Synthetic Corruption Testing: Stress-Testing Vector Search Robustness",
+        "Advanced Perspectives on Semantic Layer Integration for Agentic Text-to-SQL Pipelines",
+        "Advanced Perspectives on Evaluating Retrieval Precision with Token F1 and LLM Judges"
+      ],
+      "description": "Truncated selected titles to at most seven characters."
+    },
+    {
+      "type": "stale_date",
+      "count": 8,
+      "paper_ids": [
+        "10.1145/3637528.3671816",
+        "10.1145/3637528.3671815",
+        "10.1145/3637528.3671814",
+        "10.1145/3637528.3671813",
+        "10.1145/3637528.3671801",
+        "10.1145/3637528.3671811",
+        "10.1145/3637528.3671806",
+        "10.1145/3637528.3671809"
+      ],
+      "years_shifted": 5,
+      "description": "Shifted selected publication dates five years into the past."
+    },
+    {
+      "type": "duplicate_rows",
+      "count": 2,
+      "paper_ids": [
+        "10.1145/3637528.3671803",
+        "10.1145/3637528.3671805"
+      ],
+      "description": "Appended exact row copies with duplicate paper_id values."
+    }
+  ]
+}
