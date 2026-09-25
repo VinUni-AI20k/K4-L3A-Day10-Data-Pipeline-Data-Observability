@@ -25,6 +25,13 @@ def write_csv(df, path: Path) -> None:
     df.to_csv(path, index=False)
 
 
+def write_dataframe(df, csv_path: Path, json_path: Path) -> None:
+    """Luu cung mot dataframe ra ca CSV (de doc bang mat) va JSON (de pipeline doc lai)."""
+    write_csv(df, csv_path)
+    ensure_parent(json_path)
+    df.to_json(json_path, orient="records", indent=2, force_ascii=False, date_format="iso")
+
+
 def write_text(path: Path, text: str) -> None:
     ensure_parent(path)
     path.write_text(text, encoding="utf-8")
