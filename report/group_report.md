@@ -8,8 +8,8 @@
 | ------------------ | -------------------------- |
 | Khóa/Lớp         | K4              |
 | Tên nhóm         | 36 Quê Tôi     |
-| Repository         | https://github.com/trump22/K4-L3A-Day10-Data-Pipeline-Data-Observability |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Repository         | https://github.com/trump22/K4-L3A-Day10-36-Que-Toi |
+| Ngày hoàn thành | 2026-09-25]               |
 
 ### Thành viên và phân công
 

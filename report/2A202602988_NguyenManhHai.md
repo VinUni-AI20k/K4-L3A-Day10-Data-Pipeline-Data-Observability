@@ -11,7 +11,7 @@
 | Khóa/Lớp         |  K4          |
 | Tên nhóm         | 36 Quê Tôi   |
 | Vai trò chính    | THU THẬP DỮ LIỆU, LÀM SẠCH & DỰNG TRẠM KIỂM SOÁT CHẤT LƯỢNG GX 1.X                 |
-| Repository         | https://github.com/trump22/K4-L3A-Day10-Data-Pipeline-Data-Observability |
+| Repository         | https://github.com/trump22/K4-L3A-Day10-36-Que-Toi |
 | Ngày hoàn thành | 2026-09-25                 |
 
 ## 2. Vai trò và phạm vi công việc
