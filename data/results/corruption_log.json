@@ -1,0 +1,151 @@
+{
+  "generated_at": "2026-09-25T08:37:24.022093+00:00",
+  "seed": 42,
+  "input_rows": 24,
+  "output_rows": 22,
+  "unique_paper_ids": 19,
+  "corruption_types": [
+    "drop_latest_records",
+    "blank_summary",
+    "inject_noise",
+    "truncate_title",
+    "stale_date",
+    "duplicate_rows"
+  ],
+  "corruptions": [
+    {
+      "type": "drop_latest_records",
+      "description": "Drop 5 ban ghi moi nhat (20%).",
+      "affected_rows": 5,
+      "affected_paper_ids": [
+        "10.21203/rs.3.rs-10489777/v1",
+        "10.70267/aitia.2026482489",
+        "10.21203/rs.3.rs-10349437/v1",
+        "10.54254/2755-2721/2026.36624",
+        "10.36887/2415-8453-2026-3-2"
+      ],
+      "dropped_published": [
+        "2026-09-15T00:00:00Z",
+        "2026-09-13T00:00:00Z",
+        "2026-09-12T00:00:00Z",
+        "2026-09-08T00:00:00Z",
+        "2026-09-04T00:00:00Z"
+      ]
+    },
+    {
+      "type": "blank_summary",
+      "description": "Xoa trang summary cua 3 dong.",
+      "affected_rows": 3,
+      "affected_paper_ids": [
+        "10.52060/juptik.v4i1.4318",
+        "10.21203/rs.3.rs-10012178/v1",
+        "10.36948/ijfmr.2026.v08i04.85777"
+      ]
+    },
+    {
+      "type": "inject_noise",
+      "description": "Chen ky tu rac vao summary cua 3 dong.",
+      "affected_rows": 3,
+      "affected_paper_ids": [
+        "10.3390/buildings16132637",
+        "10.2118/234689-pa",
+        "10.55041/isjem07213"
+      ],
+      "noise_tokens": [
+        "#@!$%",
+        "~~~",
+        "lorem",
+        "ipsum",
+        "0xDEADBEEF",
+        "<<null>>",
+        "?????",
+        "|||",
+        "^^^",
+        "asdfgh"
+      ]
+    },
+    {
+      "type": "truncate_title",
+      "description": "Cat title cua 3 dong xuong 7 ky tu.",
+      "affected_rows": 3,
+      "affected_paper_ids": [
+        "10.20944/preprints202604.0339.v1",
+        "10.1007/s10278-026-02086-9",
+        "10.47576/2949-1894.2026.7.7.023"
+      ],
+      "title_changes": [
+        {
+          "before": "Retrieval-Augmented Large Language Model Agents for Automated Scientific Literature Review Generation",
+          "after": "Retriev"
+        },
+        {
+          "before": "JADE-Plus: A Multimodal Agentic Retrieval-Augmented Generation Large Language Framework for Diagnostic Support in Jawbone Lesions: Development and Technical Validation Study",
+          "after": "JADE-Pl"
+        },
+        {
+          "before": "\u0421\u043d\u0438\u0436\u0435\u043d\u0438\u0435 \u0440\u0438\u0441\u043a\u043e\u0432 \u043f\u0440\u0438\u043c\u0435\u043d\u0435\u043d\u0438\u044f LLM (Large Language Model) \u0432 \u0441\u0444\u0435\u0440\u0435 \u044d\u043a\u043e\u043d\u043e\u043c\u0438\u0447\u0435\u0441\u043a\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u0441\u0442\u0438 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u0439 \u043c\u043e\u043b\u043e\u0447\u043d\u043e\u0439 \u043f\u0440\u043e\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u043d\u0430 \u043e\u0441\u043d\u043e\u0432\u0435 \u043f\u043e\u0434\u0445\u043e\u0434\u0430 RAG (Retrieval-Augmented Generation)",
+          "after": "\u0421\u043d\u0438\u0436\u0435\u043d\u0438"
+        }
+      ]
+    },
+    {
+      "type": "stale_date",
+      "description": "Lui published cua 8 dong ve 365 ngay truoc.",
+      "affected_rows": 8,
+      "affected_paper_ids": [
+        "10.20944/preprints202608.1849.v1",
+        "10.3390/knowledge6030022",
+        "10.2118/234689-pa",
+        "10.1007/s10278-026-02086-9",
+        "10.21203/rs.3.rs-10178277/v1",
+        "10.21203/rs.3.rs-10012178/v1",
+        "10.52060/juptik.v4i1.4318",
+        "10.20944/preprints202604.0339.v1"
+      ],
+      "date_changes": [
+        {
+          "before": "2026-08-26T00:00:00Z",
+          "after": "2025-08-26T00:00:00Z"
+        },
+        {
+          "before": "2026-08-25T00:00:00Z",
+          "after": "2025-08-25T00:00:00Z"
+        },
+        {
+          "before": "2026-08-01T00:00:00Z",
+          "after": "2025-08-01T00:00:00Z"
+        },
+        {
+          "before": "2026-07-13T00:00:00Z",
+          "after": "2025-07-13T00:00:00Z"
+        },
+        {
+          "before": "2026-07-10T00:00:00Z",
+          "after": "2025-07-10T00:00:00Z"
+        },
+        {
+          "before": "2026-06-15T00:00:00Z",
+          "after": "2025-06-15T00:00:00Z"
+        },
+        {
+          "before": "2026-06-01T00:00:00Z",
+          "after": "2025-06-01T00:00:00Z"
+        },
+        {
+          "before": "2026-04-06T00:00:00Z",
+          "after": "2025-04-06T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "type": "duplicate_rows",
+      "description": "Nhan ban 3 dong.",
+      "affected_rows": 3,
+      "affected_paper_ids": [
+        "10.21203/rs.3.rs-10423755/v1",
+        "10.2118/234689-pa",
+        "10.47576/2949-1894.2026.7.7.023"
+      ]
+    }
+  ]
+}
