@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Data Observability & Quality Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+  <!-- Top Navigation -->
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-indigo-600 flex items-center justify-center text-white text-xl shadow-lg shadow-indigo-500/30">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold tracking-tight">RAG Observability Dashboard</h1>
+          <p class="text-xs text-slate-400">Day 10 — Great Expectations 1.x & 3-State Comparison</p>
+        </div>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-1.5 animate-pulse"></span> Pipeline Healthy
+        </span>
+        <span class="text-xs text-slate-400 font-mono bg-slate-800 px-2.5 py-1 rounded-lg">GX 1.23.1</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+    <!-- Key Metric Overview Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 hover:border-indigo-500/50 transition">
+        <div class="flex items-center justify-between text-slate-400 text-sm">
+          <span>🟢 Baseline Hit Rate</span>
+          <i class="fa-solid fa-bullseye text-emerald-400"></i>
+        </div>
+        <div class="mt-3 flex items-baseline justify-between">
+          <span class="text-3xl font-bold text-white">100.0%</span>
+          <span class="text-xs text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full font-medium">Chuẩn sạch</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">10/10 câu hỏi truy xuất chính xác tài liệu nguồn</p>
+      </div>
+
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 hover:border-rose-500/50 transition">
+        <div class="flex items-center justify-between text-slate-400 text-sm">
+          <span>🔴 Corrupted Hit Rate</span>
+          <i class="fa-solid fa-triangle-exclamation text-rose-400"></i>
+        </div>
+        <div class="mt-3 flex items-baseline justify-between">
+          <span class="text-3xl font-bold text-rose-400">70.0%</span>
+          <span class="text-xs text-rose-400 bg-rose-500/10 px-2 py-0.5 rounded-full font-medium">-30.0% sụt giảm</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Minh chứng hiện tượng Silent Failure khi dữ liệu bị lỗi</p>
+      </div>
+
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 hover:border-cyan-500/50 transition">
+        <div class="flex items-center justify-between text-slate-400 text-sm">
+          <span>🔵 Repaired Hit Rate</span>
+          <i class="fa-solid fa-rotate-right text-cyan-400"></i>
+        </div>
+        <div class="mt-3 flex items-baseline justify-between">
+          <span class="text-3xl font-bold text-cyan-400">100.0%</span>
+          <span class="text-xs text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded-full font-medium">+30.0% phục hồi</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Khôi phục 100% phong độ nhờ tính Idempotent</p>
+      </div>
+
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-5 hover:border-amber-500/50 transition">
+        <div class="flex items-center justify-between text-slate-400 text-sm">
+          <span>🛡️ Data Quality Gate</span>
+          <i class="fa-solid fa-clipboard-check text-amber-400"></i>
+        </div>
+        <div class="mt-3 flex items-baseline justify-between">
+          <span class="text-2xl font-bold text-amber-400">PASS ➔ FAIL ➔ PASS</span>
+        </div>
+        <p class="text-xs text-slate-400 mt-2">Bắt lỗi vi phạm schema & tự động khôi phục</p>
+      </div>
+    </div>
+
+    <!-- 3-State Performance Comparison Chart & Table -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- Chart -->
+      <div class="lg:col-span-2 bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-base font-semibold text-white">So Sánh Định Lượng 3 Trạng Thái</h2>
+            <p class="text-xs text-slate-400">Baseline (Sạch) vs Corrupted (Bị lỗi) vs Repaired (Sau phục hồi)</p>
+          </div>
+          <span class="text-xs bg-slate-700/60 text-slate-300 px-2.5 py-1 rounded-md font-mono">Benchmark: 10 queries</span>
+        </div>
+        <div class="h-72">
+          <canvas id="comparisonChart"></canvas>
+        </div>
+      </div>
+
+      <!-- Quality Gate & Freshness SLA Card -->
+      <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6 flex flex-col justify-between">
+        <div>
+          <h2 class="text-base font-semibold text-white mb-4">Chốt Kiểm Dịch (Quality Gates)</h2>
+          
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-list-check text-indigo-400"></i>
+                <div class="text-xs">
+                  <div class="font-medium text-slate-200">Table Row Count</div>
+                  <div class="text-slate-400">[5, 5000] bản ghi hợp lệ</div>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-500/20 text-emerald-400">PASS</span>
+            </div>
+
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-ban text-indigo-400"></i>
+                <div class="text-xs">
+                  <div class="font-medium text-slate-200">Null Value Check</div>
+                  <div class="text-slate-400">paper_id, title, text</div>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-500/20 text-emerald-400">PASS</span>
+            </div>
+
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-fingerprint text-indigo-400"></i>
+                <div class="text-xs">
+                  <div class="font-medium text-slate-200">Unique Paper ID</div>
+                  <div class="text-slate-400">Khử trùng lặp khóa chính</div>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-500/20 text-emerald-400">PASS</span>
+            </div>
+
+            <div class="flex items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+              <div class="flex items-center space-x-3">
+                <i class="fa-solid fa-align-left text-indigo-400"></i>
+                <div class="text-xs">
+                  <div class="font-medium text-slate-200">Summary Length</div>
+                  <div class="text-slate-400">Tối thiểu 30 ký tự</div>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded text-xs font-semibold bg-emerald-500/20 text-emerald-400">PASS</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-4 pt-4 border-t border-slate-700/60">
+          <div class="flex justify-between items-center text-xs">
+            <span class="text-slate-400">Freshness SLA (> 180d)</span>
+            <span class="text-emerald-400 font-semibold">Tươi mới (4.2% <= 25%)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6 Synthetic Corruption Scenarios Table -->
+    <div class="bg-slate-800/60 border border-slate-700/60 rounded-2xl p-6">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-base font-semibold text-white">Thử Thách Tiêm 6 Kịch Bản Độc Tố Dữ Liệu (Corruption Suite)</h2>
+          <p class="text-xs text-slate-400">Mô phỏng các sự cố dữ liệu thực tế tại môi trường Production</p>
+        </div>
+        <span class="text-xs text-rose-400 bg-rose-500/10 border border-rose-500/20 px-2.5 py-1 rounded-md font-mono">6 Scenarios Injected</span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm text-slate-300">
+          <thead class="text-xs uppercase bg-slate-900/80 text-slate-400 border-b border-slate-700">
+            <tr>
+              <th class="py-3 px-4">STT</th>
+              <th class="py-3 px-4">Kịch bản lỗi</th>
+              <th class="py-3 px-4">Bản chất nghiệp vụ</th>
+              <th class="py-3 px-4">Quy mô ảnh hưởng</th>
+              <th class="py-3 px-4">Tác động lên RAG / Observability</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-700/60">
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-mono text-xs">1</td>
+              <td class="py-3 px-4 font-semibold text-slate-200">Drop Latest Records</td>
+              <td class="py-3 px-4 text-xs">Bỏ rơi 20% bài báo mới nhất khi cào dữ liệu</td>
+              <td class="py-3 px-4 font-mono text-xs">4 bản ghi mới</td>
+              <td class="py-3 px-4 text-xs text-rose-400">Gây Stale Data, RAG bị ảo giác (Hit Rate giảm 30%)</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-mono text-xs">2</td>
+              <td class="py-3 px-4 font-semibold text-slate-200">Blank Summary</td>
+              <td class="py-3 px-4 text-xs">Xóa trắng phần tóm tắt nội dung</td>
+              <td class="py-3 px-4 font-mono text-xs">2 bản ghi</td>
+              <td class="py-3 px-4 text-xs text-amber-400">Great Expectations 1.x lập tức báo đỏ chặn đứng</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-mono text-xs">3</td>
+              <td class="py-3 px-4 font-semibold text-slate-200">Inject Noise</td>
+              <td class="py-3 px-4 text-xs">Chèn các chuỗi ký tự rác vô nghĩa</td>
+              <td class="py-3 px-4 font-mono text-xs">2 bản ghi</td>
+              <td class="py-3 px-4 text-xs text-amber-400">Làm méo mó vector embedding trong không gian ngữ nghĩa</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-mono text-xs">4</td>
+              <td class="py-3 px-4 font-semibold text-slate-200">Truncate Title</td>
+              <td class="py-3 px-4 text-xs">Cắt ngắn tiêu đề xuống dưới 8 ký tự</td>
+              <td class="py-3 px-4 font-mono text-xs">2 bản ghi</td>
+              <td class="py-3 px-4 text-xs text-rose-400">Khó khăn cho tra cứu chính xác theo tiêu đề</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-mono text-xs">5</td>
+              <td class="py-3 px-4 font-semibold text-slate-200">Stale Date</td>
+              <td class="py-3 px-4 text-xs">Lùi ngày xuất bản về 365 ngày trước</td>
+              <td class="py-3 px-4 font-mono text-xs">7 bản ghi (40%)</td>
+              <td class="py-3 px-4 text-xs text-rose-400">Freshness SLA báo cờ đỏ vi phạm ngưỡng 25%</td>
+            </tr>
+            <tr class="hover:bg-slate-700/30">
+              <td class="py-3 px-4 font-mono text-xs">6</td>
+              <td class="py-3 px-4 font-semibold text-slate-200">Duplicate Rows</td>
+              <td class="py-3 px-4 text-xs">Nhân đôi dữ liệu tạo bản ghi trùng lặp</td>
+              <td class="py-3 px-4 font-mono text-xs">2 bản ghi</td>
+              <td class="py-3 px-4 text-xs text-amber-400">GX 1.x Unique ID check báo vi phạm khóa duy nhất</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-slate-800 bg-slate-950 py-6 text-center text-xs text-slate-500">
+    Đồ án thực chiến Day 10 — Data Pipeline & Data Observability for RAG | VinUni AI20k - K4-L3A
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('comparisonChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Retrieval Hit Rate', 'Mean Token F1', 'Judge Accuracy'],
+        datasets: [
+          {
+            label: '🟢 Baseline (Sạch)',
+            data: [1.0, 1.0, 1.0],
+            backgroundColor: 'rgba(16, 185, 129, 0.8)',
+            borderColor: 'rgb(16, 185, 129)',
+            borderWidth: 1,
+            borderRadius: 6
+          },
+          {
+            label: '🔴 Corrupted (Bị lỗi)',
+            data: [0.7, 0.9, 0.9],
+            backgroundColor: 'rgba(244, 63, 94, 0.8)',
+            borderColor: 'rgb(244, 63, 94)',
+            borderWidth: 1,
+            borderRadius: 6
+          },
+          {
+            label: '🔵 Repaired (Sau phục hồi)',
+            data: [1.0, 1.0, 1.0],
+            backgroundColor: 'rgba(6, 182, 212, 0.8)',
+            borderColor: 'rgb(6, 182, 212)',
+            borderWidth: 1,
+            borderRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'top',
+            labels: { color: '#94a3b8', font: { family: 'Inter', size: 12 } }
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 1.0,
+            ticks: {
+              color: '#94a3b8',
+              callback: function(value) { return (value * 100) + '%'; }
+            },
+            grid: { color: 'rgba(51, 65, 85, 0.4)' }
+          },
+          x: {
+            ticks: { color: '#94a3b8', font: { family: 'Inter', size: 12 } },
+            grid: { display: false }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

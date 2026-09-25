@@ -1,0 +1,68 @@
+{
+  "scenarios": [
+    {
+      "name": "drop_latest_records",
+      "description": "Dropped 20% newest publications",
+      "count": 4,
+      "affected_ids": [
+        "10.1145/3637528.3671812",
+        "10.1145/3637528.3671808",
+        "10.1145/3637528.3671804",
+        "10.1145/3637528.3671807"
+      ]
+    },
+    {
+      "name": "blank_summary",
+      "description": "Erased abstract text to empty string",
+      "count": 2,
+      "affected_ids": [
+        "10.1145/3637528.3671802",
+        "10.1145/3637528.3671824"
+      ]
+    },
+    {
+      "name": "inject_noise",
+      "description": "Injected gibberish tokens into abstract",
+      "count": 2,
+      "affected_ids": [
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822"
+      ]
+    },
+    {
+      "name": "truncate_title",
+      "description": "Truncated title length to under 8 characters",
+      "count": 2,
+      "affected_ids": [
+        "10.1145/3637528.3671821",
+        "10.1145/3637528.3671810"
+      ]
+    },
+    {
+      "name": "stale_date",
+      "description": "Shifted publication date back by 365 days",
+      "count": 8,
+      "affected_ids": [
+        "10.1145/3637528.3671802",
+        "10.1145/3637528.3671824",
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822",
+        "10.1145/3637528.3671821",
+        "10.1145/3637528.3671810",
+        "10.1145/3637528.3671820",
+        "10.1145/3637528.3671819"
+      ]
+    },
+    {
+      "name": "duplicate_rows",
+      "description": "Duplicated existing rows to introduce duplicate paper_ids",
+      "count": 2,
+      "affected_ids": [
+        "10.1145/3637528.3671802",
+        "10.1145/3637528.3671824"
+      ]
+    }
+  ],
+  "original_rows": 24,
+  "corrupted_rows": 22
+}
