@@ -1,0 +1,90 @@
+{
+  "report_name": "baseline",
+  "success": true,
+  "expectations": [
+    {
+      "name": "row_count_between_5_and_5000",
+      "success": true,
+      "details": {
+        "observed_value": 24
+      }
+    },
+    {
+      "name": "paper_id_not_null",
+      "success": true,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": []
+      }
+    },
+    {
+      "name": "title_not_null",
+      "success": true,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": []
+      }
+    },
+    {
+      "name": "text_for_embedding_not_null",
+      "success": true,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": []
+      }
+    },
+    {
+      "name": "paper_id_unique",
+      "success": true,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0
+      }
+    },
+    {
+      "name": "summary_length_at_least_30",
+      "success": true,
+      "details": {
+        "element_count": 24,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": [],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 0.0,
+        "unexpected_percent_nonmissing": 0.0
+      }
+    },
+    {
+      "name": "freshness_threshold_check",
+      "success": true,
+      "details": {
+        "stale_rows": 0,
+        "total_rows": 24,
+        "threshold_percent": 0.25
+      }
+    }
+  ],
+  "freshness": {
+    "latest_published": "2026-09-15",
+    "oldest_published": "2026-04-01",
+    "stale_rows": 0,
+    "total_rows": 24,
+    "is_fresh": true,
+    "threshold_days": 180,
+    "stale_ratio": 0.0
+  },
+  "report_path": "/home/hungnguyen/Workspace/AI_in_Action/Lab/K4-L3-Day10-DaiDaiDi-DataPipeline/data/quality/baseline_quality_report.json"
+}

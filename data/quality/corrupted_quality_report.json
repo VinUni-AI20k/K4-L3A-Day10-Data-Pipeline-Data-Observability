@@ -1,0 +1,103 @@
+{
+  "report_name": "corrupted",
+  "success": false,
+  "expectations": [
+    {
+      "name": "row_count_between_5_and_5000",
+      "success": true,
+      "details": {
+        "observed_value": 22
+      }
+    },
+    {
+      "name": "paper_id_not_null",
+      "success": true,
+      "details": {
+        "element_count": 22,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": []
+      }
+    },
+    {
+      "name": "title_not_null",
+      "success": true,
+      "details": {
+        "element_count": 22,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": []
+      }
+    },
+    {
+      "name": "text_for_embedding_not_null",
+      "success": true,
+      "details": {
+        "element_count": 22,
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "partial_unexpected_list": []
+      }
+    },
+    {
+      "name": "paper_id_unique",
+      "success": false,
+      "details": {
+        "element_count": 22,
+        "unexpected_count": 6,
+        "unexpected_percent": 27.27272727272727,
+        "partial_unexpected_list": [
+          "10.20944/preprints202608.1849.v1",
+          "10.21203/rs.3.rs-10423755/v1",
+          "10.63125/gseh0k17",
+          "10.20944/preprints202608.1849.v1",
+          "10.21203/rs.3.rs-10423755/v1",
+          "10.63125/gseh0k17"
+        ],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 27.27272727272727,
+        "unexpected_percent_nonmissing": 27.27272727272727
+      }
+    },
+    {
+      "name": "summary_length_at_least_30",
+      "success": false,
+      "details": {
+        "element_count": 22,
+        "unexpected_count": 5,
+        "unexpected_percent": 22.727272727272727,
+        "partial_unexpected_list": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "unexpected_percent_total": 22.727272727272727,
+        "unexpected_percent_nonmissing": 22.727272727272727
+      }
+    },
+    {
+      "name": "freshness_threshold_check",
+      "success": false,
+      "details": {
+        "stale_rows": 8,
+        "total_rows": 22,
+        "threshold_percent": 0.25
+      }
+    }
+  ],
+  "freshness": {
+    "latest_published": "2026-08-27",
+    "oldest_published": "2025-06-15",
+    "stale_rows": 8,
+    "total_rows": 22,
+    "is_fresh": false,
+    "threshold_days": 180,
+    "stale_ratio": 0.36363636363636365
+  },
+  "report_path": "/home/hungnguyen/Workspace/AI_in_Action/Lab/K4-L3-Day10-DaiDaiDi-DataPipeline/data/quality/corrupted_quality_report.json"
+}
