@@ -25,20 +25,26 @@ class LocalEmbeddingIndex:
     def __init__(
         self,
         settings: Settings,
-        collection_name: str,
-        documents: list[dict[str, Any]],
-        persist_path: Path,
+        collection_name: str | None = None,
+        documents: list[dict[str, Any]] | None = None,
+        persist_path: Path | None = None,
     ):
         self.settings = settings
-        self.collection_name = collection_name
-        self.documents = documents
-        self.persist_path = persist_path
+        self.collection_name = collection_name or settings.baseline_collection_name
+        self.documents = documents or []
+        self.persist_path = persist_path or settings.paths.chroma_dir
         self.embedding_backend = "chroma"
         self.embedding_model = MiniLMEmbeddings(settings.embedding_model)
-        self.client = chromadb.PersistentClient(path=str(persist_path))
-        self.collection = self.client.get_collection(name=collection_name)
-        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in documents}
-        self.documents_by_title = {document["title"].lower(): document for document in documents}
+        self.client = chromadb.PersistentClient(path=str(self.persist_path))
+        if self.documents:
+            self.collection = self.client.get_collection(name=self.collection_name)
+        else:
+            self.collection = self.client.get_or_create_collection(
+                name=self.collection_name,
+                configuration={"hnsw": {"space": "cosine"}},
+            )
+        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in self.documents}
+        self.documents_by_title = {document["title"].lower(): document for document in self.documents}
 
     @staticmethod
     def _build_documents(df: pd.DataFrame) -> list[dict[str, Any]]:
@@ -86,13 +92,17 @@ class LocalEmbeddingIndex:
         df: pd.DataFrame,
         settings: Settings,
         embeddings_output_path: Path | None = None,
+        collection_name: str | None = None,
     ) -> "LocalEmbeddingIndex":
-        collection_name = cls._derive_collection_name(settings, embeddings_output_path)
+        collection_name = collection_name or cls._derive_collection_name(settings, embeddings_output_path)
         documents = cls._build_documents(df)
+        if not documents:
+            raise ValueError("Cannot build a Chroma index from an empty clean dataframe.")
         persist_path = settings.paths.chroma_dir
         persist_path.mkdir(parents=True, exist_ok=True)
 
         embedding_model = MiniLMEmbeddings(settings.embedding_model)
+        embeddings = embedding_model.embed_documents([document["content"] for document in documents])
         client = chromadb.PersistentClient(path=str(persist_path))
         try:
             client.delete_collection(name=collection_name)
@@ -102,7 +112,6 @@ class LocalEmbeddingIndex:
             name=collection_name,
             configuration={"hnsw": {"space": "cosine"}},
         )
-        embeddings = embedding_model.embed_documents([document["content"] for document in documents])
         collection.add(
             ids=[document["record_id"] for document in documents],
             embeddings=embeddings,
@@ -137,6 +146,21 @@ class LocalEmbeddingIndex:
             documents=payload["documents"],
             persist_path=Path(payload["persist_path"]),
         )
+
+    def build_from_clean(self) -> "LocalEmbeddingIndex":
+        """Populate this instance from the configured clean JSON corpus."""
+        df = pd.read_json(self.settings.paths.clean_json)
+        built = self.build(df, self.settings, collection_name=self.collection_name)
+        self.documents = built.documents
+        self.client = built.client
+        self.collection = built.collection
+        self.documents_by_paper_id = built.documents_by_paper_id
+        self.documents_by_title = built.documents_by_title
+        return self
+
+    def semantic_search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        """Search the Chroma collection with a MiniLM query embedding."""
+        return self.search(query, top_k=top_k)
 
     def search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
         query_embedding = self.embedding_model.embed_query(query)
