@@ -44,16 +44,26 @@ def _ragas_lines(metrics: dict[str, Any]) -> list[str]:
     return [f"- RAGAS `{key}`: {_fmt(value)}" for key, value in ragas.items()]
 
 
+def _check_column(check: dict[str, Any]) -> str:
+    return (check.get("kwargs") or {}).get("column") or "table"
+
+
+def _check_observed(check: dict[str, Any]) -> str:
+    if "unexpected_count" in check:
+        return f"{check['unexpected_count']} unexpected"
+    return _fmt(check.get("observed_value"))
+
+
 def _quality_lines(quality: dict[str, Any]) -> list[str]:
-    """Expected shape: {"success": bool, "results": [{"expectation", "column", "success", "observed"?}]}."""
+    """Shape from observability.quality: {"success", "checks": [{"expectation", "kwargs", "success", ...}]}."""
     lines = [f"**Overall Quality Gate:** {_fmt(quality.get('success'))}", ""]
-    results = quality.get("results") or []
-    if results:
+    checks = quality.get("checks") or []
+    if checks:
         lines += ["| Expectation | Column | Status | Observed |", "| :--- | :--- | :---: | :--- |"]
-        for item in results:
+        for check in checks:
             lines.append(
-                f"| `{item.get('expectation', '?')}` | {item.get('column') or '-'} "
-                f"| {_fmt(item.get('success'))} | {_fmt(item.get('observed'))} |"
+                f"| `{check.get('expectation', '?')}` | {_check_column(check)} "
+                f"| {_fmt(check.get('success'))} | {_check_observed(check)} |"
             )
     return lines
 
@@ -137,10 +147,12 @@ def generate_corruption_report(
         f"| Row count | {_fmt(corrupted_freshness.get('total_rows'))} | {_fmt(repaired_freshness.get('total_rows'))} |",
     ]
 
-    failed = [item for item in corrupted_quality.get("results") or [] if not item.get("success")]
+    failed = [check for check in corrupted_quality.get("checks") or [] if not check.get("success")]
     lines += ["", "### Expectations failed on corrupted data", ""]
     if failed:
-        lines += [f"- `{item.get('expectation')}` on `{item.get('column') or 'table'}`" for item in failed]
+        lines += [
+            f"- `{check.get('expectation')}` on `{_check_column(check)}` ({_check_observed(check)})" for check in failed
+        ]
     else:
         lines.append("- None — the quality gate did NOT catch the corruption (silent failure risk).")
 
