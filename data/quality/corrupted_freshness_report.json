@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-09-25T08:37:24.223115+00:00",
+  "latest_published": "2026-08-27",
+  "oldest_published": "2025-04-06",
+  "min_age_days": 29,
+  "max_age_days": 537,
+  "freshness_threshold_days": 180,
+  "max_stale_ratio": 0.25,
+  "stale_rows": 9,
+  "total_rows": 22,
+  "stale_ratio": 0.4091,
+  "is_fresh": false
+}

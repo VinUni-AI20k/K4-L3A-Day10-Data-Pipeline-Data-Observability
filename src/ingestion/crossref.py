@@ -27,6 +27,13 @@ class PaperRecord:
     comment: str
 
 
+def _fallback_categories(item: dict) -> list[str]:
+    # Crossref no longer returns `subject` for most works, which left every paper with no
+    # categories (and unanswerable `categories` eval questions). Fall back to venue + work type.
+    venue = " ".join((item.get("container-title") or [""])[0].split())
+    return [value for value in (venue, item.get("type", "")) if value]
+
+
 def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
     records = []
     items = payload.get("message", {}).get("items", [])
@@ -50,7 +57,7 @@ def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
             if name:
                 authors.append(name)
                 
-        categories = item.get("subject", [])
+        categories = item.get("subject") or _fallback_categories(item)
         primary_category = categories[0] if categories else ""
         
         pub_date_parts = item.get("published", {}).get("date-parts", [[]])[0]
