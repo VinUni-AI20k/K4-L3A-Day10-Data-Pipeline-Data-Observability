@@ -6,16 +6,16 @@
 
 | Thông tin         | Nội dung                  |
 | ------------------ | -------------------------- |
-| Khóa/Lớp         | [K3 hoặc K4]              |
-| Tên nhóm         | [Tên hoặc mã nhóm]     |
-| Repository         | [Đường dẫn repository] |
-| Ngày hoàn thành | [YYYY-MM-DD]               |
+| Khóa/Lớp         | K4              |
+| Tên nhóm         | 36 Quê Tôi     |
+| Repository         | https://github.com/trump22/K4-L3A-Day10-36-Que-Toi |
+| Ngày hoàn thành | 2026-09-25]               |
 
 ### Thành viên và phân công
 
 | STT | Họ và tên | MSSV | Vai trò chính | Module/deliverable sở hữu |
 | --: | --- | --- | --- | --- |
-| 1 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
+| 1 | Nguyễn Mạnh Hải | 2A202602988 | Data Foundation & Quality Gate (Pha 2) | `src/ingestion/crossref.py`, `src/ingestion/cleaning.py`, `src/observability/quality.py`; `data/raw/`, `data/clean/`, `data/quality/` |
 | 2 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
 | 3 | [Họ tên] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
 | 4 | [Nếu có] | [MSSV] | [Vai trò] | [File, hàm hoặc artifact] |
@@ -58,11 +58,11 @@ Crossref API
 
 | Khối             | Input          | Xử lý chính             | Output/artifact          | Owner          |
 | ----------------- | -------------- | -------------------------- | ------------------------ | -------------- |
-| Ingestion         | [Nguồn/input] | [Fetch, retry, parse...]   | [Đường dẫn artifact] | [Thành viên] |
-| Cleaning          | [Input]        | [Các quy tắc chính]     | [Đường dẫn artifact] | [Thành viên] |
+| Ingestion         | Crossref API hoặc snapshot `data/raw/crossref_response.json` | Retry 429/5xx tối đa 3 lần, fallback snapshot, parse DOI/title/abstract/authors/subject/ngày | `data/raw/crossref_records.json` | Nguyễn Mạnh Hải |
+| Cleaning          | `crossref_records.json` | Chuẩn hóa khoảng trắng, tính `age_days`, tạo `text_for_embedding`, khử trùng `paper_id` | `data/clean/papers_clean.csv` | Nguyễn Mạnh Hải |
 | Embedding/index   | [Input]        | [Model/index config]       | [Đường dẫn artifact] | [Thành viên] |
 | Evaluation        | [Input]        | [Test set và metrics]     | [Đường dẫn artifact] | [Thành viên] |
-| Observability     | [Input]        | [Quality/freshness checks] | [Đường dẫn artifact] | [Thành viên] |
+| Observability     | `papers_clean.json` | GX 1.x (6 expectation) + freshness `age_days > 180` | `data/quality/*.json` | Nguyễn Mạnh Hải |
 | Corruption/repair | [Input]        | [Corruption và repair]    | [Đường dẫn artifact] | [Thành viên] |
 | Orchestration     | [Input]        | [Thứ tự chạy]           | [Reports/metrics]        | [Thành viên] |
 
@@ -135,29 +135,36 @@ python script/run_corruption_flow.py
 
 | Thuộc tính                | Giá trị                             |
 | --------------------------- | ------------------------------------- |
-| Source                      | [Crossref endpoint/dataset thực tế] |
-| Query/filter                | [Query hoặc filter]                  |
-| Thời điểm lấy dữ liệu | [Timestamp]                           |
-| Số record nhận được    | [Số lượng]                         |
-| Cơ chế retry/backoff      | [Mô tả ngắn]                       |
+| Source                      | Crossref REST API (chạy offline bằng snapshot `data/raw/crossref_response.json`) |
+| Query/filter                | `agentic retrieval augmented generation large language model`; `from-pub-date:<hôm nay - 180 ngày>,has-abstract:true` |
+| Thời điểm lấy dữ liệu | Snapshot có sẵn trong repo (chưa gọi API thật) |
+| Số record nhận được    | 24                         |
+| Cơ chế retry/backoff      | Tối đa 3 lần với 429/5xx, chờ 2s rồi 4s; thất bại thì đọc snapshot |
 
 ### Raw và clean schema
 
 | Trường        | Kiểu dữ liệu | Bắt buộc?  | Ý nghĩa   | Xử lý khi thiếu/sai |
 | --------------- | --------------- | ------------ | ----------- | ---------------------- |
-| [Tên trường] | [Kiểu]         | [Có/Không] | [Ý nghĩa] | [Cách xử lý]        |
-| [Tên trường] | [Kiểu]         | [Có/Không] | [Ý nghĩa] | [Cách xử lý]        |
+| `paper_id` | str | Có | DOI chuẩn hóa (chữ thường, không tiền tố) | Thiếu thì bỏ record; trùng thì giữ bản đầu |
+| `title` | str | Có | Tiêu đề, đã chuẩn hóa khoảng trắng | Thiếu thì bỏ record |
+| `summary` | str | Có | Abstract đã bỏ thẻ JATS/HTML | Thiếu thì bỏ record |
+| `authors`, `categories` | list[str] | Không | Tác giả, lĩnh vực (`subject`) | Thiếu thì để danh sách rỗng |
+| `published`, `updated` | str (ISO 8601) | Có | Ngày xuất bản | Thiếu thì bỏ record |
+| `age_days` | int | Có | `(run_date - published).days` | Ngày không parse được thì bỏ dòng |
+| `text_for_embedding` | str | Có | Title/Authors/Published/Categories/Summary, 5 dòng | Sinh lại từ các cột khác |
 
 ### Quy tắc cleaning
 
 | Quy tắc                                 | Quality dimension liên quan | Số record bị tác động | Cách xác minh      |
 | ---------------------------------------- | ---------------------------- | -------------------------: | -------------------- |
-| [Ví dụ: loại record không có title] | [Completeness/Validity/...]  |              [Số lượng] | [Artifact/kiểm tra] |
-| [Quy tắc thực tế]                     | [Dimension]                  |              [Số lượng] | [Artifact/kiểm tra] |
+| Bỏ thẻ JATS/HTML khỏi abstract | Validity |                         24 | Không còn ký tự `<` trong `summary` của `papers_clean.csv` |
+| Chuẩn hóa khoảng trắng title/summary | Consistency |                      1 | So sánh raw và clean |
+| Loại record thiếu DOI/title/abstract/ngày | Completeness |                 0 | 24 record raw → 24 dòng clean |
+| Khử trùng theo `paper_id` | Uniqueness |                            0 | `ExpectColumnValuesToBeUnique` pass |
 
 Giải thích cách nhóm tạo `text_for_embedding`, document ID và `age_days`:
 
-[Mô tả tại đây.]
+`paper_id` là DOI viết thường. `age_days` bằng số ngày giữa thời điểm chạy pipeline và ngày xuất bản, nên giá trị đổi theo ngày chạy (hiện 65–181 ngày, 1/24 bài quá 180 ngày). `text_for_embedding` ghép năm dòng `Title`, `Authors`, `Published`, `Categories`, `Summary` để vector hóa cả metadata lẫn nội dung.
 
 ## 6. Evaluation setup
 
