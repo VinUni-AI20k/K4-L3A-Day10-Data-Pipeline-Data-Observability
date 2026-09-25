@@ -1,0 +1,11 @@
+{
+  "run_timestamp": "2026-09-25T10:18:52.417769",
+  "total_rows": 21,
+  "stale_rows": 11,
+  "stale_ratio_pct": 52.38,
+  "threshold_days": 180,
+  "is_fresh": false,
+  "latest_published": "2026-08-26T00:00:00.000",
+  "oldest_published": "2025-04-01",
+  "warning": "Stale ratio 52.38% exceeds 25% threshold. Consider fetching newer papers."
+}
