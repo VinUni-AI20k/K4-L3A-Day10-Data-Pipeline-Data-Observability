@@ -1,0 +1,678 @@
+[
+  {
+    "paper_id": "10.3390/vehicles8100228",
+    "title": "RKGRScen: Road-Network Knowledge Graph Retrieval-Based Scenario Generation for Autonomous Driving Testing",
+    "summary": "Simulation-based scenario testing is central to the safety validation of autonomous driving systems (ADS), where abstract scenarios must be instantiated into executable concrete scenarios. A key challenge in this process is road matching, which aims to identify a concrete site on a map that genuinely satisfies the road-semantic requirements of a scenario. Existing methods often reduce this step to template-based mapping or coarse geometric filtering, which capture coarse road types but fail to meet the finer structural and topological constraints of a scenario, thereby undermining the executability and behavioral fidelity of the generated scenarios. To address this, we propose RKGRScen (Road-Network Knowledge Graph Retrieval-Based Scenario Generation), which formalizes road matching as a semantic location retrieval problem over a road-network knowledge graph. Its indexing module constructs a road-network knowledge graph from OpenDRIVE maps and partitions it into topologically coherent communities annotated with LLM-generated semantic summaries and violation tags, organizing them into a searchable semantic community index. Its instantiation module then grounds each scenario onto concrete road sites through two-level global-to-local retrieval and resolves executable parameters and conflict-point timing with a constraint solver. In a scenario-quality evaluation on a CARLA Town01\u2013Town05 map pool comprising 2649 scenarios, RKGRScen achieves an executability rate of 93.88%, an end-to-end behavior reproduction rate of 72.59%, and a road\u2013environment matching rate of 93.43%. Therefore, RKGRScen can reliably ground high-level scenarios into executable scenarios that satisfy complex road and topological constraints, providing effective support for the safety validation of autonomous driving systems.",
+    "authors": [
+      "Zhe Wang",
+      "Yaqing Shi",
+      "Tongtong Bai",
+      "Song Huang",
+      "Changyou Zheng",
+      "Kui Yao",
+      "Kunyuan Li",
+      "Yao He"
+    ],
+    "categories": [
+      "Scenario generation",
+      "Simulation and validation",
+      "Data and knowledge"
+    ],
+    "primary_category": "Scenario generation",
+    "published": "2026-09-24",
+    "updated": "2026-09-24",
+    "age_days": 1,
+    "authors_joined": "Zhe Wang, Yaqing Shi, Tongtong Bai, Song Huang, Changyou Zheng, Kui Yao, Kunyuan Li, Yao He",
+    "categories_joined": "Scenario generation, Simulation and validation, Data and knowledge",
+    "summary_chars": 1819,
+    "text_for_embedding": "Title: RKGRScen: Road-Network Knowledge Graph Retrieval-Based Scenario Generation for Autonomous Driving Testing\nAuthors: Zhe Wang, Yaqing Shi, Tongtong Bai, Song Huang, Changyou Zheng, Kui Yao, Kunyuan Li, Yao He\nPublished: 2026-09-24\nCategories: Scenario generation, Simulation and validation, Data and knowledge\nSummary: Simulation-based scenario testing is central to the safety validation of autonomous driving systems (ADS), where abstract scenarios must be instantiated into executable concrete scenarios. A key challenge in this process is road matching, which aims to identify a concrete site on a map that genuinely satisfies the road-semantic requirements of a scenario. Existing methods often reduce this step to template-based mapping or coarse geometric filtering, which capture coarse road types but fail to meet the finer structural and topological constraints of a scenario, thereby undermining the executability and behavioral fidelity of the generated scenarios. To address this, we propose RKGRScen (Road-Network Knowledge Graph Retrieval-Based Scenario Generation), which formalizes road matching as a semantic location retrieval problem over a road-network knowledge graph. Its indexing module constructs a road-network knowledge graph from OpenDRIVE maps and partitions it into topologically coherent communities annotated with LLM-generated semantic summaries and violation tags, organizing them into a searchable semantic community index. Its instantiation module then grounds each scenario onto concrete road sites through two-level global-to-local retrieval and resolves executable parameters and conflict-point timing with a constraint solver. In a scenario-quality evaluation on a CARLA Town01\u2013Town05 map pool comprising 2649 scenarios, RKGRScen achieves an executability rate of 93.88%, an end-to-end behavior reproduction rate of 72.59%, and a road\u2013environment matching rate of 93.43%. Therefore, RKGRScen can reliably ground high-level scenarios into executable scenarios that satisfy complex road and topological constraints, providing effective support for the safety validation of autonomous driving systems.",
+    "abs_url": "https://doi.org/10.3390/vehicles8100228",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1177/09544070261484532",
+    "title": "High-value multi-vehicle scenario generation for autonomous driving testing using a fine-tuned generative transformer",
+    "summary": "Rare but high-risk multi-vehicle interactions are essential for evaluating the safety boundaries of autonomous driving systems, yet are difficult to cover efficiently through naturalistic replay, single-agent perturbation or manual parameter combinations. This study develops a high-value multi-vehicle scenario generation framework based on SMART target-domain adaptation. Two representative highway scenarios, constrained cut-in and zipper merge, are mined from highD and exiD using event-triggered rules and converted into a unified multi-agent scene representation. A SMART-based generative Transformer discretizes vehicle motions and road structures into motion and road tokens, is pretrained on WOMD, and is fine-tuned on the mined target-domain samples. During inference, Top-p sampling generates multimodal motion-token sequences, while physical-consistency filtering after continuous trajectory reconstruction rejects or resamples candidates with abnormal acceleration and jerk. Generated scenarios are evaluated across trajectory, scenario and system-response levels through open-loop quality assessment, target-scenario construction and closed-loop validation with an IDM + Pure Pursuit SUT. Compared with CS-LSTM, the proposed method reduces minADE and minFDE by 12.7% and 12.8%, respectively, and improves map compliance to 99.10%. Construction success reaches 42.0% for constrained cut-in and 35.6% for zipper merge. Selected critical scenarios reduce the SUT pass rate from 86.7% to 20.0% and expose collision and motion-paralysis failures. These results demonstrate map-compliant, replay-compatible and testing-oriented high-value interaction scenarios for operational-boundary evaluation and safety validation of autonomous driving systems within the validated highway domains.",
+    "authors": [
+      "Han Yu",
+      "Yanhui Lu",
+      "Yalin Liu",
+      "Yongxin Yu",
+      "Pengyu Wang"
+    ],
+    "categories": [
+      "Scenario generation",
+      "Traffic interactions",
+      "Safety-critical cases"
+    ],
+    "primary_category": "Scenario generation",
+    "published": "2026-09-04",
+    "updated": "2026-09-06",
+    "age_days": 21,
+    "authors_joined": "Han Yu, Yanhui Lu, Yalin Liu, Yongxin Yu, Pengyu Wang",
+    "categories_joined": "Scenario generation, Traffic interactions, Safety-critical cases",
+    "summary_chars": 1794,
+    "text_for_embedding": "Title: High-value multi-vehicle scenario generation for autonomous driving testing using a fine-tuned generative transformer\nAuthors: Han Yu, Yanhui Lu, Yalin Liu, Yongxin Yu, Pengyu Wang\nPublished: 2026-09-04\nCategories: Scenario generation, Traffic interactions, Safety-critical cases\nSummary: Rare but high-risk multi-vehicle interactions are essential for evaluating the safety boundaries of autonomous driving systems, yet are difficult to cover efficiently through naturalistic replay, single-agent perturbation or manual parameter combinations. This study develops a high-value multi-vehicle scenario generation framework based on SMART target-domain adaptation. Two representative highway scenarios, constrained cut-in and zipper merge, are mined from highD and exiD using event-triggered rules and converted into a unified multi-agent scene representation. A SMART-based generative Transformer discretizes vehicle motions and road structures into motion and road tokens, is pretrained on WOMD, and is fine-tuned on the mined target-domain samples. During inference, Top-p sampling generates multimodal motion-token sequences, while physical-consistency filtering after continuous trajectory reconstruction rejects or resamples candidates with abnormal acceleration and jerk. Generated scenarios are evaluated across trajectory, scenario and system-response levels through open-loop quality assessment, target-scenario construction and closed-loop validation with an IDM + Pure Pursuit SUT. Compared with CS-LSTM, the proposed method reduces minADE and minFDE by 12.7% and 12.8%, respectively, and improves map compliance to 99.10%. Construction success reaches 42.0% for constrained cut-in and 35.6% for zipper merge. Selected critical scenarios reduce the SUT pass rate from 86.7% to 20.0% and expose collision and motion-paralysis failures. These results demonstrate map-compliant, replay-compatible and testing-oriented high-value interaction scenarios for operational-boundary evaluation and safety validation of autonomous driving systems within the validated highway domains.",
+    "abs_url": "https://doi.org/10.1177/09544070261484532",
+    "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/09544070261484532",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/vehicles8090203",
+    "title": "A TTC\u2013THW-Based Site\u2013Time\u2013Interaction Framework for Engineering Screening in Motorcycle-Dominated Mixed Traffic",
+    "summary": "Surrogate safety assessment in motorcycle-dominated mixed traffic requires screening methods that distinguish threshold-sensitive event prevalence from stable site, time, and interaction patterns. This study develops a TTC\u2013THW-based site\u2013time\u2013interaction framework for engineering screening using 13.342 h of video from six Hanoi arterials, comprising 371,864 vehicles, 2,977,401 validated leader\u2013follower observations, and 180,722 TTC-defined events. Primary window-level inference uses 799 complete non-overlapping 60 s windows; 3181 overlapping windows are retained only for sensitivity analysis. Increasing the TTC reference from 1.5 to 2.4 s raised the flagged-observation proportion from 12.04% to 17.99%, without changing the site ordering. A one-standard-deviation increase in median THW was associated with a 13.81% lower expected TTC-defined event rate per following exposure in the primary model (IRR=0.8619, 95% CI 0.8433\u20130.8809), with similar estimates under overlapping-window and AR(1) GEE specifications. Follower-clustered event models showed stable vehicle-pair contrasts across TTC-defined criticality cut-points of 0.6, 0.8, and 1.0 s; the MC\u2013Car odds ratios were 1.440, 1.352, and 1.273, respectively, relative to Car\u2013Car. Alternative THW boundaries and empirical tertiles retained the main temporal-compression contrasts. Downsampling from 7.5 to approximately 3.75 Hz reduced absolute event counts by about 30.6\u201330.7% but left comparative site rankings unchanged. The framework therefore provides trajectory-based interaction screening rather than crash-risk prediction or independently validated near-crash classification.",
+    "authors": [
+      "Jingjing Wang",
+      "Xiayun Liu",
+      "Hongli Deng",
+      "Rongchuan Yu",
+      "Wanting Yang",
+      "Jiezong Pan"
+    ],
+    "categories": [
+      "Operational design domain",
+      "Traffic interactions"
+    ],
+    "primary_category": "Operational design domain",
+    "published": "2026-08-25",
+    "updated": "2026-08-25",
+    "age_days": 31,
+    "authors_joined": "Jingjing Wang, Xiayun Liu, Hongli Deng, Rongchuan Yu, Wanting Yang, Jiezong Pan",
+    "categories_joined": "Operational design domain, Traffic interactions",
+    "summary_chars": 1646,
+    "text_for_embedding": "Title: A TTC\u2013THW-Based Site\u2013Time\u2013Interaction Framework for Engineering Screening in Motorcycle-Dominated Mixed Traffic\nAuthors: Jingjing Wang, Xiayun Liu, Hongli Deng, Rongchuan Yu, Wanting Yang, Jiezong Pan\nPublished: 2026-08-25\nCategories: Operational design domain, Traffic interactions\nSummary: Surrogate safety assessment in motorcycle-dominated mixed traffic requires screening methods that distinguish threshold-sensitive event prevalence from stable site, time, and interaction patterns. This study develops a TTC\u2013THW-based site\u2013time\u2013interaction framework for engineering screening using 13.342 h of video from six Hanoi arterials, comprising 371,864 vehicles, 2,977,401 validated leader\u2013follower observations, and 180,722 TTC-defined events. Primary window-level inference uses 799 complete non-overlapping 60 s windows; 3181 overlapping windows are retained only for sensitivity analysis. Increasing the TTC reference from 1.5 to 2.4 s raised the flagged-observation proportion from 12.04% to 17.99%, without changing the site ordering. A one-standard-deviation increase in median THW was associated with a 13.81% lower expected TTC-defined event rate per following exposure in the primary model (IRR=0.8619, 95% CI 0.8433\u20130.8809), with similar estimates under overlapping-window and AR(1) GEE specifications. Follower-clustered event models showed stable vehicle-pair contrasts across TTC-defined criticality cut-points of 0.6, 0.8, and 1.0 s; the MC\u2013Car odds ratios were 1.440, 1.352, and 1.273, respectively, relative to Car\u2013Car. Alternative THW boundaries and empirical tertiles retained the main temporal-compression contrasts. Downsampling from 7.5 to approximately 3.75 Hz reduced absolute event counts by about 30.6\u201330.7% but left comparative site rankings unchanged. The framework therefore provides trajectory-based interaction screening rather than crash-risk prediction or independently validated near-crash classification.",
+    "abs_url": "https://doi.org/10.3390/vehicles8090203",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1145/3787978",
+    "title": "Discovering Safety Violations of Decision-Making in Autonomous Driving Systems from Accident-Free Traffic Scenarios",
+    "summary": "Safety testing serves as the fundamental pillar for the development of Autonomous Driving Systems (ADSs), and decision-making plays a key role in ADSs. To ensure the safety of ADSs, it is paramount to generate a range of critical test scenarios to test the safety of decision-making in ADSs. While existing research primarily focuses on reproducing real-world traffic accidents in simulation environments to create test scenarios, it is essential to highlight that many of these accidents do not result in safety violations of decision-making in ADSs due to the differences between human driving and autonomous driving. More importantly, we observe that some accident-free real-world scenarios can lead to misbehaviors of ADSs. Therefore, orthogonally to existing work, it is equally important to discover safety violations of ADSs from routine traffic scenarios (i.e., accident-free scenarios) to ensure the safety of Autonomous Vehicles (AVs). We introduce CRISER , a novel methodology to achieve the above goal. It automatically generates abstract and concrete scenarios from real-traffic videos where human-driving worked safely. Based on them, CRISER discovers safety violations of the ADS\u2019s decision-making in semantic equivalent scenarios (i.e., the test scenarios with the same semantics as the original accident-free traffic videos). Specifically, CRISER enhances the ability of Large Multimodal Models (LMMs) to accurately extract scenario semantics from accident-free traffic videos and generate test scenarios by multi-modal few-shot Chain-of-Thought (CoT). Based on them, CRISER explores the behavior differences between the ego vehicle (i.e., the vehicle connected to the ADS under test) and human-driving in semantic equivalent scenarios. During the exploration search, CRISER keeps the semantic consistency of test scenarios with accident-free traffic videos and explores the universality of discovered safety violations of the ADS. We implement and evaluate CRISER on the industrial-grade Level-4 ADS, Apollo. The experimental results demonstrate that CRISER can accurately extract scenario semantics and generate test scenarios from traffic videos, and effectively discover distinct types of safety violations of Apollo\u2019s decision-making in accident-free traffic scenarios.",
+    "authors": [
+      "Haoxiang Tian",
+      "Yuan Zhou",
+      "An Guo",
+      "Guoquan Wu",
+      "Mingfei Cheng",
+      "Wei Wang",
+      "Jun Wei",
+      "Tianwei Zhang",
+      "Xingshuo Han"
+    ],
+    "categories": [
+      "Scenario-based testing",
+      "Simulation and validation"
+    ],
+    "primary_category": "Scenario-based testing",
+    "published": "2026-08-21",
+    "updated": "2026-08-21",
+    "age_days": 35,
+    "authors_joined": "Haoxiang Tian, Yuan Zhou, An Guo, Guoquan Wu, Mingfei Cheng, Wei Wang, Jun Wei, Tianwei Zhang, Xingshuo Han",
+    "categories_joined": "Scenario-based testing, Simulation and validation",
+    "summary_chars": 2291,
+    "text_for_embedding": "Title: Discovering Safety Violations of Decision-Making in Autonomous Driving Systems from Accident-Free Traffic Scenarios\nAuthors: Haoxiang Tian, Yuan Zhou, An Guo, Guoquan Wu, Mingfei Cheng, Wei Wang, Jun Wei, Tianwei Zhang, Xingshuo Han\nPublished: 2026-08-21\nCategories: Scenario-based testing, Simulation and validation\nSummary: Safety testing serves as the fundamental pillar for the development of Autonomous Driving Systems (ADSs), and decision-making plays a key role in ADSs. To ensure the safety of ADSs, it is paramount to generate a range of critical test scenarios to test the safety of decision-making in ADSs. While existing research primarily focuses on reproducing real-world traffic accidents in simulation environments to create test scenarios, it is essential to highlight that many of these accidents do not result in safety violations of decision-making in ADSs due to the differences between human driving and autonomous driving. More importantly, we observe that some accident-free real-world scenarios can lead to misbehaviors of ADSs. Therefore, orthogonally to existing work, it is equally important to discover safety violations of ADSs from routine traffic scenarios (i.e., accident-free scenarios) to ensure the safety of Autonomous Vehicles (AVs). We introduce CRISER , a novel methodology to achieve the above goal. It automatically generates abstract and concrete scenarios from real-traffic videos where human-driving worked safely. Based on them, CRISER discovers safety violations of the ADS\u2019s decision-making in semantic equivalent scenarios (i.e., the test scenarios with the same semantics as the original accident-free traffic videos). Specifically, CRISER enhances the ability of Large Multimodal Models (LMMs) to accurately extract scenario semantics from accident-free traffic videos and generate test scenarios by multi-modal few-shot Chain-of-Thought (CoT). Based on them, CRISER explores the behavior differences between the ego vehicle (i.e., the vehicle connected to the ADS under test) and human-driving in semantic equivalent scenarios. During the exploration search, CRISER keeps the semantic consistency of test scenarios with accident-free traffic videos and explores the universality of discovered safety violations of the ADS. We implement and evaluate CRISER on the industrial-grade Level-4 ADS, Apollo. The experimental results demonstrate that CRISER can accurately extract scenario semantics and generate test scenarios from traffic videos, and effectively discover distinct types of safety violations of Apollo\u2019s decision-making in accident-free traffic scenarios.",
+    "abs_url": "https://doi.org/10.1145/3787978",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/vehicles8080188",
+    "title": "Constraint- and Risk-Driven Search for Safety-Critical Scenarios in Autonomous Driving Simulation",
+    "summary": "Efficient discovery of safety-critical scenarios is a central problem in autonomous-driving simulation because safety-critical events are rare and the scenario parameter space is often high-dimensional. Direct random sampling can spend most of the simulation budget on samples that are weakly relevant, physically unreachable, or behaviorally inconsistent. This study proposes a constraint- and risk-driven framework for safety-critical scenario discovery. The framework first constructs a valid scenario space using physical reachability, behavioral consistency, and traffic-feasibility constraints. It then evaluates valid simulated samples with a hierarchical scenario-value model that combines kinematic criticality, longitudinal controllability risk, and scenario diversity. Finally, a risk-feedback probabilistic search updates the sampling distribution using high-value samples. The method is evaluated primarily in a lead-vehicle hard-braking scenario and additionally in a cut-in scenario. In the lead-vehicle hard-braking scenario, the proposed method improves the discovery rate from 0.68% for Random Sampling to 49.62% under a budget of 1000 evaluations. In the cut-in scenario, the discovery rate improves from 5.28% to 67.68% under the same budget. Ablation results show that constraint-aware construction reduces potentially invalid samples, while the full hierarchical scenario-value model improves coverage of discovered safety-critical samples.",
+    "authors": [
+      "Deng Pan",
+      "Bin Lu",
+      "Xiaoji Zhou",
+      "Yuyang Mao",
+      "Lipeng Cao"
+    ],
+    "categories": [
+      "Traffic interactions",
+      "Simulation and validation",
+      "Safety-critical cases"
+    ],
+    "primary_category": "Traffic interactions",
+    "published": "2026-08-13",
+    "updated": "2026-08-13",
+    "age_days": 43,
+    "authors_joined": "Deng Pan, Bin Lu, Xiaoji Zhou, Yuyang Mao, Lipeng Cao",
+    "categories_joined": "Traffic interactions, Simulation and validation, Safety-critical cases",
+    "summary_chars": 1462,
+    "text_for_embedding": "Title: Constraint- and Risk-Driven Search for Safety-Critical Scenarios in Autonomous Driving Simulation\nAuthors: Deng Pan, Bin Lu, Xiaoji Zhou, Yuyang Mao, Lipeng Cao\nPublished: 2026-08-13\nCategories: Traffic interactions, Simulation and validation, Safety-critical cases\nSummary: Efficient discovery of safety-critical scenarios is a central problem in autonomous-driving simulation because safety-critical events are rare and the scenario parameter space is often high-dimensional. Direct random sampling can spend most of the simulation budget on samples that are weakly relevant, physically unreachable, or behaviorally inconsistent. This study proposes a constraint- and risk-driven framework for safety-critical scenario discovery. The framework first constructs a valid scenario space using physical reachability, behavioral consistency, and traffic-feasibility constraints. It then evaluates valid simulated samples with a hierarchical scenario-value model that combines kinematic criticality, longitudinal controllability risk, and scenario diversity. Finally, a risk-feedback probabilistic search updates the sampling distribution using high-value samples. The method is evaluated primarily in a lead-vehicle hard-braking scenario and additionally in a cut-in scenario. In the lead-vehicle hard-braking scenario, the proposed method improves the discovery rate from 0.68% for Random Sampling to 49.62% under a budget of 1000 evaluations. In the cut-in scenario, the discovery rate improves from 5.28% to 67.68% under the same budget. Ablation results show that constraint-aware construction reduces potentially invalid samples, while the full hierarchical scenario-value model improves coverage of discovered safety-critical samples.",
+    "abs_url": "https://doi.org/10.3390/vehicles8080188",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/vehicles8080185",
+    "title": "Vehicle-Level Speed Stability and Driving Style Clustering in Motorcycle-Dominated Mixed Traffic Using Roadside Video Trajectories",
+    "summary": "Motorcycle-dominated mixed traffic challenges vehicle-behavior modeling because motorcycles and cars differ in footprint, maneuverability, and longitudinal speed regulation. This study used roadside-video trajectories from six arterial sites in Hanoi, Vietnam. The trajectory pipeline produced 202,296 valid vehicle records, and the primary analysis included 158,821 motorcycles and 38,175 private cars. A focused manual identity-continuity audit of two 30 s clips yielded overall MOTA values of 0.9938 and 0.9977 and IDF1 values of 0.9931 and 0.9932. Motorcycles traveled faster on average but showed more stable longitudinal speed profiles: motorcycle speed standard deviation was 45% lower than the car value, and motorcycle coefficient of variation was less than half the car value. The directions of the mean-speed, speed-standard-deviation, and coefficient-of-variation contrasts were consistent across all six sites. Diagnostic reruns using lower speed bounds of 0\u20135 km/h and minimum trajectory lengths of 10\u201330 frames retained the same motorcycle\u2013car stability direction (rrb=\u22120.759 to \u22120.643 for speed standard deviation and \u22120.828 to \u22120.728 for coefficient of variation). A three-component Gaussian mixture model was retained as a parsimonious engineering partition. Repeated-subsample stability was excellent for motorcycles (median adjusted Rand index, ARI, 0.970) and moderate for cars (median ARI 0.706), while mean maximum posterior probabilities exceeded 0.93 for both classes. Savitzky\u2013Golay smoothing substantially increased usable acceleration coverage, but the inferred class contrast changed with the smoothing window; acceleration was therefore excluded from the primary clustering. A high-speed/high-variability rule flagged 4.62% of cars and 0.58% of motorcycles. This rule is an operational kinematic-screening heuristic, not a crash-probability model. The results provide class-specific evidence for mixed-traffic simulation calibration and cautious operational screening under the observed Hanoi arterial conditions.",
+    "authors": [
+      "Jingjing Wang",
+      "Xiayun Liu",
+      "Hongli Deng",
+      "Rongchuan Yu",
+      "Wanting Yang"
+    ],
+    "categories": [
+      "Traffic interactions",
+      "Simulation and validation"
+    ],
+    "primary_category": "Traffic interactions",
+    "published": "2026-08-10",
+    "updated": "2026-08-11",
+    "age_days": 46,
+    "authors_joined": "Jingjing Wang, Xiayun Liu, Hongli Deng, Rongchuan Yu, Wanting Yang",
+    "categories_joined": "Traffic interactions, Simulation and validation",
+    "summary_chars": 2043,
+    "text_for_embedding": "Title: Vehicle-Level Speed Stability and Driving Style Clustering in Motorcycle-Dominated Mixed Traffic Using Roadside Video Trajectories\nAuthors: Jingjing Wang, Xiayun Liu, Hongli Deng, Rongchuan Yu, Wanting Yang\nPublished: 2026-08-10\nCategories: Traffic interactions, Simulation and validation\nSummary: Motorcycle-dominated mixed traffic challenges vehicle-behavior modeling because motorcycles and cars differ in footprint, maneuverability, and longitudinal speed regulation. This study used roadside-video trajectories from six arterial sites in Hanoi, Vietnam. The trajectory pipeline produced 202,296 valid vehicle records, and the primary analysis included 158,821 motorcycles and 38,175 private cars. A focused manual identity-continuity audit of two 30 s clips yielded overall MOTA values of 0.9938 and 0.9977 and IDF1 values of 0.9931 and 0.9932. Motorcycles traveled faster on average but showed more stable longitudinal speed profiles: motorcycle speed standard deviation was 45% lower than the car value, and motorcycle coefficient of variation was less than half the car value. The directions of the mean-speed, speed-standard-deviation, and coefficient-of-variation contrasts were consistent across all six sites. Diagnostic reruns using lower speed bounds of 0\u20135 km/h and minimum trajectory lengths of 10\u201330 frames retained the same motorcycle\u2013car stability direction (rrb=\u22120.759 to \u22120.643 for speed standard deviation and \u22120.828 to \u22120.728 for coefficient of variation). A three-component Gaussian mixture model was retained as a parsimonious engineering partition. Repeated-subsample stability was excellent for motorcycles (median adjusted Rand index, ARI, 0.970) and moderate for cars (median ARI 0.706), while mean maximum posterior probabilities exceeded 0.93 for both classes. Savitzky\u2013Golay smoothing substantially increased usable acceleration coverage, but the inferred class contrast changed with the smoothing window; acceleration was therefore excluded from the primary clustering. A high-speed/high-variability rule flagged 4.62% of cars and 0.58% of motorcycles. This rule is an operational kinematic-screening heuristic, not a crash-probability model. The results provide class-specific evidence for mixed-traffic simulation calibration and cautious operational screening under the observed Hanoi arterial conditions.",
+    "abs_url": "https://doi.org/10.3390/vehicles8080185",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1145/3838726",
+    "title": "Generative AI for Autonomous Driving: Frontiers and Opportunities",
+    "summary": "Generative Artificial Intelligence (GenAI) constitutes a transformative technological wave that reconfigures industries through its unparalleled capabilities for content creation, reasoning, planning, and multimodal understanding. This revolutionary force offers the most promising path yet toward solving one of engineering\u2019s grandest challenges: achieving reliable, fully autonomous driving, particularly the pursuit of Level 5 autonomy. This survey delivers a comprehensive and critical synthesis of the emerging role of GenAI across the autonomous driving stack. We delve into the frontier applications of GenAI in image, LiDAR, trajectory, occupancy, and video generation, as well as LLM-guided reasoning and decision-making. We categorize practical applications, such as end-to-end driving strategies and closed-loop simulations. We identify key obstacles and possibilities such as comprehensive generalization across rare cases, evaluation, safety, and onboard deployment. By unifying these threads, the survey provides a forward-looking reference for researchers, engineers, and policymakers navigating the convergence of generative AI and advanced autonomous mobility. An actively maintained repository of cited works is available at https://github.com/taco-group/GenAI4AD.",
+    "authors": [
+      "Yuping Wang",
+      "Shuo Xing",
+      "Can Cui",
+      "Renjie Li",
+      "Hongyuan Hua",
+      "Kexin Tian",
+      "Zhaobin Mo",
+      "Xiangbo Gao",
+      "Marco Pavone",
+      "Yang Zhou",
+      "Jiachen Li",
+      "Zhengzhong Tu"
+    ],
+    "categories": [
+      "Scenario generation",
+      "Simulation and validation",
+      "Perception"
+    ],
+    "primary_category": "Scenario generation",
+    "published": "2026-08-07",
+    "updated": "2026-08-07",
+    "age_days": 49,
+    "authors_joined": "Yuping Wang, Shuo Xing, Can Cui, Renjie Li, Hongyuan Hua, Kexin Tian, Zhaobin Mo, Xiangbo Gao, Marco Pavone, Yang Zhou, Jiachen Li, Zhengzhong Tu",
+    "categories_joined": "Scenario generation, Simulation and validation, Perception",
+    "summary_chars": 1282,
+    "text_for_embedding": "Title: Generative AI for Autonomous Driving: Frontiers and Opportunities\nAuthors: Yuping Wang, Shuo Xing, Can Cui, Renjie Li, Hongyuan Hua, Kexin Tian, Zhaobin Mo, Xiangbo Gao, Marco Pavone, Yang Zhou, Jiachen Li, Zhengzhong Tu\nPublished: 2026-08-07\nCategories: Scenario generation, Simulation and validation, Perception\nSummary: Generative Artificial Intelligence (GenAI) constitutes a transformative technological wave that reconfigures industries through its unparalleled capabilities for content creation, reasoning, planning, and multimodal understanding. This revolutionary force offers the most promising path yet toward solving one of engineering\u2019s grandest challenges: achieving reliable, fully autonomous driving, particularly the pursuit of Level 5 autonomy. This survey delivers a comprehensive and critical synthesis of the emerging role of GenAI across the autonomous driving stack. We delve into the frontier applications of GenAI in image, LiDAR, trajectory, occupancy, and video generation, as well as LLM-guided reasoning and decision-making. We categorize practical applications, such as end-to-end driving strategies and closed-loop simulations. We identify key obstacles and possibilities such as comprehensive generalization across rare cases, evaluation, safety, and onboard deployment. By unifying these threads, the survey provides a forward-looking reference for researchers, engineers, and policymakers navigating the convergence of generative AI and advanced autonomous mobility. An actively maintained repository of cited works is available at https://github.com/taco-group/GenAI4AD.",
+    "abs_url": "https://doi.org/10.1145/3838726",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/app16157622",
+    "title": "Interaction-Only Traffic Scenario Initialization for Autonomous Driving Simulation Under Strict Map-Prior Removal",
+    "summary": "Reliable traffic scenario initialization is essential for autonomous driving simulation, safety evaluation, and scenario completion. Most learning-based initializers rely on high-definition map priors to constrain agent placement and attribute generation. However, in practical deployment, map priors may be unavailable, incomplete, outdated, or inconsistent with temporary road changes. This study investigates traffic scenario initialization under strict map-prior removal, where both external HD-map inputs and agent-internal road-related cues are masked to reduce implicit structural leakage. We propose an interaction-only initialization framework, InterInit, which retains a fixed decoding-slot space and conditions initialization on observed agent states and multi-agent interactions. Experiments on the Waymo Open Motion Dataset first provide a vertical prior-removal analysis from full-map-prior initialization to weak-map initialization and then to strict map-prior removal. The results reveal attribute-asymmetric degradation: position and heading remain relatively stable, whereas speed becomes the dominant failure dimension. Further diagnostic analysis shows that the speed degradation is mainly caused by speed-magnitude collapse, characterized by nearly zero predicted variance rather than a large mean-speed bias. Based on this diagnosis, InterInit-SpeedFix is introduced as a localized repair strategy that models speed probabilistically in log-speed space without changing the overall architecture or inference pipeline. It reduces global Speed MMD from 0.2461 to 0.1210, corresponding to a 50.9% improvement, while maintaining stable position and heading performance. Density-stratified Speed MMD and absolute speed-magnitude error statistics further verify that the repair is consistent across different scene-density regimes and improves both typical and high-error cases. These results provide an application-oriented diagnosis-and-repair workflow for traffic scenario initialization when map priors are unavailable, and clarify the practical boundary of interaction-only initialization under strict map-prior removal.",
+    "authors": [
+      "Kaixi Yang",
+      "Shiru Qu"
+    ],
+    "categories": [
+      "Traffic interactions",
+      "Simulation and validation",
+      "Data and knowledge"
+    ],
+    "primary_category": "Traffic interactions",
+    "published": "2026-07-31",
+    "updated": "2026-08-03",
+    "age_days": 56,
+    "authors_joined": "Kaixi Yang, Shiru Qu",
+    "categories_joined": "Traffic interactions, Simulation and validation, Data and knowledge",
+    "summary_chars": 2141,
+    "text_for_embedding": "Title: Interaction-Only Traffic Scenario Initialization for Autonomous Driving Simulation Under Strict Map-Prior Removal\nAuthors: Kaixi Yang, Shiru Qu\nPublished: 2026-07-31\nCategories: Traffic interactions, Simulation and validation, Data and knowledge\nSummary: Reliable traffic scenario initialization is essential for autonomous driving simulation, safety evaluation, and scenario completion. Most learning-based initializers rely on high-definition map priors to constrain agent placement and attribute generation. However, in practical deployment, map priors may be unavailable, incomplete, outdated, or inconsistent with temporary road changes. This study investigates traffic scenario initialization under strict map-prior removal, where both external HD-map inputs and agent-internal road-related cues are masked to reduce implicit structural leakage. We propose an interaction-only initialization framework, InterInit, which retains a fixed decoding-slot space and conditions initialization on observed agent states and multi-agent interactions. Experiments on the Waymo Open Motion Dataset first provide a vertical prior-removal analysis from full-map-prior initialization to weak-map initialization and then to strict map-prior removal. The results reveal attribute-asymmetric degradation: position and heading remain relatively stable, whereas speed becomes the dominant failure dimension. Further diagnostic analysis shows that the speed degradation is mainly caused by speed-magnitude collapse, characterized by nearly zero predicted variance rather than a large mean-speed bias. Based on this diagnosis, InterInit-SpeedFix is introduced as a localized repair strategy that models speed probabilistically in log-speed space without changing the overall architecture or inference pipeline. It reduces global Speed MMD from 0.2461 to 0.1210, corresponding to a 50.9% improvement, while maintaining stable position and heading performance. Density-stratified Speed MMD and absolute speed-magnitude error statistics further verify that the repair is consistent across different scene-density regimes and improves both typical and high-error cases. These results provide an application-oriented diagnosis-and-repair workflow for traffic scenario initialization when map priors are unavailable, and clarify the practical boundary of interaction-only initialization under strict map-prior removal.",
+    "abs_url": "https://doi.org/10.3390/app16157622",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1038/s41597-026-07929-2",
+    "title": "An interactive enhanced driving dataset for autonomous driving",
+    "summary": "Abstract Driving interaction data are important for training and evaluating autonomous driving Vision-Language-Action (VLA) models, but existing datasets contain limited dense interaction samples and weak alignment between trajectories, visual inputs, and language annotations. This work presents the Interactive Enhanced Driving Dataset (IEDD), a large-scale interaction-oriented dataset constructed from five naturalistic trajectory datasets: Lyft Level 5, Waymo, nuPlan, INTERACTION, and SIND. IEDD contains 7.31 million ego-centric interaction segments, including 6.66 million multi agents cases, covering head-on, car-following, merging, and crossing interactions. Each segment is associated with trajectory-derived interaction metrics describing interaction intensity and efficiency. Based on these annotations, IEDD-VQA further provides trajectory-reconstructed BEV videos, structured interaction semantics, and multi-turn question-answer pairs. The dataset can support interaction mining, long-tail scenario analysis, VLA instruction tuning, and hierarchical evaluation of perception, behavior description, physical quantification, and counterfactual reasoning.",
+    "authors": [
+      "Haojie Feng",
+      "Xinrui Zhang",
+      "Mengjie Tian",
+      "Peizhi Zhang",
+      "Zhuoren Li",
+      "Junpeng Huang",
+      "Xiurong Wang",
+      "Junfan Zhu",
+      "Jianzhou Wang",
+      "Dongxiao Yin",
+      "Lu Xiong"
+    ],
+    "categories": [
+      "Traffic interactions",
+      "Perception",
+      "Data and knowledge"
+    ],
+    "primary_category": "Traffic interactions",
+    "published": "2026-07-28",
+    "updated": "2026-07-28",
+    "age_days": 59,
+    "authors_joined": "Haojie Feng, Xinrui Zhang, Mengjie Tian, Peizhi Zhang, Zhuoren Li, Junpeng Huang, Xiurong Wang, Junfan Zhu, Jianzhou Wang, Dongxiao Yin, Lu Xiong",
+    "categories_joined": "Traffic interactions, Perception, Data and knowledge",
+    "summary_chars": 1169,
+    "text_for_embedding": "Title: An interactive enhanced driving dataset for autonomous driving\nAuthors: Haojie Feng, Xinrui Zhang, Mengjie Tian, Peizhi Zhang, Zhuoren Li, Junpeng Huang, Xiurong Wang, Junfan Zhu, Jianzhou Wang, Dongxiao Yin, Lu Xiong\nPublished: 2026-07-28\nCategories: Traffic interactions, Perception, Data and knowledge\nSummary: Abstract Driving interaction data are important for training and evaluating autonomous driving Vision-Language-Action (VLA) models, but existing datasets contain limited dense interaction samples and weak alignment between trajectories, visual inputs, and language annotations. This work presents the Interactive Enhanced Driving Dataset (IEDD), a large-scale interaction-oriented dataset constructed from five naturalistic trajectory datasets: Lyft Level 5, Waymo, nuPlan, INTERACTION, and SIND. IEDD contains 7.31 million ego-centric interaction segments, including 6.66 million multi agents cases, covering head-on, car-following, merging, and crossing interactions. Each segment is associated with trajectory-derived interaction metrics describing interaction intensity and efficiency. Based on these annotations, IEDD-VQA further provides trajectory-reconstructed BEV videos, structured interaction semantics, and multi-turn question-answer pairs. The dataset can support interaction mining, long-tail scenario analysis, VLA instruction tuning, and hierarchical evaluation of perception, behavior description, physical quantification, and counterfactual reasoning.",
+    "abs_url": "https://doi.org/10.1038/s41597-026-07929-2",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1007/s10664-026-10920-5",
+    "title": "Does road diversity really matter in testing automated driving systems?",
+    "summary": "Abstract Context The use of automated driving systems (ADSs) in the real world requires rigorous testing to ensure safety. To increase trust, ADSs should be tested on a large set of diverse road scenarios. Literature suggests that if a vehicle is driven along a set of geometrically diverse roads\u2014measured using various diversity measures (DMs)\u2014it will react in a wide range of behaviours, thereby increasing the chances of observing failures, or strengthening the confidence in its safety, if no failures are observed. However, this assumption has never been tested before, nor have road DMs been assessed for their properties. Objective Our goal was to perform an exploratory study on 53 currently used and new, potentially promising road DMs. Specifically, our research questions looked into the road DMs themselves, to analyse their properties (e.g. monotonicity , computation efficiency ), and to test correlation between DMs. Furthermore, we investigated the use of road DMs to determine whether the assumption that diverse test suites of roads expose diverse driving behaviour holds. Method Our empirical analysis relies on a state-of-the-art, open-source ADS testing infrastructure and uses a data set containing over 97,000 individual road geometries and matching simulation data that were collected using two driving agents. By considering test suites of various sizes and measuring their roads\u2019 geometric diversity, we studied road DM properties, the correlation between road DMs, and the correlation between road DMs and the observed behaviour. Results Our findings reveal a strong correlation between road diversity and behavioural diversity, confirming that geometrically diverse test suites systematically exercise diverse driving behaviours. We identified and aggregations as most effective, with achieving the strongest correlation of 0.95 while requiring minimal computation time. The analysed measures maintain robust correlation with behavioural diversity across test suites containing roads of varying lengths, eliminating the need for length normalisation. Conclusions These results empirically validate the fundamental assumption underlying diversity-driven ADS testing: road geometry diversity serves as a reliable proxy for behavioural diversity. For practitioners, we recommend or as optimal choices, whilst -based measures should be avoided entirely. The near-identical correlation patterns observed across architecturally different driving agents indicate that our findings generalise beyond specific ADS implementations, providing a solid foundation for diversity-driven test generation and selection.",
+    "authors": [
+      "Stefan Klikovits",
+      "Vincenzo Riccio",
+      "Ezequiel Castellano",
+      "Ahmet Cetinkaya",
+      "Alessio Gambi",
+      "Paolo Arcaini"
+    ],
+    "categories": [
+      "Simulation and validation"
+    ],
+    "primary_category": "Simulation and validation",
+    "published": "2026-07-25",
+    "updated": "2026-07-25",
+    "age_days": 62,
+    "authors_joined": "Stefan Klikovits, Vincenzo Riccio, Ezequiel Castellano, Ahmet Cetinkaya, Alessio Gambi, Paolo Arcaini",
+    "categories_joined": "Simulation and validation",
+    "summary_chars": 2630,
+    "text_for_embedding": "Title: Does road diversity really matter in testing automated driving systems?\nAuthors: Stefan Klikovits, Vincenzo Riccio, Ezequiel Castellano, Ahmet Cetinkaya, Alessio Gambi, Paolo Arcaini\nPublished: 2026-07-25\nCategories: Simulation and validation\nSummary: Abstract Context The use of automated driving systems (ADSs) in the real world requires rigorous testing to ensure safety. To increase trust, ADSs should be tested on a large set of diverse road scenarios. Literature suggests that if a vehicle is driven along a set of geometrically diverse roads\u2014measured using various diversity measures (DMs)\u2014it will react in a wide range of behaviours, thereby increasing the chances of observing failures, or strengthening the confidence in its safety, if no failures are observed. However, this assumption has never been tested before, nor have road DMs been assessed for their properties. Objective Our goal was to perform an exploratory study on 53 currently used and new, potentially promising road DMs. Specifically, our research questions looked into the road DMs themselves, to analyse their properties (e.g. monotonicity , computation efficiency ), and to test correlation between DMs. Furthermore, we investigated the use of road DMs to determine whether the assumption that diverse test suites of roads expose diverse driving behaviour holds. Method Our empirical analysis relies on a state-of-the-art, open-source ADS testing infrastructure and uses a data set containing over 97,000 individual road geometries and matching simulation data that were collected using two driving agents. By considering test suites of various sizes and measuring their roads\u2019 geometric diversity, we studied road DM properties, the correlation between road DMs, and the correlation between road DMs and the observed behaviour. Results Our findings reveal a strong correlation between road diversity and behavioural diversity, confirming that geometrically diverse test suites systematically exercise diverse driving behaviours. We identified and aggregations as most effective, with achieving the strongest correlation of 0.95 while requiring minimal computation time. The analysed measures maintain robust correlation with behavioural diversity across test suites containing roads of varying lengths, eliminating the need for length normalisation. Conclusions These results empirically validate the fundamental assumption underlying diversity-driven ADS testing: road geometry diversity serves as a reliable proxy for behavioural diversity. For practitioners, we recommend or as optimal choices, whilst -based measures should be avoided entirely. The near-identical correlation patterns observed across architecturally different driving agents indicate that our findings generalise beyond specific ADS implementations, providing a solid foundation for diversity-driven test generation and selection.",
+    "abs_url": "https://doi.org/10.1007/s10664-026-10920-5",
+    "pdf_url": "https://link.springer.com/content/pdf/10.1007/s10664-026-10920-5.pdf",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.4271/12-09-04-0028",
+    "title": "A Framework for Precautionary Safety for Automated Driving Systems\u2014Toward Tactical Decisions Fulfilling Quantitative Risk Acceptance Criteria",
+    "summary": "Safety of Automated Driving Systems (ADSs) is arguably one of the main remaining barriers before widespread market deployment. While there exists a plethora of methods for planning a trajectory that fulfils certain constraints, what those constraints should look like, to enable effective planning of safe trajectories, is still being discussed. In this article, we generalize the concept of Precautionary Safety (PCS) and present a framework providing constraints on the tactical and operational decisions of the ADS. Such constraints consider the ADS\u2019 capabilities, the external conditions, knowledge of statistically relevant events and behaviors of other traffic actors, as well as the controllability of these events. The proposed framework enables assessment of the statistical fulfilment of quantitative risk acceptance criteria (QRACs), including requirements on accident, injury, and fatality rates. The framework further provides a means to dynamically adapt the constraints used for trajectory planning, i.e., to adapt the driving to the situation at hand. A case study, considering a possible collision scenario with a jaywalking pedestrian and a rear-end collision with a trailing vehicle, is provided to showcase the applicability and usefulness of the presented framework. The simulation-based case study displays the safety benefits from considering QRACs with multiple injury risk levels and further shows how the proposed PCS framework can be applied in practice.",
+    "authors": [
+      "Magnus Gyllenhammar",
+      "Gabriel Rodrigues de Campos",
+      "Fredrik Sandblom",
+      "Martin T\u00f6rngren",
+      "Jonas Fredriksson"
+    ],
+    "categories": [
+      "Simulation and validation",
+      "Safety-critical cases"
+    ],
+    "primary_category": "Simulation and validation",
+    "published": "2026-07-08",
+    "updated": "2026-07-11",
+    "age_days": 79,
+    "authors_joined": "Magnus Gyllenhammar, Gabriel Rodrigues de Campos, Fredrik Sandblom, Martin T\u00f6rngren, Jonas Fredriksson",
+    "categories_joined": "Simulation and validation, Safety-critical cases",
+    "summary_chars": 1481,
+    "text_for_embedding": "Title: A Framework for Precautionary Safety for Automated Driving Systems\u2014Toward Tactical Decisions Fulfilling Quantitative Risk Acceptance Criteria\nAuthors: Magnus Gyllenhammar, Gabriel Rodrigues de Campos, Fredrik Sandblom, Martin T\u00f6rngren, Jonas Fredriksson\nPublished: 2026-07-08\nCategories: Simulation and validation, Safety-critical cases\nSummary: Safety of Automated Driving Systems (ADSs) is arguably one of the main remaining barriers before widespread market deployment. While there exists a plethora of methods for planning a trajectory that fulfils certain constraints, what those constraints should look like, to enable effective planning of safe trajectories, is still being discussed. In this article, we generalize the concept of Precautionary Safety (PCS) and present a framework providing constraints on the tactical and operational decisions of the ADS. Such constraints consider the ADS\u2019 capabilities, the external conditions, knowledge of statistically relevant events and behaviors of other traffic actors, as well as the controllability of these events. The proposed framework enables assessment of the statistical fulfilment of quantitative risk acceptance criteria (QRACs), including requirements on accident, injury, and fatality rates. The framework further provides a means to dynamically adapt the constraints used for trajectory planning, i.e., to adapt the driving to the situation at hand. A case study, considering a possible collision scenario with a jaywalking pedestrian and a rear-end collision with a trailing vehicle, is provided to showcase the applicability and usefulness of the presented framework. The simulation-based case study displays the safety benefits from considering QRACs with multiple injury risk levels and further shows how the proposed PCS framework can be applied in practice.",
+    "abs_url": "https://doi.org/10.4271/12-09-04-0028",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/vehicles8070155",
+    "title": "Open-World Critical Scenario Recognition and Maneuver-Level Generation for Autonomous Driving Simulation Testing",
+    "summary": "As autonomous driving moves toward large-scale deployment, controllable and efficient simulation testing has become a primary means of ensuring system safety. However, in open-world environments, existing scenario catalogs often fail to cover the full spectrum of potential traffic situations, while rare yet high-risk critical scenarios are even harder to obtain. This scarcity renders traditional random sampling and parameter-sweeping strategies ineffective for identifying unknown risks. This study addresses two core challenges: (1) incomplete scenario catalogs hindering unknown critical scenario recognition and (2) insufficient critical samples, where generated scenarios struggle to balance physical realism and edge case coverage. To tackle the first challenge, we propose an open-world recognition method integrating transformers, random forests, and extreme value theory for precise unseen sample detection. Outlier and validity filtering ensure clustering reliability, and random forest activation patterns cluster unknown samples into meaningful groups to expand the scenario catalog. Experiments show the overall F1_macro improved by 2.3 percentage points over SOTA MDENet, with its clustering accuracy surpassing iterative-AutoNovel by 6.2 percentage points. For the second challenge, we introduce a reinforcement-learning-based maneuver-level generation method. It extracts maneuver semantics from trajectories, constructs a low-dimensional parameter space, and models parameter correlations via a multivariate multimodal distribution. A dual-layer LSTM agent with a composite reward iteratively optimizes policies toward high-risk edge scenarios. The results outperformed RLBE; longitudinal and lateral reconstruction errors were reduced by 32.7% and 15.3%, respectively, while high-risk time steps and the collision rate increased by 4.3% and 5.1%, respectively. Finally, we develop a CARLA-based scenario-driven simulation framework, integrating recognized and generated scenarios into closed-loop testing on high-risk road segments. CAS failure cases validate the generated scenarios\u2019 physical feasibility and extreme challenge. Targeted augmentation of scarce critical scenarios enriches the test library and ensures broader coverage of real-world driving conditions.",
+    "authors": [
+      "Weijun Dai",
+      "Changhui Liu",
+      "Bo Li",
+      "Jie Zhang",
+      "Hongbin Wang",
+      "Lihui Tang",
+      "Siqi Peng",
+      "Shan Zhu"
+    ],
+    "categories": [
+      "Scenario generation",
+      "Simulation and validation",
+      "Safety-critical cases"
+    ],
+    "primary_category": "Scenario generation",
+    "published": "2026-07-06",
+    "updated": "2026-07-06",
+    "age_days": 81,
+    "authors_joined": "Weijun Dai, Changhui Liu, Bo Li, Jie Zhang, Hongbin Wang, Lihui Tang, Siqi Peng, Shan Zhu",
+    "categories_joined": "Scenario generation, Simulation and validation, Safety-critical cases",
+    "summary_chars": 2289,
+    "text_for_embedding": "Title: Open-World Critical Scenario Recognition and Maneuver-Level Generation for Autonomous Driving Simulation Testing\nAuthors: Weijun Dai, Changhui Liu, Bo Li, Jie Zhang, Hongbin Wang, Lihui Tang, Siqi Peng, Shan Zhu\nPublished: 2026-07-06\nCategories: Scenario generation, Simulation and validation, Safety-critical cases\nSummary: As autonomous driving moves toward large-scale deployment, controllable and efficient simulation testing has become a primary means of ensuring system safety. However, in open-world environments, existing scenario catalogs often fail to cover the full spectrum of potential traffic situations, while rare yet high-risk critical scenarios are even harder to obtain. This scarcity renders traditional random sampling and parameter-sweeping strategies ineffective for identifying unknown risks. This study addresses two core challenges: (1) incomplete scenario catalogs hindering unknown critical scenario recognition and (2) insufficient critical samples, where generated scenarios struggle to balance physical realism and edge case coverage. To tackle the first challenge, we propose an open-world recognition method integrating transformers, random forests, and extreme value theory for precise unseen sample detection. Outlier and validity filtering ensure clustering reliability, and random forest activation patterns cluster unknown samples into meaningful groups to expand the scenario catalog. Experiments show the overall F1_macro improved by 2.3 percentage points over SOTA MDENet, with its clustering accuracy surpassing iterative-AutoNovel by 6.2 percentage points. For the second challenge, we introduce a reinforcement-learning-based maneuver-level generation method. It extracts maneuver semantics from trajectories, constructs a low-dimensional parameter space, and models parameter correlations via a multivariate multimodal distribution. A dual-layer LSTM agent with a composite reward iteratively optimizes policies toward high-risk edge scenarios. The results outperformed RLBE; longitudinal and lateral reconstruction errors were reduced by 32.7% and 15.3%, respectively, while high-risk time steps and the collision rate increased by 4.3% and 5.1%, respectively. Finally, we develop a CARLA-based scenario-driven simulation framework, integrating recognized and generated scenarios into closed-loop testing on high-risk road segments. CAS failure cases validate the generated scenarios\u2019 physical feasibility and extreme challenge. Targeted augmentation of scarce critical scenarios enriches the test library and ensures broader coverage of real-world driving conditions.",
+    "abs_url": "https://doi.org/10.3390/vehicles8070155",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/app16136722",
+    "title": "Real-Time Detection of Rare Traffic Situations Using RGB-LiDAR Fusion and a Rule-Based Safety Agent in CARLA",
+    "summary": "Rare and safety-critical traffic situations remain challenging for autonomous driving (AD) because they are underrepresented in common training data and may include objects outside standard detector classes. This paper presents a real-time RGB-LiDAR fusion framework for detecting and reacting to rare traffic situations in CARLA (Car Learning to Act), a reproducible simulator for AD research. The approach combines YOLOv8n-based RGB perception, bird\u2019s-eye-view (BEV) LiDAR clustering, decision-level fusion, an interpretable rule-based safety agent with hysteresis, Time-to-Collision (TTC)-aware escalation, and an automatic emergency braking (AEB) override above the CARLA autopilot. Fused observations are classified as semantic\u2013geometric detections, semantic-only detections, or geometric-only obstacle candidates, where unmatched LiDAR clusters are treated conservatively as candidate-level physical evidence rather than confirmed rare objects. The framework was evaluated on three CARLA maps and 3CSim-inspired corner-case scenarios comprising 19,253 frames, with additional weather/lighting stress tests and a public nuScenes mini cross-platform check. On a manually annotated subset of 4800 CARLA frames, corresponding to approximately 24.9% of the recorded CARLA log, the full framework achieved 96.2% precision, 97.3% recall, and a 96.7% F1-score for safety-relevant threat detection. The control experiments show that the fusion-based safety agent reduced unnecessary braking to 1.7% compared with 8.6% for the LiDAR-only baseline and achieved event-level success on the annotated critical intervals. The proposed CPU-only implementation maintained real-time performance, with an average processing time of 34.7ms.",
+    "authors": [
+      "Mat\u00fa\u0161 \u010c\u00e1vojsk\u00fd",
+      "Mat\u00fa\u0161 Dopiriak",
+      "Eugen \u0160lapak",
+      "Arisha Al Faruque",
+      "Tom\u00e1\u0161 Dobo\u0161",
+      "Gabriel Bug\u00e1r"
+    ],
+    "categories": [
+      "Simulation and validation",
+      "Safety-critical cases",
+      "Perception"
+    ],
+    "primary_category": "Simulation and validation",
+    "published": "2026-07-05",
+    "updated": "2026-07-07",
+    "age_days": 82,
+    "authors_joined": "Mat\u00fa\u0161 \u010c\u00e1vojsk\u00fd, Mat\u00fa\u0161 Dopiriak, Eugen \u0160lapak, Arisha Al Faruque, Tom\u00e1\u0161 Dobo\u0161, Gabriel Bug\u00e1r",
+    "categories_joined": "Simulation and validation, Safety-critical cases, Perception",
+    "summary_chars": 1726,
+    "text_for_embedding": "Title: Real-Time Detection of Rare Traffic Situations Using RGB-LiDAR Fusion and a Rule-Based Safety Agent in CARLA\nAuthors: Mat\u00fa\u0161 \u010c\u00e1vojsk\u00fd, Mat\u00fa\u0161 Dopiriak, Eugen \u0160lapak, Arisha Al Faruque, Tom\u00e1\u0161 Dobo\u0161, Gabriel Bug\u00e1r\nPublished: 2026-07-05\nCategories: Simulation and validation, Safety-critical cases, Perception\nSummary: Rare and safety-critical traffic situations remain challenging for autonomous driving (AD) because they are underrepresented in common training data and may include objects outside standard detector classes. This paper presents a real-time RGB-LiDAR fusion framework for detecting and reacting to rare traffic situations in CARLA (Car Learning to Act), a reproducible simulator for AD research. The approach combines YOLOv8n-based RGB perception, bird\u2019s-eye-view (BEV) LiDAR clustering, decision-level fusion, an interpretable rule-based safety agent with hysteresis, Time-to-Collision (TTC)-aware escalation, and an automatic emergency braking (AEB) override above the CARLA autopilot. Fused observations are classified as semantic\u2013geometric detections, semantic-only detections, or geometric-only obstacle candidates, where unmatched LiDAR clusters are treated conservatively as candidate-level physical evidence rather than confirmed rare objects. The framework was evaluated on three CARLA maps and 3CSim-inspired corner-case scenarios comprising 19,253 frames, with additional weather/lighting stress tests and a public nuScenes mini cross-platform check. On a manually annotated subset of 4800 CARLA frames, corresponding to approximately 24.9% of the recorded CARLA log, the full framework achieved 96.2% precision, 97.3% recall, and a 96.7% F1-score for safety-relevant threat detection. The control experiments show that the fusion-based safety agent reduced unnecessary braking to 1.7% compared with 8.6% for the LiDAR-only baseline and achieved event-level success on the annotated critical intervals. The proposed CPU-only implementation maintained real-time performance, with an average processing time of 34.7ms.",
+    "abs_url": "https://doi.org/10.3390/app16136722",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1145/3808153",
+    "title": "From Particles to Perils: SVGD-Based Hazardous Scenario Generation for Autonomous Driving Systems Testing",
+    "summary": "Simulation-based testing of autonomous driving systems (ADS) must uncover realistic and diverse failures in dense, heterogeneous traffic. However, existing search-based seeding methods (e.g., genetic algorithms) struggle in high-dimensional spaces, often collapsing to limited modes and missing many failure scenarios. We present PtoP, a framework that combines adaptive random seed generation with Stein Variational Gradient Descent (SVGD) to produce diverse, failure-inducing initial conditions. SVGD balances attraction toward high-risk regions and repulsion among particles, yielding risk-seeking yet well-distributed seeds across multiple failure modes. PtoP is plug-and-play and enhances existing online testing methods (e.g., reinforcement learning--based testers) by providing principled seeds. Evaluation in CARLA on two industry-grade ADS (Apollo, Autoware) and a native end-to-end system shows that PtoP improves safety violation rate (up to 27.68%), scenario diversity (9.6%), and map coverage (16.78%) over baselines.",
+    "authors": [
+      "Linfeng Liang",
+      "Xiao Cheng",
+      "Tsong Yueh Chen",
+      "Xi Zheng"
+    ],
+    "categories": [
+      "Scenario generation",
+      "Simulation and validation",
+      "Safety-critical cases"
+    ],
+    "primary_category": "Scenario generation",
+    "published": "2026-06-30",
+    "updated": "2026-06-30",
+    "age_days": 87,
+    "authors_joined": "Linfeng Liang, Xiao Cheng, Tsong Yueh Chen, Xi Zheng",
+    "categories_joined": "Scenario generation, Simulation and validation, Safety-critical cases",
+    "summary_chars": 1030,
+    "text_for_embedding": "Title: From Particles to Perils: SVGD-Based Hazardous Scenario Generation for Autonomous Driving Systems Testing\nAuthors: Linfeng Liang, Xiao Cheng, Tsong Yueh Chen, Xi Zheng\nPublished: 2026-06-30\nCategories: Scenario generation, Simulation and validation, Safety-critical cases\nSummary: Simulation-based testing of autonomous driving systems (ADS) must uncover realistic and diverse failures in dense, heterogeneous traffic. However, existing search-based seeding methods (e.g., genetic algorithms) struggle in high-dimensional spaces, often collapsing to limited modes and missing many failure scenarios. We present PtoP, a framework that combines adaptive random seed generation with Stein Variational Gradient Descent (SVGD) to produce diverse, failure-inducing initial conditions. SVGD balances attraction toward high-risk regions and repulsion among particles, yielding risk-seeking yet well-distributed seeds across multiple failure modes. PtoP is plug-and-play and enhances existing online testing methods (e.g., reinforcement learning--based testers) by providing principled seeds. Evaluation in CARLA on two industry-grade ADS (Apollo, Autoware) and a native end-to-end system shows that PtoP improves safety violation rate (up to 27.68%), scenario diversity (9.6%), and map coverage (16.78%) over baselines.",
+    "abs_url": "https://doi.org/10.1145/3808153",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.4271/12-09-04-0032",
+    "title": "Model-Guided Scenario Expansion for Data-Driven Autonomous-Vehicle Safety Testing: A Feasibility Demonstration",
+    "summary": "This article presents a data-driven pipeline for autonomous-vehicle (AV) safety testing. The pipeline integrates real-world traffic observations with model-guided scenario expansion and safety-metric evaluation to enable an end-to-end AV safety testing framework, demonstrated on a canonical highway scenario. The framework enhances test diversity, realism, and coverage by generating statistically informed variants of observed driving behaviors. Key parameters such as vehicle speed, trajectories, and headways are extracted from naturalistic data and used to train a probabilistic model of traffic dynamics. Scenario variants are sampled from this model and encoded as behavior trees (BTs) for modular, simulation-ready execution. Each scenario is simulated using a consistent AV control configuration, and safety metrics such as minimum safe distance violation, minimum safe distance factor, time to collision, and aggressive driving are applied to evaluate safety outcomes independently of system-specific tuning. A case study based on the highD dataset (110,000+ trajectories) demonstrates the framework\u2019s ability to generate realistic and safety-relevant scenarios, providing an initial demonstration of pipeline feasibility and metric-based evaluation. This initial study is intentionally scoped to a single scenario class and a simplified parametric model to isolate and validate the end-to-end integration of the pipeline.",
+    "authors": [
+      "Mohamed Elshenawy",
+      "Aya Aboudina",
+      "Anhar Abdelmotaleb",
+      "Mariam Amr",
+      "Mohamed El-darieby"
+    ],
+    "categories": [
+      "Scenario-based testing",
+      "Simulation and validation",
+      "Safety-critical cases",
+      "Data and knowledge"
+    ],
+    "primary_category": "Scenario-based testing",
+    "published": "2026-06-29",
+    "updated": "2026-07-01",
+    "age_days": 88,
+    "authors_joined": "Mohamed Elshenawy, Aya Aboudina, Anhar Abdelmotaleb, Mariam Amr, Mohamed El-darieby",
+    "categories_joined": "Scenario-based testing, Simulation and validation, Safety-critical cases, Data and knowledge",
+    "summary_chars": 1432,
+    "text_for_embedding": "Title: Model-Guided Scenario Expansion for Data-Driven Autonomous-Vehicle Safety Testing: A Feasibility Demonstration\nAuthors: Mohamed Elshenawy, Aya Aboudina, Anhar Abdelmotaleb, Mariam Amr, Mohamed El-darieby\nPublished: 2026-06-29\nCategories: Scenario-based testing, Simulation and validation, Safety-critical cases, Data and knowledge\nSummary: This article presents a data-driven pipeline for autonomous-vehicle (AV) safety testing. The pipeline integrates real-world traffic observations with model-guided scenario expansion and safety-metric evaluation to enable an end-to-end AV safety testing framework, demonstrated on a canonical highway scenario. The framework enhances test diversity, realism, and coverage by generating statistically informed variants of observed driving behaviors. Key parameters such as vehicle speed, trajectories, and headways are extracted from naturalistic data and used to train a probabilistic model of traffic dynamics. Scenario variants are sampled from this model and encoded as behavior trees (BTs) for modular, simulation-ready execution. Each scenario is simulated using a consistent AV control configuration, and safety metrics such as minimum safe distance violation, minimum safe distance factor, time to collision, and aggressive driving are applied to evaluate safety outcomes independently of system-specific tuning. A case study based on the highD dataset (110,000+ trajectories) demonstrates the framework\u2019s ability to generate realistic and safety-relevant scenarios, providing an initial demonstration of pipeline feasibility and metric-based evaluation. This initial study is intentionally scoped to a single scenario class and a simplified parametric model to isolate and validate the end-to-end integration of the pipeline.",
+    "abs_url": "https://doi.org/10.4271/12-09-04-0032",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/s26113464",
+    "title": "Scenario-Driven Synthetic Data Generation Framework for Visual Perception Evaluation Under Adverse Driving Conditions",
+    "summary": "Developing and evaluating visual perception systems for autonomous vehicles requires data across diverse and adverse driving conditions, yet collecting and annotating such real-world data is costly and often impractical. To address this challenge, we propose a modular, scenario-driven framework for generating synthetic datasets tailored to the evaluation of visual perception functions. The framework aligns with the operational boundaries and detection\u2013response requirements of automated driving functions and comprises three stages: (1) configuring use-case-driven scenarios, (2) generating sensor data and ground truth via simulation, and (3) post-processing to ensure dataset usability. Designed to be generic and flexible, the framework is instantiated and demonstrated through its integration with specific platforms and tools, namely Pro-SiVIC and RTMaps. We evaluate the generated dataset from two perspectives, image fidelity and perception performance under synthetic weather conditions, in comparison to real-world conditions. Furthermore, we train multiple perception models under different learning paradigms, including baseline, transfer-learning, and mixed-training strategies, to examine the influence of synthetic data on robustness. Experimental results demonstrate not only the high quality of the generated data but also its effectiveness in evaluating visual perception functions, as well as its benefit to model robustness and generalization.",
+    "authors": [
+      "Wei Xu",
+      "Dominique Gruyer",
+      "Alexandra Duminil",
+      "Sio-Song Ieng"
+    ],
+    "categories": [
+      "Simulation and validation",
+      "Perception",
+      "Data and knowledge"
+    ],
+    "primary_category": "Simulation and validation",
+    "published": "2026-05-30",
+    "updated": "2026-06-01",
+    "age_days": 118,
+    "authors_joined": "Wei Xu, Dominique Gruyer, Alexandra Duminil, Sio-Song Ieng",
+    "categories_joined": "Simulation and validation, Perception, Data and knowledge",
+    "summary_chars": 1466,
+    "text_for_embedding": "Title: Scenario-Driven Synthetic Data Generation Framework for Visual Perception Evaluation Under Adverse Driving Conditions\nAuthors: Wei Xu, Dominique Gruyer, Alexandra Duminil, Sio-Song Ieng\nPublished: 2026-05-30\nCategories: Simulation and validation, Perception, Data and knowledge\nSummary: Developing and evaluating visual perception systems for autonomous vehicles requires data across diverse and adverse driving conditions, yet collecting and annotating such real-world data is costly and often impractical. To address this challenge, we propose a modular, scenario-driven framework for generating synthetic datasets tailored to the evaluation of visual perception functions. The framework aligns with the operational boundaries and detection\u2013response requirements of automated driving functions and comprises three stages: (1) configuring use-case-driven scenarios, (2) generating sensor data and ground truth via simulation, and (3) post-processing to ensure dataset usability. Designed to be generic and flexible, the framework is instantiated and demonstrated through its integration with specific platforms and tools, namely Pro-SiVIC and RTMaps. We evaluate the generated dataset from two perspectives, image fidelity and perception performance under synthetic weather conditions, in comparison to real-world conditions. Furthermore, we train multiple perception models under different learning paradigms, including baseline, transfer-learning, and mixed-training strategies, to examine the influence of synthetic data on robustness. Experimental results demonstrate not only the high quality of the generated data but also its effectiveness in evaluating visual perception functions, as well as its benefit to model robustness and generalization.",
+    "abs_url": "https://doi.org/10.3390/s26113464",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/make8050126",
+    "title": "Knowledge Graphs in Autonomous Driving: Construction, Integration, and Real-Time Reasoning",
+    "summary": "Autonomous driving systems require the integration of heterogeneous sensor data, distributed V2X communication, and safety-critical decision-making into coherent and interpretable world models. This review provides a systematic analysis of knowledge graph (KG)-based approaches in autonomous driving between 2015 and 2025, following a PRISMA-aligned methodology. The literature is organised along a perception \u2192 representation \u2192 reasoning \u2192 decision taxonomy, covering traffic ontologies, V2X knowledge integration, dynamic KG updates, real-time reasoning architectures, and benchmark datasets. A clear shift from static representational ontologies toward predictive and, in a smaller subset, closed-loop validated neuro-symbolic architectures. Knowledge graphs emerge as semantic integration layers that improve contextual reasoning, explainability, and rule compliance in safety-critical environments. Key challenges include scalable real-time reasoning, standardised evaluation frameworks, and safety-aligned integration of learning-based components.",
+    "authors": [
+      "Patrik Viktor",
+      "G\u00e1bor Kiss"
+    ],
+    "categories": [
+      "Safety-critical cases",
+      "Perception",
+      "Data and knowledge"
+    ],
+    "primary_category": "Safety-critical cases",
+    "published": "2026-05-11",
+    "updated": "2026-05-21",
+    "age_days": 137,
+    "authors_joined": "Patrik Viktor, G\u00e1bor Kiss",
+    "categories_joined": "Safety-critical cases, Perception, Data and knowledge",
+    "summary_chars": 1053,
+    "text_for_embedding": "Title: Knowledge Graphs in Autonomous Driving: Construction, Integration, and Real-Time Reasoning\nAuthors: Patrik Viktor, G\u00e1bor Kiss\nPublished: 2026-05-11\nCategories: Safety-critical cases, Perception, Data and knowledge\nSummary: Autonomous driving systems require the integration of heterogeneous sensor data, distributed V2X communication, and safety-critical decision-making into coherent and interpretable world models. This review provides a systematic analysis of knowledge graph (KG)-based approaches in autonomous driving between 2015 and 2025, following a PRISMA-aligned methodology. The literature is organised along a perception \u2192 representation \u2192 reasoning \u2192 decision taxonomy, covering traffic ontologies, V2X knowledge integration, dynamic KG updates, real-time reasoning architectures, and benchmark datasets. A clear shift from static representational ontologies toward predictive and, in a smaller subset, closed-loop validated neuro-symbolic architectures. Knowledge graphs emerge as semantic integration layers that improve contextual reasoning, explainability, and rule compliance in safety-critical environments. Key challenges include scalable real-time reasoning, standardised evaluation frameworks, and safety-aligned integration of learning-based components.",
+    "abs_url": "https://doi.org/10.3390/make8050126",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1177/03611981261436644",
+    "title": "Scenario-to-Zone Assignment and Route Planning for Autonomous Vehicle Testing: Hybrid Genetic Algorithm-Integer Programming Approach",
+    "summary": "This study proposes a hybrid optimization framework for efficient execution planning of scenario-based autonomous vehicle (AV) testing in physical proving grounds. Using K-City, Korea\u2019s national AV testbed, as a case study, the framework addresses the practical challenge of executing many predefined scenarios under spatial feasibility constraints and operational limitations. A genetic algorithm (GA) is integrated with an integer programming (IP) model to jointly determine scenario-to-zone assignments and execution routes, explicitly capturing the dependency between scenario allocation and routing efficiency. Unlike conventional sequential approaches, IP-based route optimization is embedded within the GA fitness evaluation, allowing route cost to directly guide the search process. The methodology was validated on both a simplified grid network and the full K-City road network comprising 47 scenarios. Results showed substantial reductions in total travel distance compared with a naive sequential baseline, demonstrating the effectiveness of the integrated approach. To reflect real testing conditions, execution constraints on the number of scenarios per cycle were incorporated, producing repeatable and operationally feasible routes. The proposed framework improves execution efficiency and consistency and can be readily adapted to other AV testbeds with similar constraints.",
+    "authors": [
+      "Joonho Park",
+      "Gyungtaek Oh",
+      "Haneul Park",
+      "Hangeom Ko",
+      "Jaehyun (Jason) So"
+    ],
+    "categories": [
+      "Scenario-based testing"
+    ],
+    "primary_category": "Scenario-based testing",
+    "published": "2026-05-07",
+    "updated": "2026-05-11",
+    "age_days": 141,
+    "authors_joined": "Joonho Park, Gyungtaek Oh, Haneul Park, Hangeom Ko, Jaehyun (Jason) So",
+    "categories_joined": "Scenario-based testing",
+    "summary_chars": 1391,
+    "text_for_embedding": "Title: Scenario-to-Zone Assignment and Route Planning for Autonomous Vehicle Testing: Hybrid Genetic Algorithm-Integer Programming Approach\nAuthors: Joonho Park, Gyungtaek Oh, Haneul Park, Hangeom Ko, Jaehyun (Jason) So\nPublished: 2026-05-07\nCategories: Scenario-based testing\nSummary: This study proposes a hybrid optimization framework for efficient execution planning of scenario-based autonomous vehicle (AV) testing in physical proving grounds. Using K-City, Korea\u2019s national AV testbed, as a case study, the framework addresses the practical challenge of executing many predefined scenarios under spatial feasibility constraints and operational limitations. A genetic algorithm (GA) is integrated with an integer programming (IP) model to jointly determine scenario-to-zone assignments and execution routes, explicitly capturing the dependency between scenario allocation and routing efficiency. Unlike conventional sequential approaches, IP-based route optimization is embedded within the GA fitness evaluation, allowing route cost to directly guide the search process. The methodology was validated on both a simplified grid network and the full K-City road network comprising 47 scenarios. Results showed substantial reductions in total travel distance compared with a naive sequential baseline, demonstrating the effectiveness of the integrated approach. To reflect real testing conditions, execution constraints on the number of scenarios per cycle were incorporated, producing repeatable and operationally feasible routes. The proposed framework improves execution efficiency and consistency and can be readily adapted to other AV testbeds with similar constraints.",
+    "abs_url": "https://doi.org/10.1177/03611981261436644",
+    "pdf_url": "https://journals.sagepub.com/doi/pdf/10.1177/03611981261436644",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.4271/09-14-01-0018",
+    "title": "Feature Reduction for Scenario-Based Safety Assessment of Automated Driving Systems",
+    "summary": "Vehicles equipped with an Automated Driving System (ADS) have the potential to significantly reduce road collisions. To enable widespread adoption of ADSs, rigorous safety assessment is essential. Valuable insights for ADS safety validation can be gained by simulating scenarios across a broad range of feature variations. A common challenge in simulating these scenarios is known as the curse of dimensionality, where increasing the number of scenario features requires a near-infinite number of simulations to cover all variations. This issue of complexity presents a need for reducing scenario features. Most related work focuses on identifying important scenario features, while few evaluate how reducing these features impacts ADS failure estimation. The present study aims to address this gap by employing a wide range of feature reduction methods and assessing their effect on ADS failure estimation. Previous research generated datasets for three distinct scenario categories by performing virtual simulations using driver reference models on real-world data. In the present work, the machine learning classifiers such as extreme gradient boosting and random forest are applied to this data for predicting ADS failures. Ten dimensionality reduction techniques, including both feature selection and transformation approaches, are employed to reduce the scenario feature set. The optimal reduced feature set is selected based on classification performance measured by the area under the precision\u2013recall curve. To assess the impact on ADS failure estimation, results are compared against those obtained with the full set of features. The findings indicate that reliable ADS failure estimates can be maintained, and even significantly improved, after substantially reducing the number of scenario features. By reducing scenario features, fewer virtual simulations may be required to reliably estimate ADS failures, which may enable more efficient scenario-based ADS safety assessment. Additionally, this study may offer guidance on selecting suitable dimensionality reduction techniques for scenario-based ADS safety assessment.",
+    "authors": [
+      "Bram Lankhorst",
+      "Erwin de Gelder",
+      "Christian P. Janssen",
+      "Andre Scholich"
+    ],
+    "categories": [
+      "Scenario-based testing",
+      "Simulation and validation",
+      "Safety-critical cases",
+      "Data and knowledge"
+    ],
+    "primary_category": "Scenario-based testing",
+    "published": "2026-05-04",
+    "updated": "2026-05-09",
+    "age_days": 144,
+    "authors_joined": "Bram Lankhorst, Erwin de Gelder, Christian P. Janssen, Andre Scholich",
+    "categories_joined": "Scenario-based testing, Simulation and validation, Safety-critical cases, Data and knowledge",
+    "summary_chars": 2133,
+    "text_for_embedding": "Title: Feature Reduction for Scenario-Based Safety Assessment of Automated Driving Systems\nAuthors: Bram Lankhorst, Erwin de Gelder, Christian P. Janssen, Andre Scholich\nPublished: 2026-05-04\nCategories: Scenario-based testing, Simulation and validation, Safety-critical cases, Data and knowledge\nSummary: Vehicles equipped with an Automated Driving System (ADS) have the potential to significantly reduce road collisions. To enable widespread adoption of ADSs, rigorous safety assessment is essential. Valuable insights for ADS safety validation can be gained by simulating scenarios across a broad range of feature variations. A common challenge in simulating these scenarios is known as the curse of dimensionality, where increasing the number of scenario features requires a near-infinite number of simulations to cover all variations. This issue of complexity presents a need for reducing scenario features. Most related work focuses on identifying important scenario features, while few evaluate how reducing these features impacts ADS failure estimation. The present study aims to address this gap by employing a wide range of feature reduction methods and assessing their effect on ADS failure estimation. Previous research generated datasets for three distinct scenario categories by performing virtual simulations using driver reference models on real-world data. In the present work, the machine learning classifiers such as extreme gradient boosting and random forest are applied to this data for predicting ADS failures. Ten dimensionality reduction techniques, including both feature selection and transformation approaches, are employed to reduce the scenario feature set. The optimal reduced feature set is selected based on classification performance measured by the area under the precision\u2013recall curve. To assess the impact on ADS failure estimation, results are compared against those obtained with the full set of features. The findings indicate that reliable ADS failure estimates can be maintained, and even significantly improved, after substantially reducing the number of scenario features. By reducing scenario features, fewer virtual simulations may be required to reliably estimate ADS failures, which may enable more efficient scenario-based ADS safety assessment. Additionally, this study may offer guidance on selecting suitable dimensionality reduction techniques for scenario-based ADS safety assessment.",
+    "abs_url": "https://doi.org/10.4271/09-14-01-0018",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1515/auto-2025-0066",
+    "title": "Integration of an agent model into an open simulation architecture for scenario-based testing of automated vehicles",
+    "summary": "Abstract Simulative and scenario-based testing are crucial methods in the safety assurance for automated driving systems. To ensure that simulation results are reliable, the real world must be modeled with sufficient fidelity, including not only the static environment but also the surrounding traffic of a vehicle under test. Thus, the availability of traffic agent models is of common interest to model naturalistic and parameterizable behavior, similar to human drivers. The interchangeability of agent models across different simulation environments represents a major challenge and necessitates harmonization and standardization. To address this challenge, we present a standardized and modular simulation integration architecture that enables the tool-independent integration of traffic agent models. The architecture builds upon the Open Simulation Interface (OSI) as a structured message format and the Functional Mock-up Interface (FMI) for dynamic model exchange. Rather than introducing yet another model or simulation tool, we provide a reusable reference implementation that translates these standards into a practical integration blueprint, including clear interfaces, data mappings, and execution semantics. The generic nature of the architecture is demonstrated by integrating an exemplary agent model into three widely used simulation environments: OpenPASS, CARLA, and CarMaker. As part of the evaluation, we show that the model yields consistent behavior in all simulation platforms, thereby validating the interoperability, modularity, and standard compliance of the proposed architecture. The reference implementation lowers integration barriers, serves as a foundation for future research, and is made publicly available at github.com/ika-rwth-aachen/agent-model-integration .",
+    "authors": [
+      "Christian Geller",
+      "Daniel Becker",
+      "Jobst Beckmann",
+      "Lutz Eckstein"
+    ],
+    "categories": [
+      "Scenario-based testing",
+      "Simulation and validation"
+    ],
+    "primary_category": "Scenario-based testing",
+    "published": "2026-05-01",
+    "updated": "2026-05-25",
+    "age_days": 147,
+    "authors_joined": "Christian Geller, Daniel Becker, Jobst Beckmann, Lutz Eckstein",
+    "categories_joined": "Scenario-based testing, Simulation and validation",
+    "summary_chars": 1798,
+    "text_for_embedding": "Title: Integration of an agent model into an open simulation architecture for scenario-based testing of automated vehicles\nAuthors: Christian Geller, Daniel Becker, Jobst Beckmann, Lutz Eckstein\nPublished: 2026-05-01\nCategories: Scenario-based testing, Simulation and validation\nSummary: Abstract Simulative and scenario-based testing are crucial methods in the safety assurance for automated driving systems. To ensure that simulation results are reliable, the real world must be modeled with sufficient fidelity, including not only the static environment but also the surrounding traffic of a vehicle under test. Thus, the availability of traffic agent models is of common interest to model naturalistic and parameterizable behavior, similar to human drivers. The interchangeability of agent models across different simulation environments represents a major challenge and necessitates harmonization and standardization. To address this challenge, we present a standardized and modular simulation integration architecture that enables the tool-independent integration of traffic agent models. The architecture builds upon the Open Simulation Interface (OSI) as a structured message format and the Functional Mock-up Interface (FMI) for dynamic model exchange. Rather than introducing yet another model or simulation tool, we provide a reusable reference implementation that translates these standards into a practical integration blueprint, including clear interfaces, data mappings, and execution semantics. The generic nature of the architecture is demonstrated by integrating an exemplary agent model into three widely used simulation environments: OpenPASS, CARLA, and CarMaker. As part of the evaluation, we show that the model yields consistent behavior in all simulation platforms, thereby validating the interoperability, modularity, and standard compliance of the proposed architecture. The reference implementation lowers integration barriers, serves as a foundation for future research, and is made publicly available at github.com/ika-rwth-aachen/agent-model-integration .",
+    "abs_url": "https://doi.org/10.1515/auto-2025-0066",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1002/smr.70112",
+    "title": "Analyzing the Sensitivity of a Scenario Selection Process for Simulation\u2010Based Safety Testing",
+    "summary": "ABSTRACT Automated driving systems (ADS) require exhaustive safety testing. Simulation\u2010based safety testing is a cost\u2010effective method for conducting safety testing. However, an ADS may be exposed to a large number of driving scenarios in the real world. It is not feasible to test every scenario in the simulator. We previously introduced the simulation\u2010based safety testing scenario selection (SSTSS) process for simulation\u2010based safety testing of ADS. In order to be useful, the SSTSS process must reflect input changes correctly in its outputs. To investigate this, we vary two key inputs: (i) the operational design domain (ODD) and (ii) the car crash dataset to analyze the sensitivity of the SSTSS process. We selected two different ODDs: one comprehensive, covering diverse urban driving conditions, and one more restricted, defining a controlled environment. We then use two different car crash datasets, the US and EU datasets, as well as subsets of these datasets. We compare the total number of selected scenarios and the correlation between the priority of selected scenarios when different ODDs and datasets are used. Our results show that the SSTSS process shows appropriate sensitivity to the ODD and car crash dataset used, allowing testers to focus on relevant, non\u2010redundant test scenarios.",
+    "authors": [
+      "Fauzia Khan",
+      "Hina Anwar",
+      "Dietmar Pfahl"
+    ],
+    "categories": [
+      "Scenario-based testing",
+      "Operational design domain",
+      "Simulation and validation",
+      "Data and knowledge"
+    ],
+    "primary_category": "Scenario-based testing",
+    "published": "2026-04-29",
+    "updated": "2026-05-26",
+    "age_days": 149,
+    "authors_joined": "Fauzia Khan, Hina Anwar, Dietmar Pfahl",
+    "categories_joined": "Scenario-based testing, Operational design domain, Simulation and validation, Data and knowledge",
+    "summary_chars": 1309,
+    "text_for_embedding": "Title: Analyzing the Sensitivity of a Scenario Selection Process for Simulation\u2010Based Safety Testing\nAuthors: Fauzia Khan, Hina Anwar, Dietmar Pfahl\nPublished: 2026-04-29\nCategories: Scenario-based testing, Operational design domain, Simulation and validation, Data and knowledge\nSummary: ABSTRACT Automated driving systems (ADS) require exhaustive safety testing. Simulation\u2010based safety testing is a cost\u2010effective method for conducting safety testing. However, an ADS may be exposed to a large number of driving scenarios in the real world. It is not feasible to test every scenario in the simulator. We previously introduced the simulation\u2010based safety testing scenario selection (SSTSS) process for simulation\u2010based safety testing of ADS. In order to be useful, the SSTSS process must reflect input changes correctly in its outputs. To investigate this, we vary two key inputs: (i) the operational design domain (ODD) and (ii) the car crash dataset to analyze the sensitivity of the SSTSS process. We selected two different ODDs: one comprehensive, covering diverse urban driving conditions, and one more restricted, defining a controlled environment. We then use two different car crash datasets, the US and EU datasets, as well as subsets of these datasets. We compare the total number of selected scenarios and the correlation between the priority of selected scenarios when different ODDs and datasets are used. Our results show that the SSTSS process shows appropriate sensitivity to the ODD and car crash dataset used, allowing testers to focus on relevant, non\u2010redundant test scenarios.",
+    "abs_url": "https://doi.org/10.1002/smr.70112",
+    "pdf_url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/smr.70112",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1145/3798262",
+    "title": "Prunario: Testing Autonomous Driving Systems by Pruning Likely Redundant Scenarios",
+    "summary": "We present Prunario , a novel technique for effectively testing autonomous driving systems (ADS). Ensuring the safety of ADS is critical, as their failures can lead to severe casualties. While ADS testing methods have advanced in recent years, they remain unsatisfactory in generating diverse test scenarios that induce distinct driving behaviors\u2013a key requirement for thoroughly evaluating ADS across different situations. To address this, Prunario employs a novel simulation prediction technique to estimate ADS runtime behavior and prune redundant test scenarios that yield similar driving records. Experimental results demonstrate Prunario \u2019s effectiveness: it uncovered 23 previously undetected bugs in an industrial-strength ADS and outperformed three state-of-the-art testing techniques.",
+    "authors": [
+      "Minsu Kim",
+      "Sunbeom So",
+      "Hakjoo Oh"
+    ],
+    "categories": [
+      "Scenario-based testing",
+      "Simulation and validation"
+    ],
+    "primary_category": "Scenario-based testing",
+    "published": "2026-04-10",
+    "updated": "2026-08-23",
+    "age_days": 168,
+    "authors_joined": "Minsu Kim, Sunbeom So, Hakjoo Oh",
+    "categories_joined": "Scenario-based testing, Simulation and validation",
+    "summary_chars": 794,
+    "text_for_embedding": "Title: Prunario: Testing Autonomous Driving Systems by Pruning Likely Redundant Scenarios\nAuthors: Minsu Kim, Sunbeom So, Hakjoo Oh\nPublished: 2026-04-10\nCategories: Scenario-based testing, Simulation and validation\nSummary: We present Prunario , a novel technique for effectively testing autonomous driving systems (ADS). Ensuring the safety of ADS is critical, as their failures can lead to severe casualties. While ADS testing methods have advanced in recent years, they remain unsatisfactory in generating diverse test scenarios that induce distinct driving behaviors\u2013a key requirement for thoroughly evaluating ADS across different situations. To address this, Prunario employs a novel simulation prediction technique to estimate ADS runtime behavior and prune redundant test scenarios that yield similar driving records. Experimental results demonstrate Prunario \u2019s effectiveness: it uncovered 23 previously undetected bugs in an industrial-strength ADS and outperformed three state-of-the-art testing techniques.",
+    "abs_url": "https://doi.org/10.1145/3798262",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.3390/vehicles8040088",
+    "title": "A Reproducible Reference Architecture for Automated Driving Scenario Databases",
+    "summary": "As automated vehicles move from controlled environments to unpredictable real-world roads, scenario-based testing has become the cornerstone of safety validation. In recent years, substantial progress has been made in scenario representation standards and generation methodologies. However, integrating scenario generation, standards-aligned packaging, validation, curation, and structured querying into a reproducible end-to-end lifecycle remains challenging in practice. This work presents a reproducible reference architecture for Scenario Databases (SCDBs) that treats scenario collections as lifecycle-governed data systems rather than static repositories. The proposed architecture unifies the scenario lifecycle within a single workflow. It integrates scenario generation and ingestion, validation and curation, immutable storage, semantic and value-based querying, and reproducible export. Scenario semantics are represented using ASAM OpenX formats (OpenDRIVE and OpenSCENARIO), together with ASAM OpenLABEL metadata, enabling standards-aligned interoperability. Querying is performed over categorical and value-carrying metadata without requiring inspection of raw scenario artifacts at query time. The reference implementation is deployed using Infrastructure-as-Code, supporting reproducibility and low operational overhead. Execution-based metric enrichment is supported as an optional extension, enabling scenarios to be augmented with execution-derived measurements and trace metadata. The contribution is not a centralized database, but a reference architecture and deployment blueprint that supports interoperable and federated scenario ecosystems. By framing SCDBs as reproducible lifecycle systems, this work supports scalable scenario reuse and more transparent safety validation workflows.",
+    "authors": [
+      "Yavar Taghipour Azar",
+      "Juan Diego Ortega",
+      "Marcos Nieto"
+    ],
+    "categories": [
+      "Scenario generation",
+      "Scenario-based testing",
+      "Simulation and validation",
+      "Data and knowledge"
+    ],
+    "primary_category": "Scenario generation",
+    "published": "2026-04-10",
+    "updated": "2026-04-10",
+    "age_days": 168,
+    "authors_joined": "Yavar Taghipour Azar, Juan Diego Ortega, Marcos Nieto",
+    "categories_joined": "Scenario generation, Scenario-based testing, Simulation and validation, Data and knowledge",
+    "summary_chars": 1810,
+    "text_for_embedding": "Title: A Reproducible Reference Architecture for Automated Driving Scenario Databases\nAuthors: Yavar Taghipour Azar, Juan Diego Ortega, Marcos Nieto\nPublished: 2026-04-10\nCategories: Scenario generation, Scenario-based testing, Simulation and validation, Data and knowledge\nSummary: As automated vehicles move from controlled environments to unpredictable real-world roads, scenario-based testing has become the cornerstone of safety validation. In recent years, substantial progress has been made in scenario representation standards and generation methodologies. However, integrating scenario generation, standards-aligned packaging, validation, curation, and structured querying into a reproducible end-to-end lifecycle remains challenging in practice. This work presents a reproducible reference architecture for Scenario Databases (SCDBs) that treats scenario collections as lifecycle-governed data systems rather than static repositories. The proposed architecture unifies the scenario lifecycle within a single workflow. It integrates scenario generation and ingestion, validation and curation, immutable storage, semantic and value-based querying, and reproducible export. Scenario semantics are represented using ASAM OpenX formats (OpenDRIVE and OpenSCENARIO), together with ASAM OpenLABEL metadata, enabling standards-aligned interoperability. Querying is performed over categorical and value-carrying metadata without requiring inspection of raw scenario artifacts at query time. The reference implementation is deployed using Infrastructure-as-Code, supporting reproducibility and low operational overhead. Execution-based metric enrichment is supported as an optional extension, enabling scenarios to be augmented with execution-derived measurements and trace metadata. The contribution is not a centralized database, but a reference architecture and deployment blueprint that supports interoperable and federated scenario ecosystems. By framing SCDBs as reproducible lifecycle systems, this work supports scalable scenario reuse and more transparent safety validation workflows.",
+    "abs_url": "https://doi.org/10.3390/vehicles8040088",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  },
+  {
+    "paper_id": "10.1145/3806653",
+    "title": "Generative AI for Testing of Autonomous Driving Systems: A Survey",
+    "summary": "Autonomous driving systems (ADS) have been an active area of research, with the potential to deliver significant benefits to society. However, before large-scale deployment on public roads, extensive testing is necessary to validate their functionality and safety under diverse driving conditions. Therefore, different testing approaches are required, and achieving effective and efficient testing of ADS remains an open challenge. Recently, generative AI has emerged as a powerful tool across many domains and is increasingly applied to ADS testing due to its ability to interpret context, reason about complex tasks, and generate diverse outputs. To understand its role in ADS testing, we systematically analyzed 92 relevant studies and synthesized their findings into six major application categories, primarily centered on scenario-based testing. We further evaluated the effectiveness of these approaches and compiled a comprehensive set of resources, including 37 datasets, 17 simulators, 61 ADS systems, 141 metrics, and 100 benchmarks used for evaluation. In addition, we identified 27 limitations in existing research and outlined six major directions for future work. This survey provides an overview and practical insights into the use of generative AI for testing ADS, highlights existing challenges, and outlines future research opportunities in this rapidly evolving field.",
+    "authors": [
+      "Qunying Song",
+      "He Ye",
+      "Mark Harman",
+      "Federica Sarro"
+    ],
+    "categories": [
+      "Scenario generation",
+      "Scenario-based testing",
+      "Simulation and validation",
+      "Data and knowledge"
+    ],
+    "primary_category": "Scenario generation",
+    "published": "2026-04-04",
+    "updated": "2026-04-04",
+    "age_days": 174,
+    "authors_joined": "Qunying Song, He Ye, Mark Harman, Federica Sarro",
+    "categories_joined": "Scenario generation, Scenario-based testing, Simulation and validation, Data and knowledge",
+    "summary_chars": 1387,
+    "text_for_embedding": "Title: Generative AI for Testing of Autonomous Driving Systems: A Survey\nAuthors: Qunying Song, He Ye, Mark Harman, Federica Sarro\nPublished: 2026-04-04\nCategories: Scenario generation, Scenario-based testing, Simulation and validation, Data and knowledge\nSummary: Autonomous driving systems (ADS) have been an active area of research, with the potential to deliver significant benefits to society. However, before large-scale deployment on public roads, extensive testing is necessary to validate their functionality and safety under diverse driving conditions. Therefore, different testing approaches are required, and achieving effective and efficient testing of ADS remains an open challenge. Recently, generative AI has emerged as a powerful tool across many domains and is increasingly applied to ADS testing due to its ability to interpret context, reason about complex tasks, and generate diverse outputs. To understand its role in ADS testing, we systematically analyzed 92 relevant studies and synthesized their findings into six major application categories, primarily centered on scenario-based testing. We further evaluated the effectiveness of these approaches and compiled a comprehensive set of resources, including 37 datasets, 17 simulators, 61 ADS systems, 141 metrics, and 100 benchmarks used for evaluation. In addition, we identified 27 limitations in existing research and outlined six major directions for future work. This survey provides an overview and practical insights into the use of generative AI for testing ADS, highlights existing challenges, and outlines future research opportunities in this rapidly evolving field.",
+    "abs_url": "https://doi.org/10.1145/3806653",
+    "pdf_url": "",
+    "comment": "categories:inferred from title/abstract"
+  }
+]
