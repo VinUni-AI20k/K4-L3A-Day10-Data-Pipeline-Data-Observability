@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from typing import Any
+from core.utils import write_text
 
 
 def generate_phase1_report(
@@ -10,15 +11,13 @@ def generate_phase1_report(
     quality: dict[str, Any],
     freshness: dict[str, Any],
 ) -> None:
-    """TODO(student): viet markdown report cho baseline phase.
-
-    Pseudo-code:
-    1. Gom source summary.
-    2. In metrics retrieval/evaluation.
-    3. In data quality va freshness.
-    4. Ghi markdown vao report_path.
-    """
-    raise NotImplementedError("Student task: implement phase 1 report.")
+    lines = ["# Phase 1 Baseline Report", "", "## Source", ""]
+    lines.extend(f"- **{key}:** {value}" for key, value in source_summary.items())
+    lines.extend(["", "## Metrics", ""])
+    lines.extend(f"- **{key}:** {value}" for key, value in metrics.items())
+    lines.extend(["", "## Quality", "", f"- **Success:** {quality['success']}", f"- **Checks:** {quality['checks']}"])
+    lines.extend(["", "## Freshness", "", f"- **Fresh:** {freshness['is_fresh']}", f"- **Stale rows:** {freshness['stale_rows']}/{freshness['total_rows']}", ""])
+    write_text(report_path, "\n".join(lines))
 
 
 def generate_corruption_report(
@@ -31,5 +30,8 @@ def generate_corruption_report(
     corrupted_freshness: dict[str, Any],
     repaired_freshness: dict[str, Any],
 ) -> None:
-    """TODO(student): viet markdown report so sanh baseline/corrupted/repaired."""
-    raise NotImplementedError("Student task: implement corruption comparison report.")
+    metric_names = ["retrieval_hit_rate", "mean_token_f1", "judge_accuracy", "mean_judge_score"]
+    lines = ["# Corruption and Repair Report", "", "| Metric | Baseline | Corrupted | Repaired |", "|---|---:|---:|---:|"]
+    lines.extend(f"| {name} | {baseline_metrics.get(name)} | {corrupted_metrics.get(name)} | {repaired_metrics.get(name)} |" for name in metric_names)
+    lines.extend(["", "## Quality and Freshness", "", f"- Corrupted quality gate: `{corrupted_quality['success']}`", f"- Repaired quality gate: `{repaired_quality['success']}`", f"- Corrupted freshness: `{corrupted_freshness['is_fresh']}`", f"- Repaired freshness: `{repaired_freshness['is_fresh']}`", ""])
+    write_text(report_path, "\n".join(lines))

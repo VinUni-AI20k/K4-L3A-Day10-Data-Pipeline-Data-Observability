@@ -1,0 +1,13 @@
+{
+  "report_name": "corrupted",
+  "success": false,
+  "checks": {
+    "row_count_5_to_5000": true,
+    "paper_id_non_null": true,
+    "title_non_null": true,
+    "text_for_embedding_non_null": true,
+    "paper_id_unique": false,
+    "summary_min_30_chars": false
+  },
+  "row_count": 20
+}

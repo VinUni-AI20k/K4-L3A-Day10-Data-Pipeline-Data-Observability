@@ -1,0 +1,13 @@
+{
+  "report_name": "repaired",
+  "success": true,
+  "checks": {
+    "row_count_5_to_5000": true,
+    "paper_id_non_null": true,
+    "title_non_null": true,
+    "text_for_embedding_non_null": true,
+    "paper_id_unique": true,
+    "summary_min_30_chars": true
+  },
+  "row_count": 24
+}
