@@ -1,0 +1,45 @@
+{
+  "scenarios": [
+    {
+      "name": "drop_latest_records",
+      "affected_rows": 5,
+      "paper_ids": [
+        "10.1145/3637528.3671812",
+        "10.1145/3637528.3671808",
+        "10.1145/3637528.3671804",
+        "10.1145/3637528.3671807",
+        "10.1145/3637528.3671802"
+      ]
+    },
+    {
+      "name": "blank_summary",
+      "affected_rows": 3
+    },
+    {
+      "name": "inject_text_noise",
+      "affected_rows": 3
+    },
+    {
+      "name": "truncate_title",
+      "affected_rows": 3
+    },
+    {
+      "name": "stale_date",
+      "affected_rows": 10,
+      "replacement": "2021-09-25"
+    },
+    {
+      "name": "duplicate_rows",
+      "affected_rows": 5,
+      "paper_ids": [
+        "10.1145/3637528.3671824",
+        "10.1145/3637528.3671823",
+        "10.1145/3637528.3671822",
+        "10.1145/3637528.3671821",
+        "10.1145/3637528.3671810"
+      ]
+    }
+  ],
+  "input_rows": 24,
+  "output_rows": 24
+}
