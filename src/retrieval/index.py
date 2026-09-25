@@ -1,8 +1,20 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import os
 from pathlib import Path
 from typing import Any
+
+os.environ["ANONYMIZED_TELEMETRY"] = "False"
+
+import warnings
+warnings.filterwarnings("ignore")
+
+try:
+    import posthog
+    posthog.capture = lambda *args, **kwargs: None
+except Exception:
+    pass
 
 import chromadb
 import pandas as pd
@@ -25,20 +37,23 @@ class LocalEmbeddingIndex:
     def __init__(
         self,
         settings: Settings,
-        collection_name: str,
-        documents: list[dict[str, Any]],
-        persist_path: Path,
+        collection_name: str | None = None,
+        documents: list[dict[str, Any]] | None = None,
+        persist_path: Path | None = None,
     ):
         self.settings = settings
-        self.collection_name = collection_name
-        self.documents = documents
-        self.persist_path = persist_path
+        self.collection_name = collection_name or settings.baseline_collection_name
+        self.documents = documents or []
+        self.persist_path = persist_path or settings.paths.chroma_dir
         self.embedding_backend = "chroma"
         self.embedding_model = MiniLMEmbeddings(settings.embedding_model)
-        self.client = chromadb.PersistentClient(path=str(persist_path))
-        self.collection = self.client.get_collection(name=collection_name)
-        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in documents}
-        self.documents_by_title = {document["title"].lower(): document for document in documents}
+        self.client = chromadb.PersistentClient(path=str(self.persist_path))
+        try:
+            self.collection = self.client.get_collection(name=self.collection_name)
+        except Exception:
+            self.collection = None
+        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in self.documents}
+        self.documents_by_title = {document["title"].lower(): document for document in self.documents}
 
     @staticmethod
     def _build_documents(df: pd.DataFrame) -> list[dict[str, Any]]:
@@ -100,7 +115,7 @@ class LocalEmbeddingIndex:
             pass
         collection = client.create_collection(
             name=collection_name,
-            configuration={"hnsw": {"space": "cosine"}},
+            metadata={"hnsw:space": "cosine"},
         )
         embeddings = embedding_model.embed_documents([document["content"] for document in documents])
         collection.add(
@@ -138,7 +153,59 @@ class LocalEmbeddingIndex:
             persist_path=Path(payload["persist_path"]),
         )
 
+    def build_from_clean(self, clean_path: Path | None = None) -> "LocalEmbeddingIndex":
+        target_path = clean_path or self.settings.paths.clean_json
+        if not target_path.exists():
+            target_path = self.settings.paths.clean_csv
+        if not target_path.exists():
+            raise FileNotFoundError(f"Clean data file not found at {target_path}")
+
+        if str(target_path).endswith(".csv"):
+            df = pd.read_csv(target_path)
+        else:
+            df = pd.read_json(target_path)
+
+        self.persist_path.mkdir(parents=True, exist_ok=True)
+        self.documents = self._build_documents(df)
+
+        try:
+            self.client.delete_collection(name=self.collection_name)
+        except Exception:
+            pass
+
+        self.collection = self.client.create_collection(
+            name=self.collection_name,
+            metadata={"hnsw:space": "cosine"},
+        )
+        embeddings = self.embedding_model.embed_documents([document["content"] for document in self.documents])
+        self.collection.add(
+            ids=[document["record_id"] for document in self.documents],
+            embeddings=embeddings,
+            documents=[document["content"] for document in self.documents],
+            metadatas=[document["metadata"] for document in self.documents],
+        )
+
+        manifest_path = self.settings.paths.embeddings_json
+        write_json(
+            manifest_path,
+            {
+                "backend": "chroma",
+                "embedding_model": self.settings.embedding_model,
+                "persist_path": str(self.persist_path),
+                "collection_name": self.collection_name,
+                "documents": self.documents,
+            },
+        )
+        self.documents_by_paper_id = {document["paper_id"].lower(): document for document in self.documents}
+        self.documents_by_title = {document["title"].lower(): document for document in self.documents}
+        return self
+
+    def semantic_search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        return self.search(query, top_k=top_k)
+
     def search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
+        if self.collection is None:
+            self.collection = self.client.get_collection(name=self.collection_name)
         query_embedding = self.embedding_model.embed_query(query)
         results = self.collection.query(
             query_embeddings=[query_embedding],

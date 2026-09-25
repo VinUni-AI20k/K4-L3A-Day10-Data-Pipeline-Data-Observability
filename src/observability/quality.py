@@ -69,6 +69,8 @@ def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: s
         if not res.success:
             results["passed"] = False
 
+    results["success"] = results["passed"]
+
     # Persist report
     settings.paths.quality_dir.mkdir(parents=True, exist_ok=True)
     out_path = settings.paths.quality_dir / f"{report_name}.json"

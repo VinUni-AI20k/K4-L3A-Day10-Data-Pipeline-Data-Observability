@@ -234,3 +234,4 @@ def load_raw_records(path: Path) -> list[PaperRecord]:
         )
 
     return [_to_paper_record(d) for d in raw]
+

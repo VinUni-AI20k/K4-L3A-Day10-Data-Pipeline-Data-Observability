@@ -1,8 +1,40 @@
+# Environments & Secrets
 solution/
-.env
-lab.txt
-.venv/
-src/*.egg-info/
 lab/
+lab.txt
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+
+# Python & Build artifacts
 **/__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+src/*.egg-info/
+build/
+dist/
+
+# Testing & Coverage
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Editor & OS artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Verification & Temp reports
 doc_verification_report.md
+scratch/

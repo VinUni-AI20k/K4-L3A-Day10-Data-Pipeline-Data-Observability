@@ -2,7 +2,17 @@ from __future__ import annotations
 
 from functools import lru_cache
 
-from langchain_core.embeddings import Embeddings
+try:
+    from langchain_core.embeddings import Embeddings
+except ImportError:
+    class Embeddings:  # type: ignore[no-redef]
+        """Fallback Embeddings base class when langchain_core is not installed."""
+        def embed_documents(self, texts: list[str]) -> list[list[float]]:
+            raise NotImplementedError
+
+        def embed_query(self, text: str) -> list[float]:
+            raise NotImplementedError
+
 from sentence_transformers import SentenceTransformer
 
 
