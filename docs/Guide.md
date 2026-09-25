@@ -64,7 +64,7 @@ Nếu mạng phòng lab bị chập chờn hoặc API Crossref đang "hắt hơi
 
 Kiểm tra bước 2:
 ```bash
-python -c "from core.config import load_settings; from ingestion.crossref import fetch_source_records; s=load_settings(); r=fetch_source_records(s); print(f'Tín hiệu hoàn thành: Đã tải {len(r)} bài báo')"
+py -c "from core.config import load_settings; from ingestion.crossref import fetch_source_records; s=load_settings(); r=fetch_source_records(s); print(f'Tín hiệu hoàn thành: Đã tải {len(r)} bài báo')"
 ```
 > Tín hiệu hoàn thành: Console in ra `Tín hiệu hoàn thành: Đã tải 24 bài báo`.
 
