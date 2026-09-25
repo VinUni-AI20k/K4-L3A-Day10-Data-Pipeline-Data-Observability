@@ -11,6 +11,17 @@ from core.config import Settings
 from core.utils import read_json, safe_slug, write_json
 from retrieval.embeddings import MiniLMEmbeddings
 
+METADATA_FIELDS = (
+    "paper_id",
+    "title",
+    "published",
+    "authors_joined",
+    "categories_joined",
+    "summary",
+    "abs_url",
+    "pdf_url",
+)
+
 
 @dataclass(frozen=True)
 class SearchResult:
@@ -41,26 +52,27 @@ class LocalEmbeddingIndex:
         self.documents_by_title = {document["title"].lower(): document for document in documents}
 
     @staticmethod
-    def _build_documents(df: pd.DataFrame) -> list[dict[str, Any]]:
+    def _to_text(value: Any) -> str:
+        # Chroma metadata only accepts str/int/float/bool, so None/NaN/Timestamp must become strings.
+        if value is None or (not isinstance(value, (list, tuple, dict)) and pd.isna(value)):
+            return ""
+        if isinstance(value, pd.Timestamp):
+            return value.strftime("%Y-%m-%d")
+        return str(value)
+
+    @classmethod
+    def _build_documents(cls, df: pd.DataFrame) -> list[dict[str, Any]]:
         records = df.to_dict(orient="records")
         documents: list[dict[str, Any]] = []
         for index, row in enumerate(records):
+            metadata = {key: cls._to_text(row.get(key)) for key in METADATA_FIELDS}
             documents.append(
                 {
-                    "record_id": f"{row['paper_id']}::{index}",
-                    "paper_id": row["paper_id"],
-                    "title": row["title"],
-                    "content": row["text_for_embedding"],
-                    "metadata": {
-                        "paper_id": row["paper_id"],
-                        "title": row["title"],
-                        "published": row["published"],
-                        "authors_joined": row["authors_joined"],
-                        "categories_joined": row["categories_joined"],
-                        "summary": row["summary"],
-                        "abs_url": row["abs_url"],
-                        "pdf_url": row["pdf_url"],
-                    },
+                    "record_id": f"{metadata['paper_id']}::{index}",
+                    "paper_id": metadata["paper_id"],
+                    "title": metadata["title"],
+                    "content": cls._to_text(row.get("text_for_embedding")),
+                    "metadata": metadata,
                 }
             )
         return documents
@@ -116,7 +128,8 @@ class LocalEmbeddingIndex:
             {
                 "backend": "chroma",
                 "embedding_model": settings.embedding_model,
-                "persist_path": str(persist_path),
+                # Stored relative to the project so the manifest works on any machine.
+                "persist_path": persist_path.resolve().relative_to(settings.paths.project_dir).as_posix(),
                 "collection_name": collection_name,
                 "documents": documents,
             },
@@ -131,11 +144,14 @@ class LocalEmbeddingIndex:
     @classmethod
     def load(cls, settings: Settings, embeddings_path: Path | None = None) -> "LocalEmbeddingIndex":
         payload = read_json(embeddings_path or settings.paths.embeddings_json)
+        persist_path = Path(payload["persist_path"])
+        if not persist_path.is_absolute():
+            persist_path = settings.paths.project_dir / persist_path
         return cls(
             settings=settings,
             collection_name=payload["collection_name"],
             documents=payload["documents"],
-            persist_path=Path(payload["persist_path"]),
+            persist_path=persist_path,
         )
 
     def search(self, query: str, top_k: int | None = None) -> list[SearchResult]:
