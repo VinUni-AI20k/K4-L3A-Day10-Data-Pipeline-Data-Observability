@@ -21,7 +21,7 @@ def _stale_stats(df: pd.DataFrame, settings: Settings) -> tuple[int, float]:
 
 
 def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: str) -> dict[str, Any]:
-    """TODO(student): tao bo data quality checks.
+    """Tao bo data quality checks.
 
     Pseudo-code:
     1. Check row count.
@@ -87,7 +87,7 @@ def run_data_quality_checks(df: pd.DataFrame, settings: Settings, report_name: s
 
 
 def build_freshness_report(df: pd.DataFrame, settings: Settings, report_path) -> dict[str, Any]:
-    """TODO(student): tong hop freshness report.
+    """Tong hop freshness report.
 
     Pseudo-code:
     1. Tim latest va oldest published date.

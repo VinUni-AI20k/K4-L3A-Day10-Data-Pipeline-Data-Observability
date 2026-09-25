@@ -72,7 +72,7 @@ def _parse_authors(item: dict) -> list[str]:
 
 
 def parse_crossref_payload(payload: dict) -> list[PaperRecord]:
-    """TODO(student): parse Crossref payload thanh list PaperRecord.
+    """Parse Crossref payload thanh list PaperRecord.
 
     Pseudo-code:
     1. Duyet `payload["message"]["items"]`.
@@ -129,7 +129,7 @@ def _request_with_retry(params: dict) -> dict:
 
 
 def fetch_source_records(settings: Settings) -> list[PaperRecord]:
-    """TODO(student): goi source API, luu raw response, parse thanh records.
+    """Goi source API, luu raw response, parse thanh records.
 
     Pseudo-code:
     1. Tao params tu `settings.source_query`, `settings.source_filter`, `settings.max_results`.
@@ -165,5 +165,5 @@ def fetch_source_records(settings: Settings) -> list[PaperRecord]:
 
 
 def load_raw_records(path: Path) -> list[PaperRecord]:
-    """TODO(student): doc JSON snapshot va map thanh `PaperRecord`."""
+    """Doc JSON snapshot va map thanh `PaperRecord`."""
     return [PaperRecord(**row) for row in read_json(path)]
