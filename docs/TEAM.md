@@ -8,12 +8,12 @@
 
 ## # Thành viên
 
-| STT | Họ và tên | MSSV | Email | Vai trò & Phân công công việc | Báo cáo cá nhân |
-|---:|---|---|---|---|---|
-| 1 | | | | Trưởng nhóm / Pipeline Integrator (`core/`, `phase1.py`, `corruption_flow.py`) | `report/<MSSV1>_HoTen.md` |
-| 2 | | | | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, raw data) | `report/<MSSV2>_HoTen.md` |
-| 3 | | | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/<MSSV3>_HoTen.md` |
-| 4 | | | | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/<MSSV4>_HoTen.md` |
+| STT | Họ và tên | MSSV | Email | Vai trò & Phân công công việc | GitHub Issue | Báo cáo cá nhân |
+|---:|---|---|---|---|---|---|
+| 1 | Đỗ Khắc Gia Khoa (@Dokhacgiakhoa) | | dokhacgiakhoa666@gmail.com | Trưởng nhóm / Pipeline Integrator (`core/`, `phase1.py`, `corruption_flow.py`, `data/fixtures/`) | [Issue #1](https://github.com/Dokhacgiakhoa/K4-L3-Day10-1nguoi1mang-DataPipeline/issues/1) | `report/<MSSV1>_HoTen.md` |
+| 2 | Đỗ Thái Sơn (@tsun165) | | sondoforwork@gmail.com | Data Ingestion & Cleaning (`crossref.py`, `cleaning.py`) | [Issue #2](https://github.com/Dokhacgiakhoa/K4-L3-Day10-1nguoi1mang-DataPipeline/issues/2) | `report/<MSSV2>_HoTen.md` |
+| 3 | Hoàng Thái Đạt (@Liber72) | | hoangthaidat722004@gmail.com | Controlled Corruption & Reporting (`corruption.py`, `reporting.py`, smoke test `retrieval/`) | [Issue #3](https://github.com/Dokhacgiakhoa/K4-L3-Day10-1nguoi1mang-DataPipeline/issues/3) | `report/<MSSV3>_HoTen.md` |
+| 4 | Nguyễn Nguyên Phong (@Heargreaves1) | | nguyennguyenphong977@gmail.com | Observability & Evaluation (`quality.py` GX 1.x, Freshness SLA, `testset.py`) | [Issue #4](https://github.com/Dokhacgiakhoa/K4-L3-Day10-1nguoi1mang-DataPipeline/issues/4) | `report/<MSSV4>_HoTen.md` |
 
 *(Nếu nhóm có 3 hoặc 5-6 thành viên, xem bảng phân công chi tiết theo vai trò trong file `CHECKPOINTS.md`)*.
 

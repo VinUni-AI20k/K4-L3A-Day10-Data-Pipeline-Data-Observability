@@ -1,0 +1,68 @@
+{
+  "report_name": "corrupted",
+  "success": false,
+  "gx_success": false,
+  "total_records": 22,
+  "freshness": {
+    "latest_published": "2026-06-06",
+    "oldest_published": "2024-01-01",
+    "stale_rows": 11,
+    "total_rows": 22,
+    "stale_ratio": 0.5,
+    "freshness_threshold_days": 180,
+    "is_fresh": false
+  },
+  "expectations": [
+    {
+      "expectation": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "batch_id": "papers_source_corrupted-papers_asset_corrupted",
+        "min_value": 5,
+        "max_value": 5000
+      },
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "batch_id": "papers_source_corrupted-papers_asset_corrupted",
+        "column": "paper_id"
+      },
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "batch_id": "papers_source_corrupted-papers_asset_corrupted",
+        "column": "paper_id"
+      },
+      "success": false
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "batch_id": "papers_source_corrupted-papers_asset_corrupted",
+        "column": "title"
+      },
+      "success": true
+    },
+    {
+      "expectation": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "batch_id": "papers_source_corrupted-papers_asset_corrupted",
+        "column": "text_for_embedding"
+      },
+      "success": true
+    },
+    {
+      "expectation": "expect_column_value_lengths_to_be_between",
+      "kwargs": {
+        "batch_id": "papers_source_corrupted-papers_asset_corrupted",
+        "column": "summary",
+        "min_value": 30
+      },
+      "success": false
+    }
+  ],
+  "evaluated_at": "2026-09-25T07:51:41.624415+00:00"
+}
