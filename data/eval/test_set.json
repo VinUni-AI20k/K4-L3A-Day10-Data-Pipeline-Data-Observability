@@ -3,102 +3,102 @@
     "id": "eval_001",
     "type": "summary",
     "question_type": "summary",
-    "question": "T\u00f3m t\u1eaft n\u1ed9i dung nghi\u00ean c\u1ee9u ch\u00ednh c\u1ee7a b\u00e0i b\u00e1o 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines'?",
-    "ground_truth": "Static benchmarks fail to capture domain drift in enterprise knowledge bases.",
+    "question": "T\u00f3m t\u1eaft n\u1ed9i dung nghi\u00ean c\u1ee9u ch\u00ednh c\u1ee7a b\u00e0i b\u00e1o 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation'?",
+    "ground_truth": "Abstract Increasingly, digital forensic investigations require a quick, reliable, and privacy-preserving assessment of case materials before formal forensic examination.",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671812"
+      "10.21203/rs.3.rs-10489777/v1"
     ]
   },
   {
     "id": "eval_002",
     "type": "authors",
     "question_type": "authors",
-    "question": "Ai l\u00e0 t\u00e1c gi\u1ea3 c\u1ee7a nghi\u00ean c\u1ee9u v\u1ec1 ch\u1ee7 \u0111\u1ec1 'Multi-Agent Consensus for High-Stakes Fact Verification'?",
-    "ground_truth": "Phong Vu; Ngan Hoang",
+    "question": "Ai l\u00e0 t\u00e1c gi\u1ea3 c\u1ee7a nghi\u00ean c\u1ee9u v\u1ec1 ch\u1ee7 \u0111\u1ec1 'Retrieval-Augmented Generation for Large Language Model-Based Intelligent Assistants: A Review'?",
+    "ground_truth": "Zilang Shao",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671808"
+      "10.70267/aitia.2026482489"
     ]
   },
   {
     "id": "eval_003",
     "type": "date",
     "question_type": "date",
-    "question": "Nghi\u00ean c\u1ee9u 'Freshness SLAs for Real-Time LLM Knowledge Augmentation' \u0111\u01b0\u1ee3c c\u00f4ng b\u1ed1 v\u00e0o n\u0103m/th\u00e1ng n\u00e0o?",
-    "ground_truth": "2026-07-05",
+    "question": "Nghi\u00ean c\u1ee9u 'Agentic Retrieval-Augmented Generation for Verifiable Regulatory Compliance in Urban Cyber-Physical Systems' \u0111\u01b0\u1ee3c c\u00f4ng b\u1ed1 v\u00e0o n\u0103m/th\u00e1ng n\u00e0o?",
+    "ground_truth": "2026-09-12",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671804"
+      "10.21203/rs.3.rs-10349437/v1"
     ]
   },
   {
     "id": "eval_004",
     "type": "category",
     "question_type": "category",
-    "question": "C\u00f4ng tr\u00ecnh 'Automated Data Quality Profiling with Great Expectations in CI/CD' thu\u1ed9c l\u0129nh v\u1ef1c chuy\u00ean m\u00f4n n\u00e0o?",
-    "ground_truth": "Data Quality; DevOps",
+    "question": "C\u00f4ng tr\u00ecnh 'Advances in Reinforcement Learning for Retrieval-Augmented Generation in Large Language Model' thu\u1ed9c l\u0129nh v\u1ef1c chuy\u00ean m\u00f4n n\u00e0o?",
+    "ground_truth": "",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671810"
+      "10.54254/2755-2721/2026.36624"
     ]
   },
   {
     "id": "eval_005",
     "type": "multi_hop",
     "question_type": "multi_hop",
-    "question": "C\u00e2u h\u1ecfi k\u1ebft h\u1ee3p li\u00ean ng\u00e0nh gi\u1eefa hai ch\u1ee7 \u0111\u1ec1: 'Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks' v\u00e0 'Data Observability and Quality Gates for Production RAG Systems' \u0111\u1ec1 c\u1eadp \u0111\u1ebfn gi\u1ea3i ph\u00e1p g\u00ec?",
+    "question": "C\u00e2u h\u1ecfi k\u1ebft h\u1ee3p li\u00ean ng\u00e0nh gi\u1eefa hai ch\u1ee7 \u0111\u1ec1: 'Intelligent automation of economic processes based on retrieval-augmented generation and large language models' v\u00e0 'Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large Language Model' \u0111\u1ec1 c\u1eadp \u0111\u1ebfn gi\u1ea3i ph\u00e1p g\u00ec?",
     "ground_truth": "K\u1ebft h\u1ee3p c\u01a1 ch\u1ebf \u0111\u1ecbnh tuy\u1ebfn suy lu\u1eadn agentic multi-hop reasoning v\u1edbi c\u00e1c c\u1ed5ng ki\u1ec3m so\u00e1t ch\u1ea5t l\u01b0\u1ee3ng d\u1eef li\u1ec7u t\u1ef1 \u0111\u1ed9ng Great Expectations 1.x \u0111\u1ec3 ng\u0103n ng\u1eeba silent data corruption trong h\u1ec7 th\u1ed1ng RAG.",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671801",
-      "10.1145/3637528.3671802"
+      "10.36887/2415-8453-2026-3-2",
+      "10.28932/jutisi.v12i2.13099"
     ]
   },
   {
     "id": "eval_006",
     "type": "summary",
     "question_type": "summary",
-    "question": "T\u00f3m t\u1eaft n\u1ed9i dung ch\u00ednh c\u1ee7a nghi\u00ean c\u1ee9u 'Data Observability and Quality Gates for Production RAG Systems'?",
-    "ground_truth": "Silent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors.",
+    "question": "T\u00f3m t\u1eaft n\u1ed9i dung ch\u00ednh c\u1ee7a nghi\u00ean c\u1ee9u 'Transformasi Layanan Informasi Berbasis Chatbot Retrieval-Augmented Generation dan Large Language Model'?",
+    "ground_truth": "Keterbukaan akses informasi publik diatur dalam Undang-Undang Nomor 14 Tahun 2008 tentang Keterbukaan Informasi Publik sebagai elemen utama untuk mewujudkan transparansi dan tata kelola pemerintahan yang baik.",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671802"
+      "10.28932/jutisi.v12i2.13099"
     ]
   },
   {
     "id": "eval_007",
     "type": "authors",
     "question_type": "authors",
-    "question": "Ai l\u00e0 t\u00e1c gi\u1ea3 c\u1ee7a c\u00f4ng tr\u00ecnh 'Hybrid Search Architectures: Combining BM25 with Dense Representations'?",
-    "ground_truth": "Dat Tran; Lan Pham",
+    "question": "Ai l\u00e0 t\u00e1c gi\u1ea3 c\u1ee7a c\u00f4ng tr\u00ecnh 'Evidence Constrained Agentic Retrieval Augmented Generation for Substation Civil Engineering Preliminary Design Documents in a Single Project Study'?",
+    "ground_truth": "Yizhang Huang; Xinhui Zhang",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671811"
+      "10.21203/rs.3.rs-10423755/v1"
     ]
   },
   {
     "id": "eval_008",
     "type": "date",
     "question_type": "date",
-    "question": "Th\u1eddi \u0111i\u1ec3m xu\u1ea5t b\u1ea3n c\u1ee7a b\u00e0i b\u00e1o 'Chunking Strategies for Technical Documentation Retrieval' l\u00e0 ng\u00e0y n\u00e0o?",
-    "ground_truth": "2026-04-30",
+    "question": "Th\u1eddi \u0111i\u1ec3m xu\u1ea5t b\u1ea3n c\u1ee7a b\u00e0i b\u00e1o 'Integrating Retrieval-Augmented Generation with Large Language Model for Robust and Explainable AI Text Detection' l\u00e0 ng\u00e0y n\u00e0o?",
+    "ground_truth": "2026-08-25",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671809"
+      "10.3390/knowledge6030022"
     ]
   },
   {
     "id": "eval_009",
     "type": "category",
     "question_type": "category",
-    "question": "B\u00e0i b\u00e1o 'Mitigating Ghost Vectors in Dense Retrieval via Idempotent Indexing' \u0111\u01b0\u1ee3c ph\u00e2n lo\u1ea1i v\u00e0o nh\u1eefng l\u0129nh v\u1ef1c n\u00e0o?",
-    "ground_truth": "Databases; Information Systems",
+    "question": "B\u00e0i b\u00e1o 'Microsoft Azure artificial intelligence / machine learning hackathon for development of retrieval-augmented generation large language model' \u0111\u01b0\u1ee3c ph\u00e2n lo\u1ea1i v\u00e0o nh\u1eefng l\u0129nh v\u1ef1c n\u00e0o?",
+    "ground_truth": "",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671803"
+      "10.21079/11681/50309"
     ]
   },
   {
     "id": "eval_010",
     "type": "multi_hop",
     "question_type": "multi_hop",
-    "question": "S\u1ef1 ph\u1ed1i h\u1ee3p gi\u1eefa 'Continuous Benchmark Evaluation for Enterprise Retrieval Pipelines' v\u00e0 'Automated Data Quality Profiling with Great Expectations in CI/CD' mang l\u1ea1i l\u1ee3i \u00edch g\u00ec cho vi\u1ec7c qu\u1ea3n tr\u1ecb d\u1eef li\u1ec7u retrieval?",
+    "question": "S\u1ef1 ph\u1ed1i h\u1ee3p gi\u1eefa 'DOLPHIN: A Privacy-Preserving Digital Investigation Readiness Assessment Framework based on Offline Large Language Models and Retrieval-Augmented Generation' v\u00e0 'SafeRAG: A Large-Language-Model-Based Multistage Retrieval-Augmented Framework for Oil and Gas Safety Report Generation' mang l\u1ea1i l\u1ee3i \u00edch g\u00ec cho vi\u1ec7c qu\u1ea3n tr\u1ecb d\u1eef li\u1ec7u retrieval?",
     "ground_truth": "Thi\u1ebft l\u1eadp b\u1ed9 test benchmark t\u1ef1 \u0111\u1ed9ng k\u1ebft h\u1ee3p v\u1edbi profiling ki\u1ec3m so\u00e1t ch\u1ea5t l\u01b0\u1ee3ng d\u1eef li\u1ec7u trong CI/CD \u0111\u1ec3 ph\u00e1t hi\u1ec7n s\u1edbm schema drift tr\u01b0\u1edbc khi \u0111\u01b0a v\u00e0o embedding pipeline.",
     "ground_truth_doc_ids": [
-      "10.1145/3637528.3671812",
-      "10.1145/3637528.3671810"
+      "10.21203/rs.3.rs-10489777/v1",
+      "10.2118/234689-pa"
     ]
   }
 ]
