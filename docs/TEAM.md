@@ -12,7 +12,7 @@
 |---:|---|---|---|---|---|
 | 1 | Hoàng Trung Hiếu | 2A202602945 | `hoangtrunghieu0025-lab` | Trưởng nhóm / Pipeline Integrator (`phase1.py`, `corruption_flow.py`, `common.py`, `reporting.py`) | `report/2A202602945_HoangTrungHieu.md` |
 | 2 | Ngô Kỳ Anh | 2A202602916 | `glacerjust` | Data Foundation (`crossref.py`, `cleaning.py`, raw data) | `report/2A202602916_NgoKyAnh.md` |
-| 3 | Nguyễn Văn Tài | 2A202603004 | `Tai Nguyen Van` | Corruption & Vector Store (`corruption.py`, Chroma smoke test) | `report/2A202603004_NguyenVanTai.md` |
+| 3 | Nguyễn Văn Tài | 2A202603004 | `nvtai24` | Corruption & Vector Store (`corruption.py`, Chroma smoke test) | `report/2A202603004_NguyenVanTai.md` |
 | 4 | Nguyễn Việt Hoàng Hải | 2A202602967 | `nguyenviethoanghai` | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`) | `report/2A202602967_NguyenVietHoangHai.md` |
 
 ---
