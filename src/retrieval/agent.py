@@ -56,4 +56,8 @@ def run_agent_question(agent: Any, question: str) -> str:
     if not messages:
         return ""
     final_message = messages[-1]
-    return getattr(final_message, "content", str(final_message))
+    # Gemini 3+ tra content dang list block (kem signature); .text chi lay phan chu.
+    text = getattr(final_message, "text", None)
+    if isinstance(text, str):
+        return text
+    return str(getattr(final_message, "content", final_message))
