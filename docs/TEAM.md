@@ -14,6 +14,7 @@
 | 2 | | | | Data Foundation & Recovery (`crossref.py`, `cleaning.py`, raw data) | `report/<MSSV2>_HoTen.md` |
 | 3 | | | | RAG & Vector Index (`retrieval/index.py`, `embeddings.py`, ChromaDB) | `report/<MSSV3>_HoTen.md` |
 | 4 | | | | Observability & Evaluation (`quality.py` GX 1.x, `testset.py`, reporting) | `report/<MSSV4>_HoTen.md` |
+| 5 | Lan | | | Corruption Suite & Testing (`corruption.py`, `tests/` pytest) | `report/Lan.md` |
 
 *(Nếu nhóm có 3 hoặc 5-6 thành viên, xem bảng phân công chi tiết theo vai trò trong file `CHECKPOINTS.md`)*.
 
@@ -56,3 +57,11 @@
   - Đo lường và xuất bảng đối chiếu 3 trạng thái vào `data/reports/corruption_report.md`.
 - **Điều học được / Đóng góp chính:**
   - Cách thiết lập hệ thống cảnh báo sớm chặn đứng hiện tượng Silent Failure trước khi dữ liệu vào serving layer.
+
+### ## Lan
+- **Vai trò:** Phụ trách Corruption Suite & Unit Testing.
+- **Công việc chi tiết đã hoàn thành:**
+  - Xây dựng 6 kịch bản làm hỏng dữ liệu chủ động trong `src/ingestion/corruption.py`.
+  - Cấu hình và viết test suite toàn diện (`CP0`, `CP1`, `CP2`, `CP4`) với `pytest` không phụ thuộc vào code đồng đội bằng `conftest.py` độc lập.
+- **Điều học được / Đóng góp chính:**
+  - Hiểu sâu về cách dữ liệu có thể bị thoái hóa ngầm mà không gây lỗi runtime. Thành thạo kỹ năng TDD (Test-Driven Development) và fixture mock trong dự án thực tế.
