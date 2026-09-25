@@ -41,6 +41,11 @@ class Paths:
     repaired_answers: Path
     comparison_report: Path
 
+    @property
+    def test_set_json(self) -> Path:
+        """Path used by the Phase 3 benchmark checkpoint."""
+        return self.eval_testset
+
 
 @dataclass(frozen=True)
 class Settings:

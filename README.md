@@ -206,21 +206,21 @@ GOOGLE_API_KEY=your_gemini_api_key_here
 
 ### 📋 Checklist Nghiệm thu & Điều kiện nộp bài (Checkpoint 6):
 
-- [ ] **Môi trường:** Chạy lệnh smoke test in ra `Môi trường sẵn sàng`.
-- [ ] **Pha 1 (Baseline):** Lệnh `python script/run_phase1.py` chạy trơn tru, sinh đầy đủ:
+- [x] **Môi trường:** Chạy lệnh smoke test in ra `Môi trường sẵn sàng`.
+- [x] **Pha 1 (Baseline):** Lệnh `python script/run_phase1.py` chạy trơn tru, sinh đầy đủ:
   - `data/clean/papers_clean.csv`
   - `data/eval/test_set.json`
   - `data/results/baseline_metrics.json`
   - `data/reports/phase1_report.md`
-- [ ] **Pha 2 (Corruption & Repair):** Lệnh `python script/run_corruption_flow.py` chạy thành công, tạo ra:
+- [x] **Pha 2 (Corruption & Repair):** Lệnh `python script/run_corruption_flow.py` chạy thành công, tạo ra:
   - `data/results/corruption_log.json` (ghi nhận 6 dạng lỗi)
   - `data/results/corrupted_metrics.json` (chứng minh chỉ số giảm sút)
   - `data/results/repaired_metrics.json` (chứng minh chỉ số phục hồi)
   - `data/reports/corruption_report.md` (bảng đối chiếu 3 trạng thái rõ ràng)
-- [ ] **Data Observability (GX 1.x):** Quality Gate sử dụng cú pháp chuẩn GX 1.x (`gx.get_context()`, `add_pandas()`), phát hiện thành công khi data bị inject lỗi.
-- [ ] **Bảo mật:** Không commit file `.env` hoặc API Key cá nhân lên GitHub.
-- [ ] **Kiểm tra Contributor trên GitHub:** 
+- [x] **Data Observability (GX 1.x):** Quality Gate sử dụng cú pháp chuẩn GX 1.x (`gx.get_context()`, `add_pandas()`), phát hiện thành công khi data bị inject lỗi.
+- [x] **Bảo mật:** Không commit file `.env` hoặc API Key cá nhân lên GitHub.
+- [x] **Kiểm tra Contributor trên GitHub:** 
   > ⚠️ **QUY TẮC ĐIỂM DANH GITHUB:**  
   > GitHub chỉ ghi nhận đóng góp khi commit được push trực tiếp vào **nhánh mặc định (`main`)**.  
   > Trước khi nộp bài, mở trình duyệt vào repo nhóm, chọn tab **Insights > Contributors**. Bắt buộc mọi thành viên trong nhóm đều phải xuất hiện trên biểu đồ commit thì mới được tính điểm chuyên cần nhóm!
-- [ ] **Nộp bài lên VLearn LMS:** Mỗi thành viên copy đường link repository GitHub của nhóm và nộp lên cổng LMS trước khi đồng hồ đếm ngược kết thúc 240 phút!
+- [x] **Nộp bài lên VLearn LMS:** Mỗi thành viên copy đường link repository GitHub của nhóm và nộp lên cổng LMS trước khi đồng hồ đếm ngược kết thúc 240 phút!
