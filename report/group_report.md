@@ -11,14 +11,12 @@
 
 ### Thành viên và phân công
 
-> ⚠️ Cột Họ tên/MSSV cần từng thành viên tự điền. GitHub account được lấy từ lịch sử commit thực tế.
-
 | STT | Họ và tên | MSSV | GitHub | Vai trò chính | Module/deliverable sở hữu |
 | --: | --- | --- | --- | --- | --- |
-| 1 | [Họ tên] | [MSSV] | `hoangtrunghieu0025-lab` | Trưởng nhóm — Pipeline integration & reporting | `pipelines/phase1.py`, `pipelines/corruption_flow.py`, `pipelines/common.py`, `observability/reporting.py`; tích hợp và chạy lại toàn bộ flow |
-| 2 | [Họ tên] | [MSSV] | `glacerjust` | Source & cleaning owner | `ingestion/crossref.py`, `ingestion/cleaning.py`; `data/raw/`, `data/clean/` |
-| 3 | [Họ tên] | [MSSV] | `Tai Nguyen Van` | Corruption & vector store owner | `ingestion/corruption.py`, `script/smoke_test_chroma.py`; `corruption_log.json` |
-| 4 | [Họ tên] | [MSSV] | `nguyenviethoanghai` | Observability & evaluation-set owner | `observability/quality.py` (GX 1.x + freshness), `evaluation/testset.py`; `data/quality/`, `data/eval/` |
+| 1 | Hoàng Trung Hiếu | 2A202602945 | `hoangtrunghieu0025-lab` | Trưởng nhóm — Pipeline integration & reporting | `pipelines/phase1.py`, `pipelines/corruption_flow.py`, `pipelines/common.py`, `observability/reporting.py`; tích hợp và chạy lại toàn bộ flow |
+| 2 | Ngô Kỳ Anh | 2A202602916 | `glacerjust` | Source & cleaning owner | `ingestion/crossref.py`, `ingestion/cleaning.py`; `data/raw/`, `data/clean/` |
+| 3 | Nguyễn Văn Tài | 2A202603004 | `Tai Nguyen Van` | Corruption & vector store owner | `ingestion/corruption.py`, `script/smoke_test_chroma.py`; `corruption_log.json` |
+| 4 | Nguyễn Việt Hoàng Hải | 2A202602967 | `nguyenviethoanghai` | Observability & evaluation-set owner | `observability/quality.py` (GX 1.x + freshness), `evaluation/testset.py`; `data/quality/`, `data/eval/` |
 
 ## 2. Tóm tắt kết quả
 
@@ -264,7 +262,7 @@ Một điểm cần lưu ý khi đọc số: eval_004 (`categories`) retrieval *
 ## 13. Checklist trước khi nộp
 
 - [x] Thông tin nhóm và repository chính xác.
-- [ ] Phân công khớp với module, artifact và kết quả thực tế (**từng thành viên điền Họ tên/MSSV**).
+- [x] Phân công khớp với module, artifact và kết quả thực tế.
 - [x] Lệnh tái hiện đã được chạy lại trên phiên bản dùng để nộp.
 - [x] Baseline, corrupted và repaired dùng cùng evaluation set.
 - [x] Bảng metrics khớp với các file trong `data/results/`.
