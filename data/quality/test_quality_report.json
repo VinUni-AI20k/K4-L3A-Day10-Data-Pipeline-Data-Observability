@@ -1,0 +1,69 @@
+{
+  "report_name": "test",
+  "success": true,
+  "gx_success": true,
+  "freshness_success": true,
+  "row_count": 24,
+  "expectations": [
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source_test-papers_asset_test",
+        "min_value": 5,
+        "max_value": 5000
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source_test-papers_asset_test",
+        "column": "paper_id"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source_test-papers_asset_test",
+        "column": "paper_id"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source_test-papers_asset_test",
+        "column": "title"
+      }
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source_test-papers_asset_test",
+        "column": "text_for_embedding"
+      }
+    },
+    {
+      "expectation_type": "expect_column_value_lengths_to_be_between",
+      "success": true,
+      "kwargs": {
+        "batch_id": "papers_source_test-papers_asset_test",
+        "column": "summary",
+        "min_value": 30
+      }
+    }
+  ],
+  "freshness": {
+    "latest_published": "2026-07-22",
+    "oldest_published": "2026-03-28",
+    "stale_rows": 1,
+    "total_rows": 24,
+    "stale_ratio": 0.0417,
+    "threshold_days": 180,
+    "max_stale_ratio": 0.25,
+    "is_fresh": true
+  }
+}
