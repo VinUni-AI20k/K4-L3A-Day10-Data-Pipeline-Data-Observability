@@ -56,4 +56,5 @@
   - Xây dựng Freshness SLA: stale khi hơn 25% bài có `age_days > 180`; ghi report vào `data/quality/`.
   - Xây dựng `src/evaluation/testset.py`: 10 câu hỏi cho 4 loại `summary`/`authors`/`date`/`categories`.
 - **Điều học được / Đóng góp chính:**
-  - [Tự điền]
+  - Data Quality Gate chỉ phát hiện được các vi phạm mà nó được lập trình để kiểm tra (bắt được 3/6 lỗi); các lỗi nội dung tinh vi như `inject_noise` hoặc mất dữ liệu có chọn lọc `drop_latest_records` đòi hỏi kiểm tra anomaly và nội dung nâng cao hơn.
+  - Silent failure là mối nguy lớn nhất trong RAG: dữ liệu lỗi thời (`stale_date`) không làm vỡ schema nhưng khiến Agent tự tin trả lời sai lệch; do đó Freshness SLA là lớp phòng vệ thiết yếu bổ trợ cho Quality Gate.
