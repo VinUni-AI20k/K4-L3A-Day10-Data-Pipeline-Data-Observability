@@ -1,6 +1,6 @@
 # Phase 1 Baseline Report
 
-Generated: 2026-09-25T09:26:07.939294+00:00
+Generated: 2026-09-25T10:03:06.737091+00:00
 
 ## Data Source Summary
 
@@ -18,7 +18,7 @@ Generated: 2026-09-25T09:26:07.939294+00:00
 - **Retrieval Hit Rate**: 1.0000
 - **Mean Token F1**: 0.7745
 - **LLM Judge Accuracy**: 0.6000
-- **Mean LLM Judge Score**: 3.6000 / 5
+- **Mean LLM Judge Score**: 4.0000 / 5
 - **Ragas**: skipped (Set RUN_RAGAS=1 to enable the slower Ragas pass.)
 
 ## Data Quality Gate (Great Expectations 1.x)
