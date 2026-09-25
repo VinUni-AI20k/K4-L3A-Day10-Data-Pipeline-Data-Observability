@@ -1,0 +1,66 @@
+[
+  {
+    "type": "drop_latest",
+    "count": 4,
+    "affected_ids": [
+      "10.1145/3637528.3671812",
+      "10.1145/3637528.3671808",
+      "10.1145/3637528.3671804",
+      "10.1145/3637528.3671807"
+    ],
+    "description": "Dropped 4 most-recent records (20%)."
+  },
+  {
+    "type": "blank_summary",
+    "count": 3,
+    "affected_ids": [
+      "10.1145/3637528.3671802",
+      "10.1145/3637528.3671824",
+      "10.1145/3637528.3671823"
+    ],
+    "description": "Blanked summary field on 3 records."
+  },
+  {
+    "type": "inject_noise",
+    "count": 3,
+    "affected_ids": [
+      "10.1145/3637528.3671822",
+      "10.1145/3637528.3671821",
+      "10.1145/3637528.3671810"
+    ],
+    "description": "Injected ####NOISE#### into summary of 3 records."
+  },
+  {
+    "type": "truncate_title",
+    "count": 3,
+    "affected_ids": [
+      "10.1145/3637528.3671820",
+      "10.1145/3637528.3671819",
+      "10.1145/3637528.3671818"
+    ],
+    "description": "Truncated title to 7 characters on 3 records."
+  },
+  {
+    "type": "stale_date",
+    "count": 6,
+    "affected_ids": [
+      "10.1145/3637528.3671817",
+      "10.1145/3637528.3671816",
+      "10.1145/3637528.3671815",
+      "10.1145/3637528.3671814",
+      "10.1145/3637528.3671813",
+      "10.1145/3637528.3671801"
+    ],
+    "description": "Set published date 3 years back on 6 records (triggers is_fresh=False)."
+  },
+  {
+    "type": "duplicate_rows",
+    "count": 3,
+    "affected_ids": [
+      "10.1145/3637528.3671802",
+      "10.1145/3637528.3671824",
+      "10.1145/3637528.3671823"
+    ],
+    "description": "Duplicated 3 records \u2014 violates paper_id uniqueness."
+  }
+]

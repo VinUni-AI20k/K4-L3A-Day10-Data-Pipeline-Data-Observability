@@ -2,8 +2,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from langchain.agents import create_agent
-from langchain.tools import tool
+from langchain.agents import create_react_agent
+from langchain_core.tools import tool
+from langchain import hub
 
 from core.config import Settings
 from retrieval.index import LocalEmbeddingIndex
@@ -38,16 +39,8 @@ def build_agent(settings: Settings, index: LocalEmbeddingIndex):
         )
 
     llm = build_llm(settings=settings, temperature=0.0)
-    return create_agent(
-        model=llm,
-        tools=[semantic_search_papers, lookup_paper],
-        system_prompt=(
-            "You answer questions about the indexed scholarly paper corpus sourced from Crossref. "
-            "Use tools before answering factual questions. "
-            "If the indexed corpus does not support the answer, say so clearly."
-        ),
-        name="paper_corpus_agent",
-    )
+    prompt = hub.pull("hwchase17/react")
+    return create_react_agent(llm=llm, tools=[semantic_search_papers, lookup_paper], prompt=prompt)
 
 
 def run_agent_question(agent: Any, question: str) -> str:
