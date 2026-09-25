@@ -6,3 +6,17 @@ src/*.egg-info/
 lab/
 **/__pycache__/
 doc_verification_report.md
+
+# Team Planning & Guide (local reference)
+TEAM-GUIDE.md
+
+# Non-lab temporary & IDE files
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
