@@ -1,0 +1,10 @@
+{
+  "run_timestamp": "2026-09-25T08:14:18.040436",
+  "total_rows": 24,
+  "stale_rows": 1,
+  "stale_ratio_pct": 4.17,
+  "threshold_days": 180,
+  "is_fresh": true,
+  "latest_published": "2026-07-22T00:00:00",
+  "oldest_published": "2026-03-28T00:00:00"
+}
