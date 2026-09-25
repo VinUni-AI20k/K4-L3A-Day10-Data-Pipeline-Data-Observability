@@ -119,10 +119,10 @@ Giải thích ngắn gọn bằng lời của bạn:
 
 | Metric/signal          | Baseline | Corrupted | Repaired | Nhận xét của cá nhân |
 | ---------------------- | -------: | --------: | -------: | ------------------------- |
-| `retrieval_hit_rate` |    1.000 |     0.700 |    1.000 | Giảm 3/10 câu khi mất hoặc hỏng tài liệu đích |
-| `mean_token_f1`      |    0.928 |     0.828 |    0.928 | Giảm khi summary bị xóa hoặc chèn nhiễu |
-| `judge_accuracy`     |    0.800 |     0.700 |    0.800 | Giảm nhẹ; 2 câu multi_hop luôn sai ở cả 3 trạng thái |
-| `mean_judge_score`   |     4.40 |      4.00 |     4.40 | Phục hồi hoàn toàn sau repair |
+| `retrieval_hit_rate` |    1.000 |     0.000 |    1.000 | Cả 5 bài được hỏi đều nằm trong nhóm bị drop nên không còn được truy xuất |
+| `mean_token_f1`      |    1.000 |     0.548 |    1.000 | Giảm mạnh khi tài liệu đích mất và summary bị hỏng |
+| `judge_accuracy`     |    1.000 |     0.600 |    1.000 | Phục hồi hoàn toàn sau repair |
+| `mean_judge_score`   |     5.00 |      3.20 |     5.00 | Phục hồi hoàn toàn sau repair |
 | Quality checks         | PASS (7/7) | FAIL (4 đạt, 3 lỗi) | PASS (7/7) | Gate phát hiện `paper_id` trùng, summary quá ngắn và freshness |
 | Freshness status       | Fresh (1/24 stale) | Không fresh (7/24 stale) | Fresh (1/24 stale) | Vượt ngưỡng 25% khi tiêm lỗi stale date |
 
@@ -130,7 +130,7 @@ Giải thích ngắn gọn bằng lời của bạn:
 
 Hoàn thành hai chuỗi nguyên nhân–bằng chứng sau:
 
-1. Tiêm lỗi (trùng dòng, summary rỗng, lùi ngày 5 năm) → check unique, độ dài summary và freshness đều fail → hit rate giảm từ 1.0 xuống 0.7 và Token F1 giảm từ 0.928 xuống 0.828.
+1. Tiêm lỗi (trùng dòng, summary rỗng, lùi ngày 5 năm) → check unique, độ dài summary và freshness đều fail → hit rate giảm từ 1.0 xuống 0.0 và Token F1 giảm từ 1.000 xuống 0.548.
 2. Repair từ raw snapshot → quality và freshness pass trở lại → cả bốn metric về đúng giá trị baseline.
 
 Corruption nào ảnh hưởng rõ nhất và vì sao?
@@ -139,7 +139,7 @@ Chưa đủ dữ liệu để kết luận riêng từng loại lỗi vì cả 6
 
 Kết quả nào khác với kỳ vọng ban đầu?
 
-Slide kỳ vọng hit rate "giảm sâu" (ví dụ ≤ 40%) nhưng thực tế chỉ giảm xuống 0.7. Nguyên nhân có thể do chỉ có 10 câu hỏi và seed cố định 42 chọn dòng hỏng ít trùng với các bài trong test set; chưa kiểm chứng thêm bằng nhiều seed khác nhau.
+Hit rate giảm về 0.0 là kết quả mạnh hơn kỳ vọng của slide (ví dụ ≤ 40%). Nguyên nhân: test set 5 câu luôn lấy 5 dòng đầu của dữ liệu đã sắp xếp theo ngày mới nhất, trùng đúng 5 bài bị bước "drop latest 20%" xóa, nên mức sụt giảm này một phần do cách chọn bài chứ không chỉ phản ánh chất lượng truy xuất. Chưa kiểm chứng với test set chọn bài rải đều.
 
 ## 9. Điều học được và hướng cải thiện
 

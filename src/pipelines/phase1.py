@@ -42,7 +42,7 @@ def main() -> None:
     freshness = build_freshness_report(df, settings, paths.freshness_report)
 
     index = LocalEmbeddingIndex.build(df, settings, paths.embeddings_json)
-    load_or_create_test_set(df, paths.eval_testset, refresh=settings.refresh_test_set)
+    load_or_create_test_set(df, paths.eval_testset, force_refresh=settings.refresh_test_set)
     bundle = evaluate_pipeline(settings, index, paths.eval_testset, paths.baseline_metrics, paths.baseline_answers)
 
     source_summary = {
