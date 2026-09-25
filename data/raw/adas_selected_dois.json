@@ -1,0 +1,32 @@
+{
+  "selected_on": "2026-09-25",
+  "project_context": "P-065 Scenario Forge RAV-03: ODD-constrained ADAS scenario generation, human review, OpenSCENARIO export, CARLA validation; initial family motorcycle cut-in.",
+  "selection_rule": "Crossref journal/proceedings records with DOI, title, author, abstract, full publication date and DOI URL. Venue and relevance reviewed manually. No Scopus quartile claim is made.",
+  "category_note": "Crossref subject is absent for this set; categories in PaperRecord are controlled topic labels inferred from title/abstract, not publisher-assigned subject headings.",
+  "selection": [
+    {"doi": "10.1145/3806653", "focus": "Generative AI survey for ADS testing"},
+    {"doi": "10.1145/3808153", "focus": "Hazardous scenario generation"},
+    {"doi": "10.1145/3787978", "focus": "Safety violation discovery"},
+    {"doi": "10.1145/3798262", "focus": "Scenario deduplication and test efficiency"},
+    {"doi": "10.1007/s10664-026-10920-5", "focus": "Road diversity in ADS testing"},
+    {"doi": "10.1002/smr.70112", "focus": "Scenario selection sensitivity"},
+    {"doi": "10.4271/09-14-01-0018", "focus": "Scenario-based safety assessment"},
+    {"doi": "10.4271/12-09-04-0032", "focus": "Scenario expansion and safety testing"},
+    {"doi": "10.1515/auto-2025-0066", "focus": "Open simulation architecture"},
+    {"doi": "10.3390/vehicles8040088", "focus": "Scenario database architecture and provenance"},
+    {"doi": "10.3390/vehicles8070155", "focus": "Critical maneuver-level scenario generation"},
+    {"doi": "10.3390/vehicles8080188", "focus": "Constraint- and risk-driven scenario search"},
+    {"doi": "10.3390/vehicles8100228", "focus": "Knowledge-graph retrieval for scenario generation"},
+    {"doi": "10.3390/vehicles8080185", "focus": "Motorcycle-dominated mixed traffic"},
+    {"doi": "10.3390/vehicles8090203", "focus": "Motorcycle mixed-traffic TTC and THW"},
+    {"doi": "10.3390/app16157622", "focus": "Traffic scenario initialization under map constraints"},
+    {"doi": "10.3390/s26113464", "focus": "Adverse-condition perception scenario generation"},
+    {"doi": "10.1038/s41597-026-07929-2", "focus": "Interactive driving dataset"},
+    {"doi": "10.1177/09544070261484532", "focus": "Multi-vehicle scenario generation"},
+    {"doi": "10.3390/app16136722", "focus": "Rare traffic situation detection"},
+    {"doi": "10.1177/03611981261436644", "focus": "Autonomous vehicle test route planning"},
+    {"doi": "10.4271/12-09-04-0028", "focus": "Precautionary automated driving safety"},
+    {"doi": "10.3390/make8050126", "focus": "Knowledge graphs for autonomous driving"},
+    {"doi": "10.1145/3838726", "focus": "Generative AI frontier for autonomous driving"}
+  ]
+}
