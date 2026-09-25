@@ -54,7 +54,7 @@
     "judge": {
       "score": 5,
       "correct": true,
-      "reasoning": "The model answer correctly identifies the authors of the study as Phong Vu and Ngan Hoang, matching the reference answer exactly."
+      "reasoning": "The model answer matches the reference answer exactly, providing the correct authors of the study."
     }
   },
   {
@@ -142,7 +142,7 @@
     "judge": {
       "score": 2,
       "correct": false,
-      "reasoning": "The model answer only addresses the issue of static benchmarks from the first reference but fails to mention the contributions of the second reference regarding data observability and quality gates. It does not provide a comprehensive evaluation of how both contributions complement each other in a retrieval pipeline."
+      "reasoning": "The model answer only addresses the issue of static benchmarks and does not mention the contributions of 'Data Observability and Quality Gates for Production RAG Systems', nor how both contributions complement each other in a retrieval pipeline."
     }
   }
 ]

@@ -7,15 +7,15 @@
     {
       "record_id": "10.1145/3637528.3671802::0",
       "paper_id": "10.1145/3637528.3671802",
-      "title": "Data Observability and Quality Gates for Production RAG Systems",
-      "content": "Title: Data Observability and Quality Gates for Production RAG Systems\nAuthors: Anh Tran, Quoc Pham\nPublished: 2026-06-12\nCategories: Software Engineering, Data Systems\nSummary: Silent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors. We introduce automated quality gates using Great Expectations 1.x to catch stale and malformed embeddings before serving.",
+      "title": "Data Ob",
+      "content": "Title: Data Ob\nAuthors: Anh Tran, Quoc Pham\nPublished: 2026-06-12\nCategories: Software Engineering, Data Systems\nSummary: ",
       "metadata": {
         "paper_id": "10.1145/3637528.3671802",
-        "title": "Data Observability and Quality Gates for Production RAG Systems",
+        "title": "Data Ob",
         "published": "2026-06-12",
         "authors_joined": "Anh Tran, Quoc Pham",
         "categories_joined": "Software Engineering, Data Systems",
-        "summary": "Silent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors. We introduce automated quality gates using Great Expectations 1.x to catch stale and malformed embeddings before serving.",
+        "summary": "",
         "abs_url": "https://doi.org/10.1145/3637528.3671802",
         "pdf_url": "https://doi.org/10.1145/3637528.3671802"
       }
@@ -40,14 +40,14 @@
       "record_id": "10.1145/3637528.3671823::2",
       "paper_id": "10.1145/3637528.3671823",
       "title": "Advanced Perspectives on Hybrid Search Architectures: Combining BM25 with Dense Representations",
-      "content": "Title: Advanced Perspectives on Hybrid Search Architectures: Combining BM25 with Dense Representations\nAuthors: Dat Tran, Lan Pham\nPublished: 2026-06-11\nCategories: Information Retrieval, Algorithms\nSummary: An extended empirical study on ense vector search excels at conceptual similarity but struggles with exact acronyms and serial numbers. Reciprocal Rank Fusion of sparse lexical scores and dense embeddings achieves optimal recall Further analysis on scaling parameters.",
+      "content": "Title: Advanced Perspectives on Hybrid Search Architectures: Combining BM25 with Dense Representations\nAuthors: Dat Tran, Lan Pham\nPublished: 2026-06-11\nCategories: Information Retrieval, Algorithms\nSummary: An extended empirical study on ense vector search excels at conceptual similarity but struggles with exact acronyms and serial numbers. Reciprocal Rank Fusion of sparse lexical scores and dense embeddings achieves optimal recall Further analysis on scaling parameters. 0xDEADBEEF ERROR DATA NOISE!@#",
       "metadata": {
         "paper_id": "10.1145/3637528.3671823",
         "title": "Advanced Perspectives on Hybrid Search Architectures: Combining BM25 with Dense Representations",
         "published": "2026-06-11",
         "authors_joined": "Dat Tran, Lan Pham",
         "categories_joined": "Information Retrieval, Algorithms",
-        "summary": "An extended empirical study on ense vector search excels at conceptual similarity but struggles with exact acronyms and serial numbers. Reciprocal Rank Fusion of sparse lexical scores and dense embeddings achieves optimal recall Further analysis on scaling parameters.",
+        "summary": "An extended empirical study on ense vector search excels at conceptual similarity but struggles with exact acronyms and serial numbers. Reciprocal Rank Fusion of sparse lexical scores and dense embeddings achieves optimal recall Further analysis on scaling parameters. 0xDEADBEEF ERROR DATA NOISE!@#",
         "abs_url": "https://doi.org/10.1145/3637528.3671823",
         "pdf_url": "https://doi.org/10.1145/3637528.3671823"
       }
@@ -72,11 +72,11 @@
       "record_id": "10.1145/3637528.3671821::4",
       "paper_id": "10.1145/3637528.3671821",
       "title": "Advanced Perspectives on Chunking Strategies for Technical Documentation Retrieval",
-      "content": "Title: Advanced Perspectives on Chunking Strategies for Technical Documentation Retrieval\nAuthors: Long Trinh, Ha Chu\nPublished: 2025-06-09T00:00:00\nCategories: Information Retrieval, Natural Language Processing\nSummary: An extended empirical study on ierarchical and semantic boundary chunking preserves code block contexts and markdown headings. Our benchmark demonstrates superior top-1 recall compared to fixed character length sliding windows Further analysis on scaling parameters.",
+      "content": "Title: Advanced Perspectives on Chunking Strategies for Technical Documentation Retrieval\nAuthors: Long Trinh, Ha Chu\nPublished: 2026-06-09\nCategories: Information Retrieval, Natural Language Processing\nSummary: An extended empirical study on ierarchical and semantic boundary chunking preserves code block contexts and markdown headings. Our benchmark demonstrates superior top-1 recall compared to fixed character length sliding windows Further analysis on scaling parameters.",
       "metadata": {
         "paper_id": "10.1145/3637528.3671821",
         "title": "Advanced Perspectives on Chunking Strategies for Technical Documentation Retrieval",
-        "published": "2025-06-09T00:00:00",
+        "published": "2026-06-09",
         "authors_joined": "Long Trinh, Ha Chu",
         "categories_joined": "Information Retrieval, Natural Language Processing",
         "summary": "An extended empirical study on ierarchical and semantic boundary chunking preserves code block contexts and markdown headings. Our benchmark demonstrates superior top-1 recall compared to fixed character length sliding windows Further analysis on scaling parameters.",
@@ -184,14 +184,14 @@
       "record_id": "10.1145/3637528.3671815::11",
       "paper_id": "10.1145/3637528.3671815",
       "title": "Advanced Perspectives on Mitigating Ghost Vectors in Dense Retrieval via Idempotent Indexing",
-      "content": "Title: Advanced Perspectives on Mitigating Ghost Vectors in Dense Retrieval via Idempotent Indexing\nAuthors: Duc Vu, Thao Dang\nPublished: 2026-06-03\nCategories: Databases, Information Systems\nSummary: ",
+      "content": "Title: Advanced Perspectives on Mitigating Ghost Vectors in Dense Retrieval via Idempotent Indexing\nAuthors: Duc Vu, Thao Dang\nPublished: 2026-06-03\nCategories: Databases, Information Systems\nSummary: An extended empirical study on oft-deletions in vector databases leave orphaned embeddings that lead to hallucinations. This paper designs an idempotent index synchronization protocol that guarantees complete purges of outdated vector artifacts Further analysis on scaling parameters.",
       "metadata": {
         "paper_id": "10.1145/3637528.3671815",
         "title": "Advanced Perspectives on Mitigating Ghost Vectors in Dense Retrieval via Idempotent Indexing",
         "published": "2026-06-03",
         "authors_joined": "Duc Vu, Thao Dang",
         "categories_joined": "Databases, Information Systems",
-        "summary": "",
+        "summary": "An extended empirical study on oft-deletions in vector databases leave orphaned embeddings that lead to hallucinations. This paper designs an idempotent index synchronization protocol that guarantees complete purges of outdated vector artifacts Further analysis on scaling parameters.",
         "abs_url": "https://doi.org/10.1145/3637528.3671815",
         "pdf_url": "https://doi.org/10.1145/3637528.3671815"
       }
@@ -200,11 +200,11 @@
       "record_id": "10.1145/3637528.3671814::12",
       "paper_id": "10.1145/3637528.3671814",
       "title": "Advanced Perspectives on Data Observability and Quality Gates for Production RAG Systems",
-      "content": "Title: Advanced Perspectives on Data Observability and Quality Gates for Production RAG Systems\nAuthors: Anh Tran, Quoc Pham\nPublished: 2026-06-02\nCategories: Software Engineering, Data Systems\nSummary: An extended empirical study on ilent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors. We introduce automated quality gates using Great Expectations 1.x to catch stale and malformed embeddings before serving Further analysis on scaling parameters.",
+      "content": "Title: Advanced Perspectives on Data Observability and Quality Gates for Production RAG Systems\nAuthors: Anh Tran, Quoc Pham\nPublished: 2025-06-02T00:00:00\nCategories: Software Engineering, Data Systems\nSummary: An extended empirical study on ilent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors. We introduce automated quality gates using Great Expectations 1.x to catch stale and malformed embeddings before serving Further analysis on scaling parameters.",
       "metadata": {
         "paper_id": "10.1145/3637528.3671814",
         "title": "Advanced Perspectives on Data Observability and Quality Gates for Production RAG Systems",
-        "published": "2026-06-02",
+        "published": "2025-06-02T00:00:00",
         "authors_joined": "Anh Tran, Quoc Pham",
         "categories_joined": "Software Engineering, Data Systems",
         "summary": "An extended empirical study on ilent data corruption in RAG pipelines degrades LLM answer faithfulness without throwing runtime errors. We introduce automated quality gates using Great Expectations 1.x to catch stale and malformed embeddings before serving Further analysis on scaling parameters.",
@@ -232,14 +232,14 @@
       "record_id": "10.1145/3637528.3671801::14",
       "paper_id": "10.1145/3637528.3671801",
       "title": "Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks",
-      "content": "Title: Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks\nAuthors: Minh Nguyen, Hoang Le\nPublished: 2026-05-20\nCategories: Artificial Intelligence, Information Retrieval\nSummary: Retrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices. 0xDEADBEEF ERROR DATA NOISE!@#",
+      "content": "Title: Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks\nAuthors: Minh Nguyen, Hoang Le\nPublished: 2026-05-20\nCategories: Artificial Intelligence, Information Retrieval\nSummary: Retrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices.",
       "metadata": {
         "paper_id": "10.1145/3637528.3671801",
         "title": "Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks",
         "published": "2026-05-20",
         "authors_joined": "Minh Nguyen, Hoang Le",
         "categories_joined": "Artificial Intelligence, Information Retrieval",
-        "summary": "Retrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices. 0xDEADBEEF ERROR DATA NOISE!@#",
+        "summary": "Retrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices.",
         "abs_url": "https://doi.org/10.1145/3637528.3671801",
         "pdf_url": "https://doi.org/10.1145/3637528.3671801"
       }
@@ -247,11 +247,11 @@
     {
       "record_id": "10.1145/3637528.3671811::15",
       "paper_id": "10.1145/3637528.3671811",
-      "title": "Hybrid ",
-      "content": "Title: Hybrid \nAuthors: Dat Tran, Lan Pham\nPublished: 2026-05-14\nCategories: Information Retrieval, Algorithms\nSummary: Dense vector search excels at conceptual similarity but struggles with exact acronyms and serial numbers. Reciprocal Rank Fusion of sparse lexical scores and dense embeddings achieves optimal recall.",
+      "title": "Hybrid Search Architectures: Combining BM25 with Dense Representations",
+      "content": "Title: Hybrid Search Architectures: Combining BM25 with Dense Representations\nAuthors: Dat Tran, Lan Pham\nPublished: 2026-05-14\nCategories: Information Retrieval, Algorithms\nSummary: Dense vector search excels at conceptual similarity but struggles with exact acronyms and serial numbers. Reciprocal Rank Fusion of sparse lexical scores and dense embeddings achieves optimal recall.",
       "metadata": {
         "paper_id": "10.1145/3637528.3671811",
-        "title": "Hybrid ",
+        "title": "Hybrid Search Architectures: Combining BM25 with Dense Representations",
         "published": "2026-05-14",
         "authors_joined": "Dat Tran, Lan Pham",
         "categories_joined": "Information Retrieval, Algorithms",
@@ -325,19 +325,19 @@
       }
     },
     {
-      "record_id": "10.1145/3637528.3671813::20",
-      "paper_id": "10.1145/3637528.3671813",
-      "title": "Advanced Perspectives on Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks",
-      "content": "Title: Advanced Perspectives on Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks\nAuthors: Minh Nguyen, Hoang Le\nPublished: 2026-06-01\nCategories: Artificial Intelligence, Information Retrieval\nSummary: An extended empirical study on etrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices Further analysis on scaling parameters.",
+      "record_id": "10.1145/3637528.3671810::20",
+      "paper_id": "10.1145/3637528.3671810",
+      "title": "Automated Data Quality Profiling with Great Expectations in CI/CD",
+      "content": "Title: Automated Data Quality Profiling with Great Expectations in CI/CD\nAuthors: Son Nguyen, Thuy Doan\nPublished: 2026-06-08\nCategories: Data Quality, DevOps\nSummary: Embedding quality checks directly into data pipelines enables fail-closed governance. We show how Great Expectations suites catch schema drifts and null fields before documents reach the embedding model.",
       "metadata": {
-        "paper_id": "10.1145/3637528.3671813",
-        "title": "Advanced Perspectives on Agentic Retrieval-Augmented Generation for Knowledge-Intensive Tasks",
-        "published": "2026-06-01",
-        "authors_joined": "Minh Nguyen, Hoang Le",
-        "categories_joined": "Artificial Intelligence, Information Retrieval",
-        "summary": "An extended empirical study on etrieval-Augmented Generation (RAG) significantly improves large language model accuracy by grounding responses in retrieved passages. We explore agentic multi-hop reasoning and routing across heterogeneous vector indices Further analysis on scaling parameters.",
-        "abs_url": "https://doi.org/10.1145/3637528.3671813",
-        "pdf_url": "https://doi.org/10.1145/3637528.3671813"
+        "paper_id": "10.1145/3637528.3671810",
+        "title": "Automated Data Quality Profiling with Great Expectations in CI/CD",
+        "published": "2026-06-08",
+        "authors_joined": "Son Nguyen, Thuy Doan",
+        "categories_joined": "Data Quality, DevOps",
+        "summary": "Embedding quality checks directly into data pipelines enables fail-closed governance. We show how Great Expectations suites catch schema drifts and null fields before documents reach the embedding model.",
+        "abs_url": "https://doi.org/10.1145/3637528.3671810",
+        "pdf_url": "https://doi.org/10.1145/3637528.3671810"
       }
     }
   ]
